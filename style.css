@@ -1,0 +1,235 @@
+
+/*----*/
+/*OPTIONS*/
+/*----*/
+/*HEADER OPTIONS*/
+#headerBackground{background:{color:Header Color};}
+#headerBackground{background-image:url({image:Header Image});} 
+#headerBackground{height:{text:Header Height}px;}
+#bar{background-color:{color:Main Color};}
+
+/*HIGHLIGHT OPTIONS*/
+::selection{opacity:1;color:#fff; background-color:{color:Main Color};}
+:-moz-selection{opacity:1;color:#fff; background-color:{color:Main Color};}
+
+/*Change scrollbar for code overflow*/
+pre.prettyprint::-webkit-scrollbar{width:0px}
+pre.prettyprint::-webkit-scrollbar:horizontal{height:8px;}
+pre.prettyprint::-webkit-scrollbar-track{background-color: #888;}
+pre.prettyprint::-webkit-scrollbar-thumb{background-color: #555;}
+pre.prettyprint::-webkit-scrollbar-corner{display:none;}
+
+/*GOOGLE CODE PRETIFIER*/
+/* desert scheme ported from vim to google prettify */
+pre.prettyprint { display: block; overflow: auto}
+pre.prettyprint { display: block; background-color: #555; padding:10px; border:none;}
+pre .nocode { background-color: none; color: #000 }
+pre .str { color: #ffa0a0 } /* string  - pink */
+pre .kwd { color: #f0e68c; font-weight: bold }
+pre .com { color: #87ceeb } /* comment - skyblue */
+pre .typ { color: #98fb98 } /* type    - lightgreen */
+pre .lit { color: #cd5c5c } /* literal - darkred */
+pre .pun { color: #fff }    /* punctuation */
+pre .pln { color: #fff }    /* plaintext */
+pre .tag { color: #f0e68c; font-weight: bold } /* html/xml tag    - lightyellow */
+pre .atn { color: #bdb76b; font-weight: bold } /* attribute name  - khaki */
+pre .atv { color: #ffa0a0 } /* attribute value - pink */
+pre .dec { color: #98fb98 } /* decimal         - lightgreen */
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0; margin-bottom: 0; color: #aaaaaa } /* IE indents via margin-left */
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+/* Alternate shading for lines */
+li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
+.prettyprint ol.linenums > li { list-style-type: decimal; }
+
+@media print {
+    /*Remove uneeded content*/
+    .iconContainer{display:none;}
+    .bottom{display:none;}
+    .asksubmit{display:none;}
+    .space{display:none;}
+    #disqus_thread{display:none;}
+    /*Print style for code*/
+  pre.prettyprint { background-color: none }
+  pre .str, code .str { color: #060 }
+  pre .kwd, code .kwd { color: #006; font-weight: bold }
+  pre .com, code .com { color: #600; font-style: italic }
+  pre .typ, code .typ { color: #404; font-weight: bold }
+  pre .lit, code .lit { color: #044 }
+  pre .pun, code .pun { color: #440 }
+  pre .pln, code .pln { color: #000 }
+  pre .tag, code .tag { color: #006; font-weight: bold }
+  pre .atn, code .atn { color: #404 }
+  pre .atv, code .atv { color: #060 }
+}
+
+/*----*/
+/*RESPONSIVE*/
+/*----*/
+/*ANY SCREEN SIZE*/
+@media only screen 
+{
+        body {font-size:1rem;} /*16px*/
+        /*Titles*/
+        h1{font-size:2.744rem;}
+        h2{font-size:1.96rem;}
+        h3{font-size:1.4rem;}
+        h4{font-size:1rem;}
+}/*Any screen size*/
+
+/*LARGER THAN 640PX*/
+@media only screen and (min-width: 640px) 
+{
+        body {font-size:1.125rem;} /*18px*/
+        /*Titles*/
+        h1{font-size:4.75rem;} /*76.243px*/
+        h2{font-size:2.938rem;} /*47.122px*/
+        h3{font-size:1.813rem;} /*29.124px*/
+        h4{font-size:1.125rem;} /*18px*/
+}/*Larger than 640px*/
+
+
+/*----*/
+/*STYLE EVEYRHTING*/
+/*---*/
+
+/*Header*/
+#header h1{color:{color:Main Color}; font-family: 'Lato', sans-serif; font-weight:900; text-transform: uppercase;}
+#header h2{font-family: 'Roboto Slab', serif; font-weight: 300; font-size:1rem;}
+#headerImage{border-radius:100px}
+#headerImageContainer{background:transparent;width:100px;margin:0 auto;padding:5px; margin-top:20px;}
+#headerImageBorder{width:100px;border-radius:100px;background:#FFF;margin:0 auto;}
+#header{text-align:center;background:transparent;margin:0 auto; padding: 20px;}
+#headerBackground{width:100%;background-position:top center;background-size:cover}
+#headerBackground{background-repeat: no-repeat;background-size: cover;}
+
+/*Social media icons*/
+.iconContainer{list-style:none;width:100%}
+.iconContainer a{font-size:25px; color:{color:Light Color};}
+.iconContainer a:hover{color:{color:Main Color};}
+.iconContainer ul{text-align:center;padding:0}
+.iconContainer ul li{display:inline;padding:10px}
+
+/*----*/
+/*POSTS*/
+
+/*Spacer*/
+.space{height:200px;}
+
+/*All*/
+.posts:first-child{padding-top:10px}
+.posts{list-style:none;padding-left:0}
+.posts img{margin-left:5%;margin-right:5%; padding:20px;}/*center images*/
+.posts a{word-wrap:break-word;}
+.posts p{font-family: 'Roboto Slab', serif; font-weight:300;}
+
+/*Chat*/    
+.chat{list-style:none;padding:0}
+.chat li{margin-top:10px;margin-bottom:10px;border-radius:5px;display: inline-block}
+.label{font-weight:700;color:#444;}
+
+/*Image*/
+
+/*Quote*/
+.quote{ font-weight:700;font-family: 'Roboto Slab', serif; font-size:3rem; line-height:4rem; margin:0px; text-align:center;}
+.source{ font-weight:300; font-size:1rem; padding-top:20px; padding-bottom:20px; font-style:italic;}
+.source a{font-weight:bold;}
+
+/*Link*/
+.link h3{font-size: 24px;line-height: 27px;}
+
+/*Audio*/
+.tumblr_audio_player{height:40px;}
+
+/*POST BOTTOM*/
+/*Post notes,tags, and date*/
+.postStats{font-size:14px;list-style:none;max-width:640px;margin:0;padding:0px; padding-top:0px; color:{color:Light Color};}
+.postStats li{display:inline; float:left; height:30px; padding-right:20px; white-space: nowrap;}
+.nobold{font-weight:400;}
+.like_and_reblog_buttons {list-style: none;}
+.like_and_reblog_buttons li {float: left; padding-right: 20px; height: 20px;}
+.like_and_reblog_buttons li:first-child {padding-left:0px;}
+.tags a{background-color:#eee; padding:5px; border-radius:5px;}
+
+/*---FOOTER---*/
+.bottom{margin-top:100px;}
+
+/*BOTTOM LINKS*/
+/*Other link*/
+#bottomLinks a{padding-right:10px;font-size:15px;}
+#bottomLinks a:hover{color:{color:Main Color};}
+#bottomBlurb p{font-size:12px}
+#bottomDescription,#bottomBlurb,#bottomLinks{margin-top:20px;text-align:center;color:{color:Light Color};}
+#bottomLinks a{color:{color:Light Color};}
+
+/*NEXT/PREVIOUS*/
+/*Navigation*/
+#navlink{margin-top:20px;margin-left:20px;border-radius:5px;text-align:center;float:right;padding:10px; border: 1px solid; border-color:#eee;}
+
+/*Ask and Submit*/
+#ask, #submit{display:none;}
+#askBox, #submitBox{margin-top:50px; margin-bottom:50px; height: 270px;}
+
+/*Permalink notes*/
+ol.notes{list-style-type:none; padding:0 0 100px;}
+ol.notes li.note{padding:5px 0 15px}
+ol.notes li.note img.avatar{display:none}
+ol.notes li.note .answer_content{font-weight:400}
+ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px;margin:10px 0 0 25px;padding:4px 10px}
+
+/*INSTAGRAM FEED*/
+#instafeed{width: 100%;overflow: scroll;white-space: nowrap;}
+#instafeed img{opacity:0.5;}
+#instafeed img:hover{opacity:0.8;}
+/*For instagram banner*/
+#instafeed::-webkit-scrollbar{width:0px}
+#instafeed::-webkit-scrollbar:horizontal{height:0px;}
+
+/*BASIC STYLING*/
+a{text-decoration:none; color:inherit; font-weight:800;}
+a:hover{color:{color:Main Color};}
+body{color:#555; font-family: 'Lato', sans-serif; font-size:1rem; line-height:1.5rem;}
+ul{margin-left:0px;}/*remove foundation left margin*/
+
+/*USABLE CLASSES*/
+.pDropCap
+{
+    float: left; 
+    font-size: 75px; 
+    line-height: 60px; 
+    padding-top: 4px; 
+    padding-right: 4px; 
+    padding-left: 4px; 
+}
+.pHighlight
+{
+    background-color:#ffcc66;
+}
+.pLeading
+{
+    font-weight:100;
+    font-size:1.4rem;
+    line-height:2rem;
+}
+.pQuote
+{
+    font-family: 'Roboto Slab', serif;
+    font-size:1.96rem;
+    line-height:2rem;
+    text-align:center;
+    margin:0px;
+    padding:0px;
+} 
+.pImageLeft
+{
+float:left;
+width: 60%;
+}
+.pImageRight
+{
+float:Right;
+width: 60%;
+}
+
+{CustomCSS}
