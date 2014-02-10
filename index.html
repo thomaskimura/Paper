@@ -1,0 +1,746 @@
+<!--
+
+PAPER THEME
+PAPER theme created by Thomas Kimura
+ 
+
+-->
+<html>
+    <head>
+        <title>{Title}{block:PostTitle} - {PostTitle}{/block:PostTitle}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        
+        <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+    
+        <meta charset="UTF-8">
+        
+        <!--Tumblr Custom options -->
+        <meta name="color:Main Color" content="#f2f291"/> <!--Color for hover and highlight-->
+        <meta name="color:Light Color" content="#bbbbbb"/> <!--A light colour for post notes, date posted, tags, and social media icons-->
+        <meta name="color:Header Color" content="#ffffff"/>
+        
+        <meta name="image:Logo" content=""/> <!--Circular image to display in header-->
+        <meta name="image:Header Image" content=""/> <!--Background image for header-->
+        
+        <meta name='text:Tagline' content='A Short Subtitle' />
+        <meta name="text:Header Height" content="200"/>
+
+        <meta name="text:Tumblr Username" content="USER" /> <!--Needed for ask/submit to work-->
+        <meta name='text:Disqus Shortname' content='' />
+        <meta name="text:Username on Facebook" content="Facebook"/>
+        <meta name="text:Google Plus Url" content="Google"/>
+        <meta name="text:Username on Twitter" content="Twitter"/>
+        <meta name="text:Username on YouTube" content="YouTube"/>
+        <meta name="text:Username on Instagram" content="Instagram"/>
+        <meta name="text:Username on Pinterest" content="Pintrest"/>
+        <meta name="text:Username on Flickr" content="Flickr"/>
+        <meta name="text:Username on Linkedin" content="Linkedin"/>
+        <meta name="text:Username on Dribbble" content="Dribbble"/>
+        <meta name="text:Username on GitHub" content="GitHub"/>
+        <meta name="text:Email" content="Email"/>
+        <meta name="text:Instagram User ID" content=""/>
+        <meta name="text:Instagram Access Token" content=""/>
+        
+        <meta name="if:Instagram Banner" content="0"/>
+        
+<link href="http://static.tumblr.com/smotcsf/Vian0p49e/foundation.min.css" rel="stylesheet">
+
+<script src="http://static.tumblr.com/smotcsf/nBdmx9k3g/run_prettify.js"></script>
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
+
+<style>
+/*----*/
+/*OPTIONS*/
+/*----*/
+/*HEADER OPTIONS*/
+#headerBackground{background:{color:Header Color};}
+#headerBackground{background-image:url({image:Header Image});} 
+#headerBackground{height:{text:Header Height}px;}
+#bar{background-color:{color:Main Color};}
+
+/*HIGHLIGHT OPTIONS*/
+::selection{opacity:1;color:#fff; background-color:{color:Main Color};}
+:-moz-selection{opacity:1;color:#fff; background-color:{color:Main Color};}
+
+/*Change scrollbar for code overflow*/
+pre.prettyprint::-webkit-scrollbar{width:0px}
+pre.prettyprint::-webkit-scrollbar:horizontal{height:8px;}
+pre.prettyprint::-webkit-scrollbar-track{background-color: #888;}
+pre.prettyprint::-webkit-scrollbar-thumb{background-color: #555;}
+pre.prettyprint::-webkit-scrollbar-corner{display:none;}
+
+/*GOOGLE CODE PRETIFIER*/
+/* desert scheme ported from vim to google prettify */
+pre.prettyprint { display: block; overflow: auto}
+pre.prettyprint { display: block; background-color: #555; padding:10px; border:none;}
+pre .nocode { background-color: none; color: #000 }
+pre .str { color: #ffa0a0 } /* string  - pink */
+pre .kwd { color: #f0e68c; font-weight: bold }
+pre .com { color: #87ceeb } /* comment - skyblue */
+pre .typ { color: #98fb98 } /* type    - lightgreen */
+pre .lit { color: #cd5c5c } /* literal - darkred */
+pre .pun { color: #fff }    /* punctuation */
+pre .pln { color: #fff }    /* plaintext */
+pre .tag { color: #f0e68c; font-weight: bold } /* html/xml tag    - lightyellow */
+pre .atn { color: #bdb76b; font-weight: bold } /* attribute name  - khaki */
+pre .atv { color: #ffa0a0 } /* attribute value - pink */
+pre .dec { color: #98fb98 } /* decimal         - lightgreen */
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0; margin-bottom: 0; color: #aaaaaa } /* IE indents via margin-left */
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+/* Alternate shading for lines */
+li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
+.prettyprint ol.linenums > li { list-style-type: decimal; }
+
+@media print {
+    /*Remove uneeded content*/
+    .iconContainer{display:none;}
+    .bottom{display:none;}
+    .asksubmit{display:none;}
+    .space{display:none;}
+    #disqus_thread{display:none;}
+    /*Print style for code*/
+  pre.prettyprint { background-color: none }
+  pre .str, code .str { color: #060 }
+  pre .kwd, code .kwd { color: #006; font-weight: bold }
+  pre .com, code .com { color: #600; font-style: italic }
+  pre .typ, code .typ { color: #404; font-weight: bold }
+  pre .lit, code .lit { color: #044 }
+  pre .pun, code .pun { color: #440 }
+  pre .pln, code .pln { color: #000 }
+  pre .tag, code .tag { color: #006; font-weight: bold }
+  pre .atn, code .atn { color: #404 }
+  pre .atv, code .atv { color: #060 }
+}
+
+/*----*/
+/*RESPONSIVE*/
+/*----*/
+/*ANY SCREEN SIZE*/
+@media only screen 
+{
+        body {font-size:1rem;} /*16px*/
+        /*Titles*/
+        h1{font-size:2.744rem;}
+        h2{font-size:1.96rem;}
+        h3{font-size:1.4rem;}
+        h4{font-size:1rem;}
+}/*Any screen size*/
+
+/*LARGER THAN 640PX*/
+@media only screen and (min-width: 640px) 
+{
+        body {font-size:1.125rem;} /*18px*/
+        /*Titles*/
+        h1{font-size:4.75rem;} /*76.243px*/
+        h2{font-size:2.938rem;} /*47.122px*/
+        h3{font-size:1.813rem;} /*29.124px*/
+        h4{font-size:1.125rem;} /*18px*/
+}/*Larger than 640px*/
+
+
+/*----*/
+/*STYLE EVEYRHTING*/
+/*---*/
+
+/*Header*/
+#header h1{color:{color:Main Color}; font-family: 'Lato', sans-serif; font-weight:900; text-transform: uppercase;}
+#header h2{font-family: 'Roboto Slab', serif; font-weight: 300; font-size:1rem;}
+#headerImage{border-radius:100px}
+#headerImageContainer{background:transparent;width:100px;margin:0 auto;padding:5px; margin-top:20px;}
+#headerImageBorder{width:100px;border-radius:100px;background:#FFF;margin:0 auto;}
+#header{text-align:center;background:transparent;margin:0 auto; padding: 20px;}
+#headerBackground{width:100%;background-position:top center;background-size:cover}
+#headerBackground{background-repeat: no-repeat;background-size: cover;}
+
+/*Social media icons*/
+.iconContainer{list-style:none;width:100%}
+.iconContainer a{font-size:25px; color:{color:Light Color};}
+.iconContainer a:hover{color:{color:Main Color};}
+.iconContainer ul{text-align:center;padding:0}
+.iconContainer ul li{display:inline;padding:10px}
+
+/*----*/
+/*POSTS*/
+
+/*Spacer*/
+.space{height:200px;}
+
+/*All*/
+.posts:first-child{padding-top:10px}
+.posts{list-style:none;padding-left:0}
+.posts img{margin-left:5%;margin-right:5%; padding:20px;}/*center images*/
+.posts a{word-wrap:break-word;}
+.posts p{font-family: 'Roboto Slab', serif; font-weight:300;}
+
+/*Chat*/    
+.chat{list-style:none;padding:0}
+.chat li{margin-top:10px;margin-bottom:10px;border-radius:5px;display: inline-block}
+.label{font-weight:700;color:#444;}
+
+/*Image*/
+
+/*Quote*/
+.quote{ font-weight:700;font-family: 'Roboto Slab', serif; font-size:3rem; line-height:4rem; margin:0px; text-align:center;}
+.source{ font-weight:300; font-size:1rem; padding-top:20px; padding-bottom:20px; font-style:italic;}
+.source a{font-weight:bold;}
+
+/*Link*/
+.link h3{font-size: 24px;line-height: 27px;}
+
+/*Audio*/
+.tumblr_audio_player{height:40px;}
+
+/*POST BOTTOM*/
+/*Post notes,tags, and date*/
+.postStats{font-size:14px;list-style:none;max-width:640px;margin:0;padding:0px; padding-top:0px; color:{color:Light Color};}
+.postStats li{display:inline; float:left; height:30px; padding-right:20px; white-space: nowrap;}
+.nobold{font-weight:400;}
+.like_and_reblog_buttons {list-style: none;}
+.like_and_reblog_buttons li {float: left; padding-right: 20px; height: 20px;}
+.like_and_reblog_buttons li:first-child {padding-left:0px;}
+.tags a{background-color:#eee; padding:5px; border-radius:5px;}
+
+/*---FOOTER---*/
+.bottom{margin-top:100px;}
+
+/*BOTTOM LINKS*/
+/*Other link*/
+#bottomLinks a{padding-right:10px;font-size:15px;}
+#bottomLinks a:hover{color:{color:Main Color};}
+#bottomBlurb p{font-size:12px}
+#bottomDescription,#bottomBlurb,#bottomLinks{margin-top:20px;text-align:center;color:{color:Light Color};}
+#bottomLinks a{color:{color:Light Color};}
+
+/*NEXT/PREVIOUS*/
+/*Navigation*/
+#navlink{margin-top:20px;margin-left:20px;border-radius:5px;text-align:center;float:right;padding:10px; border: 1px solid; border-color:#eee;}
+
+/*Ask and Submit*/
+#ask, #submit{display:none;}
+#askBox, #submitBox{margin-top:50px; margin-bottom:50px; height: 270px;}
+
+/*Permalink notes*/
+ol.notes{list-style-type:none; padding:0 0 100px;}
+ol.notes li.note{padding:5px 0 15px}
+ol.notes li.note img.avatar{display:none}
+ol.notes li.note .answer_content{font-weight:400}
+ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px;margin:10px 0 0 25px;padding:4px 10px}
+
+/*INSTAGRAM FEED*/
+#instafeed{width: 100%;overflow: scroll;white-space: nowrap;}
+#instafeed img{opacity:0.5;}
+#instafeed img:hover{opacity:0.8;}
+/*For instagram banner*/
+#instafeed::-webkit-scrollbar{width:0px}
+#instafeed::-webkit-scrollbar:horizontal{height:0px;}
+
+/*BASIC STYLING*/
+a{text-decoration:none; color:inherit; font-weight:800;}
+a:hover{color:{color:Main Color};}
+body{color:#555; font-family: 'Lato', sans-serif; font-size:1rem; line-height:1.5rem;}
+ul{margin-left:0px;}/*remove foundation left margin*/
+
+/*USABLE CLASSES*/
+.pDropCap
+{
+    float: left; 
+    font-size: 75px; 
+    line-height: 60px; 
+    padding-top: 4px; 
+    padding-right: 4px; 
+    padding-left: 4px; 
+}
+.pHighlight
+{
+    background-color:#ffcc66;
+}
+.pLeading
+{
+    font-weight:100;
+    font-size:1.4rem;
+    line-height:2rem;
+}
+.pQuote
+{
+    font-family: 'Roboto Slab', serif;
+    font-size:1.96rem;
+    line-height:2rem;
+    text-align:center;
+    margin:0px;
+    padding:0px;
+} 
+.pImageLeft
+{
+float:left;
+width: 60%;
+}
+.pImageRight
+{
+float:Right;
+width: 60%;
+}
+
+{CustomCSS}
+</style>
+
+
+
+</head>
+    <body>
+       
+<div id="headerBackground">
+    <div id="header">
+      
+            <a id="title" href="{BlogURL}">
+                <h1>{Title}</h1>
+            </a>
+                <h2>{text:Tagline}</h2>
+            {block:IfLogoImage}
+            <div id="headerImageBorder">
+                <div id="headerImageContainer">
+                    <a id="title" href="{BlogURL}">
+                    <img id="headerImage" src="{image:Logo}"/>
+                    </a>
+                </div>
+            </div>
+            {/block:IfLogoImage}
+            <!---SOCIAL ICONS-->
+<div class=row>
+<div class="small-12 medium-10 large-8 small-centered columns">
+    <div class= "iconContainer">
+            <ul>
+            
+                {block:IfUsernameOnFacebook}
+                    <li>
+                        <a target="_blank" href="http://www.facebook.com/{text:Username on Facebook}" id="facebook"><i class="icon-facebook-sign"></i></a>
+                    </li>
+                {/block:IfUsernameOnFacebook}
+                
+                {block:IfGooglePlusUrl}
+                    <li>
+                        <a target="_blank" href="http://www.google.com/+{text:URL on Google Plus}" id="google"><i class="icon-google-plus-sign"></i></a>
+                    </li>
+                {/block:IfGooglePlusUrl}
+
+                {block:IfUsernameOnTwitter}
+                    <li>
+                        <a target="_blank" href="http://www.twitter.com/{text:Username on Twitter}" id="twitter"><i class="icon-twitter-sign"></i></a>
+                    </li>
+                {/block:IfUsernameOnTwitter} 
+            
+                {block:IfUsernameOnYouTube}
+                    <li>
+                        <a target="_blank" href="http://www.youtube.com/{text:Username on YouTube}" id="youtube"><i class="icon-youtube-sign"></i></a>
+                    </li>
+                {/block:IfUsernameOnYouTube}
+                
+                {block:IfUsernameOnInstagram}
+                    <li>
+                        <a target="_blank" href="http://www.instagram.com/{text:Username on Instagram}" id="instagram"><i class="icon-instagram"></i></a>
+                    </li>
+                {/block:IfUsernameOnInstagram}
+ 
+                {block:IfUsernameOnPinterest}
+                    <li>
+                        <a target="_blank" href="http://www.pinterest.com/{text:Username on Pinterest}" id="pinterest"><i class="icon-pinterest-sign"></i></a>
+                    </li>
+                {/block:IfUsernameOnPinterest}
+    
+                {block:IfUsernameOnFlickr}
+                    <li>
+                        <a target="_blank" href="http://www.flickr.com/{text:Username on Flickr}" id="flickr"><i class="icon-flickr"></i></a>
+                    </li>
+                {/block:IfUsernameOnFlickr}
+    
+                {block:IfUsernameOnLinkedin}
+                    <li>
+                        <a target="_blank" href="http://www.linkedin.com/in/{text:Username on LinkedIn}" id="linkedin"><i class="icon-linkedin-sign"></i></a>
+                    </li>
+                {/block:IfUsernameOnLinkedin}
+    
+                {block:IfUsernameOnGitHub}
+                    <li>
+                        <a target="_blank" href="http://www.github.com/{text:Username on GitHub}" id="linkedin"><i class="icon-github-sign"></i></a>
+                    </li>
+                {/block:IfUsernameOnGitHub}
+   
+                {block:IfUsernameOnDribbble}
+                    <li>
+                        <a target="_blank" href="http://www.dribbble.com/{text:Username on Dribbble}" id="dribbble"><i class="icon-dribbble"></i></a>
+                    </li>
+                {/block:IfUsernameOnDribbble}
+                
+            </ul>
+    </div>    
+</div>
+</div>
+<!--End icons-->
+    </div>
+</div>
+<!--End header-->
+
+
+<!--CONTENT-->
+<div class="row">
+    <div class="small-12 medium-10 large-8 small-centered columns">
+        <ol class="posts">
+        <!--Spacer-->
+        <div class="space"></div>
+        <!--POST-->
+             {block:Posts}
+            
+                {block:Text}
+                    <li class="post text">
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+                        {Body}
+                    </li>
+                {/block:Text}
+
+                {block:Photo}
+                    <li class="post photo">
+                        <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>    
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Photo}
+
+                {block:Panorama}
+                    <li class="post panorama">
+                        {LinkOpenTag}
+                            <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                        {LinkCloseTag}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Panorama}
+
+                {block:Photoset}
+                  <div class="photoset-grid" data-layout="{PhotosetLayout}" data-id="photoset{PostID}">
+                    {block:Photos}
+                      <img src="{PhotoURL-500}"
+                        {block:HighRes}data-highres="{PhotoURL-HighRes}"{/block:HighRes}
+                        {block:Caption}alt="{Caption}"{/block:caption} />
+                    {/block:Photos}
+                  </div>
+                  {block:Caption}
+                    {Caption}
+                  {/block:caption}
+                {/block:Photoset}
+
+                {block:Quote}
+                    <li class="post quote">
+                        “ {Quote} ”
+
+                        {block:Source}
+                            <div class="source">{Source}</div>
+                        {/block:Source}
+                    </li>
+                {/block:Quote}
+
+                {block:Link}
+                    <li class="post link">
+                    <h3>
+                        <a href="{URL}" id="link" class="link" {Target}>{Name} <i class="fa fa-share"></i></a>
+                    </h3>
+                        {block:Description}
+                            <div class="description">{Description}</div>
+                        {/block:Description}
+                    </li>
+                {/block:Link}
+
+                {block:Chat}
+                    <li class="post chat">
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+                        <ul class="chat">
+                            {block:Lines}
+                                <li class="{Alt} user_{UserNumber}">
+                                    {block:Label}
+                                        <span class="label">{Label}</span>
+                                    {/block:Label}
+                                    <br/>
+                                    {Line}
+                                </li>
+                                <br/>
+                            {/block:Lines}
+                        </ul>
+                    </li>
+                {/block:Chat}
+
+                {block:Video}
+                    <li class="post video">
+                    <div class="center">
+                        {Video-500}
+                    </div>
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Video}
+
+                {block:Audio}
+                    <li class="post audio">
+                        {AudioPlayerBlack}
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Audio}
+                
+<!--POST FOOTER-->          
+   <div>  
+        <ul class="postStats">
+          <div class="like_and_reblog_buttons"></div>
+          {block:IndexPage}<!--only show on index-->
+          
+                <li>
+                    <i class="fa fa-heart"></i>
+                    <a class="nobold" href="{Permalink}">
+                        {NoteCountWithLabel}
+                    </a>
+                </li>
+                
+             {block:IfDisqusShortname}
+              <li>
+                        <i class="fa fa-comment"></i> <a class="dsq-comment-count nobold" href="{Permalink}#disqus_thread">Comments</a>
+                        <script type="text/javascript">
+                            var disqus_shortname = '{text:Disqus Shortname}';
+                        
+                            (function () {
+                                var s = document.createElement('script'); s.async = true;
+                                s.type = 'text/javascript';
+                                s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+                                (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                            }());
+                        </script>
+              </li>
+             {/block:IfDisqusShortname}
+             
+             {/block:IndexPage}
+             
+              <li>  
+                    {block:Date} 
+                        <i class="fa fa-clock-o"></i> {timeAgo} 
+                    {/block:Date}
+              </li>
+              
+                {block:Tags}
+                            <li class="tags">
+                                <a href="{TagURL}" class="nobold">{Tag}</a>
+                            </li>
+                {/block:Tags}
+          </ul>
+    </div>
+<!--End post footer-->
+<!--Spacer-->
+<div class="space"></div>
+{/block:Posts}
+<!--End posts-->
+            
+            {block:PermalinkPage} 
+                {block:IfDisqusShortname}
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = "{text:Disqus Shortname}"; // Required - Replace <example> with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+                {/block:IfDisqusShortname}
+                {PostNotes}
+            {/block:PermalinkPage}
+         
+        </ol>
+    </div><!--Content columns-->
+</div><!--Content row-->
+
+<!--FOOTER-->      
+<div class="row" >
+<div class="small-12 medium-10 large-8 small-centered columns">
+                {block:NextPage}
+                    <a id="navlink" href="{NextPage}">Next <i class="fa fa-angle-right"></i> </a>
+                {/block:NextPage} 
+                
+                {block:PreviousPage}
+                    <a id="navlink" href="{PreviousPage}"><i class="fa fa-angle-left"></i> Previous</a>
+                {/block:PreviousPage}             
+</div>
+</div>
+
+<!--
+<div class="row" id="bottomSearch">
+    <div class="small-12 large-8 small-centered columns">
+                        <form id="searchForm" action="/search" method="get">
+                            <input id="search" placeholder="Search..." autocomplete="off" type="text" name="q" value="{SearchQuery}"/>
+                        </form>           
+    </div>
+</div>
+-->
+<div class="bottom">
+    <div class="row" id="bottomLinks">
+    <div class="small-12 medium-5 large-5 small-centered columns">
+            <a href="{BlogURL}">Home</a>
+            <a href="/archive">Archive</a>
+            {block:AskEnabled}
+                <a onclick="askOn()" id="askButton">{AskLabel}</a>
+            {/block:AskEnabled}
+            {block:SubmissionsEnabled} 
+                <a onclick="submitOn()" id="submitButton">{SubmitLabel}</a>
+            {/block:SubmissionsEnabled} 
+            {block:IfEmail}
+                <a href="mailto:{text:Email}" id="Email">Email</a>
+            {/block:IfEmail}
+            
+    </div>
+    </div>
+    
+    <div class="row" id="bottomDescription">
+    <div class="small-8 medium-6 large-4 small-centered columns">
+            <p>{Description}</p>
+    </div>
+    </div>
+    
+    <div class="row" id="bottomBlurb">
+    <div class="small-8 medium-6 large-4 small-centered columns">
+            <p><a href="http://papertheme.tumblr.com/">Paper</a> theme powered by <a href="http://www.tumblr.com/">Tumblr</a></p>
+    </div>
+    </div>
+</div><!--Bottom-->
+
+
+<div class="asksubmit">
+    {block:AskEnabled}
+    <div class="row" id="ask">
+        <div class="small-12 medium-10 large-8 small-centered columns">   
+            <iframe id="askBox" frameborder="0" scrolling="no" width="100%" height="190" src="http://www.tumblr.com/ask_form/{text:Tumblr Username}.tumblr.com" style="background-color:transparent; overflow:hidden;" id="ask_form"></iframe>
+        </div>
+    </div>
+    {/block:AskEnabled}
+    
+    {block:SubmissionsEnabled} 
+    <div class="row" id="submit">
+        <div class="small-12 large-8 small-centered columns">   
+    <iframe id="submitBox" src="http://www.tumblr.com/submit_form/{text:Tumblr Username}.tumblr.com" frameborder="0" height="500" scrolling="no" width="100%"></iframe>
+        </div>
+    </div>
+    {/block:SubmissionsEnabled} 
+</div>
+
+{block:IfInstagramBanner}
+<div id="instafeed"></div>
+{/block:IfInstagramBanner}
+
+<script src="http://static.tumblr.com/smotcsf/6y4mx9k52/jquery.min.js" ></script>
+
+<script type="text/javascript" src="http://static.tumblr.com/smotcsf/y9Mmw9qml/instafeed.min.js"></script>
+
+<script>
+    $('.photoset-grid').photosetGrid({
+  highresLinks: true,
+  rel: $('.photoset-grid').attr('data-id'),
+  gutter: '5px',
+
+  onComplete: function(){});
+  }
+});
+</script> 
+
+<script>
+    //Ask button
+    function askOn()
+    {
+        if( $('#ask').css('display') == "block" )  //check if as is displayed
+        { 
+            //ask is displayed 
+            document.getElementById("ask").style.display = 'none';
+        } 
+        else 
+        { 
+            //ask is not displayed 
+            document.getElementById("ask").style.display = 'block';
+            //call scroll function
+            scroll();
+            document.getElementById("submit").style.display = 'none';
+        }
+    }
+    
+    //Submit button
+    function submitOn()
+    {
+        if( $('#submit').css('display') == "block" )  //check if as is displayed
+        { 
+            //ask is displayed 
+            document.getElementById("submit").style.display = 'none';
+        } 
+        else 
+        { 
+            //ask is not displayed 
+            document.getElementById("submit").style.display = 'block';
+            //call scroll function
+            scroll();
+            document.getElementById("ask").style.display = 'none';
+        }
+    }
+    
+    //scroll to ask/submit box
+    function scroll() {
+        $('html, body').animate({
+        scrollTop: $(".asksubmit").offset().top
+    }, 500);
+    }
+    
+</script>
+
+<script>
+    $.SyntaxHighlighter.init({
+        'wrapLines':false
+    });
+</script>
+
+
+
+<script type="text/javascript">
+    var userFeed = new Instafeed({
+        limit: 20,
+        get: 'user',
+        userId: {text:Instagram User ID},
+        accessToken: '{text:Instagram Access Token}',
+    });
+    userFeed.run();
+</script>
+    
+    </body>
+    <style>
+        /*Remove tumblr controls for printing*/
+        @media print{
+            #tumblr_controls {display:none;}
+        }
+    </style>
+</html>
