@@ -26,7 +26,7 @@ view this project at https://github.com/thomaskimura/Paper
             <meta name="description" content="{MetaDescription}" />
         {/block:Description}
         
-        <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
         <meta charset="UTF-8">
         
@@ -58,14 +58,21 @@ view this project at https://github.com/thomaskimura/Paper
         <meta name="text:Instagram Access Token" content=""/>
         
         <meta name="if:Instagram Banner" content="0"/>
+        <meta name="if:Slide Out Menu" content="0"/>
+        <meta name="if:Menu" content="0"/>
         
+<!--Stylesheets-->    
 <link href="http://static.tumblr.com/smotcsf/Vian0p49e/foundation.min.css" rel="stylesheet">
+<link href="http://static.tumblr.com/smotcsf/SA3n0thdj/slidebars.min.css" rel="stylesheet">
 
+<!--Syntax-->
 <script src="http://static.tumblr.com/smotcsf/nBdmx9k3g/run_prettify.js"></script>
 
+<!--Font Awesome-->
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
+<!--Google Fonts-->
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
 
@@ -77,7 +84,6 @@ view this project at https://github.com/thomaskimura/Paper
 #headerBackground{background:{color:Header Color};}
 #headerBackground{background-image:url({image:Header Image});} 
 #headerBackground{height:{text:Header Height}px;}
-#bar{background-color:{color:Main Color};}
 
 /*HIGHLIGHT OPTIONS*/
 ::selection{opacity:1;color:#fff; background-color:{color:Main Color};}
@@ -166,6 +172,18 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
 /*---*/
 
 /*Header*/
+.menuIcon{position:absolute; top:20px; left:20px; font-size:2rem; cursor: pointer; color:{color:Light Color}; display:none;}
+.menuIcon:hover{color:{color:Main Color};}
+#bar{background-color:#fff; padding:5px;}
+#bar ul{list-style:none; display:inline; padding:0px;}
+#bar ul li {display:inline;}
+#bar ul li a{padding-right:20px; padding-left:20px; color:{color:Main Color}; font-weight:300;}
+#bar ul li a:hover{color:#555;}
+.sb-slidebar h1{text-align:center; text-transform:uppercase; font-weight:900; font-size:1.813rem; color:{color:Main Color};}
+.sb-slidebar ul{list-style:none; padding:0px; margin:0px;}
+.sb-slidebar ul li{padding-top:20px;padding-left:10px;}
+.sb-slidebar ul li a{ color:{color:Light Color}; font-weight:300;}
+.sb-slidebar ul li a:hover{color:{color:Main Color};}
 #header h1{color:{color:Main Color}; font-family: 'Lato', sans-serif; font-weight:900; text-transform: uppercase;}
 #header h2{font-family: 'Roboto Slab', serif; font-weight: 300; font-size:1rem;}
 #headerImage{border-radius:100px}
@@ -189,11 +207,15 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
 .space{height:200px;}
 
 /*All*/
-.posts:first-child{padding-top:10px}
-.posts{list-style:none;padding-left:0}
-.posts img{margin-left:5%;margin-right:5%; padding:20px;}/*center images*/
-.posts a{word-wrap:break-word;}
-.posts p{font-family: 'Roboto Slab', serif; font-weight:300;}
+.post:first-child{padding-top:10px}
+.post{list-style:none;padding-left:0}
+.post img{display: block;padding: 20px;margin: 0 auto;}/*center images*/
+.post a{word-wrap:break-word;}
+.post p{font-family: 'Roboto Slab', serif; font-weight:300;}
+.post h1:first-child+p, .post h2:first-child+p, .post h3:first-child+p, .post h4:first-child+p, .post h5:first-child+p, .post h6:first-child+p, .post p:first-child{font-size:1.4rem;line-height:2rem;}
+.post h2, h3, h4{padding-top:50px;}
+#title{padding-top:0px;}
+
 
 /*Chat*/    
 .chat{list-style:none;padding:0}
@@ -263,6 +285,7 @@ a:hover{color:{color:Main Color};}
 body{color:#555; font-family: 'Lato', sans-serif; font-size:1rem; line-height:1.5rem;}
 ul{margin-left:0px;}/*remove foundation left margin*/
 
+
 /*USABLE CLASSES*/
 .pDropCap
 {
@@ -273,21 +296,20 @@ ul{margin-left:0px;}/*remove foundation left margin*/
     padding-right: 4px; 
     padding-left: 4px; 
 }
-.pHighlight
+.pHighlight, code
 {
-    background-color:#ffcc66;
+    background-color:#ffe4ca;
 }
 .pLeading
 {
-    font-weight:100;
     font-size:1.4rem;
     line-height:2rem;
 }
 .pQuote
 {
     font-family: 'Roboto Slab', serif;
-    font-size:1.96rem;
-    line-height:2rem;
+    font-size:2rem; 
+    line-height:4rem;
     text-align:center;
     margin:0px;
     padding:0px;
@@ -295,22 +317,41 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 .pImageLeft
 {
 float:left;
-width: 60%;
+width: 50%;
+margin:0px;
 }
 .pImageRight
 {
 float:Right;
-width: 60%;
+width: 50%;
+margin:0px;
 }
-
+{block:IfSlideOutMenu}
+.menuIcon{display:block;}
+{/block:IfSlideOutMenu}
 {CustomCSS}
+
 </style>
 
 
 
 </head>
     <body>
-       
+    <div id="sb-site"><!--ALL MAIN CONTENT GOES IN HERE-->
+    <span class="sb-toggle-left menuIcon"><i class="fa fa-bars"></i></span>
+
+{block:IfMenu} 
+    <div id="bar">
+                    <ul>
+                    {block:Pages}
+                        <li>
+                            <a href="{URL}">{Label}</a>
+                        </li>
+                    {/block:Pages}
+                </ul>
+    </div>
+{/block:IfMenu}
+
 <div id="headerBackground">
     <div id="header">
       
@@ -415,7 +456,7 @@ width: 60%;
                 {block:Text}
                     <li class="post text">
                         {block:Title}
-                            <h3><a href="{Permalink}">{Title}</a></h3>
+                            <h3 id="title"><a href="{Permalink}">{Title}</a></h3>
                         {/block:Title}
                         {Body}
                     </li>
@@ -467,7 +508,7 @@ width: 60%;
 
                 {block:Link}
                     <li class="post link">
-                    <h3>
+                    <h3 id="title">
                         <a href="{URL}" id="link" class="link" {Target}>{Name} <i class="fa fa-share"></i></a>
                     </h3>
                         {block:Description}
@@ -479,7 +520,7 @@ width: 60%;
                 {block:Chat}
                     <li class="post chat">
                         {block:Title}
-                            <h3><a href="{Permalink}">{Title}</a></h3>
+                            <h3 id="title"><a href="{Permalink}">{Title}</a></h3>
                         {/block:Title}
                         <ul class="chat">
                             {block:Lines}
@@ -620,7 +661,7 @@ width: 60%;
             <a href="{BlogURL}">Home</a>
             <a href="/archive">Archive</a>
             {block:AskEnabled}
-                <a onclick="askOn()" id="askButton">{AskLabel}</a>
+                <a onclick="askOn()" id="askButton" href="#asksubmit">{AskLabel}</a>
             {/block:AskEnabled}
             {block:SubmissionsEnabled} 
                 <a onclick="submitOn()" id="submitButton">{SubmitLabel}</a>
@@ -647,6 +688,7 @@ width: 60%;
 
 
 <div class="asksubmit">
+<a name="asksubmit"></a> 
     {block:AskEnabled}
     <div class="row" id="ask">
         <div class="small-12 medium-10 large-8 small-centered columns">   
@@ -668,20 +710,35 @@ width: 60%;
 <div id="instafeed"></div>
 {/block:IfInstagramBanner}
 
+</div><!--END OF SLIDEBARS-->
+
+<div class="sb-slidebar sb-left">
+      <!-- Your left Slidebar content. -->
+      <div>
+      <!--
+            <a id="title" href="{BlogURL}">
+                <h1>{Title}</h1>
+            </a>
+        -->
+                    <ul>
+                    {block:Pages}
+                        <li>
+                            <a href="{URL}">{Label}</a>
+                        </li>
+                    {/block:Pages}
+                </ul>
+    </div>
+</div>
+
+
+<!--Jquery-->
 <script src="http://static.tumblr.com/smotcsf/6y4mx9k52/jquery.min.js" ></script>
 
+<!--Instafeed-->
 <script type="text/javascript" src="http://static.tumblr.com/smotcsf/y9Mmw9qml/instafeed.min.js"></script>
 
-<script>
-    $('.photoset-grid').photosetGrid({
-  highresLinks: true,
-  rel: $('.photoset-grid').attr('data-id'),
-  gutter: '5px',
-
-  onComplete: function(){});
-  }
-});
-</script> 
+<!--Slidebars-->
+<script src="http://static.tumblr.com/smotcsf/5iOn0th2k/slidebars.min.js"></script>
 
 <script>
     //Ask button
@@ -725,6 +782,7 @@ width: 60%;
         $('html, body').animate({
         scrollTop: $(".asksubmit").offset().top
     }, 500);
+    window.location.hash="content"; //FALL BACK
     }
     
 </script>
@@ -735,8 +793,6 @@ width: 60%;
     });
 </script>
 
-
-
 <script type="text/javascript">
     var userFeed = new Instafeed({
         limit: 20,
@@ -746,8 +802,18 @@ width: 60%;
     });
     userFeed.run();
 </script>
+
+<script>
+  (function($) {
+    $(document).ready(function() {
+      $.slidebars();
+    });
+  }) (jQuery);
+</script>
+
     
     </body>
+    <!--LAST DITCH EFFORT-->
     <style>
         /*Remove tumblr controls for printing*/
         @media print{
