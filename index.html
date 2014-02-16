@@ -164,6 +164,45 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
         h2{font-size:2.938rem;} /*47.122px*/
         h3{font-size:1.813rem;} /*29.124px*/
         h4{font-size:1.125rem;} /*18px*/
+        
+/*IMAGE ALIGN*/        
+.pImageLeft
+{
+float:left;
+width: 50%;
+margin:0px;
+}
+.post .pImageLeft
+{
+    position:relative;
+    left:-20%;
+    margin-right:-20%;
+    float:left;
+    width: 60%;
+}
+
+.pImageRight
+{
+float:Right;
+width: 50%;
+margin:0px;
+}
+.post .pImageRight
+{
+    position:relative;
+    left:20%;
+    margin-left:-20%;
+    float:right;
+    width: 60%;
+}
+.pImageFull
+{
+    max-width: none;
+    width: 140%;
+    position: relative;
+    left: -20%;
+}
+
 }/*Larger than 640px*/
 
 
@@ -207,6 +246,7 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
 .space{height:200px;}
 
 /*All*/
+.posts{padding:0px;}
 .post:first-child{padding-top:10px}
 .post{list-style:none;padding-left:0}
 .post img{display: block;padding: 20px;margin: 0 auto;}/*center images*/
@@ -219,7 +259,7 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
 
 /*Chat*/    
 .chat{list-style:none;padding:0}
-.chat li{margin-top:10px;margin-bottom:10px;border-radius:5px;display: inline-block}
+.chat li{margin-top:10px;margin-bottom:10px;border-radius:5px;display: inline-block; font-family: 'Roboto Slab', serif;}
 .label{font-weight:700;color:#444;}
 
 /*Image*/
@@ -246,6 +286,21 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
 .tags a{background-color:#eee; padding:5px; border-radius:5px;}
 
 /*---FOOTER---*/
+.disqus_thread
+{
+
+}
+.disqusButtonDiv
+{
+    text-align:center;
+}
+#disqusButton
+{
+    color:{color:Light Color};
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
 .bottom{margin-top:100px;}
 
 /*BOTTOM LINKS*/
@@ -314,17 +369,7 @@ ul{margin-left:0px;}/*remove foundation left margin*/
     margin:0px;
     padding:0px;
 } 
-.pImageLeft
-{
-float:left;
-width: 50%;
-margin:0px;
-}
-.pImageRight
-{
-float:Right;
-width: 50%;
-margin:0px;
+
 }
 {block:IfSlideOutMenu}
 .menuIcon{display:block;}
@@ -608,9 +653,13 @@ margin:0px;
 <!--End posts-->
             
             {block:PermalinkPage} 
+<div class="disqusButtonDiv">
+    <a onclick="disqusOn()" id="disqusButton" href="#disqus" >Show Comments <i class="fa fa-comment"></i></a>
+</div>
                 {block:IfDisqusShortname}
 
-<div id="disqus_thread"></div>
+<div id="disqus_thread" style="display:none;" ></div>
+<a name="disqus"></a> 
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = "{text:Disqus Shortname}"; // Required - Replace <example> with your forum shortname
@@ -623,7 +672,7 @@ margin:0px;
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
 
                 {/block:IfDisqusShortname}
                 {PostNotes}
@@ -783,6 +832,12 @@ margin:0px;
         scrollTop: $(".asksubmit").offset().top
     }, 500);
     window.location.hash="content"; //FALL BACK
+    }
+    
+    function disqusOn()
+    {
+            document.getElementById("disqus_thread").style.display = 'initial';
+            document.getElementById("disqusButton").style.display = 'none';
     }
     
 </script>
