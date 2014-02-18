@@ -290,15 +290,17 @@ margin:0px;
 {
 
 }
-.disqusButtonDiv
-{
-    text-align:center;
-}
+
 #disqusButton
 {
+    text-align:center;
     color:{color:Light Color};
     text-transform: uppercase;
     font-size: 0.8rem;
+    font-weight: 400;
+    padding:10px;
+    border:#eee 1px solid;
+    border-radius:5px;
 }
 
 .bottom{margin-top:100px;}
@@ -320,7 +322,7 @@ margin:0px;
 #askBox, #submitBox{margin-top:50px; margin-bottom:50px; height: 270px;}
 
 /*Permalink notes*/
-ol.notes{list-style-type:none; padding:0 0 100px;}
+ol.notes{list-style-type:none; padding:0px; margin-top:100px;}
 ol.notes li.note{padding:5px 0 15px}
 ol.notes li.note img.avatar{display:none}
 ol.notes li.note .answer_content{font-weight:400}
@@ -653,26 +655,13 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 <!--End posts-->
             
             {block:PermalinkPage} 
-<div class="disqusButtonDiv">
-    <a onclick="disqusOn()" id="disqusButton" href="#disqus" >Show Comments <i class="fa fa-comment"></i></a>
-</div>
+
                 {block:IfDisqusShortname}
 
-<div id="disqus_thread" style="display:none;" ></div>
-<a name="disqus"></a> 
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = "{text:Disqus Shortname}"; // Required - Replace <example> with your forum shortname
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
+<div id="disqus_thread"></div>
+<div id="disqus_loader" style="text-align: center">
+    <a onclick='$.ajaxSetup({cache:true});$.getScript("http://{text:Disqus Shortname}.disqus.com/embed.js");$.ajaxSetup({cache:false});$("#disqus_loader").remove();' id="disqusButton">Show Comments</a>
+</div>
 
                 {/block:IfDisqusShortname}
                 {PostNotes}
