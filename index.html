@@ -313,6 +313,8 @@ margin:0px;
 #bottomDescription,#bottomBlurb,#bottomLinks{margin-top:20px;text-align:center;color:{color:Light Color};}
 #bottomLinks a{color:{color:Light Color};}
 
+.clearOnIndex{display:none;}
+
 /*NEXT/PREVIOUS*/
 /*Navigation*/
 #navlink{margin-top:20px;margin-left:20px;border-radius:5px;text-align:center;float:right;padding:10px; border: 1px solid; border-color:#eee;}
@@ -417,8 +419,7 @@ ul{margin-left:0px;}/*remove foundation left margin*/
             {/block:IfLogoImage}
             <!---SOCIAL ICONS-->
 <div class=row>
-<div class="small-12 medium-10 large-8 small-centered columns">
-    <div class= "iconContainer">
+<div class="small-12 medium-10 large-8 small-centered columns iconContainer clearOnPermalink">
             <ul>
             
                 {block:IfUsernameOnFacebook}
@@ -482,7 +483,6 @@ ul{margin-left:0px;}/*remove foundation left margin*/
                 {/block:IfUsernameOnDribbble}
                 
             </ul>
-    </div>    
 </div>
 </div>
 <!--End icons-->
@@ -655,6 +655,14 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 <!--End posts-->
             
             {block:PermalinkPage} 
+            <style>
+                .space{display:none;}
+                .clearOnPermalink{display:none;}
+                .clearOnIndex{display:initial;}
+                #headerBackground h1{font-size:2rem; margin:0px;}
+                #headerBackground h2{font-size:0.8rem; margin-bottom:50px;}
+                #disqus_thread{margin-top: 130px;}
+            </style>
 
                 {block:IfDisqusShortname}
 
@@ -707,7 +715,6 @@ ul{margin-left:0px;}/*remove foundation left margin*/
             {block:IfEmail}
                 <a href="mailto:{text:Email}" id="Email">Email</a>
             {/block:IfEmail}
-            
     </div>
     </div>
     
@@ -716,6 +723,73 @@ ul{margin-left:0px;}/*remove foundation left margin*/
             <p>{Description}</p>
     </div>
     </div>
+    
+    <div class=row>
+    <div class="small-12 medium-10 large-8 small-centered columns iconContainer clearOnIndex">
+            <ul>
+                {block:IfUsernameOnFacebook}
+                    <li>
+                        <a target="_blank" href="http://www.facebook.com/{text:Username on Facebook}" id="facebook"><i class="icon-facebook-sign"></i></a>
+                    </li>
+                {/block:IfUsernameOnFacebook}
+                
+                {block:IfGooglePlusUrl}
+                    <li>
+                        <a target="_blank" href="http://www.google.com/+{text:URL on Google Plus}" id="google"><i class="icon-google-plus-sign"></i></a>
+                    </li>
+                {/block:IfGooglePlusUrl}
+
+                {block:IfUsernameOnTwitter}
+                    <li>
+                        <a target="_blank" href="http://www.twitter.com/{text:Username on Twitter}" id="twitter"><i class="icon-twitter-sign"></i></a>
+                    </li>
+                {/block:IfUsernameOnTwitter} 
+            
+                {block:IfUsernameOnYouTube}
+                    <li>
+                        <a target="_blank" href="http://www.youtube.com/{text:Username on YouTube}" id="youtube"><i class="icon-youtube-sign"></i></a>
+                    </li>
+                {/block:IfUsernameOnYouTube}
+                
+                {block:IfUsernameOnInstagram}
+                    <li>
+                        <a target="_blank" href="http://www.instagram.com/{text:Username on Instagram}" id="instagram"><i class="icon-instagram"></i></a>
+                    </li>
+                {/block:IfUsernameOnInstagram}
+ 
+                {block:IfUsernameOnPinterest}
+                    <li>
+                        <a target="_blank" href="http://www.pinterest.com/{text:Username on Pinterest}" id="pinterest"><i class="icon-pinterest-sign"></i></a>
+                    </li>
+                {/block:IfUsernameOnPinterest}
+    
+                {block:IfUsernameOnFlickr}
+                    <li>
+                        <a target="_blank" href="http://www.flickr.com/{text:Username on Flickr}" id="flickr"><i class="icon-flickr"></i></a>
+                    </li>
+                {/block:IfUsernameOnFlickr}
+    
+                {block:IfUsernameOnLinkedin}
+                    <li>
+                        <a target="_blank" href="http://www.linkedin.com/in/{text:Username on LinkedIn}" id="linkedin"><i class="icon-linkedin-sign"></i></a>
+                    </li>
+                {/block:IfUsernameOnLinkedin}
+    
+                {block:IfUsernameOnGitHub}
+                    <li>
+                        <a target="_blank" href="http://www.github.com/{text:Username on GitHub}" id="linkedin"><i class="icon-github-sign"></i></a>
+                    </li>
+                {/block:IfUsernameOnGitHub}
+   
+                {block:IfUsernameOnDribbble}
+                    <li>
+                        <a target="_blank" href="http://www.dribbble.com/{text:Username on Dribbble}" id="dribbble"><i class="icon-dribbble"></i></a>
+                    </li>
+                {/block:IfUsernameOnDribbble}
+            </ul>
+    </div>
+    </div>
+<!--End icons-->
     
     <div class="row" id="bottomBlurb">
     <div class="small-8 medium-6 large-4 small-centered columns">
