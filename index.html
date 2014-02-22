@@ -18,7 +18,7 @@ view this project at https://github.com/thomaskimura/Paper
 
 <html>
     <head>
-        <title>{Title}{block:PostTitle} - {PostTitle}{/block:PostTitle}</title>
+        <title>{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}</title>
         <link rel="shortcut icon" href="{Favicon}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         
@@ -78,6 +78,8 @@ view this project at https://github.com/thomaskimura/Paper
 <link href='http://fonts.googleapis.com/css?family=Cinzel+Decorative:900' rel='stylesheet' type='text/css'>
 
 <style>
+/*STYLE SHEET*/
+
 /*----*/
 /*OPTIONS*/
 /*----*/
@@ -121,6 +123,9 @@ li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
 li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
 .prettyprint ol.linenums > li { list-style-type: decimal; }
 
+/*----*/
+/*PRINT*/
+/*----*/
 @media print {
     /*Remove uneeded content*/
     .iconContainer{display:none;}
@@ -129,6 +134,8 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
     .space{display:none;}
     #disqus_thread{display:none;}
     /*Print style for code*/
+    body{overflow:visible;}
+    #disqus_loader{display:none;}
   pre.prettyprint { background-color: none }
   pre .str, code .str { color: #060 }
   pre .kwd, code .kwd { color: #006; font-weight: bold }
@@ -148,6 +155,7 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
 /*ANY SCREEN SIZE*/
 @media only screen 
 {
+        /*Typography for smaller screens*/
         body {font-size:1rem;} /*16px*/
         /*Titles*/
         h1{font-size:2.744rem;}
@@ -159,6 +167,7 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
 /*LARGER THAN 640PX*/
 @media only screen and (min-width: 640px) 
 {
+        /*Typography for larger screens*/
         body {font-size:1.125rem;} /*18px*/
         /*Titles*/
         h1{font-size:4.75rem;} /*76.243px*/
@@ -169,9 +178,9 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
 /*IMAGE ALIGN*/        
 .pImageLeft
 {
-float:left;
-width: 50%;
-margin:0px;
+    float:left;
+    width: 50%;
+    margin:0px;
 }
 .post .pImageLeft
 {
@@ -184,9 +193,9 @@ margin:0px;
 
 .pImageRight
 {
-float:Right;
-width: 50%;
-margin:0px;
+    float:Right;
+    width: 50%;
+    margin:0px;
 }
 .post .pImageRight
 {
@@ -210,43 +219,58 @@ margin:0px;
 /*----*/
 /*STYLE EVEYRHTING*/
 /*---*/
+/*HEADER*/
+/*RE DO THIS HEADER*/
+/*Make sure its easy and simple but also has cool features, move options to top of stylesheet*/
 
-/*Header*/
-.menuIcon{position:absolute; top:20px; left:20px; font-size:2rem; cursor: pointer; color:{color:Light Color}; display:none;}
+/*Icon for menu*/
+.menuIcon{position:absolute; top:20px; left:20px; font-size:2rem; cursor: pointer; color:{color:Light Color}; display:none; z-index:10;}
 .menuIcon:hover{color:{color:Main Color};}
+
+/*Top bar menu*/
 #bar{background-color:#fff; padding:5px;}
 #bar ul{list-style:none; display:inline; padding:0px;}
 #bar ul li {display:inline;}
 #bar ul li a{padding-right:20px; padding-left:20px; color:{color:Main Color}; font-weight:300;}
 #bar ul li a:hover{color:#555;}
+
+/*Slidebar menu*/
+.sb-slidebar{z-index:10;}
 .sb-slidebar h1{text-align:center; text-transform:uppercase; font-weight:900; font-size:1.813rem; color:{color:Main Color};}
 .sb-slidebar ul{list-style:none; padding:0px; margin:0px;}
 .sb-slidebar ul li{padding-top:20px;padding-left:10px;}
 .sb-slidebar ul li a{ color:{color:Light Color}; font-weight:300;}
 .sb-slidebar ul li a:hover{color:{color:Main Color};}
-#header h1{color:{color:Main Color}; font-family: 'Lata', sans-serif; font-weight:900;}
-#header h2{font-family: 'Roboto Slab', serif; font-weight: 300; font-size:1rem;}
+
+/*Header*/
+#headerTint{background:#fff; opacity:1; height:200px;}
+#headerBackground{width:100%;background-position:top center;background-size:cover; height:200px;}
+#headerBackground{background-repeat: no-repeat;background-size: cover;}
+#header{text-align:center;margin:0 auto; height:200px;}
+#header{position:absolute; top:0px; width:100%;}
+#header h1{color:#555; font-family: 'Lata', sans-serif; font-weight:900;padding-top:10px; padding-bottom:0px;margin-bottom:20px;}
+#header h2{font-family: 'Roboto Slab', serif; font-weight: 300; font-size:1rem; color:#555;}
 #headerImage{border-radius:100px}
 #headerImageContainer{background:transparent;width:100px;margin:0 auto;padding:5px; margin-top:20px;}
 #headerImageBorder{width:100px;border-radius:100px;background:#FFF;margin:0 auto;}
-#header{text-align:center;background:transparent;margin:0 auto; padding: 20px;}
-#headerBackground{width:100%;background-position:top center;background-size:cover}
-#headerBackground{background-repeat: no-repeat;background-size: cover;}
 
 /*Social media icons*/
 .iconContainer{list-style:none;width:100%}
-.iconContainer a{font-size:25px; color:{color:Light Color};}
+.iconContainer a{font-size:20px; color:#555;}
 .iconContainer a:hover{color:{color:Main Color};}
 .iconContainer ul{text-align:center;padding:0}
 .iconContainer ul li{display:inline;padding:10px}
 
 /*----*/
 /*POSTS*/
+/*----*/
 
 /*Spacer*/
+/*Use this to space out elements evenly*/
 .space{height:200px;}
 
 /*All*/
+/*Apply to all post types*/
 .posts{padding:0px;}
 .post:first-child{padding-top:10px}
 .post{list-style:none;padding-left:0}
@@ -255,8 +279,6 @@ margin:0px;
 .post p{font-family: 'Roboto Slab', serif; font-weight:300;}
 .post h1:first-child+p, .post h2:first-child+p, .post h3:first-child+p, .post h4:first-child+p, .post h5:first-child+p, .post h6:first-child+p, .post p:first-child{font-size:1.4rem;line-height:2rem;}
 .post h2, h3, h4{padding-top:50px;}
-#title{padding-top:0px;}
-
 
 /*Chat*/    
 .chat{list-style:none;padding:0}
@@ -264,6 +286,7 @@ margin:0px;
 .label{font-weight:700;color:#444;}
 
 /*Image*/
+/*Find a way to style images effectively and responsivly*/
 
 /*Quote*/
 .quote{ font-weight:700;font-family: 'Roboto Slab', serif; font-size:3rem; line-height:4rem; margin:0px; text-align:center;}
@@ -286,23 +309,9 @@ margin:0px;
 .like_and_reblog_buttons li:first-child {padding-left:0px;}
 .tags a{background-color:#eee; padding:5px; border-radius:5px;}
 
+/*----*/
 /*---FOOTER---*/
-.disqus_thread
-{
-
-}
-
-#disqusButton
-{
-    text-align:center;
-    color:{color:Light Color};
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    font-weight: 400;
-    padding:10px;
-    border:#eee 1px solid;
-    border-radius:5px;
-}
+/*----*/
 
 .bottom{margin-top:100px;}
 
@@ -315,6 +324,8 @@ margin:0px;
 #bottomLinks a{color:{color:Light Color};}
 
 .clearOnIndex{display:none;}
+
+.powered{color:#eee;}
 
 /*NEXT/PREVIOUS*/
 /*Navigation*/
@@ -339,14 +350,31 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
 #instafeed::-webkit-scrollbar{width:0px}
 #instafeed::-webkit-scrollbar:horizontal{height:0px;}
 
+/*----*/
+/*PERMALINK*/
+/*----*/
+/*Button to load comments*/
+#disqusButton
+{
+    text-align:center;
+    padding:10px;
+    border:#eee 1px solid;
+    border-radius:5px;
+}
+
+/*----*/
 /*BASIC STYLING*/
+/*----*/
 a{text-decoration:none; color:inherit; font-weight:800;}
 a:hover{color:{color:Main Color};}
 body{color:#555; font-family: 'Lato', sans-serif; font-size:1rem; line-height:1.5rem;}
 ul{margin-left:0px;}/*remove foundation left margin*/
+#tumblr_controls
+{position:absolute !important;} /*fix tumblr iframes*/
 
-
+/*----*/
 /*USABLE CLASSES*/
+/*----*/
 .pDropCap
 {
     float: left; 
@@ -375,14 +403,15 @@ ul{margin-left:0px;}/*remove foundation left margin*/
     padding:0px;
 } 
 
-}
-{block:IfSlideOutMenu}
-.menuIcon{display:block;}
-{/block:IfSlideOutMenu}
 {CustomCSS}
 
 </style>
 
+{block:IfSlideOutMenu}
+<style>
+    .menuIcon{display:initial;}
+</style>
+{/block:IfSlideOutMenu}
 
 
 </head>
@@ -402,12 +431,29 @@ ul{margin-left:0px;}/*remove foundation left margin*/
     </div>
 {/block:IfMenu}
 
+<!--NEW HEADER
+<div class="row">
+  <div class="small-12 medium-10 large-8 small-centered columns">
+    <div class="row">
+      <div class="large-6 columns">
+        <h1><a id="title" href="{BlogURL}">{Title}</a></h1>
+        <h2>{text:Tagline}</h2>
+      </div>
+      <div class="large-6 columns">
+        <h1><a id="title" href="{BlogURL}">{Title}</a></h1>
+        <p>{Description}</p>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
 <div id="headerBackground">
-    <div id="header">
-      
-            <a id="title" href="{BlogURL}">
-                <h1>{Title}</h1>
-            </a>
+    <div id="headerTint">
+    </div>
+</div>
+<div id="header">
+                <h1><a id="title" href="{BlogURL}">{Title}</a></h1>
                 <h2>{text:Tagline}</h2>
             {block:IfLogoImage}
             <div id="headerImageBorder">
@@ -487,7 +533,6 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 </div>
 </div>
 <!--End icons-->
-    </div>
 </div>
 <!--End header-->
 
@@ -657,12 +702,11 @@ ul{margin-left:0px;}/*remove foundation left margin*/
             
             {block:PermalinkPage} 
             <style>
-                .space{display:none;}
                 .clearOnPermalink{display:none;}
                 .clearOnIndex{display:initial;}
-                #headerBackground{opacity:0.8;}
-                #headerBackground h1{font-size:2rem; margin:0px;}
-                #headerBackground h2{font-size:0.8rem; margin-bottom:50px;}
+                #header, #headerTint, #headerBackground{height:50px;}
+                #header h1{font-size:2rem; margin:0px;}
+                #header h2{display:none}
                 #disqus_thread{margin-top: 130px;}
             </style>
 
@@ -795,7 +839,7 @@ ul{margin-left:0px;}/*remove foundation left margin*/
     
     <div class="row" id="bottomBlurb">
     <div class="small-8 medium-6 large-4 small-centered columns">
-            <p><a href="http://papertheme.tumblr.com/">Paper</a> theme powered by <a href="http://www.tumblr.com/">Tumblr</a></p>
+            <p class="powered"><a href="http://papertheme.tumblr.com/">Paper</a> theme powered by <a href="http://www.tumblr.com/">Tumblr</a></p>
     </div>
     </div>
 </div><!--Bottom-->
