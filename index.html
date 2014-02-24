@@ -21,6 +21,7 @@ view this project at https://github.com/thomaskimura/Paper
         <title>{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}</title>
         <link rel="shortcut icon" href="{Favicon}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        <link rel="icon" type="image/png" href="{image:Favicon}">
         
         {block:Description}
             <meta name="description" content="{MetaDescription}" />
@@ -32,6 +33,7 @@ view this project at https://github.com/thomaskimura/Paper
         
         <!--Tumblr Custom options -->
         <meta name="image:Logo" content=""/> <!--Circular image to display in header-->
+        <meta name="image:Favicon" content=""/>
         <meta name="color:Main Color" content="#f2f291"/> <!--Color for hover and highlight-->
         <meta name="color:Light Color" content="#bbbbbb"/> <!--A light colour for post notes, date posted, tags, and social media icons-->
         <meta name="color:Header Color" content="#ffffff"/>
@@ -381,14 +383,14 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
 /*----*/
 /*---FOOTER---*/
 /*----*/
-.bottom{margin-top:100px;}
+
 
 /*BOTTOM LINKS*/
 /*Other link*/
 #bottomLinks a{padding-right:10px;font-size:15px;}
 #bottomLinks a:hover{color:{color:Main Color};}
 #bottomBlurb p{font-size:12px}
-#bottomDescription,#bottomBlurb,#bottomLinks{margin-top:20px;text-align:center;color:{color:Light Color};}
+#bottomDescription,#bottomBlurb,#bottomLinks{text-align:center;color:{color:Light Color};}
 #bottomLinks a{color:{color:Light Color};}
 .powered{color:#eee;}
 
@@ -808,8 +810,8 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 </div>
 <div class="spaceSmall"></div>
                 {/block:IfDisqusShortname}
-                {PostNotes}
-<div class="spaceSmall"></div>
+                {block:PostNotes}{PostNotes}<div class="spaceSmall"></div>{/block:PostNotes}
+
             {/block:PermalinkPage}
          
         </ol>
