@@ -469,6 +469,36 @@ ul{margin-left:0px;}/*remove foundation left margin*/
     padding:0px;
 } 
 
+.alert
+{
+    background: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 2px #aaa;
+    margin-top:-20px;
+}
+
+.alertTop
+{
+    height:40px;
+    width:100%;
+    background: #aaa;
+    padding: 3px;
+    border-radius: 5px;
+    font-size:1rem;
+    line-height:0px;
+    text-align:left;
+}
+.alertTop i
+{
+    cursor:pointer;
+}
+.alertButton
+{
+    border:solid 1px #aaa;
+    border-radius:5px;
+    padding:10px;
+}
 {CustomCSS}
 
 </style>
@@ -499,19 +529,31 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 {/block:IfMenu}
 
 <!--HEADER-->
+
 <div class="row header">
 <div class="spaceSmall"></div>
   <div class="small-12 medium-10 large-8 small-centered columns">
+        
     <div class="row">
     
       <div class="large-5 small-10 small-centered columns">
+      <div id="alertTop" class="alertTop"><i class="fa fa-times" onclick="alertClose()"></i></div>
+        <div id="alert" class="alert">
+        <p>
+        This theme is currently under construction. To see everything involved in this theme view it on GitHub.
+        </p>
+        <p>
+        <a target="_blank"  class="alertButton" href="https://github.com/thomaskimura/Paper" id="github">View Project</a>
+        </p>
+        </div>
             {block:IfLogoImage}
                 <div id="headerImageContainer">
                     <a id="title" href="{BlogURL}">
                     <img id="headerImage" src="{image:Logo}"/>
                     </a>
                 </div>
-            {/block:IfLogoImage}   
+            {/block:IfLogoImage}  
+        
         <h1><a id="title" href="{BlogURL}">{Title}</a></h1>
         <div class="backButtonContainer hideOnIndex">
             <a class="backButton" href="{BlogURL}"><i class="fa fa-long-arrow-left"></i> {Title}</a>
@@ -582,6 +624,7 @@ ul{margin-left:0px;}/*remove foundation left margin*/
     
     <div class="large-5 small-10 small-centered columns">
         <p>{Description}</p>
+
         <div class="spaceSmall"></div>
     </div>
     
@@ -801,6 +844,8 @@ ul{margin-left:0px;}/*remove foundation left margin*/
                 .backButtonContainer{margin-top:20px;}
                 .backButton{display:initial;}
                 .hideOnPermalink{display:none !important;}
+                .alert{display:none;}
+                .alertTop{display:none;}
             </style>
             {block:IfDisqusShortname}
 
@@ -1050,6 +1095,14 @@ ul{margin-left:0px;}/*remove foundation left margin*/
             document.getElementById("disqus_thread").style.display = 'initial';
             document.getElementById("disqusButton").style.display = 'none';
     }
+    
+    function alertClose()
+    {
+        document.getElementById("alert").style.display = 'none';
+        document.getElementById("alertTop").style.display = 'none';
+    }
+    
+    $(".alertClose").css({"backgroundColor": "black", "color": "white"});
     
 </script>
 
