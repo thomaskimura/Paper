@@ -274,6 +274,16 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
 
 }/*End larger than 640px*/
 
+/*----*/
+/*BASIC STYLING*/
+/*----*/
+a{text-decoration:none; color:inherit; font-weight:800;}
+p{margin-top:0px;}
+h2,h3,h4,h5,h6{margin-bottom: 1rem;margin-top: 5rem;}
+a:hover{color:{color:Main Color};}
+body{color:#555; font-family: 'Lato', sans-serif;}
+ul{margin-left:0px;}/*remove foundation left margin*/
+#tumblr_controls{position:absolute !important;} /*fix tumblr iframes*/
 
 /*----*/
 /*STYLE EVEYRHTING*/
@@ -323,6 +333,7 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
 #flickr:hover{color:#0063dc;}
 #dribbble:hover{color:#ea4c89;}
 #github:hover{color:#171515;}
+
 
 /*----*/
 /*POSTS*/
@@ -384,7 +395,6 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
 /*---FOOTER---*/
 /*----*/
 
-
 /*BOTTOM LINKS*/
 /*Other link*/
 #bottomLinks a{padding-right:10px;font-size:15px;}
@@ -430,15 +440,6 @@ ol.notes li.note .answer_content{font-weight:400}
 ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px;margin:10px 0 0 25px;padding:4px 10px}
 
 /*----*/
-/*BASIC STYLING*/
-/*----*/
-a{text-decoration:none; color:inherit; font-weight:800;}
-a:hover{color:{color:Main Color};}
-body{color:#555; font-family: 'Lato', sans-serif;}
-ul{margin-left:0px;}/*remove foundation left margin*/
-#tumblr_controls{position:absolute !important;} /*fix tumblr iframes*/
-
-/*----*/
 /*USABLE CLASSES*/
 /*----*/
 .pDropCap
@@ -454,7 +455,7 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 {
     background-color:#ffe4ca;
 }
-.pLeading
+.pBigText
 {
     font-size:1.4rem;
     line-height:2rem;
@@ -505,47 +506,43 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 
 {block:IfSlideOutMenu}
 <style>
+    /*STYLE FOR SLIDEOUT*/
     .menuIcon{display:initial;}
 </style>
 {/block:IfSlideOutMenu}
 
+
+{block:PermalinkPage} 
+    <style>
+    /*STYLE FOR PERMALINK PAGE ONLY*/
+        .header ul, .header p{display:none;}
+        .header h1{display:none;}
+        #title{font-size:4rem; line-height:5rem;}
+        .hideOnIndex{display:block;}
+        .header .backButton{border: 1px solid #eee; padding: 10px; border-radius: 5px;}
+        .backButtonContainer{margin-top:20px;}
+        .backButton{display:initial;}
+        .hideOnPermalink{display:none !important;}
+        .alert{display:none;}
+        .alertTop{display:none;}
+    </style>
+{/block:PermalinkPage}
 
 </head>
 <body>
 <div id="sb-site"> <!--ALL MAIN CONTENT GOES IN HERE-->
 <span class="sb-toggle-left menuIcon"><i class="fa fa-bars"></i></span> <!--Menu Icon-->
 
-<!--MENU-->
-{block:IfMenu} <!--Lets put this under the header descritption yo!-->
-    <div id="bar">
-                    <ul>
-                    {block:Pages}
-                        <li>
-                            <a href="{URL}">{Label}</a>
-                        </li>
-                    {/block:Pages}
-                </ul>
-    </div>
-{/block:IfMenu}
-
 <!--HEADER-->
 
 <div class="row header">
-<div class="spaceSmall"></div>
+<div class="spaceSmall hideOnSmall"></div>
   <div class="small-12 medium-10 large-8 small-centered columns">
         
     <div class="row">
     
       <div class="large-5 small-10 small-centered columns">
-      <div id="alertTop" class="alertTop"><i class="fa fa-times" onclick="alertClose()"></i></div>
-        <div id="alert" class="alert">
-        <p>
-        This theme is currently under construction. To see everything involved in this theme view it on GitHub.
-        </p>
-        <p>
-        <a target="_blank"  class="alertButton" href="https://github.com/thomaskimura/Paper" id="github">View Project</a>
-        </p>
-        </div>
+      
             {block:IfLogoImage}
                 <div id="headerImageContainer">
                     <a id="title" href="{BlogURL}">
@@ -555,6 +552,17 @@ ul{margin-left:0px;}/*remove foundation left margin*/
             {/block:IfLogoImage}  
         
         <h1><a id="title" href="{BlogURL}">{Title}</a></h1>
+        <!--
+        <div id="alertTop" class="alertTop"><i class="fa fa-times" onclick="alertClose()"></i></div>
+        <div id="alert" class="alert">
+        <p>
+        This theme is currently under construction. To see everything involved in this theme view it on GitHub.
+        </p>
+        <p>
+        <a target="_blank"  class="alertButton" href="https://github.com/thomaskimura/Paper" id="github">View Project</a>
+        </p>
+        </div>
+        -->
         <div class="backButtonContainer hideOnIndex">
             <a class="backButton" href="{BlogURL}"><i class="fa fa-long-arrow-left"></i> {Title}</a>
         </div>
@@ -624,6 +632,16 @@ ul{margin-left:0px;}/*remove foundation left margin*/
     
     <div class="large-5 small-10 small-centered columns">
         <p>{Description}</p>
+<!--MENU-->
+{block:IfMenu} <!--Lets put this under the header descritption yo!-->
+                <ul>
+                    {block:Pages}
+                        <li>
+                            <a href="{URL}">{Label}</a>
+                        </li>
+                    {/block:Pages}
+                </ul>
+{/block:IfMenu}
 
         <div class="spaceSmall"></div>
     </div>
@@ -835,18 +853,6 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 <!--End posts-->
             
             {block:PermalinkPage} 
-            <style>
-                .header ul, .header p{display:none;}
-                .header h1{display:none;}
-                #title{font-size:4rem; line-height:5rem;}
-                .hideOnIndex{display:block;}
-                .header .backButton{border: 1px solid #eee; padding: 10px; border-radius: 5px;}
-                .backButtonContainer{margin-top:20px;}
-                .backButton{display:initial;}
-                .hideOnPermalink{display:none !important;}
-                .alert{display:none;}
-                .alertTop{display:none;}
-            </style>
             {block:IfDisqusShortname}
 
 <div id="disqus_thread"></div>
