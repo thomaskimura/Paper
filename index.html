@@ -5,6 +5,9 @@
  |  __/ ___ \|  __/| |___|  _ < 
  |_| /_/   \_\_|   |_____|_| \_\
                                 
+
+Version 1.0 BETA
+
 Paper theme created by Thomas Kimura
 
 View a live demo at http://papertheme.tumblr.com/
@@ -31,19 +34,19 @@ view this project at https://github.com/thomaskimura/Paper
     
         <meta charset="UTF-8">
         
-        <!--Tumblr Custom options -->
-        <meta name="image:Logo" content=""/> <!--Circular image to display in header-->
-        <meta name="image:Favicon" content=""/>
+        <!--TUMBLR CUSTOMIZATION-->
+        <!--Colours-->
         <meta name="color:Main Color" content="#f2f291"/> <!--Color for hover and highlight-->
         <meta name="color:Light Color" content="#bbbbbb"/> <!--A light colour for post notes, date posted, tags, and social media icons-->
-        <meta name="color:Header Color" content="#ffffff"/>
         
+        <!--Images-->
+        <meta name="image:Favicon" content=""/> <!--Favicon-->
         <meta name="image:Logo" content=""/> <!--Circular image to display in header-->
-        <meta name="image:Header Image" content=""/> <!--Background image for header-->
         
+        <!--Text-->
         <meta name='text:Tagline' content='A Short Subtitle' />
-        <meta name="text:Header Height" content="200"/>
 
+        <!--Usernames and accounts-->
         <meta name="text:Tumblr Username" content="USER" /> <!--Needed for ask/submit to work-->
         <meta name='text:Disqus Shortname' content='' />
         <meta name="text:Username on Facebook" content="Facebook"/>
@@ -60,6 +63,7 @@ view this project at https://github.com/thomaskimura/Paper
         <meta name="text:Instagram User ID" content=""/>
         <meta name="text:Instagram Access Token" content=""/>
         
+        <!--Options-->
         <meta name="if:Instagram Banner" content="0"/>
         <meta name="if:Slide Out Menu" content="0"/>
         <meta name="if:Menu" content="0"/>
@@ -72,33 +76,29 @@ view this project at https://github.com/thomaskimura/Paper
 <script src="http://static.tumblr.com/smotcsf/nBdmx9k3g/run_prettify.js"></script>
 
 <!--Font Awesome-->
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 <!--Google Fonts-->
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Cinzel+Decorative:900' rel='stylesheet' type='text/css'>
 
 <style>
-/*STYLE SHEET*/
+/*----STYLE SHEET----*/
 
-/*----*/
-/*OPTIONS*/
-/*----*/
 
-/*HIGHLIGHT OPTIONS*/
+/*--------------------*/
+
+
+/*--OPTIONS--*/
+/*Highlight options*/
 ::selection{opacity:1;color:#fff; background-color:{color:Main Color};}
 :-moz-selection{opacity:1;color:#fff; background-color:{color:Main Color};}
 
-/*Change scrollbar for code overflow*/
-pre.prettyprint::-webkit-scrollbar{width:0px}
-pre.prettyprint::-webkit-scrollbar:horizontal{height:8px;}
-pre.prettyprint::-webkit-scrollbar-track{background-color: #888;}
-pre.prettyprint::-webkit-scrollbar-thumb{background-color: #555;}
-pre.prettyprint::-webkit-scrollbar-corner{display:none;}
 
-/*GOOGLE CODE PRETIFIER*/
+/*--------------------*/
+
+
+/*--GOOGLE CODE PRETIFIER--*/
 /* desert scheme ported from vim to google prettify */
 pre.prettyprint { display: block; overflow: auto}
 pre.prettyprint { display: block; background-color: #555; padding:10px; border:none;}
@@ -122,9 +122,18 @@ li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
 li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
 .prettyprint ol.linenums > li { list-style-type: decimal; }
 
-/*----*/
-/*PRINT*/
-/*----*/
+/*Change scrollbar for code overflow*/
+pre.prettyprint::-webkit-scrollbar{width:0px}
+pre.prettyprint::-webkit-scrollbar:horizontal{height:8px;}
+pre.prettyprint::-webkit-scrollbar-track{background-color: #888;}
+pre.prettyprint::-webkit-scrollbar-thumb{background-color: #555;}
+pre.prettyprint::-webkit-scrollbar-corner{display:none;}
+
+
+/*--------------------*/
+
+
+/*--PRINT--*/
 @media print {
     /*Line height*/
      body{line-height:1.5rem;}
@@ -154,7 +163,7 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
   pre .atn, code .atn { color: #404 }
   pre .atv, code .atv { color: #060 }
   
-/*IMAGE ALIGN*/        
+/*Align images for print*/        
 .pImageLeft
 {
     float:left;
@@ -194,9 +203,11 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
 
 }/*End print*/
 
-/*----*/
-/*RESPONSIVE*/
-/*----*/
+
+/*--------------------*/
+
+
+/*--RESPONSIVE--*/
 
 /*ANY SCREEN SIZE*/
 @media only screen 
@@ -215,6 +226,7 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
         /*Use this to space out elements evenly*/
         .space{height:150px;}
         .spaceSmall{height:50px;}
+        
 }/*End any screen size*/
 
 /*LARGER THAN 640PX*/
@@ -234,7 +246,8 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
         /*Use this to space out elements evenly*/
         .space{height:200px;}
         .spaceSmall{height:100px;}
-/*IMAGE ALIGN*/        
+        
+/*Image align for big screens*/        
 .pImageLeft
 {
     float:left;
@@ -271,28 +284,39 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
     position: relative;
     left: -20%;
 }
-
 }/*End larger than 640px*/
 
-/*----*/
-/*BASIC STYLING*/
-/*----*/
+
+/*--------------------*/
+
+
+/*--BASIC STYLING--*/
+body{color:#555; font-family: 'Lato', sans-serif;}
 a{text-decoration:none; color:inherit; font-weight:800;}
 p{margin-top:0px;}
-h2,h3,h4,h5,h6{margin-bottom: 1rem;margin-top: 5rem;}
 a:hover{color:{color:Main Color};}
-body{color:#555; font-family: 'Lato', sans-serif;}
+h2,h3,h4,h5,h6{margin-bottom: 1rem;margin-top: 5rem;}
 ul{margin-left:0px;}/*remove foundation left margin*/
 #tumblr_controls{position:absolute !important;} /*fix tumblr iframes*/
 
-/*----*/
-/*STYLE EVEYRHTING*/
-/*---*/
+
+/*--------------------*/
+
+
+/*--STYLE EVEYRHTING--*/
 
 /*HEADER*/
 /*Icon for menu*/
 .menuIcon{position:absolute; top:20px; left:20px; font-size:2rem; cursor: pointer; color:{color:Light Color}; display:none; z-index:10;}
 .menuIcon:hover{color:{color:Main Color};}
+
+/*Header*/
+.header{text-align:center;}
+.header h1{color:#333;}
+#title:hover{color:{color:Main Color};}
+.header p{color:{color:Light Color};}
+.header ul{list-style:none; padding:0px; margin:1rem;}
+.header ul li{display:inline; padding:5px; color:{color:Light Color};}
 
 /*Top bar menu*/
 #bar{background-color:#fff; padding:5px;}
@@ -308,14 +332,6 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 .sb-slidebar ul li{padding-top:20px;padding-left:10px;}
 .sb-slidebar ul li a{ color:{color:Light Color}; font-weight:300;}
 .sb-slidebar ul li a:hover{color:{color:Main Color};}
-
-/*Header*/
-.header{text-align:center;}
-.header h1{color:#333;}
-#title:hover{color:{color:Main Color};}
-.header p{color:{color:Light Color};}
-.header ul{list-style:none; padding:0px; margin:1rem;}
-.header ul li{display:inline; padding:5px; color:{color:Light Color};}
 
 /*Logo*/
 #headerImage{border-radius:100px}
@@ -335,11 +351,12 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 #github:hover{color:#171515;}
 
 
-/*----*/
-/*POSTS*/
-/*----*/
+/*--------------------*/
 
-/*All*/
+
+/*--POSTS--*/
+
+/*ALL*/
 /*Apply to all post types*/
 .small-centered{float:none !important;} /*Unfloat to center divs*/
 .posts{padding:0px; margin:0px;}
@@ -356,7 +373,7 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 /*Hide & Show*/
 .hideOnIndex{display:none;}
 
-/*Chat*/    
+/*CHAT*/    
 .chat{list-style:none;padding:0}
 .chat li{margin-top:10px;margin-bottom:10px;border-radius:5px;display: inline-block; font-family: 'Roboto Slab', serif;}
 .label{font-weight:700;color:#444;}
@@ -364,18 +381,22 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 /*Image*/
 /*Find a way to style images effectively and responsivly*/
 
-/*Quote*/
+/*QUOTE*/
 .quote{ font-weight:700;font-family: 'Roboto Slab', serif; font-size:3rem; line-height:4rem; margin:0px; text-align:center;}
 .source{ font-weight:300; font-size:1rem; padding-top:20px; padding-bottom:20px; font-style:italic;}
 .source a{font-weight:bold;}
 
-/*Link*/
+/*LINK*/
 .link h3{font-size: 24px;line-height: 27px;}
 
-/*Audio*/
+/*AUDIO*/
 .tumblr_audio_player{height:40px;}
 
-/*POST BOTTOM*/
+
+/*--------------------*/
+
+
+/*--POST BOTTOM--*/
 /*Post notes,tags, and date*/
 .postStats{font-size:14px;list-style:none;max-width:640px;margin:0;padding:0px; padding-top:0px; color:{color:Light Color};}
 .postStats li{display:inline-block; padding-right:20px;}
@@ -385,15 +406,11 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 .like_and_reblog_buttons li:first-child {padding-left:0px;}
 .tags a{background-color:#eee; padding:5px; border-radius:5px;}
 
-/*PERMALINK BOTTOM*/
-.postBottom{text-align:center; color:{color:Light Color};}
-.postBottom h3{margin:0px;}
-.postBottom ul{list-style:none; padding:0px; margin:0rem;}
-.postBottom ul li{display:inline; padding:5px; color:{color:Light Color};}
 
-/*----*/
-/*---FOOTER---*/
-/*----*/
+/*--------------------*/
+
+
+/*--FOOTER--*/
 
 /*BOTTOM LINKS*/
 /*Other link*/
@@ -408,7 +425,7 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 /*Navigation*/
 #navlink{border-radius:5px;text-align:center;float:right;padding:10px; border: 1px solid; border-color:#eee;}
 
-/*Ask and Submit*/
+/*ASK & SUBMIT*/
 #ask, #submit{display:none;}
 #askBox, #submitBox{margin-top:50px; margin-bottom:50px; height: 270px;}
 
@@ -420,9 +437,17 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 #instafeed::-webkit-scrollbar{width:0px}
 #instafeed::-webkit-scrollbar:horizontal{height:0px;}
 
-/*----*/
-/*PERMALINK*/
-/*----*/
+
+/*--------------------*/
+
+
+/*--PERMALINK--*/
+
+/*Custom footer*/
+.postBottom{text-align:center; color:{color:Light Color};}
+.postBottom h3{margin:0px;}
+.postBottom ul{list-style:none; padding:0px; margin:0rem;}
+.postBottom ul li{display:inline; padding:5px; color:{color:Light Color};}
 /*Button to load comments*/
 #disqusButton
 {
@@ -431,7 +456,6 @@ ul{margin-left:0px;}/*remove foundation left margin*/
     border:#eee 1px solid;
     border-radius:5px;
 }
-
 /*Permalink notes*/
 ol.notes{list-style-type:none; padding:0px;}
 ol.notes li.note{padding:5px 0 15px}
@@ -439,9 +463,11 @@ ol.notes li.note img.avatar{display:none}
 ol.notes li.note .answer_content{font-weight:400}
 ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px;margin:10px 0 0 25px;padding:4px 10px}
 
-/*----*/
-/*USABLE CLASSES*/
-/*----*/
+
+/*--------------------*/
+
+
+/*--USABLE CLASSES--*/
 .pDropCap
 {
     float: left; 
@@ -506,7 +532,7 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
 
 {block:IfSlideOutMenu}
 <style>
-    /*STYLE FOR SLIDEOUT*/
+    /*--STYLE FOR SLIDEOUT--*/
     .menuIcon{display:initial;}
 </style>
 {/block:IfSlideOutMenu}
@@ -514,7 +540,7 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
 
 {block:PermalinkPage} 
     <style>
-    /*STYLE FOR PERMALINK PAGE ONLY*/
+    /*--STYLE FOR PERMALINK PAGE ONLY--*/
         .header ul, .header p{display:none;}
         .header h1{display:none;}
         #title{font-size:4rem; line-height:5rem;}
@@ -569,61 +595,61 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
         <ul>
                 {block:IfUsernameOnFacebook}
                     <li>
-                        <a target="_blank" href="http://www.facebook.com/{text:Username on Facebook}" id="facebook"><i class="icon-facebook-sign"></i></a>
+                        <a target="_blank" href="http://www.facebook.com/{text:Username on Facebook}" id="facebook"><i class="fa fa-facebook-square"></i></a>
                     </li>
                 {/block:IfUsernameOnFacebook}
                 
                 {block:IfGooglePlusUrl}
                     <li>
-                        <a target="_blank" href="http://www.google.com/+{text:URL on Google Plus}" id="google"><i class="icon-google-plus-sign"></i></a>
+                        <a target="_blank" href="http://www.google.com/+{text:URL on Google Plus}" id="google"><i class="fa fa-google-plus-square"></i></a>
                     </li>
                 {/block:IfGooglePlusUrl}
 
                 {block:IfUsernameOnTwitter}
                     <li>
-                        <a target="_blank" href="http://www.twitter.com/{text:Username on Twitter}" id="twitter"><i class="icon-twitter-sign"></i></a>
+                        <a target="_blank" href="http://www.twitter.com/{text:Username on Twitter}" id="twitter"><i class="fa fa-twitter-square"></i></a>
                     </li>
                 {/block:IfUsernameOnTwitter} 
             
                 {block:IfUsernameOnYouTube}
                     <li>
-                        <a target="_blank" href="http://www.youtube.com/{text:Username on YouTube}" id="youtube"><i class="icon-youtube-sign"></i></a>
+                        <a target="_blank" href="http://www.youtube.com/{text:Username on YouTube}" id="youtube"><i class="fa fa-youtube-square"></i></a>
                     </li>
                 {/block:IfUsernameOnYouTube}
                 
                 {block:IfUsernameOnInstagram}
                     <li>
-                        <a target="_blank" href="http://www.instagram.com/{text:Username on Instagram}" id="instagram"><i class="icon-instagram"></i></a>
+                        <a target="_blank" href="http://www.instagram.com/{text:Username on Instagram}" id="instagram"><i class="fa fa-instagram"></i></a>
                     </li>
                 {/block:IfUsernameOnInstagram}
  
                 {block:IfUsernameOnPinterest}
                     <li>
-                        <a target="_blank" href="http://www.pinterest.com/{text:Username on Pinterest}" id="pinterest"><i class="icon-pinterest-sign"></i></a>
+                        <a target="_blank" href="http://www.pinterest.com/{text:Username on Pinterest}" id="pinterest"><i class="fa fa-pinterest-square"></i></a>
                     </li>
                 {/block:IfUsernameOnPinterest}
     
                 {block:IfUsernameOnFlickr}
                     <li>
-                        <a target="_blank" href="http://www.flickr.com/{text:Username on Flickr}" id="flickr"><i class="icon-flickr"></i></a>
+                        <a target="_blank" href="http://www.flickr.com/{text:Username on Flickr}" id="flickr"><i class="fa fa-flickr"></i></a>
                     </li>
                 {/block:IfUsernameOnFlickr}
     
                 {block:IfUsernameOnLinkedin}
                     <li>
-                        <a target="_blank" href="http://www.linkedin.com/in/{text:Username on LinkedIn}" id="linkedin"><i class="icon-linkedin-sign"></i></a>
+                        <a target="_blank" href="http://www.linkedin.com/in/{text:Username on LinkedIn}" id="linkedin"><i class="fa fa-linkedin-square"></i></a>
                     </li>
                 {/block:IfUsernameOnLinkedin}
     
                 {block:IfUsernameOnGitHub}
                     <li>
-                        <a target="_blank" href="http://www.github.com/{text:Username on GitHub}" id="github"><i class="icon-github-sign"></i></a>
+                        <a target="_blank" href="http://www.github.com/{text:Username on GitHub}" id="github"><i class="fa fa-github-square"></i></a>
                     </li>
                 {/block:IfUsernameOnGitHub}
    
                 {block:IfUsernameOnDribbble}
                     <li>
-                        <a target="_blank" href="http://www.dribbble.com/{text:Username on Dribbble}" id="dribbble"><i class="icon-dribbble"></i></a>
+                        <a target="_blank" href="http://www.dribbble.com/{text:Username on Dribbble}" id="dribbble"><i class="fa fa-dribbble"></i></a>
                     </li>
                 {/block:IfUsernameOnDribbble}
                 
@@ -879,61 +905,61 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
             
                 {block:IfUsernameOnFacebook}
                     <li>
-                        <a target="_blank" href="http://www.facebook.com/{text:Username on Facebook}" id="facebook"><i class="icon-facebook-sign"></i></a>
+                        <a target="_blank" href="http://www.facebook.com/{text:Username on Facebook}" id="facebook"><i class="fa fa-facebook-square"></i></a>
                     </li>
                 {/block:IfUsernameOnFacebook}
                 
                 {block:IfGooglePlusUrl}
                     <li>
-                        <a target="_blank" href="http://www.google.com/+{text:URL on Google Plus}" id="google"><i class="icon-google-plus-sign"></i></a>
+                        <a target="_blank" href="http://www.google.com/+{text:URL on Google Plus}" id="google"><i class="fa fa-google-plus-square"></i></a>
                     </li>
                 {/block:IfGooglePlusUrl}
 
                 {block:IfUsernameOnTwitter}
                     <li>
-                        <a target="_blank" href="http://www.twitter.com/{text:Username on Twitter}" id="twitter"><i class="icon-twitter-sign"></i></a>
+                        <a target="_blank" href="http://www.twitter.com/{text:Username on Twitter}" id="twitter"><i class="fa fa-twitter-square"></i></a>
                     </li>
                 {/block:IfUsernameOnTwitter} 
             
                 {block:IfUsernameOnYouTube}
                     <li>
-                        <a target="_blank" href="http://www.youtube.com/{text:Username on YouTube}" id="youtube"><i class="icon-youtube-sign"></i></a>
+                        <a target="_blank" href="http://www.youtube.com/{text:Username on YouTube}" id="youtube"><i class="fa fa-youtube-square"></i></a>
                     </li>
                 {/block:IfUsernameOnYouTube}
                 
                 {block:IfUsernameOnInstagram}
                     <li>
-                        <a target="_blank" href="http://www.instagram.com/{text:Username on Instagram}" id="instagram"><i class="icon-instagram"></i></a>
+                        <a target="_blank" href="http://www.instagram.com/{text:Username on Instagram}" id="instagram"><i class="fa fa-instagram"></i></a>
                     </li>
                 {/block:IfUsernameOnInstagram}
  
                 {block:IfUsernameOnPinterest}
                     <li>
-                        <a target="_blank" href="http://www.pinterest.com/{text:Username on Pinterest}" id="pinterest"><i class="icon-pinterest-sign"></i></a>
+                        <a target="_blank" href="http://www.pinterest.com/{text:Username on Pinterest}" id="pinterest"><i class="fa fa-pinterest-square"></i></a>
                     </li>
                 {/block:IfUsernameOnPinterest}
     
                 {block:IfUsernameOnFlickr}
                     <li>
-                        <a target="_blank" href="http://www.flickr.com/{text:Username on Flickr}" id="flickr"><i class="icon-flickr"></i></a>
+                        <a target="_blank" href="http://www.flickr.com/{text:Username on Flickr}" id="flickr"><i class="fa fa-flickr"></i></a>
                     </li>
                 {/block:IfUsernameOnFlickr}
     
                 {block:IfUsernameOnLinkedin}
                     <li>
-                        <a target="_blank" href="http://www.linkedin.com/in/{text:Username on LinkedIn}" id="linkedin"><i class="icon-linkedin-sign"></i></a>
+                        <a target="_blank" href="http://www.linkedin.com/in/{text:Username on LinkedIn}" id="linkedin"><i class="fa fa-linkedin-square"></i></a>
                     </li>
                 {/block:IfUsernameOnLinkedin}
     
                 {block:IfUsernameOnGitHub}
                     <li>
-                        <a target="_blank" href="http://www.github.com/{text:Username on GitHub}" id="github"><i class="icon-github-sign"></i></a>
+                        <a target="_blank" href="http://www.github.com/{text:Username on GitHub}" id="github"><i class="fa fa-github-square"></i></a>
                     </li>
                 {/block:IfUsernameOnGitHub}
    
                 {block:IfUsernameOnDribbble}
                     <li>
-                        <a target="_blank" href="http://www.dribbble.com/{text:Username on Dribbble}" id="dribbble"><i class="icon-dribbble"></i></a>
+                        <a target="_blank" href="http://www.dribbble.com/{text:Username on Dribbble}" id="dribbble"><i class="fa fa-dribbble"></i></a>
                     </li>
                 {/block:IfUsernameOnDribbble}
                 
