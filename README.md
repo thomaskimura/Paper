@@ -9,7 +9,7 @@ Second try and making a tumblr theme. View a live version at http://papertheme.t
 - Responsive typography
 - Responsive photosets
 - Responsive navigation
-- Create Header with options
+- Remove post stats on photos, add link through on photos
+- Create Header with customization
 - Custom fonts
 - Documentation
-- Font Awesome 4 update
