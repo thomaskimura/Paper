@@ -42,9 +42,6 @@ view this project at https://github.com/thomaskimura/Paper
         <!--Images-->
         <meta name="image:Favicon" content=""/> <!--Favicon-->
         <meta name="image:Logo" content=""/> <!--Circular image to display in header-->
-        
-        <!--Text-->
-        <meta name='text:Tagline' content='A Short Subtitle' />
 
         <!--Usernames and accounts-->
         <meta name="text:Tumblr Username" content="USER" /> <!--Needed for ask/submit to work-->
@@ -72,8 +69,6 @@ view this project at https://github.com/thomaskimura/Paper
 <link href="http://static.tumblr.com/smotcsf/Vian0p49e/foundation.min.css" rel="stylesheet">
 <link href="http://static.tumblr.com/smotcsf/SA3n0thdj/slidebars.min.css" rel="stylesheet">
 
-<!--Syntax-->
-<script src="http://static.tumblr.com/smotcsf/nBdmx9k3g/run_prettify.js"></script>
 
 <!--Font Awesome-->
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
@@ -81,6 +76,8 @@ view this project at https://github.com/thomaskimura/Paper
 <!--Google Fonts-->
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
+
+
 
 <style>
 /*----STYLE SHEET----*/
@@ -97,30 +94,6 @@ view this project at https://github.com/thomaskimura/Paper
 
 /*--------------------*/
 
-
-/*--GOOGLE CODE PRETIFIER--*/
-/* desert scheme ported from vim to google prettify */
-pre.prettyprint { display: block; overflow: auto}
-pre.prettyprint { display: block; background-color: #555; padding:10px; border:none;}
-pre .nocode { background-color: none; color: #000 }
-pre .str { color: #ffa0a0 } /* string  - pink */
-pre .kwd { color: #f0e68c; font-weight: bold }
-pre .com { color: #87ceeb } /* comment - skyblue */
-pre .typ { color: #98fb98 } /* type    - lightgreen */
-pre .lit { color: #cd5c5c } /* literal - darkred */
-pre .pun { color: #fff }    /* punctuation */
-pre .pln { color: #fff }    /* plaintext */
-pre .tag { color: #f0e68c; font-weight: bold } /* html/xml tag    - lightyellow */
-pre .atn { color: #bdb76b; font-weight: bold } /* attribute name  - khaki */
-pre .atv { color: #ffa0a0 } /* attribute value - pink */
-pre .dec { color: #98fb98 } /* decimal         - lightgreen */
-
-/* Specify class=linenums on a pre to get line numbering */
-ol.linenums { margin-top: 0; margin-bottom: 0; color: #aaaaaa } /* IE indents via margin-left */
-li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
-/* Alternate shading for lines */
-li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
-.prettyprint ol.linenums > li { list-style-type: decimal; }
 
 /*Change scrollbar for code overflow*/
 pre.prettyprint::-webkit-scrollbar{width:0px}
@@ -292,6 +265,7 @@ pre.prettyprint::-webkit-scrollbar-corner{display:none;}
 
 /*--BASIC STYLING--*/
 body{color:#555; font-family: 'Lato', sans-serif;}
+html, body{overflow-y: scroll;overflow-x: hidden; -webkit-overflow-scrolling: touch;}
 a{text-decoration:none; color:inherit; font-weight:800;}
 p{margin-top:0px;}
 a:hover{color:{color:Main Color};}
@@ -427,7 +401,7 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 
 /*ASK & SUBMIT*/
 #ask, #submit{display:none;}
-#askBox, #submitBox{margin-top:50px; margin-bottom:50px; height: 270px;}
+#askBox, #submitBox{margin-top:50px; margin-bottom:50px; height: 300px;}
 
 /*INSTAGRAM FEED*/
 #instafeed{width: 100%;overflow: scroll;white-space: nowrap;}
@@ -554,8 +528,10 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
     </style>
 {/block:PermalinkPage}
 
+<link href="http://static.tumblr.com/smotcsf/aUTn1y3ih/tomorrow.css" rel="stylesheet">
+
 </head>
-<body>
+<body onload="prettyPrint()">
 <div id="sb-site"> <!--ALL MAIN CONTENT GOES IN HERE-->
 <span class="sb-toggle-left menuIcon"><i class="fa fa-bars"></i></span> <!--Menu Icon-->
 
@@ -1006,7 +982,7 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
                     <a onclick="askOn()" id="askButton" href="#asksubmit">{AskLabel}</a>
                 {/block:AskEnabled}
                 {block:SubmissionsEnabled} 
-                    <a onclick="submitOn()" id="submitButton">{SubmitLabel}</a>
+                    <a onclick="submitOn()" id="submitButton" href="#asksubmit">{SubmitLabel}</a>
                 {/block:SubmissionsEnabled} 
                 {block:IfEmail}
                     <a href="mailto:{text:Email}" id="Email">Email</a>
@@ -1067,6 +1043,8 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
     </div>
 </div>
 
+<!--Syntax-->
+<script src="http://static.tumblr.com/smotcsf/phJn1y2w7/prettify.js"></script>
 
 <!--Jquery-->
 <script src="http://static.tumblr.com/smotcsf/6y4mx9k52/jquery.min.js" ></script>
