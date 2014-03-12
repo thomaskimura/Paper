@@ -59,6 +59,7 @@ view this project at https://github.com/thomaskimura/Paper
         <meta name="text:Email" content="Email"/>
         <meta name="text:Instagram User ID" content=""/>
         <meta name="text:Instagram Access Token" content=""/>
+        <meta name="text:Instagram Tag" content=""/>
         
         <!--Options-->
         <meta name="if:Instagram Banner" content="0"/>
@@ -1122,6 +1123,7 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
     });
 </script>
 
+{block:IfInstagramUserID}
 <script type="text/javascript">
     var userFeed = new Instafeed({
         limit: 20,
@@ -1131,6 +1133,21 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
     });
     userFeed.run();
 </script>
+{/block:IfInstagramUserID}
+
+{block:IfInstagramTag}
+<script type="text/javascript">
+    var feed = new Instafeed({
+        limit: 20,
+        get: 'tagged',
+        tagName: '{text:Instagram Tag}',
+        clientId: 'a25f5a7693b04351b165dc8df1e6aded'
+    });
+    feed.run();
+</script>
+{/block:IfInstagramTag}
+
+
 
 <script>
   (function($) {
