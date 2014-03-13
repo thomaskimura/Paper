@@ -22,9 +22,10 @@ view this project at https://github.com/thomaskimura/Paper
 <html>
     <head>
         <title>{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}</title>
-        <link rel="shortcut icon" href="{Favicon}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
-        <link rel="icon" type="image/png" href="{image:Favicon}">
+
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="shortcut icon" type="image/png" href="{image:Favicon}">
         
         {block:Description}
             <meta name="description" content="{MetaDescription}" />
@@ -339,7 +340,7 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 .post img{display: block;padding: 20px;margin: 0 auto;}/*center images*/
 .post a{word-wrap:break-word;}
 .post p{font-family: 'Roboto Slab', serif; font-weight:300;}
-.post :first-child+p, .post h2:first-child+p, .post h3:first-child+p, .post h4:first-child+p, .post h5:first-child+p, .post h6:first-child+p, .post p:first-child, .post p:first-of-type{font-size:1.4rem;line-height:2rem;}
+.post p:first-child, .post p:first-of-type{font-size:1.4rem;line-height:2rem;}
 #title{margin:0px; color:#444;}
 
 .postDate{font-size: 1rem; color:{color:Light Color};}
@@ -366,6 +367,13 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 
 /*AUDIO*/
 .tumblr_audio_player{height:40px;}
+
+/*VIDEO*/
+.post iframe 
+{
+max-width: 100%;
+width: 100%;
+}
 
 
 /*--------------------*/
@@ -507,6 +515,102 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
     text-align:center;
 }
 
+.center
+{
+    text-align:center;
+}
+
+/* =============================================================================
+   PXU Photoset Extended Styles
+   ========================================================================== */
+
+.clearit:before, .clearit:after { content: ""; display: table; }
+.clearit:after { clear: both; }
+.clearit { *zoom: 1; }
+
+/* Photoset */
+
+.photo-slideshow {
+  visibility: hidden;
+}
+
+.photo-slideshow.processed {
+  visibility: visible;
+}
+
+.photo-slideshow .row {
+  clear: both;
+}
+
+.photo-slideshow .pxu-photo {
+  display: block;
+  float: left;
+  margin-bottom: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.photo-slideshow .pxu-photo img {
+  display: block;
+}
+
+.photo-slideshow.processed .pxu-photo img {
+  width: 100%;
+  height: auto;
+}
+
+.photo-slideshow .pxu-photo:first-child img {
+  margin-left: 0;
+}
+
+.photo-slideshow .count-1 {
+  width: 100%;
+}
+
+.photo-slideshow .count-2 {
+  width: 50%;
+}
+
+.photo-slideshow .count-3 {
+  width: 33.33%;
+}
+
+.photo-slideshow .count-4 {
+  width: 25%;
+}
+
+.photo-slideshow .count-5 {
+  width: 20%;
+}
+
+.photo-slideshow .info {
+  display: none;
+}
+
+/* Icons for EXIF Data and Zoom */
+
+.photo-data {
+  position: relative;
+  float: left;
+}
+
+.icons {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  text-indent: -9999px;
+  z-index: 999;
+  visibility: hidden;
+}
+
+.icons > span, .icons .tumblr-box span {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin-bottom: 2px;
+  cursor: pointer;
+}
 {CustomCSS}
 
 </style>
@@ -524,7 +628,6 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
     /*--STYLE FOR PERMALINK PAGE ONLY--*/
         .header ul, .header p{display:none;}
         .header h1{display:none;}
-        #title{font-size:4rem; line-height:5rem;}
         .hideOnIndex{display:block;}
         .header .backButton{border: 1px solid #eee; padding: 10px; border-radius: 5px;}
         .backButtonContainer{margin-top:20px;}
@@ -532,6 +635,12 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
         .hideOnPermalink{display:none !important;}
         .alert{display:none;}
         .alertTop{display:none;}
+    
+    /*LARGER THAN 640PX*/
+    @media only screen and (min-width: 700px) 
+    {
+        #title{font-size:4.75rem; line-height:5rem;}
+    }/*End larger than 640px*/
     </style>
 {/block:PermalinkPage}
 
@@ -754,10 +863,12 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
     <!--+++++--> 
     {block:Photo}
         <li class="post photo">
-            <img src="{PhotoURL-500}" alt="{PhotoAlt}"/> 
             {block:Date} 
-                <span class="postDate hideOnIndex"><i class="fa fa-calendar"></i> {DayOfMonth} {Month} {Year}</span>
+                <span class="postDate hideOnIndex textCenter"><i class="fa fa-calendar"></i> {DayOfMonth} {Month} {Year}</span>
             {/block:Date}
+            <a href="{Permalink}">
+                <img src="{PhotoURL-500}" alt="{PhotoAlt}"/> 
+            </a>
             {block:Caption}
                 <div class="caption">{Caption}</div>
             {/block:Caption}
@@ -891,19 +1002,27 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
     <!--PHOTOSET-->
     <!--++++++++-->
     {block:Photoset}
-        <div class="photoset-grid" data-layout="{PhotosetLayout}" data-id="photoset{PostID}">
-            {block:Photos}
-              <img src="{PhotoURL-500}"
-                {block:HighRes}data-highres="{PhotoURL-HighRes}"{/block:HighRes}
-                {block:Caption}alt="{Caption}"{/block:caption} />
-            {/block:Photos}
-        </div>
         {block:Date} 
-            <span class="postDate hideOnIndex"><i class="fa fa-calendar"></i> {DayOfMonth} {Month} {Year}</span>
+                <span class="postDate hideOnIndex textCenter"><i class="fa fa-calendar"></i> {DayOfMonth} {Month} {Year}</span>
         {/block:Date}
-        {block:Caption}
-            {Caption}
-        {/block:caption}
+        <div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">
+
+          {block:Photos}
+            <div class="photo-data">
+              <div class="pxu-photo">
+                <img alt="{PhotoAlt}" src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}">
+              </div>
+              <div class="icons">
+                <a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}">
+                  <span class="zoom">Zoom</span>
+                </a>
+              </div>
+            </div>
+          {/block:Photos}
+        
+        </div><!-- close SLIDESHOW -->
+        
+        {block:Caption}{Caption}{/block:Caption}
         {block:More}
             <a href="{Permalink}" class="readMoreButton">
                 {lang:Read more} <i class="fa fa-long-arrow-right"></i>
@@ -1189,12 +1308,12 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
     <!--+++++-->
     {block:Video}
         <li class="post video">
-            <div class="center">
-                {Video-500}
-            </div>
             {block:Date} 
-                    <span class="postDate hideOnIndex"><i class="fa fa-calendar"></i> {DayOfMonth} {Month} {Year}</span>
+                <span class="postDate hideOnIndex textCenter"><i class="fa fa-calendar"></i> {DayOfMonth} {Month} {Year}</span>
             {/block:Date}
+            <div class="center">
+                {Video-700}
+            </div>
             {block:Caption}
                 <div class="caption">{Caption}</div>
             {/block:Caption}
@@ -1558,14 +1677,16 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
 <!--SCRIPTS-->
 <!--+++++++-->
 
-<!--Syntax-->
-<script src="http://static.tumblr.com/smotcsf/phJn1y2w7/prettify.js"></script>
 <!--Jquery-->
 <script src="http://static.tumblr.com/smotcsf/6y4mx9k52/jquery.min.js" ></script>
+<!--Syntax-->
+<script src="http://static.tumblr.com/smotcsf/phJn1y2w7/prettify.js"></script>
 <!--Instafeed-->
 <script type="text/javascript" src="http://static.tumblr.com/smotcsf/y9Mmw9qml/instafeed.min.js"></script>
 <!--Slidebars-->
 <script src="http://static.tumblr.com/smotcsf/5iOn0th2k/slidebars.min.js"></script>
+<!--Photoset Grid-->
+<script src="http://static.tumblr.com/smotcsf/Ecdn2cscy/pxuphotoset.min.js"></script>
 
 <!--ASK SLIDE, AND DISQUS LOAD-->
 <script>
@@ -1668,6 +1789,18 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
       $.slidebars();
     });
   }) (jQuery);
+</script>
+
+<!--PHOTOSETS-->
+<script>
+$(document).ready(function() {
+    $('.photo-slideshow').pxuPhotoset({
+        // options go here
+    }, function() {
+        // callback
+        
+    });
+});
 </script>
 
     
