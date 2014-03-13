@@ -7,9 +7,8 @@ Second try and making a tumblr theme. View a live version at http://papertheme.t
 
 ###To Do
 - Responsive typography
-- Responsive photosets
 - Responsive navigation
-- Remove post stats on photos, add link through on photos
-- Create Header with customization
+- Add hover state to photos, to display stats
+- Create header with customization
 - Custom fonts
 - Documentation
