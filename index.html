@@ -267,7 +267,7 @@ pre.prettyprint::-webkit-scrollbar-corner{display:none;}
 
 /*--BASIC STYLING--*/
 body{color:#555; font-family: 'Lato', sans-serif;}
-html, body{overflow-y: scroll;overflow-x: hidden; -webkit-overflow-scrolling: touch;}
+html, body{overflow-x: hidden; -webkit-overflow-scrolling: touch;}
 a{text-decoration:none; color:inherit; font-weight:800;}
 p{margin-top:0px;}
 a:hover{color:{color:Main Color};}
@@ -410,7 +410,7 @@ width: 100%;
 
 /*ASK & SUBMIT*/
 #ask, #submit{display:none;}
-#askBox, #submitBox{margin-top:50px; margin-bottom:50px; height: 300px;}
+#askBox, #submitBox{margin-top:50px; margin-bottom:50px; height: 400px;}
 
 /*INSTAGRAM FEED*/
 #instafeed{width: 100%;overflow: scroll;white-space: nowrap;}
@@ -1796,6 +1796,14 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
 $(document).ready(function() {
     $('.photo-slideshow').pxuPhotoset({
         // options go here
+        'highRes'   : true, // will use high res images
+        'rounded'   : 'false', // corners, all or false
+        'exif'      : false, // display EXIF data if available (tooltip)
+        'captions'  : false, // display individual captions on photos (tooltip)
+        'gutter'    : '10px', // spacing between the images
+        'photoset'  : '.photo-slideshow', // photoset wrapper
+        'photoWrap' : '.photo-data', // photo data wrapper (includes photo, icons + exif)
+        'photo'     : '.pxu-photo' // photo wrap (includes photo only)
     }, function() {
         // callback
         
