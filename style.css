@@ -1,16 +1,16 @@
+/*--------------------*/
+/*----STYLE SHEET----*/
+/*--------------------*/
 
-/*----*/
-/*OPTIONS*/
-/*----*/
-/*HEADER OPTIONS*/
-#headerBackground{background:{color:Header Color};}
-#headerBackground{background-image:url({image:Header Image});} 
-#headerBackground{height:{text:Header Height}px;}
-#bar{background-color:{color:Main Color};}
 
-/*HIGHLIGHT OPTIONS*/
+/*--OPTIONS--*/
+/*Highlight options*/
 ::selection{opacity:1;color:#fff; background-color:{color:Main Color};}
 :-moz-selection{opacity:1;color:#fff; background-color:{color:Main Color};}
+
+
+/*--------------------*/
+
 
 /*Change scrollbar for code overflow*/
 pre.prettyprint::-webkit-scrollbar{width:0px}
@@ -19,38 +19,28 @@ pre.prettyprint::-webkit-scrollbar-track{background-color: #888;}
 pre.prettyprint::-webkit-scrollbar-thumb{background-color: #555;}
 pre.prettyprint::-webkit-scrollbar-corner{display:none;}
 
-/*GOOGLE CODE PRETIFIER*/
-/* desert scheme ported from vim to google prettify */
-pre.prettyprint { display: block; overflow: auto}
-pre.prettyprint { display: block; background-color: #555; padding:10px; border:none;}
-pre .nocode { background-color: none; color: #000 }
-pre .str { color: #ffa0a0 } /* string  - pink */
-pre .kwd { color: #f0e68c; font-weight: bold }
-pre .com { color: #87ceeb } /* comment - skyblue */
-pre .typ { color: #98fb98 } /* type    - lightgreen */
-pre .lit { color: #cd5c5c } /* literal - darkred */
-pre .pun { color: #fff }    /* punctuation */
-pre .pln { color: #fff }    /* plaintext */
-pre .tag { color: #f0e68c; font-weight: bold } /* html/xml tag    - lightyellow */
-pre .atn { color: #bdb76b; font-weight: bold } /* attribute name  - khaki */
-pre .atv { color: #ffa0a0 } /* attribute value - pink */
-pre .dec { color: #98fb98 } /* decimal         - lightgreen */
 
-/* Specify class=linenums on a pre to get line numbering */
-ol.linenums { margin-top: 0; margin-bottom: 0; color: #aaaaaa } /* IE indents via margin-left */
-li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
-/* Alternate shading for lines */
-li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
-.prettyprint ol.linenums > li { list-style-type: decimal; }
+/*--------------------*/
 
+
+/*--PRINT--*/
 @media print {
+    /*Line height*/
+     body{line-height:1.5rem;}
     /*Remove uneeded content*/
     .iconContainer{display:none;}
     .bottom{display:none;}
     .asksubmit{display:none;}
     .space{display:none;}
+    .notes{display:none;}
+    .sb-slidebar{display:none;}
     #disqus_thread{display:none;}
+    #disqus_loader{display:none;}
+    .postBottom{display:none !important;}
+    .backButton{display:none !important;}
     /*Print style for code*/
+    body{overflow:visible;}
+    #disqus_loader{display:none;}
   pre.prettyprint { background-color: none }
   pre .str, code .str { color: #060 }
   pre .kwd, code .kwd { color: #006; font-weight: bold }
@@ -62,137 +52,320 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {background-color:#555;}
   pre .tag, code .tag { color: #006; font-weight: bold }
   pre .atn, code .atn { color: #404 }
   pre .atv, code .atv { color: #060 }
+  
+/*Align images for print*/        
+.pImageLeft
+{
+    float:left;
+    width: 50%;
+    margin:0px;
+}
+.post .pImageLeft
+{
+    position:relative;
+    left:-20%;
+    margin-right:-20%;
+    float:left;
+    width: 60%;
 }
 
-/*----*/
-/*RESPONSIVE*/
-/*----*/
+.pImageRight
+{
+    float:Right;
+    width: 50%;
+    margin:0px;
+}
+.post .pImageRight
+{
+    position:relative;
+    left:20%;
+    margin-left:-20%;
+    float:right;
+    width: 60%;
+}
+.pImageFull
+{
+    max-width: none;
+    width: 140%;
+    position: relative;
+    left: -20%;
+}
+
+}/*End print*/
+
+
+/*--------------------*/
+
+
+/*--RESPONSIVE--*/
+
 /*ANY SCREEN SIZE*/
 @media only screen 
 {
-        body {font-size:1rem;} /*16px*/
+        /*Typography for smaller screens*/
+        body {font-size:1rem; line-height:2rem;} /*16px*/
         /*Titles*/
         h1{font-size:2.744rem;}
         h2{font-size:1.96rem;}
         h3{font-size:1.4rem;}
         h4{font-size:1rem;}
-}/*Any screen size*/
+        
+        .hideOnSmall{display:none;}/*hides element on small devices*/
+        
+        /*Spacer*/
+        /*Use this to space out elements evenly*/
+        .space{height:150px;}
+        .spaceSmall{height:50px;}
+        
+}/*End any screen size*/
 
 /*LARGER THAN 640PX*/
 @media only screen and (min-width: 640px) 
 {
-        body {font-size:1.125rem;} /*18px*/
+        /*Typography for larger screens*/
+        body {font-size:1.125rem;line-height:2.125rem;} /*18px*/
         /*Titles*/
         h1{font-size:4.75rem;} /*76.243px*/
         h2{font-size:2.938rem;} /*47.122px*/
         h3{font-size:1.813rem;} /*29.124px*/
         h4{font-size:1.125rem;} /*18px*/
-}/*Larger than 640px*/
+        
+        .hideOnSmall{display:block;}/*show hidden element on larger devices*/
+        
+        /*Spacer*/
+        /*Use this to space out elements evenly*/
+        .space{height:200px;}
+        .spaceSmall{height:100px;}
+        
+/*Image align for big screens*/        
+.pImageLeft
+{
+    float:left;
+    width: 50%;
+    margin:0px;
+}
+.post .pImageLeft
+{
+    position:relative;
+    left:-20%;
+    margin-right:-20%;
+    float:left;
+    width: 60%;
+}
+
+.pImageRight
+{
+    float:Right;
+    width: 50%;
+    margin:0px;
+}
+.post .pImageRight
+{
+    position:relative;
+    left:20%;
+    margin-left:-20%;
+    float:right;
+    width: 60%;
+}
+.pImageFull
+{
+    max-width: none;
+    width: 140%;
+    position: relative;
+    left: -20%;
+}
+}/*End larger than 640px*/
 
 
-/*----*/
-/*STYLE EVEYRHTING*/
-/*---*/
+/*--------------------*/
+
+
+/*--BASIC STYLING--*/
+body{color:#555; font-family: 'Lato', sans-serif;}
+html, body{overflow-x: hidden; -webkit-overflow-scrolling: touch;}
+a{text-decoration:none; color:inherit; font-weight:800;}
+p{margin-top:0px;}
+a:hover{color:{color:Main Color};}
+h2,h3,h4,h5,h6{margin-bottom: 1rem;margin-top: 5rem;}
+ul{margin-left:0px;}/*remove foundation left margin*/
+#tumblr_controls{position:absolute !important;} /*fix tumblr iframes*/
+
+
+/*--------------------*/
+
+
+/*--STYLE EVEYRHTING--*/
+
+/*HEADER*/
+/*Icon for menu*/
+.menuIcon{position:absolute; top:20px; left:20px; font-size:2rem; cursor: pointer; color:{color:Light Color}; display:none; z-index:10;}
+.menuIcon:hover{color:{color:Main Color};}
 
 /*Header*/
-#header h1{color:{color:Main Color}; font-family: 'Lato', sans-serif; font-weight:900; text-transform: uppercase;}
-#header h2{font-family: 'Roboto Slab', serif; font-weight: 300; font-size:1rem;}
+.header{text-align:center;}
+.header h1{color:#333;}
+#title:hover{color:{color:Main Color};}
+.header p{color:{color:Light Color};}
+.header ul{list-style:none; padding:0px; margin:1rem;}
+.header ul li{display:inline; padding:5px; color:{color:Light Color};}
+
+/*Top bar menu*/
+#bar{background-color:#fff; padding:5px;}
+#bar ul{list-style:none; display:inline; padding:0px;}
+#bar ul li {display:inline;}
+#bar ul li a{padding-right:20px; padding-left:20px; color:{color:Main Color}; font-weight:300;}
+#bar ul li a:hover{color:#555;}
+
+/*Slidebar menu*/
+.sb-slidebar{z-index:10;}
+.sb-slidebar h1{text-align:center; text-transform:uppercase; font-weight:900; font-size:1.813rem; color:{color:Main Color};}
+.sb-slidebar ul{list-style:none; padding:0px; margin:0px;}
+.sb-slidebar ul li{padding-top:20px;padding-left:10px;}
+.sb-slidebar ul li a{ color:{color:Light Color}; font-weight:300;}
+.sb-slidebar ul li a:hover{color:{color:Main Color};}
+
+/*Logo*/
 #headerImage{border-radius:100px}
-#headerImageContainer{background:transparent;width:100px;margin:0 auto;padding:5px; margin-top:20px;}
-#headerImageBorder{width:100px;border-radius:100px;background:#FFF;margin:0 auto;}
-#header{text-align:center;background:transparent;margin:0 auto; padding: 20px;}
-#headerBackground{width:100%;background-position:top center;background-size:cover}
-#headerBackground{background-repeat: no-repeat;background-size: cover;}
+#headerImageContainer{background:transparent;width:100px;margin:0 auto;padding:10px;}
 
 /*Social media icons*/
-.iconContainer{list-style:none;width:100%}
-.iconContainer a{font-size:25px; color:{color:Light Color};}
-.iconContainer a:hover{color:{color:Main Color};}
-.iconContainer ul{text-align:center;padding:0}
-.iconContainer ul li{display:inline;padding:10px}
+/*colors*/
+#twitter:hover{color:#55ACEE;}
+#facebook:hover{color:#3B5998;}
+#linkedin:hover{color:#0e76a8;}
+#google:hover{color:#dd4b39;}
+#youtube:hover{color:#c4302b;}
+#instagram:hover{color:#3f729b;}
+#pinterest:hover{color:#c8232c;}
+#flickr:hover{color:#0063dc;}
+#dribbble:hover{color:#ea4c89;}
+#github:hover{color:#171515;}
 
-/*----*/
-/*POSTS*/
 
-/*Spacer*/
-.space{height:200px;}
+/*--------------------*/
 
-/*All*/
-.posts:first-child{padding-top:10px}
-.posts{list-style:none;padding-left:0}
-.posts img{margin-left:5%;margin-right:5%; padding:20px;}/*center images*/
-.posts a{word-wrap:break-word;}
-.posts p{font-family: 'Roboto Slab', serif; font-weight:300;}
 
-/*Chat*/    
+/*--POSTS--*/
+
+/*ALL*/
+/*Apply to all post types*/
+.small-centered{float:none !important;} /*Unfloat to center divs*/
+.posts{padding:0px; margin:0px;}
+.post{list-style:none;padding-left:0}
+.post img{display: block;padding: 20px;margin: 0 auto;}/*center images*/
+.post a{word-wrap:break-word;}
+.post p{font-family: 'Roboto Slab', serif; font-weight:300;}
+.post p:first-child, .post p:first-of-type{font-size:1.4rem;line-height:2rem;}
+#title{margin:0px; color:#444;}
+
+.postDate{font-size: 1rem; color:{color:Light Color};}
+.readMoreButton{font-size: 1rem; font-weight: 600;}
+
+/*Hide & Show*/
+.hideOnIndex{display:none;}
+
+/*CHAT*/    
 .chat{list-style:none;padding:0}
-.chat li{margin-top:10px;margin-bottom:10px;border-radius:5px;display: inline-block}
+.chat li{margin-top:10px;margin-bottom:10px;border-radius:5px;display: inline-block; font-family: 'Roboto Slab', serif;}
 .label{font-weight:700;color:#444;}
 
 /*Image*/
+/*Find a way to style images effectively and responsivly*/
 
-/*Quote*/
+/*QUOTE*/
 .quote{ font-weight:700;font-family: 'Roboto Slab', serif; font-size:3rem; line-height:4rem; margin:0px; text-align:center;}
 .source{ font-weight:300; font-size:1rem; padding-top:20px; padding-bottom:20px; font-style:italic;}
 .source a{font-weight:bold;}
 
-/*Link*/
+/*LINK*/
 .link h3{font-size: 24px;line-height: 27px;}
 
-/*Audio*/
+/*AUDIO*/
 .tumblr_audio_player{height:40px;}
 
-/*POST BOTTOM*/
+/*VIDEO*/
+.post iframe 
+{
+max-width: 100%;
+width: 100%;
+}
+
+
+/*--------------------*/
+
+
+/*--POST BOTTOM--*/
 /*Post notes,tags, and date*/
 .postStats{font-size:14px;list-style:none;max-width:640px;margin:0;padding:0px; padding-top:0px; color:{color:Light Color};}
-.postStats li{display:inline; float:left; height:30px; padding-right:20px; white-space: nowrap;}
+.postStats li{display:inline-block; padding-right:20px;}
 .nobold{font-weight:400;}
 .like_and_reblog_buttons {list-style: none;}
 .like_and_reblog_buttons li {float: left; padding-right: 20px; height: 20px;}
 .like_and_reblog_buttons li:first-child {padding-left:0px;}
 .tags a{background-color:#eee; padding:5px; border-radius:5px;}
 
-/*---FOOTER---*/
-.bottom{margin-top:100px;}
+
+/*--------------------*/
+
+
+/*--FOOTER--*/
 
 /*BOTTOM LINKS*/
 /*Other link*/
 #bottomLinks a{padding-right:10px;font-size:15px;}
 #bottomLinks a:hover{color:{color:Main Color};}
 #bottomBlurb p{font-size:12px}
-#bottomDescription,#bottomBlurb,#bottomLinks{margin-top:20px;text-align:center;color:{color:Light Color};}
+#bottomDescription,#bottomBlurb,#bottomLinks{text-align:center;color:{color:Light Color};}
 #bottomLinks a{color:{color:Light Color};}
+.powered{color:#eee;}
 
 /*NEXT/PREVIOUS*/
 /*Navigation*/
-#navlink{margin-top:20px;margin-left:20px;border-radius:5px;text-align:center;float:right;padding:10px; border: 1px solid; border-color:#eee;}
+#navlink{border-radius:5px;text-align:center;float:right;padding:10px; border: 1px solid; border-color:#eee;}
 
-/*Ask and Submit*/
+/*ASK & SUBMIT*/
 #ask, #submit{display:none;}
-#askBox, #submitBox{margin-top:50px; margin-bottom:50px; height: 270px;}
+#askBox, #submitBox{margin-top:50px; margin-bottom:50px; height: 400px;}
 
+/*INSTAGRAM FEED*/
+#instafeed{width: 100%;overflow: scroll;white-space: nowrap;}
+#instafeed img{opacity:0.2;}
+#instafeed img:hover{opacity:0.5;}
+/*For instagram banner*/
+#instafeed::-webkit-scrollbar{width:0px}
+#instafeed::-webkit-scrollbar:horizontal{height:0px;}
+
+
+/*--------------------*/
+
+
+/*--PERMALINK--*/
+
+/*Custom footer*/
+.postBottom{text-align:center; color:{color:Light Color};}
+.postBottom h3{margin:0px;}
+.postBottom ul{list-style:none; padding:0px; margin:0rem;}
+.postBottom ul li{display:inline; padding:5px; color:{color:Light Color};}
+/*Button to load comments*/
+#disqusButton
+{
+    text-align:center;
+    padding:10px;
+    border:#eee 1px solid;
+    border-radius:5px;
+}
 /*Permalink notes*/
-ol.notes{list-style-type:none; padding:0 0 100px;}
+ol.notes{list-style-type:none; padding:0px;}
 ol.notes li.note{padding:5px 0 15px}
 ol.notes li.note img.avatar{display:none}
 ol.notes li.note .answer_content{font-weight:400}
 ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px;margin:10px 0 0 25px;padding:4px 10px}
 
-/*INSTAGRAM FEED*/
-#instafeed{width: 100%;overflow: scroll;white-space: nowrap;}
-#instafeed img{opacity:0.5;}
-#instafeed img:hover{opacity:0.8;}
-/*For instagram banner*/
-#instafeed::-webkit-scrollbar{width:0px}
-#instafeed::-webkit-scrollbar:horizontal{height:0px;}
 
-/*BASIC STYLING*/
-a{text-decoration:none; color:inherit; font-weight:800;}
-a:hover{color:{color:Main Color};}
-body{color:#555; font-family: 'Lato', sans-serif; font-size:1rem; line-height:1.5rem;}
-ul{margin-left:0px;}/*remove foundation left margin*/
+/*--------------------*/
 
-/*USABLE CLASSES*/
+
+/*--USABLE CLASSES--*/
 .pDropCap
 {
     float: left; 
@@ -202,34 +375,184 @@ ul{margin-left:0px;}/*remove foundation left margin*/
     padding-right: 4px; 
     padding-left: 4px; 
 }
-.pHighlight
+.pHighlight, code
 {
-    background-color:#ffcc66;
+    background-color:#ffe4ca;
 }
-.pLeading
+.pBigText
 {
-    font-weight:100;
     font-size:1.4rem;
     line-height:2rem;
 }
 .pQuote
 {
     font-family: 'Roboto Slab', serif;
-    font-size:1.96rem;
-    line-height:2rem;
+    font-size:2rem; 
+    line-height:4rem;
     text-align:center;
     margin:0px;
     padding:0px;
 } 
-.pImageLeft
+
+.alert
 {
-float:left;
-width: 60%;
-}
-.pImageRight
-{
-float:Right;
-width: 60%;
+    background: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 2px #aaa;
+    margin-top:-20px;
 }
 
+.alertTop
+{
+    height:40px;
+    width:100%;
+    background: #aaa;
+    padding: 3px;
+    border-radius: 5px;
+    font-size:1rem;
+    line-height:0px;
+    text-align:left;
+}
+.alertTop i
+{
+    cursor:pointer;
+}
+.alertButton
+{
+    border:solid 1px #aaa;
+    border-radius:5px;
+    padding:10px;
+}
+
+.textCenter
+{
+    text-align:center;
+}
+
+.center
+{
+    text-align:center;
+}
+
+/* =============================================================================
+   PXU Photoset Extended Styles
+   ========================================================================== */
+
+.clearit:before, .clearit:after { content: ""; display: table; }
+.clearit:after { clear: both; }
+.clearit { *zoom: 1; }
+
+/* Photoset */
+
+.photo-slideshow {
+  visibility: hidden;
+}
+
+.photo-slideshow.processed {
+  visibility: visible;
+}
+
+.photo-slideshow .row {
+  clear: both;
+}
+
+.photo-slideshow .pxu-photo {
+  display: block;
+  float: left;
+  margin-bottom: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.photo-slideshow .pxu-photo img {
+  display: block;
+}
+
+.photo-slideshow.processed .pxu-photo img {
+  width: 100%;
+  height: auto;
+}
+
+.photo-slideshow .pxu-photo:first-child img {
+  margin-left: 0;
+}
+
+.photo-slideshow .count-1 {
+  width: 100%;
+}
+
+.photo-slideshow .count-2 {
+  width: 50%;
+}
+
+.photo-slideshow .count-3 {
+  width: 33.33%;
+}
+
+.photo-slideshow .count-4 {
+  width: 25%;
+}
+
+.photo-slideshow .count-5 {
+  width: 20%;
+}
+
+.photo-slideshow .info {
+  display: none;
+}
+
+/* Icons for EXIF Data and Zoom */
+
+.photo-data {
+  position: relative;
+  float: left;
+}
+
+.icons {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  text-indent: -9999px;
+  z-index: 999;
+  visibility: hidden;
+}
+
+.icons > span, .icons .tumblr-box span {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin-bottom: 2px;
+  cursor: pointer;
+}
 {CustomCSS}
+
+</style>
+
+{block:IfSlideOutMenu}
+<style>
+    /*--STYLE FOR SLIDEOUT--*/
+    .menuIcon{display:initial;}
+</style>
+{/block:IfSlideOutMenu}
+
+
+{block:PermalinkPage} 
+    <style>
+    /*--STYLE FOR PERMALINK PAGE ONLY--*/
+        .header ul, .header p{display:none;}
+        .header h1{display:none;}
+        .hideOnIndex{display:block;}
+        .header .backButton{border: 1px solid #eee; padding: 10px; border-radius: 5px;}
+        .backButtonContainer{margin-top:20px;}
+        .backButton{display:initial;}
+        .hideOnPermalink{display:none !important;}
+        .alert{display:none;}
+        .alertTop{display:none;}
+    
+    /*LARGER THAN 640PX*/
+    @media only screen and (min-width: 700px) 
+    {
+        #title{font-size:4.75rem; line-height:5rem;}
+    }/*End larger than 640px*/
