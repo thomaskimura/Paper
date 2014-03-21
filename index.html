@@ -64,8 +64,6 @@ view this project at https://github.com/thomaskimura/Paper
         
         <!--Options-->
         <meta name="if:Instagram Banner" content="0"/>
-        <meta name="if:Slide Out Menu" content="0"/>
-        <meta name="if:Menu" content="0"/>
         
 <!--Stylesheets-->    
 <link href="http://static.tumblr.com/smotcsf/Vian0p49e/foundation.min.css" rel="stylesheet">
@@ -77,7 +75,9 @@ view this project at https://github.com/thomaskimura/Paper
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 <!--Google Fonts-->
+<!--remove unused-->
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
 
 
@@ -187,15 +187,18 @@ pre.prettyprint::-webkit-scrollbar-corner{display:none;}
 /*ANY SCREEN SIZE*/
 @media only screen 
 {
-        /*Typography for smaller screens*/
-        body {font-size:1rem; line-height:2rem;} /*16px*/
+        /*Typography for smaller screens, base 19px*/
+        body {font-size: 1.188rem; line-height: 1.922rem; font-family: 'Roboto', sans-serif; }
         /*Titles*/
-        h1{font-size:2.744rem;}
-        h2{font-size:1.96rem;}
-        h3{font-size:1.4rem;}
-        h4{font-size:1rem;}
+        h1{font-size: 3.125rem; line-height:5.056rem;}
+        h2{font-size: 1.938rem; line-height:3.135rem;}
+        h3{font-size: 1.5rem; line-height:2.427rem;}
+        h4{font-size: 1.188rem; line-height: 1.922rem;}
+        h5{font-size: 0.937rem; line-height: 1.516rem;}
+        h6{font-size:0.678rem; line-height:0.935; font-weight:300;}
         
         .hideOnSmall{display:none;}/*hides element on small devices*/
+        .hideOnLarge{display:block;}
         
         /*Spacer*/
         /*Use this to space out elements evenly*/
@@ -216,6 +219,7 @@ pre.prettyprint::-webkit-scrollbar-corner{display:none;}
         h4{font-size:1.125rem;} /*18px*/
         
         .hideOnSmall{display:block;}/*show hidden element on larger devices*/
+        .hideOnLarge{display:none;}
         
         /*Spacer*/
         /*Use this to space out elements evenly*/
@@ -266,7 +270,7 @@ pre.prettyprint::-webkit-scrollbar-corner{display:none;}
 
 
 /*--BASIC STYLING--*/
-body{color:#555; font-family: 'Lato', sans-serif;}
+body{color:#555;}
 html, body{overflow-x: hidden; -webkit-overflow-scrolling: touch;}
 a{text-decoration:none; color:inherit; font-weight:800;}
 p{margin-top:0px;}
@@ -282,10 +286,6 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 /*--STYLE EVEYRHTING--*/
 
 /*HEADER*/
-/*Icon for menu*/
-.menuIcon{position:absolute; top:20px; left:20px; font-size:2rem; cursor: pointer; color:{color:Light Color}; display:none; z-index:10;}
-.menuIcon:hover{color:{color:Main Color};}
-
 /*Header*/
 .header{text-align:center;}
 .header h1{color:#333;}
@@ -294,13 +294,9 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 .header ul{list-style:none; padding:0px; margin:1rem;}
 .header ul li{display:inline; padding:5px; color:{color:Light Color};}
 
-/*Top bar menu*/
-#bar{background-color:#fff; padding:5px;}
-#bar ul{list-style:none; display:inline; padding:0px;}
-#bar ul li {display:inline;}
-#bar ul li a{padding-right:20px; padding-left:20px; color:{color:Main Color}; font-weight:300;}
-#bar ul li a:hover{color:#555;}
-
+/*Icon for menu*/
+.menuIcon{position:absolute; top:20px; left:20px; font-size:2rem; cursor: pointer; color:{color:Light Color}; z-index:10;}
+.menuIcon:hover{color:{color:Main Color};}
 /*Slidebar menu*/
 .sb-slidebar{z-index:10;}
 .sb-slidebar h1{text-align:center; text-transform:uppercase; font-weight:900; font-size:1.813rem; color:{color:Main Color};}
@@ -325,6 +321,28 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 #flickr:hover{color:#0063dc;}
 #dribbble:hover{color:#ea4c89;}
 #github:hover{color:#171515;}
+
+/*Header Background*/
+/*Use a text imput for header height*/
+/*Create a very good default*/
+#headerBackground /*set the background for the header*/
+{
+    height: 300px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: -10;
+}
+#headerTint /*set a tint colour to overlay ontop of images*/
+{
+    height: 300px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    background: none; /*set option for tint colour*/
+    opacity: 0.6;
+    z-index: -10;
+}
 
 
 /*--------------------*/
@@ -354,172 +372,7 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 .chat li{margin-top:10px;margin-bottom:10px;border-radius:5px;display: inline-block; font-family: 'Roboto Slab', serif;}
 .label{font-weight:700;color:#444;}
 
-/*Image*/
-/*Find a way to style images effectively and responsivly*/
-
-/*QUOTE*/
-.quote{ font-weight:700;font-family: 'Roboto Slab', serif; font-size:3rem; line-height:4rem; margin:0px; text-align:center;}
-.source{ font-weight:300; font-size:1rem; padding-top:20px; padding-bottom:20px; font-style:italic;}
-.source a{font-weight:bold;}
-
-/*LINK*/
-.link h3{font-size: 24px;line-height: 27px;}
-
-/*AUDIO*/
-.tumblr_audio_player{height:40px;}
-
-/*VIDEO*/
-.post iframe 
-{
-max-width: 100%;
-width: 100%;
-}
-
-
-/*--------------------*/
-
-
-/*--POST BOTTOM--*/
-/*Post notes,tags, and date*/
-.postStats{font-size:14px;list-style:none;max-width:640px;margin:0;padding:0px; padding-top:0px; color:{color:Light Color};}
-.postStats li{display:inline-block; padding-right:20px;}
-.nobold{font-weight:400;}
-.like_and_reblog_buttons {list-style: none;}
-.like_and_reblog_buttons li {float: left; padding-right: 20px; height: 20px;}
-.like_and_reblog_buttons li:first-child {padding-left:0px;}
-.tags a{background-color:#eee; padding:5px; border-radius:5px;}
-
-
-/*--------------------*/
-
-
-/*--FOOTER--*/
-
-/*BOTTOM LINKS*/
-/*Other link*/
-#bottomLinks a{padding-right:10px;font-size:15px;}
-#bottomLinks a:hover{color:{color:Main Color};}
-#bottomBlurb p{font-size:12px}
-#bottomDescription,#bottomBlurb,#bottomLinks{text-align:center;color:{color:Light Color};}
-#bottomLinks a{color:{color:Light Color};}
-.powered{color:#eee;}
-
-/*NEXT/PREVIOUS*/
-/*Navigation*/
-#navlink{border-radius:5px;text-align:center;float:right;padding:10px; border: 1px solid; border-color:#eee;}
-
-/*ASK & SUBMIT*/
-#ask, #submit{display:none;}
-#askBox, #submitBox{margin-top:50px; margin-bottom:50px; height: 400px;}
-
-/*INSTAGRAM FEED*/
-#instafeed{width: 100%;overflow: scroll;white-space: nowrap;}
-#instafeed img{opacity:0.2;}
-#instafeed img:hover{opacity:0.5;}
-/*For instagram banner*/
-#instafeed::-webkit-scrollbar{width:0px}
-#instafeed::-webkit-scrollbar:horizontal{height:0px;}
-
-
-/*--------------------*/
-
-
-/*--PERMALINK--*/
-
-/*Custom footer*/
-.postBottom{text-align:center; color:{color:Light Color};}
-.postBottom h3{margin:0px;}
-.postBottom ul{list-style:none; padding:0px; margin:0rem;}
-.postBottom ul li{display:inline; padding:5px; color:{color:Light Color};}
-/*Button to load comments*/
-#disqusButton
-{
-    text-align:center;
-    padding:10px;
-    border:#eee 1px solid;
-    border-radius:5px;
-}
-/*Permalink notes*/
-ol.notes{list-style-type:none; padding:0px;}
-ol.notes li.note{padding:5px 0 15px}
-ol.notes li.note img.avatar{display:none}
-ol.notes li.note .answer_content{font-weight:400}
-ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px;margin:10px 0 0 25px;padding:4px 10px}
-
-
-/*--------------------*/
-
-
-/*--USABLE CLASSES--*/
-.pDropCap
-{
-    float: left; 
-    font-size: 75px; 
-    line-height: 60px; 
-    padding-top: 4px; 
-    padding-right: 4px; 
-    padding-left: 4px; 
-}
-.pHighlight, code
-{
-    background-color:#ffe4ca;
-}
-.pBigText
-{
-    font-size:1.4rem;
-    line-height:2rem;
-}
-.pQuote
-{
-    font-family: 'Roboto Slab', serif;
-    font-size:2rem; 
-    line-height:4rem;
-    text-align:center;
-    margin:0px;
-    padding:0px;
-} 
-
-.alert
-{
-    background: #eee;
-    padding: 10px;
-    border-radius: 5px;
-    border: solid 2px #aaa;
-    margin-top:-20px;
-}
-
-.alertTop
-{
-    height:40px;
-    width:100%;
-    background: #aaa;
-    padding: 3px;
-    border-radius: 5px;
-    font-size:1rem;
-    line-height:0px;
-    text-align:left;
-}
-.alertTop i
-{
-    cursor:pointer;
-}
-.alertButton
-{
-    border:solid 1px #aaa;
-    border-radius:5px;
-    padding:10px;
-}
-
-.textCenter
-{
-    text-align:center;
-}
-
-.center
-{
-    text-align:center;
-}
-
+/*IMAGE*/
 /* =============================================================================
    PXU Photoset Extended Styles
    ========================================================================== */
@@ -611,16 +464,172 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
   margin-bottom: 2px;
   cursor: pointer;
 }
+
+/*QUOTE*/
+.quote{ font-weight:700;font-family: 'Roboto Slab', serif; font-size:3rem; line-height:4rem; margin:0px; text-align:center;}
+.source{ font-weight:300; font-size:1rem; padding-top:20px; padding-bottom:20px; font-style:italic;}
+.source a{font-weight:bold;}
+
+/*LINK*/
+.link h3{font-size: 24px;line-height: 27px;}
+
+/*AUDIO*/
+.tumblr_audio_player{height:40px;}
+
+/*VIDEO*/
+.post iframe 
+{
+max-width: 100%;
+width: 100%;
+}
+
+
+/*--------------------*/
+
+
+/*--POST BOTTOM--*/
+/*Post notes,tags, and date*/
+.postStats{font-size:14px;list-style:none;max-width:640px;margin:0;padding:0px; padding-top:0px; color:{color:Light Color};}
+.postStats li{display:inline-block; padding-right:20px;}
+.nobold{font-weight:400;}
+.like_and_reblog_buttons {list-style: none;}
+.like_and_reblog_buttons li {float: left; padding-right: 20px; height: 20px;}
+.like_and_reblog_buttons li:first-child {padding-left:0px;}
+.tags a{background-color:#eee; padding:5px; border-radius:5px;}
+
+
+/*--------------------*/
+
+
+/*--FOOTER--*/
+
+/*BOTTOM LINKS*/
+/*Other link*/
+#bottomLinks a{padding-right:10px;font-size:15px;}
+#bottomLinks a:hover{color:{color:Main Color};}
+#bottomBlurb p{font-size:12px} /*fix this*/
+#bottomDescription,#bottomBlurb,#bottomLinks{text-align:center;color:{color:Light Color};}
+#bottomLinks a{color:{color:Light Color};}
+.powered{color:#eee;}
+
+/*NEXT/PREVIOUS*/
+/*Navigation*/
+#navlink{border-radius:5px;text-align:center;float:right;padding:10px; border: 1px solid; border-color:#eee;}
+
+/*ASK & SUBMIT*/
+#ask, #submit{display:none;}
+#askBox, #submitBox{margin-top:50px; margin-bottom:50px; height: 400px;}
+
+/*INSTAGRAM FEED*/
+#instafeed{width: 100%;overflow: scroll;white-space: nowrap;}
+#instafeed img{opacity:0.2;}
+#instafeed img:hover{opacity:0.5;}
+/*For instagram banner*/
+#instafeed::-webkit-scrollbar{width:0px}
+#instafeed::-webkit-scrollbar:horizontal{height:0px;}
+
+
+/*--------------------*/
+
+
+/*--PERMALINK--*/
+
+/*Custom footer*/
+.postBottom{text-align:center; color:{color:Light Color};}
+.postBottom h3{margin:0px;}
+.postBottom ul{list-style:none; padding:0px; margin:0rem;}
+.postBottom ul li{display:inline; padding:5px; color:{color:Light Color};}
+/*Button to load comments*/
+#disqusButton
+{
+    text-align:center;
+    padding:10px;
+    border:#eee 1px solid;
+    border-radius:5px;
+}
+/*Permalink notes*/
+ol.notes{list-style-type:none; padding:0px;}
+ol.notes li.note{padding:5px 0 15px}
+ol.notes li.note img.avatar{display:none}
+ol.notes li.note .answer_content{font-weight:400}
+ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px;margin:10px 0 0 25px;padding:4px 10px}
+
+
+/*--------------------*/
+
+
+/*--USABLE CLASSES--*/
+.pDropCap
+{
+    float: left; 
+    font-size: 75px; 
+    line-height: 60px; 
+    padding-top: 4px; 
+    padding-right: 4px; 
+    padding-left: 4px; 
+}
+.pHighlight, code
+{
+    background-color:#ffe4ca;
+}
+.pBigText
+{
+    font-size:1.4rem;
+    line-height:2rem;
+}
+.pQuote
+{
+    font-family: 'Roboto Slab', serif;
+    font-size:2rem; 
+    line-height:4rem;
+    text-align:center;
+    margin:0px;
+    padding:0px;
+} 
+
+.pAlert
+{
+    background: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 2px #aaa;
+    margin-top:-20px;
+}
+
+.pAlertTop
+{
+    height:40px;
+    width:100%;
+    background: #aaa;
+    padding: 3px;
+    border-radius: 5px;
+    font-size:1rem;
+    line-height:0px;
+    text-align:left;
+}
+.pAlertTop i
+{
+    cursor:pointer;
+}
+.pAlertButton
+{
+    border:solid 1px #aaa;
+    border-radius:5px;
+    padding:10px;
+}
+
+.pTextCenter
+{
+    text-align:center;
+}
+
+.pCenter
+{
+    text-align:center;
+}
 {CustomCSS}
 
 </style>
-
-{block:IfSlideOutMenu}
-<style>
-    /*--STYLE FOR SLIDEOUT--*/
-    .menuIcon{display:initial;}
-</style>
-{/block:IfSlideOutMenu}
 
 
 {block:PermalinkPage} 
@@ -651,7 +660,7 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
 <!--MAIN CONTENT GOES DOWN THERE FOR SLIDEBAR-->
 <!--+++++++++++++++++++++++++++++++++++++++++-->
 <div id="sb-site"> 
-<span class="sb-toggle-left menuIcon"><i class="fa fa-bars"></i></span> <!--menu Icon-->
+<span class="sb-toggle-left menuIcon hideOnLarge"><i class="fa fa-bars"></i></span> <!--menu Icon-->
 
 <!--++++++-->
 <!--HEADER-->
@@ -755,15 +764,13 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
 <div class="large-5 small-10 small-centered columns">
     <p>{Description}</p>
     <!--MENU-->
-        {block:IfMenu}
-            <ul>
+            <ul class="hideOnSmall" >
                 {block:Pages}
                     <li>
                         <a href="{URL}">{Label}</a>
                     </li>
                 {/block:Pages}
             </ul>
-        {/block:IfMenu}
         <div class="spaceSmall"></div> <!--space-->
 </div>
     
@@ -864,7 +871,7 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
     {block:Photo}
         <li class="post photo">
             {block:Date} 
-                <span class="postDate hideOnIndex textCenter"><i class="fa fa-calendar"></i> {DayOfMonth} {Month} {Year}</span>
+                <span class="postDate hideOnIndex pTextCenter"><i class="fa fa-calendar"></i> {DayOfMonth} {Month} {Year}</span>
             {/block:Date}
             <a href="{Permalink}">
                 <img src="{PhotoURL-500}" alt="{PhotoAlt}"/> 
@@ -1003,7 +1010,7 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
     <!--++++++++-->
     {block:Photoset}
         {block:Date} 
-                <span class="postDate hideOnIndex textCenter"><i class="fa fa-calendar"></i> {DayOfMonth} {Month} {Year}</span>
+                <span class="postDate hideOnIndex pTextCenter"><i class="fa fa-calendar"></i> {DayOfMonth} {Month} {Year}</span>
         {/block:Date}
         <div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">
 
@@ -1309,9 +1316,9 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
     {block:Video}
         <li class="post video">
             {block:Date} 
-                <span class="postDate hideOnIndex textCenter"><i class="fa fa-calendar"></i> {DayOfMonth} {Month} {Year}</span>
+                <span class="postDate hideOnIndex pTextCenter"><i class="fa fa-calendar"></i> {DayOfMonth} {Month} {Year}</span>
             {/block:Date}
-            <div class="center">
+            <div class="pCenter">
                 {Video-700}
             </div>
             {block:Caption}
@@ -1580,6 +1587,7 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
     </div>
 </div>
 
+<div class="spaceSmall"></div>
 <!--SEARCH
 <div class="row" id="bottomSearch">
     <div class="small-12 large-8 small-centered columns">
