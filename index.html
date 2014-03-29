@@ -83,12 +83,14 @@ view this project at https://github.com/thomaskimura/Paper
 
 
 <style>
+/*remove all pixels and replace in golden ratio REMs*/
 /*--------------------*/
 /*----STYLE SHEET----*/
 /*--------------------*/
 
 
 /*--OPTIONS--*/
+/*put all options in here*/
 /*Highlight options*/
 ::selection{opacity:1;color:#fff; background-color:{color:Main Color};}
 :-moz-selection{opacity:1;color:#fff; background-color:{color:Main Color};}
@@ -187,36 +189,47 @@ pre.prettyprint::-webkit-scrollbar-corner{display:none;}
 /*ANY SCREEN SIZE*/
 @media only screen 
 {
-        /*Typography for smaller screens, base 19px*/
+        /*Typography for smaller screens*/
         body {font-size: 1.188rem; line-height: 1.922rem; font-family: 'Roboto', sans-serif; }
-        /*Titles*/
+        /*base font for mobile = 19px*/
+        /*use golden ratio 1.618*/
         h1{font-size: 3.125rem; line-height:5.056rem;}
         h2{font-size: 1.938rem; line-height:3.135rem;}
         h3{font-size: 1.5rem; line-height:2.427rem;}
         h4{font-size: 1.188rem; line-height: 1.922rem;}
         h5{font-size: 0.937rem; line-height: 1.516rem;}
-        h6{font-size:0.678rem; line-height:0.935; font-weight:300;}
+        h6{font-size:0.678rem; line-height:0.935;}
+        
+        /*first paragraph*/
+        .post p:first-child, .post p:first-of-type{font-size:1.5rem; line-height: 1.922rem;}
         
         .hideOnSmall{display:none;}/*hides element on small devices*/
         .hideOnLarge{display:block;}
         
         /*Spacer*/
         /*Use this to space out elements evenly*/
-        .space{height:150px;}
-        .spaceSmall{height:50px;}
+        .space{height:5.06rem;}
+        .spaceSmall{height:3.135rem;}
         
 }/*End any screen size*/
 
 /*LARGER THAN 640PX*/
 @media only screen and (min-width: 640px) 
 {
+        /*FIX THIS*/
         /*Typography for larger screens*/
-        body {font-size:1.125rem;line-height:2.125rem;} /*18px*/
-        /*Titles*/
-        h1{font-size:4.75rem;} /*76.243px*/
-        h2{font-size:2.938rem;} /*47.122px*/
-        h3{font-size:1.813rem;} /*29.124px*/
-        h4{font-size:1.125rem;} /*18px*/
+        body {font-size: 1.375rem;}
+        /*base font for mobile = 22px*/
+        /*use golden ratio 1.618*/
+        h1{font-size: 3.625rem; line-height:5.865rem;}
+        h2{font-size: 2.25rem; line-height:3.640rem;}
+        h3{font-size: 1.75rem; line-height:2.831rem;}
+        h4{font-size: 1.375rem; line-height:2.224rem;}
+        h5{font-size: 1.063rem; line-height:1.719rem;}
+        h6{font-size:0.625rem; line-height:1.011rem;}
+        
+        /*first paragraph*/
+        .post p:first-child, .post p:first-of-type{font-size:1.75rem; line-height:2.224rem;}
         
         .hideOnSmall{display:block;}/*show hidden element on larger devices*/
         .hideOnLarge{display:none;}
@@ -263,6 +276,7 @@ pre.prettyprint::-webkit-scrollbar-corner{display:none;}
     position: relative;
     left: -20%;
 }
+
 }/*End larger than 640px*/
 
 
@@ -358,7 +372,6 @@ ul{margin-left:0px;}/*remove foundation left margin*/
 .post img{display: block;padding: 20px;margin: 0 auto;}/*center images*/
 .post a{word-wrap:break-word;}
 .post p{font-family: 'Roboto Slab', serif; font-weight:300;}
-.post p:first-child, .post p:first-of-type{font-size:1.4rem;line-height:2rem;}
 #title{margin:0px; color:#444;}
 
 .postDate{font-size: 1rem; color:{color:Light Color};}
@@ -642,8 +655,6 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
         .backButtonContainer{margin-top:20px;}
         .backButton{display:initial;}
         .hideOnPermalink{display:none !important;}
-        .alert{display:none;}
-        .alertTop{display:none;}
     
     /*LARGER THAN 640PX*/
     @media only screen and (min-width: 700px) 
@@ -660,18 +671,17 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
 <!--MAIN CONTENT GOES DOWN THERE FOR SLIDEBAR-->
 <!--+++++++++++++++++++++++++++++++++++++++++-->
 <div id="sb-site"> 
-<span class="sb-toggle-left menuIcon hideOnLarge"><i class="fa fa-bars"></i></span> <!--menu Icon-->
+<span class="sb-toggle-left menuIcon hideOnLarge hideOnPermalink"><i class="fa fa-bars"></i></span> <!--menu Icon-->
 
 <!--++++++-->
 <!--HEADER-->
 <!--++++++-->
 <div class="row header">
-<div class="spaceSmall hideOnSmall"></div> <!--space, hide it on small-->
   <div class="small-12 medium-10 large-8 small-centered columns">     
     <div class="row"> 
       <div class="large-5 small-10 small-centered columns">
             {block:IfLogoImage}
-                <div id="headerImageContainer">
+                <div id="headerImageContainer" class="hideOnPermalink">
                     <a id="title" href="{BlogURL}">
                     <img id="headerImage" src="{image:Logo}"/>
                     </a>
@@ -789,6 +799,7 @@ ol.notes li.note blockquote{border-color:#ccc;border-left:solid;border-width:5px
     </div>
 </div>
 
+<div class="spaceSmall hideOnSmall"></div> <!--space, hide it on small-->
 
 <!--+++++++-->
 <!--CONTENT-->
