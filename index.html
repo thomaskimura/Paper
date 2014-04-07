@@ -43,6 +43,14 @@ view this project at https://github.com/thomaskimura/Paper
         <!--Images-->
         <meta name="image:Favicon" content=""/> <!--Favicon-->
         <meta name="image:Logo" content=""/> <!--Circular image to display in header-->
+        
+        <!--Sizing-->
+        <meta name="text:Column Size" content="7"/>
+        
+        <!--Fonts-->
+        <meta name="font:Headings" content=""/>
+        <meta name="font:Body" content=""/>
+        <meta name="font:Fancy" content=""/>
 
         <!--Usernames and accounts-->
         <meta name="text:Tumblr Username" content="USER" /> <!--Needed for ask/submit to work-->
@@ -61,6 +69,8 @@ view this project at https://github.com/thomaskimura/Paper
         <meta name="text:Instagram User ID" content=""/>
         <meta name="text:Instagram Access Token" content=""/>
         <meta name="text:Instagram Tag" content=""/>
+        
+        
         
         <!--Options-->
         <meta name="if:Instagram Banner" content="0"/>
@@ -195,7 +205,7 @@ view this project at https://github.com/thomaskimura/Paper
 @media only screen 
 {
   /*--TYPOGRAPHY SIZING--*/
-  body {font-size: 1rem; line-height: 1.618rem; font-family: 'Roboto', sans-serif; }
+  body {font-size: 1rem; line-height: 1.618rem; font-family:{font:Headings}; }
   /*base font for mobile = 16px & 24px*/
   h1{font-size:3.927rem; line-height:4.712rem;} /*line height @ 1.2*/
   h2{font-size:2.618rem; line-height:3.14rem;}
@@ -209,7 +219,7 @@ view this project at https://github.com/thomaskimura/Paper
 
   /*Spacer*/
   /*Use this to space out elements evenly*/
-  .space{height:4.236rem;}
+  .space{height:3.927rem;}
   .spaceSmall{height:2.618rem;}
 
 
@@ -243,7 +253,7 @@ view this project at https://github.com/thomaskimura/Paper
     padding-left:10px;
     margin-left: 0px;
     color:#444;
-    font-family: 'Roboto Slab', serif;
+    font-family: {font:Body};
     font-size:1.618rem;
     font-weight:700;
     line-height:2.617rem;
@@ -280,7 +290,7 @@ view this project at https://github.com/thomaskimura/Paper
     display:inline; 
     padding:0.573rem; 
     color:{color:Light Color};}
-  #title:hover{
+  .header #title:hover{
     color:{color:Main Color};}
 
   /*Logo*/
@@ -368,10 +378,10 @@ view this project at https://github.com/thomaskimura/Paper
   .post{list-style:none;padding-left:0}
   .post img{display: block;padding:1rem;margin: 0 auto;}/*center images*/
   .post a{word-wrap:break-word;}
-  .post p{font-family: 'Roboto Slab', serif; font-weight:300;}
+  .post p{font-family:{font:Body}; font-weight:300;}
   #title{margin:0px; margin-bottom:0.573rem; color:#444;}
 
-  .postDate{color:{color:Light Color};}
+  .postDate{color:{color:Light Color}; padding-bottom:0.573rem;}
   .readMoreButton{font-weight: 600;}
 
   /*Hide & Show*/
@@ -384,7 +394,7 @@ view this project at https://github.com/thomaskimura/Paper
     margin-top:0.573rem;
     margin-bottom:0.573rem;
     border-radius:5px; 
-    font-family: 'Roboto Slab', serif; 
+    font-family:{font:Body}; 
     padding:0.573rem;}
   .chat .odd{
     background:#fafafa;}
@@ -467,7 +477,7 @@ view this project at https://github.com/thomaskimura/Paper
   /*QUOTE*/
   .quote{
     font-weight:700;
-    font-family: 'Roboto Slab', serif; 
+    font-family:{font:Fancy}; 
     font-size:2.618rem; 
     line-height:3.14rem; 
     margin:0px; 
@@ -500,6 +510,7 @@ view this project at https://github.com/thomaskimura/Paper
 
   /*VIDEO*/
   .post iframe {max-width: 100%;width: 100%;}
+  .tumblr_video_container{max-width: 100%;width: 100%;}
 
 
   /*--------------------*/
@@ -507,9 +518,10 @@ view this project at https://github.com/thomaskimura/Paper
 
   /*--POST BOTTOM--*/
   /*Post notes,tags, and date*/
+  .postFooter{padding-top:0.573rem;}
   .postStats{
-    font-size:0.927rem;
-    line-height:1.499rem;
+    font-size:0.8rem;
+    line-height:1.294rem;
     list-style:none;
     max-width:640px;
     margin:0;
@@ -546,7 +558,8 @@ view this project at https://github.com/thomaskimura/Paper
     text-align: center;
     float: right;
     padding: 0.573rem;
-    border: 3px #eee solid;}
+    border: 3px #eee solid;
+    margin-left: 1rem;}
 
   /*BOTTOM LINKS*/
   /*Other link*/
@@ -606,6 +619,14 @@ view this project at https://github.com/thomaskimura/Paper
   ol.notes{
     list-style-type:none;
     padding:0px;}
+  ol.notes li{
+      font-size:0.8rem;
+      line-height:1.294rem;
+  }
+  ol.notes blockquote{
+      font-size:0.8rem;
+      line-height:1.294rem;
+  }
   ol.notes li.note{
     padding:5px 0 0.573rem;}
   ol.notes li.note img.avatar{
@@ -656,7 +677,7 @@ view this project at https://github.com/thomaskimura/Paper
   }
   .pQuote
   {
-  font-family: 'Roboto Slab', serif;
+  font-family:{font:Fancy};
   font-size:1.618rem; line-height:2.617rem;
   text-align:center;
   margin:0px;
@@ -732,11 +753,21 @@ view this project at https://github.com/thomaskimura/Paper
 
   .hideOnSmall{display:block;}/*show hidden element on larger devices*/
   .hideOnLarge{display:none;}
+  
+  .postStats{
+    font-size:1rem;
+    line-height:1.618rem;
+  }
+  
+  ol.notes li{
+    font-size:1rem;
+    line-height:1.618rem;
+  }
 
   /*Spacer*/
   /*Use this to space out elements evenly*/
-  .space{height:9.424rem;}
-  .spaceSmall{height:7.942rem;}
+  .space{height:4.909rem;}
+  .spaceSmall{height:3.6rem;}
         
   /*Image align for big screens*/        
   .pImageLeft
@@ -803,7 +834,7 @@ view this project at https://github.com/thomaskimura/Paper
     
     /*TYPOGRAPHY*/
     /*first paragraph*/
-    .post p:first-child, .post p:first-of-type{font-size:1.2rem; line-height: 1.8rem;} /*1.2*/
+    .post p:first-child, .post p:first-of-type{font-size:1.2rem; line-height: 1.941rem;} /*1.2 & 1.618*/
 
   /*LARGER THAN 900PX*/
     @media only screen and (min-width: 900px) 
@@ -811,7 +842,7 @@ view this project at https://github.com/thomaskimura/Paper
       #title{font-size:3.6rem; line-height:4.32rem;}
       
     /*first paragraph*/
-    .post p:first-child, .post p:first-of-type{font-size:1.65rem; line-height:2.475rem;} /*1.2 & 1.5*/
+    .post p:first-child, .post p:first-of-type{font-size:1.65rem; line-height:2.669rem;} /*1.2 & 1.618*/
     }/*END LARGER THAN 900PX*/
   </style>
 {/block:PermalinkPage}
@@ -823,7 +854,10 @@ view this project at https://github.com/thomaskimura/Paper
 <!--MAIN CONTENT GOES DOWN THERE FOR SLIDEBAR-->
 <!--+++++++++++++++++++++++++++++++++++++++++-->
 <div id="sb-site"> 
-<span class="sb-toggle-left menuIcon hideOnLarge hideOnPermalink"><i class="fa fa-bars"></i></span> <!--menu Icon-->
+<!--
+<span class="sb-toggle-left menuIcon hideOnLarge hideOnPermalink"><i class="fa fa-bars"></i></span>
+-->
+<!--menu Icon-->
 
 <div class="spaceSmall"></div> <!--space-->
 
@@ -831,9 +865,9 @@ view this project at https://github.com/thomaskimura/Paper
 <!--HEADER-->
 <!--++++++-->
 <div class="row header">
-  <div class="small-12 medium-10 large-8 small-centered columns">     
+  <div class="small-12 medium-9 large-{text:Column Size} small-centered columns">     
     <div class="row"> 
-      <div class="large-5 small-10 small-centered columns">
+      <div class="large-12 small-10 small-centered columns">
             {block:IfLogoImage}
                 <div id="headerImageContainer" class="hideOnPermalink">
                     <a id="title" href="{BlogURL}">
@@ -925,7 +959,7 @@ view this project at https://github.com/thomaskimura/Paper
             </ul>
     </div>
     
-<div class="large-5 small-10 small-centered columns">
+<div class="large-8 small-10 small-centered columns">
     <p>{Description}</p>
     <!--MENU-->
             <ul class="hideOnSmall" >
@@ -957,7 +991,7 @@ view this project at https://github.com/thomaskimura/Paper
 <!--CONTENT-->
 <!--+++++++-->
 <div class="row">
-    <div class="small-12 medium-9 large-7 small-centered columns">
+    <div class="small-12 medium-9 large-{text:Column Size} small-centered columns">
         <ol class="posts">
         
     <!--POST TYPES-->
@@ -972,7 +1006,7 @@ view this project at https://github.com/thomaskimura/Paper
                 <h3 id="title"><a href="{Permalink}">{Title}</a></h3>
             {/block:Title}
             {block:Date} 
-                    <span class="postDate hideOnIndex"><i class="fa fa-calendar"></i> {DayOfMonth} {Month} {Year}</span>
+                    <span class="postDate hideOnIndex">{DayOfMonth} {Month} {Year}</span>
             {/block:Date}
             {Body}
             {block:More}
@@ -1034,7 +1068,7 @@ view this project at https://github.com/thomaskimura/Paper
     {block:Photo}
         <li class="post photo">
             {block:Date} 
-                <span class="postDate hideOnIndex pTextCenter"><i class="fa fa-calendar"></i> {DayOfMonth} {Month} {Year}</span>
+                <span class="postDate hideOnIndex pTextCenter">{DayOfMonth} {Month} {Year}</span>
             {/block:Date}
             <a href="{Permalink}">
                 <img src="{PhotoURL-500}" alt="{PhotoAlt}"/> 
@@ -1107,7 +1141,7 @@ view this project at https://github.com/thomaskimura/Paper
                 <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
             {LinkCloseTag}
             {block:Date} 
-                    <span class="postDate hideOnIndex"><i class="fa fa-calendar"></i> {DayOfMonth} {Month} {Year}</span>
+                    <span class="postDate hideOnIndex">{DayOfMonth} {Month} {Year}</span>
             {/block:Date}
             {block:Caption}
                 <div class="caption">{Caption}</div>
@@ -1173,7 +1207,7 @@ view this project at https://github.com/thomaskimura/Paper
     <!--++++++++-->
     {block:Photoset}
         {block:Date} 
-                <span class="postDate hideOnIndex pTextCenter"><i class="fa fa-calendar"></i> {DayOfMonth} {Month} {Year}</span>
+                <span class="postDate hideOnIndex pTextCenter">{DayOfMonth} {Month} {Year}</span>
         {/block:Date}
         <div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">
 
@@ -1323,7 +1357,7 @@ view this project at https://github.com/thomaskimura/Paper
                 <a href="{URL}" id="link" class="link" {Target}><h3>{Name} <i class="fa fa-share"></i></h3></a>
             
             {block:Date} 
-                <span class="postDate hideOnIndex"><i class="fa fa-calendar"></i> {DayOfMonth} {Month} {Year}</span>
+                <span class="postDate hideOnIndex">{DayOfMonth} {Month} {Year}</span>
             {/block:Date}
             {block:Description}
                 <div class="description">
@@ -1399,9 +1433,7 @@ view this project at https://github.com/thomaskimura/Paper
                 </h3>
             {/block:Title}
             {block:Date} 
-                <span class="postDate hideOnIndex">
-                    <i class="fa fa-calendar"></i> {DayOfMonth} {Month} {Year}
-                </span>
+                <span class="postDate hideOnIndex">{DayOfMonth} {Month} {Year}</span>
             {/block:Date}
             <ul class="chat">
                 {block:Lines}
@@ -1477,7 +1509,7 @@ view this project at https://github.com/thomaskimura/Paper
     {block:Video}
         <li class="post video">
             {block:Date} 
-                <span class="postDate hideOnIndex pTextCenter"><i class="fa fa-calendar"></i> {DayOfMonth} {Month} {Year}</span>
+                <span class="postDate hideOnIndex pTextCenter">{DayOfMonth} {Month} {Year}</span>
             {/block:Date}
             <div class="pCenter">
                 {Video-700}
@@ -1548,9 +1580,7 @@ view this project at https://github.com/thomaskimura/Paper
         <li class="post audio">
             {AudioPlayerBlack}
             {block:Date} 
-                <span class="postDate hideOnIndex">
-                    <i class="fa fa-calendar"></i> {DayOfMonth} {Month} {Year}
-                </span>
+                <span class="postDate hideOnIndex">{DayOfMonth} {Month} {Year}</span>
             {/block:Date}
             {block:Caption}
                 <div class="caption">{Caption}</div>
@@ -1655,7 +1685,7 @@ view this project at https://github.com/thomaskimura/Paper
 <!--++++++++++++++++-->
 <div class="postBottom hideOnIndex"> <!--hide on index, show on permalink-->
     <div class="row">
-    <div class="small-12 medium-10 large-8 small-centered columns">
+    <div class="small-12 medium-9 large-{text:Column Size} small-centered columns">  
         <div class="row">
             <div class="large-6 small-centered columns">
             <h3><a href="{BlogURL}">{Title}</a></h3>
@@ -1737,7 +1767,7 @@ view this project at https://github.com/thomaskimura/Paper
 
 <!--NAVIGATION--> 
 <div class="row" >
-    <div class="small-12 medium-10 large-8 small-centered columns">
+    <div class="small-12 medium-9 large-{text:Column Size} small-centered columns">  
         {block:NextPage}
             <a id="navlink" href="{NextPage}">Next <i class="fa fa-long-arrow-right"></i> </a>
         {/block:NextPage} 
@@ -1751,7 +1781,7 @@ view this project at https://github.com/thomaskimura/Paper
 <div class="spaceSmall"></div>
 <!--SEARCH
 <div class="row" id="bottomSearch">
-    <div class="small-12 large-8 small-centered columns">
+    <div class="small-12 medium-9 large-{text:Column Size} small-centered columns">  
                         <form id="searchForm" action="/search" method="get">
                             <input id="search" placeholder="Search..." autocomplete="off" type="text" name="q" value="{SearchQuery}"/>
                         </form>           
@@ -1763,7 +1793,7 @@ view this project at https://github.com/thomaskimura/Paper
 <div class="bottom">
     <!--LINKS-->
     <div class="row" id="bottomLinks">
-        <div class="small-12 medium-10 large-8 small-centered columns">
+        <div class="small-12 medium-9 large-{text:Column Size} small-centered columns">  
             <a href="{BlogURL}">Home</a>
             <a href="/archive">Archive</a>
             {block:AskEnabled}
@@ -1798,7 +1828,7 @@ view this project at https://github.com/thomaskimura/Paper
     <a name="asksubmit"></a> 
     {block:AskEnabled}
         <div class="row" id="ask">
-            <div class="small-12 medium-10 large-8 small-centered columns">   
+            <div class="small-12 medium-9 large-{text:Column Size} small-centered columns">     
                 <iframe id="askBox" frameborder="0" scrolling="no" width="100%" height="190" src="http://www.tumblr.com/ask_form/{text:Tumblr Username}.tumblr.com" style="background-color:transparent; overflow:hidden;" id="ask_form"></iframe>
             </div>
         </div>
@@ -1806,7 +1836,7 @@ view this project at https://github.com/thomaskimura/Paper
     
     {block:SubmissionsEnabled} 
         <div class="row" id="submit">
-            <div class="small-12 large-8 small-centered columns">   
+            <div class="small-12 medium-9 large-{text:Column Size} small-centered columns">    
                 <iframe id="submitBox" src="http://www.tumblr.com/submit_form/{text:Tumblr Username}.tumblr.com" frameborder="0" height="500" scrolling="no" width="100%"></iframe>
             </div>
         </div>
