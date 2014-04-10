@@ -75,6 +75,7 @@ view this project at https://github.com/thomaskimura/Paper
         <!--Options-->
         <meta name="if:Instagram Banner" content="0"/>
         <meta name="if:Big Photos" content="1"/>
+        <meta name="if:Post Navigation" content="1"/>
         
 <!--Stylesheets-->    
 <link href="http://static.tumblr.com/smotcsf/Vian0p49e/foundation.min.css" rel="stylesheet">
@@ -86,6 +87,8 @@ view this project at https://github.com/thomaskimura/Paper
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+
+
 
 <style>
 /*remove all pixels and replace in golden ratio REMs*/
@@ -500,13 +503,23 @@ view this project at https://github.com/thomaskimura/Paper
 
   /*--Footer--*/
   /*navigation*/
+  .navlinkContainer
+  {
+      padding:0px;
+  }
   #navlink
-  {border-radius: 5px;
-    text-align: center;
-    float: right;
-    padding: 0.573rem;
-    border: 3px #eee solid;
-    margin-left: 1rem;}
+  {
+text-align: center;
+float: right;
+padding: 0.573rem;
+width: 50%;
+background: #fafafa;
+padding-top: 1rem;
+padding-bottom: 1rem;}
+#navlink:hover
+{
+    background:#eee;
+}
   /*bottom links*/
   #bottomDescription,#bottomBlurb,#bottomLinks{
     text-align:center;}
@@ -548,9 +561,7 @@ view this project at https://github.com/thomaskimura/Paper
   /*comment button*/
   #disqusButton{
   text-align:center;
-  padding:0.573rem;
-  border:#eee 3px solid;
-  border-radius:5px;}
+  padding:0.573rem;}
   /*permalink notes*/
   ol.notes{
     list-style-type:none;
@@ -575,7 +586,29 @@ view this project at https://github.com/thomaskimura/Paper
     font-size:0.8rem;
     line-height:1.294rem;
     }
-  /*Custom footer*/
+    /*permalink navigation*/
+    .permalinkPagination
+    {
+        text-align:center;
+        font-size:0.927rem; line-height:1.499rem;
+    }
+    .postNav
+    {
+        display:block;
+        width:100%;
+        background:#fafafa;
+        padding-top:1rem;
+        padding-bottom:1rem;
+    }
+    .postNav:hover
+    {
+        background:#eee;
+    }
+    .permalinkPagination .columns
+    {
+        padding:0px;
+    }
+  /*custom footer*/
   /*permalink only footer*/
   .postBottom{
     text-align:center;
@@ -696,10 +729,10 @@ view this project at https://github.com/thomaskimura/Paper
   ol.notes li{font-size:1rem;line-height:1.618rem;}
   ol.notes li.note blockquote a{font-size:1rem;line-height:1.618rem;}
   
-  .postBottom p{
-        font-size:1rem;
-        line-height:1.618rem;
-    }
+  .postBottom p{font-size:1rem;line-height:1.618rem;}
+  .permalinkPagination{font-size:1.159rem; line-height:1.947rem;}
+  
+  .pQuote{font-size:3.6rem; line-height:4.32rem;}
 
   /*Spacer*/
   /*Use this to space out elements evenly*/
@@ -799,7 +832,7 @@ view this project at https://github.com/thomaskimura/Paper
 {/block:IfBigPhotos}
 
 </head>
-<body onload="prettyPrint()"> <!--load syntax highlighter-->
+<body onload="prettyPrint()" id="body" tabindex="0" onkeydown="keyPress(event)"> <!--load syntax highlighter-->
 
 <!--+++++++++++++++++++++++++++++++++++++++++-->
 <!--MAIN CONTENT GOES DOWN THERE FOR SLIDEBAR-->
@@ -1603,11 +1636,35 @@ view this project at https://github.com/thomaskimura/Paper
 <!--PERMALINK PAGE-->
 <!--++++++++++++++--> 
 {block:PermalinkPage}
+
+{block:IfPostNavigation}
+{block:PermalinkPagination}
+<div class="row permalinkPagination">
+    <div class="large-6 medium-6 small-6 columns">
+        {block:PreviousPost}
+        <span>
+            <a class="postNav" id="previousPost" href="{PreviousPost}"><i class="fa fa-long-arrow-left"></i> Previous Post</a>
+        </span>
+        {/block:PreviousPost}
+    </div>
+    <div class="large-6 medium-6 small-6 columns">
+         {block:NextPost}
+        <span>
+            <a class="postNav" id="nextPost" href="{NextPost}">Next Post <i class="fa fa-long-arrow-right"></i></a>
+        </span>
+        {/block:NextPost} 
+    </div>
+</div>
+<div class="spaceSmall"></div>
+{/block:PermalinkPagination}
+{/block:IfPostNavigation}
+
+
     <!--DISQUS COMMENTS-->
     {block:IfDisqusShortname}
         <div id="disqus_thread"></div>
         <div id="disqus_loader" style="text-align: center">
-            <a onclick='$.ajaxSetup({cache:true});$.getScript("http://{text:Disqus Shortname}.disqus.com/embed.js");$.ajaxSetup({cache:false});$("#disqus_loader").remove();' id="disqusButton">Show Comments</a>
+            <a onclick='$.ajaxSetup({cache:true});$.getScript("http://{text:Disqus Shortname}.disqus.com/embed.js");$.ajaxSetup({cache:false});$("#disqus_loader").remove();' id="disqusButton"><i class="fa fa-comments"></i></a>
         </div>
         <div class="spaceSmall"></div> <!--space-->
     {/block:IfDisqusShortname}
@@ -1718,14 +1775,15 @@ view this project at https://github.com/thomaskimura/Paper
 
 <!--NAVIGATION--> 
 <div class="row" >
-    <div class="small-12 medium-9 large-{text:Column Size} small-centered columns">  
+    <div class="small-12 medium-9 large-{text:Column Size} small-centered columns navlinkContainer">  
         {block:NextPage}
             <a id="navlink" href="{NextPage}">Next <i class="fa fa-long-arrow-right"></i> </a>
         {/block:NextPage} 
         
         {block:PreviousPage}
             <a id="navlink" href="{PreviousPage}"><i class="fa fa-long-arrow-left"></i> Previous</a>
-        {/block:PreviousPage}             
+        {/block:PreviousPage}   
+        <a id="random" href="{BlogURL}random"><i class="fa fa-long-arrow-left"></i>Random</a>
     </div>
 </div>
 
@@ -1838,6 +1896,98 @@ view this project at https://github.com/thomaskimura/Paper
 <!--Photoset Grid-->
 <script src="http://static.tumblr.com/smotcsf/Ecdn2cscy/pxuphotoset.min.js"></script>
 
+
+<!--READY-->
+<script>
+//BASIC STUFF?
+$( document ).ready(function() {
+    //alert('ready new');
+    $.slidebars();
+});
+
+$(window).load(function() {
+   //alert("window is loaded");
+   document.body.focus();
+});
+</script>
+
+
+<!--KEYBOARD NAV ON INDEX-->
+{block:IndexPage}
+<script>
+  //RANDOM NAVIGATION FOR INDEX
+  document.body.onkeydown = function(e){   
+        if (e == null) {
+            keycode = event.keyCode;
+        } else {
+            keycode = e.which;
+        }
+        if(keycode == 80){
+            $("#sb-site").fadeOut();
+            window.location = $('#random').attr('href');
+            //alert('Random');
+        } 
+         if (url) {
+        window.location = url;
+        }
+    };
+</script>
+{/block:IndexPage}
+
+
+<!--PHOTOSETS-->
+<script>
+    $('.photo-slideshow').pxuPhotoset({
+        // options go here
+        'highRes'   : true, // will use high res images
+        'rounded'   : 'false', // corners, all or false
+        'exif'      : false, // display EXIF data if available (tooltip)
+        'captions'  : false, // display individual captions on photos (tooltip)
+        'gutter'    : '10px', // spacing between the images
+        'photoset'  : '.photo-slideshow', // photoset wrapper
+        'photoWrap' : '.photo-data', // photo data wrapper (includes photo, icons + exif)
+        'photo'     : '.pxu-photo' // photo wrap (includes photo only)
+    }, function() {
+        // callback
+        
+    });
+</script>
+
+
+<!--PERSONAL INSTAFEED-->
+{block:IfInstagramUserID}
+    <script type="text/javascript">
+        var userFeed = new Instafeed({
+            limit: 20,
+            get: 'user',
+            userId: {text:Instagram User ID},
+            accessToken: '{text:Instagram Access Token}',
+        });
+        userFeed.run();
+    </script>
+{/block:IfInstagramUserID}
+<!--INSTAFEED OF A TAG-->
+{block:IfInstagramTag}
+    <script type="text/javascript">
+        var feed = new Instafeed({
+            limit: 20,
+            get: 'tagged',
+            tagName: '{text:Instagram Tag}',
+            clientId: 'a25f5a7693b04351b165dc8df1e6aded'
+        });
+        feed.run();
+    </script>
+{/block:IfInstagramTag}
+
+
+<!--SYNTAX HIGHLIGHTER-->
+<script>
+    $.SyntaxHighlighter.init({
+        'wrapLines':false
+    });
+</script>
+
+
 <!--ASK SLIDE, AND DISQUS LOAD-->
 <script>
     //Ask button
@@ -1899,67 +2049,46 @@ view this project at https://github.com/thomaskimura/Paper
     $(".alertClose").css({"backgroundColor": "black", "color": "white"});
 </script>
 
-<!--SYNTAX HIGHLIGHTER-->
+
+<!--PERMALINK ONLY-->
+{block:PermalinkPage} 
 <script>
-    $.SyntaxHighlighter.init({
-        'wrapLines':false
-    });
+  //KEYBOARD NAVIGATION FOR PERMALINK
+  document.body.onkeydown = function(e){   
+        if (e == null) {
+            keycode = event.keyCode;
+        } else {
+            keycode = e.which;
+        }
+        if(keycode == 39){
+            $("#sb-site").animate({right:"1000px"}, left());
+            function left(){
+                window.location = $('#previousPost').attr('href');
+            }
+            //alert('Right');
+        } else if(keycode == 37){
+            $("#sb-site").animate({left:"1000px"},right());
+            function right(){
+                window.location = $('#previousPost').attr('href');
+            }
+            //alert('Left');
+        }   
+        else if(keycode == 80){
+            $("#sb-site").fadeOut();
+            window.location = $('#random').attr('href');
+            //alert('Random')
+        }
+         if (url) {
+        window.location = url;
+        }
+    };
 </script>
+{/block:PermalinkPage}
 
-<!--PERSONAL INSTAFEED-->
-{block:IfInstagramUserID}
-    <script type="text/javascript">
-        var userFeed = new Instafeed({
-            limit: 20,
-            get: 'user',
-            userId: {text:Instagram User ID},
-            accessToken: '{text:Instagram Access Token}',
-        });
-        userFeed.run();
-    </script>
-{/block:IfInstagramUserID}
 
-<!--INSTAFEED OF A TAG-->
-{block:IfInstagramTag}
-    <script type="text/javascript">
-        var feed = new Instafeed({
-            limit: 20,
-            get: 'tagged',
-            tagName: '{text:Instagram Tag}',
-            clientId: 'a25f5a7693b04351b165dc8df1e6aded'
-        });
-        feed.run();
-    </script>
-{/block:IfInstagramTag}
 
-<!--SLIDEBARS-->
-<script>
-  (function($) {
-    $(document).ready(function() {
-      $.slidebars();
-    });
-  }) (jQuery);
-</script>
 
-<!--PHOTOSETS-->
-<script>
-$(document).ready(function() {
-    $('.photo-slideshow').pxuPhotoset({
-        // options go here
-        'highRes'   : true, // will use high res images
-        'rounded'   : 'false', // corners, all or false
-        'exif'      : false, // display EXIF data if available (tooltip)
-        'captions'  : false, // display individual captions on photos (tooltip)
-        'gutter'    : '10px', // spacing between the images
-        'photoset'  : '.photo-slideshow', // photoset wrapper
-        'photoWrap' : '.photo-data', // photo data wrapper (includes photo, icons + exif)
-        'photo'     : '.pxu-photo' // photo wrap (includes photo only)
-    }, function() {
-        // callback
-        
-    });
-});
-</script>
+
 
     
 </body>
