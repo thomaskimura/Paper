@@ -1,0 +1,1367 @@
+<!--
+  ____   _    ____  _____ ____  
+ |  _ \ / \  |  _ \| ____|  _ \ 
+ | |_) / _ \ | |_) |  _| | |_) |
+ |  __/ ___ \|  __/| |___|  _ < 
+ |_| /_/   \_\_|   |_____|_| \_\
+                                
+
+Version 1.0 BETA
+
+Paper theme created by Thomas Kimura
+
+View a live demo at http://papertheme.tumblr.com/
+
+view this project at https://github.com/thomaskimura/Paper
+    
+    tweet @thomaskimura_
+    github @thomaskimura
+    
+-->
+
+<html>
+  <head>
+    <title>{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}</title>
+
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+    <link rel="shortcut icon" href="{Favicon}">
+    
+    {block:Description}
+        <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" charset="UTF-8">
+    
+    <!--TUMBLR CUSTOMIZATION-->
+    <!--Colours-->
+    <meta name="color:Main Color" content="#f2f291"/> <!--Color for hover and highlight-->
+    
+    <!--Images-->
+    <meta name="image:Logo" content=""/> <!--Circular image to display in header-->
+    
+    <!--Sizing-->
+    <meta name="text:Column Size" content="7"/> <!--Set column width using Foundation 5, takes a number 1-12-->
+    
+    <!--Fonts-->
+    <meta name="font:Headings" content=""/>
+    <meta name="font:Body" content=""/>
+    <meta name="font:Fancy" content=""/>
+
+    <!--Text-->
+    <meta name="text:Email" content="Email"/>
+    <meta name="text:Tumblr Username" content="USER" /> <!--Needed for ask/submit to work-->
+    <meta name='text:Disqus Shortname' content='' />
+
+    <meta name="text:Username on Facebook" content="Facebook"/>
+    <meta name="text:Google Plus Url" content="Google"/>
+    <meta name="text:Username on Twitter" content="Twitter"/>
+    <meta name="text:Username on YouTube" content="YouTube"/>
+    <meta name="text:Username on Instagram" content="Instagram"/>
+    <meta name="text:Username on Pinterest" content="Pintrest"/>
+    <meta name="text:Username on Flickr" content="Flickr"/>
+    <meta name="text:Username on Linkedin" content="Linkedin"/>
+    <meta name="text:Username on Dribbble" content="Dribbble"/>
+    <meta name="text:Username on GitHub" content="GitHub"/>
+
+    <meta name="text:Instagram User ID" content=""/>
+    <meta name="text:Instagram Access Token" content=""/>
+    <meta name="text:Instagram Tag" content=""/>
+    
+    <!--Options-->
+    <meta name="if:Instagram Banner" content="0"/>
+    <meta name="if:Big Photos" content="1"/>
+    <meta name="if:Post Navigation" content="1"/>
+    <meta name="if:Slidebars" content="1"/>
+        
+    <!--Stylesheets-->    
+    <link href="http://static.tumblr.com/smotcsf/Vian0p49e/foundation.min.css" rel="stylesheet">
+    {block:IfSlidebars}
+        <link href="http://static.tumblr.com/smotcsf/SA3n0thdj/slidebars.min.css" rel="stylesheet">
+    {/block:IfSlidebars}
+    <link href="http://static.tumblr.com/smotcsf/7r0n3ul63/style.css" rel="stylesheet">
+
+    <!--Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+<style>
+/*--------------------*/
+/*----STYLE SHEET----*/
+/*--------------------*/
+
+/*-------------*/
+/*---OPTIONS---*/
+/*-------------*/
+/*--Highlight options--*/
+::selection{opacity:1;color:#fff; background-color:{color:Main Color};}
+:-moz-selection{opacity:1;color:#fff; background-color:{color:Main Color};}
+
+/*--Link Hover--*/
+a:hover{color:{color:Main Color};}
+.header #title:hover{color:{color:Main Color};}
+.menuIcon:hover{color:{color:Main Color};}
+.sb-slidebar ul li a:hover{color:{color:Main Color};}
+#bottomLinks a:hover{color:{color:Main Color};}
+
+/*--Fonts--*/
+body, ol.notes li.note blockquote a {font-family:{font:Headings};}
+blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
+.post p, .chat li{font-family:{font:Body};}
+
+{CustomCSS}
+</style>
+
+
+{block:PermalinkPage} 
+<style>
+/*--STYLE FOR PERMALINK PAGE ONLY--*/
+  /*HEADER*/
+  .header ul, .header p{display:none;}
+  .header h1{display:none;}
+  .header .backButton{border: 3px solid #eee; padding: 10px; border-radius: 5px;}
+  .backButtonContainer{margin-top:20px;}
+  .backButton{display:initial;}
+
+  /*HIDE*/
+  .hideOnPermalink{display:none !important;}
+  .hideOnIndex{display:block;}
+
+  #title{font-size:2.618rem; line-height:3.14rem;}
+    
+  /*TYPOGRAPHY*/
+  /* first paragraph larger */
+  .post p:first-child, .post p:first-of-type{font-size:1.2rem; line-height: 1.941rem;} /*1.2 & 1.618*/
+
+/*LARGER THAN 900PX*/
+  @media only screen and (min-width: 900px) 
+  {
+    #title{font-size:3.6rem; line-height:4.32rem;}
+      
+    /* first paragraph larger*/
+    .post p:first-child, .post p:first-of-type{font-size:1.65rem; line-height:2.669rem;} /*1.2 & 1.618*/
+  }
+/*END LARGER THAN 900PX*/
+</style>
+{/block:PermalinkPage}
+
+{block:IfBigPhotos}
+<style>
+  @media only screen and (min-width: 700px) 
+  {
+    .post img
+    {
+      max-width:none;
+      width:130%;
+      margin-left:-15%;
+    }
+  }
+</style>
+{/block:IfBigPhotos}
+
+</head>
+<body onload="prettyPrint()" id="body" tabindex="0" onkeydown="keyPress(event)"> <!--load syntax highlighter-->
+
+<!--+++++++++++++++++++++++++++++++++++++++++-->
+<!--MAIN CONTENT GOES DOWN THERE FOR SLIDEBAR-->
+<!--+++++++++++++++++++++++++++++++++++++++++-->
+<div id="sb-site"> 
+<!--
+<span class="sb-toggle-left menuIcon hideOnLarge hideOnPermalink"><i class="fa fa-bars"></i></span>
+-->
+<!--menu Icon-->
+
+<div class="spaceSmall"></div> <!--space-->
+
+<!--++++++-->
+<!--HEADER-->
+<!--++++++-->
+<div class="row header">
+  <div class="small-12 medium-9 large-{text:Column Size} small-centered columns">     
+    <div class="row"> 
+      <div class="large-12 small-10 small-centered columns">
+            {block:IfLogoImage}
+                <div id="headerImageContainer" class="hideOnPermalink">
+                    <a id="title" href="{BlogURL}">
+                    <img id="headerImage" src="{image:Logo}"/>
+                    </a>
+                </div>
+            {/block:IfLogoImage}  
+        <h1><a id="title" href="{BlogURL}">{Title}</a></h1>
+
+        <div class="backButtonContainer hideOnIndex hideOnPrint"> <!--back button, hide on index, show on permalink-->
+            <a class="backButton" href="{BlogURL}"><i class="fa fa-long-arrow-left"></i> {Title}</a>
+        </div>
+
+        <!--SOCIAL-->
+        <ul>
+                {block:IfUsernameOnFacebook}
+                    <li>
+                        <a target="_blank" href="http://www.facebook.com/{text:Username on Facebook}" id="facebook"><i class="fa fa-facebook-square"></i></a>
+                    </li>
+                {/block:IfUsernameOnFacebook}
+                
+                {block:IfGooglePlusUrl}
+                    <li>
+                        <a target="_blank" href="http://www.google.com/+{text:URL on Google Plus}" id="google"><i class="fa fa-google-plus-square"></i></a>
+                    </li>
+                {/block:IfGooglePlusUrl}
+
+                {block:IfUsernameOnTwitter}
+                    <li>
+                        <a target="_blank" href="http://www.twitter.com/{text:Username on Twitter}" id="twitter"><i class="fa fa-twitter-square"></i></a>
+                    </li>
+                {/block:IfUsernameOnTwitter} 
+            
+                {block:IfUsernameOnYouTube}
+                    <li>
+                        <a target="_blank" href="http://www.youtube.com/{text:Username on YouTube}" id="youtube"><i class="fa fa-youtube-square"></i></a>
+                    </li>
+                {/block:IfUsernameOnYouTube}
+                
+                {block:IfUsernameOnInstagram}
+                    <li>
+                        <a target="_blank" href="http://www.instagram.com/{text:Username on Instagram}" id="instagram"><i class="fa fa-instagram"></i></a>
+                    </li>
+                {/block:IfUsernameOnInstagram}
+ 
+                {block:IfUsernameOnPinterest}
+                    <li>
+                        <a target="_blank" href="http://www.pinterest.com/{text:Username on Pinterest}" id="pinterest"><i class="fa fa-pinterest-square"></i></a>
+                    </li>
+                {/block:IfUsernameOnPinterest}
+    
+                {block:IfUsernameOnFlickr}
+                    <li>
+                        <a target="_blank" href="http://www.flickr.com/{text:Username on Flickr}" id="flickr"><i class="fa fa-flickr"></i></a>
+                    </li>
+                {/block:IfUsernameOnFlickr}
+    
+                {block:IfUsernameOnLinkedin}
+                    <li>
+                        <a target="_blank" href="http://www.linkedin.com/in/{text:Username on LinkedIn}" id="linkedin"><i class="fa fa-linkedin-square"></i></a>
+                    </li>
+                {/block:IfUsernameOnLinkedin}
+    
+                {block:IfUsernameOnGitHub}
+                    <li>
+                        <a target="_blank" href="http://www.github.com/{text:Username on GitHub}" id="github"><i class="fa fa-github-square"></i></a>
+                    </li>
+                {/block:IfUsernameOnGitHub}
+   
+                {block:IfUsernameOnDribbble}
+                    <li>
+                        <a target="_blank" href="http://www.dribbble.com/{text:Username on Dribbble}" id="dribbble"><i class="fa fa-dribbble"></i></a>
+                    </li>
+                {/block:IfUsernameOnDribbble}
+                
+            </ul>
+    </div>
+    
+<div class="large-8 small-10 small-centered columns">
+    <p>{Description}</p>
+    <!--MENU-->
+            <ul class="hideOnSmall" >
+                {block:Pages}
+                    <li>
+                        <a href="{URL}">{Label}</a>
+                    </li>
+                {/block:Pages}
+            </ul>
+        <div class="spaceSmall"></div> <!--space-->
+</div>
+    
+    </div>
+  </div>
+</div>
+<!--++++++++++-->
+<!--END HEADER-->
+<!--++++++++++-->
+
+<!--+++++++++++++++++-->
+<!--HEADER BACKGROUND-->
+<!--+++++++++++++++++-->
+<div id="headerBackground">
+    <div id="headerTint">
+    </div>
+</div>
+
+<!--+++++++-->
+<!--CONTENT-->
+<!--+++++++-->
+<div class="row">
+    <div class="small-12 medium-9 large-{text:Column Size} small-centered columns">
+        <ol class="posts">
+        
+    <!--POST TYPES-->
+    {block:Posts}
+             
+    <!--++++++++++-->
+    <!--TEXT POSTS-->
+    <!--++++++++++-->
+    {block:Text}
+        <li class="post text">
+            {block:Title}
+                <h3 id="title"><a href="{Permalink}">{Title}</a></h3>
+            {/block:Title}
+            {block:Date} 
+                    <span class="postDate hideOnIndex">{DayOfMonth} {Month} {Year}</span>
+            {/block:Date}
+            {Body}
+            {block:More}
+            <a href="{Permalink}" class="readMoreButton">{lang:Read more} <i class="fa fa-long-arrow-right"></i></a>{/block:More}
+        </li>
+    <!--POST FOOTER FOR TEXT POST-->          
+    <div class="postFooter">  
+        <ul class="postStats">
+            <div class="like_and_reblog_buttons"></div>
+            {block:IndexPage} <!--only show on index-->
+                <li>
+                    <i class="fa fa-heart"></i>
+                    <a class="nobold" href="{Permalink}">
+                        {NoteCountWithLabel}
+                    </a>
+                </li>
+            {block:IfDisqusShortname} <!--display comment count when nessecary-->
+                <li>
+                    <i class="fa fa-comment"></i> 
+                    <a class="dsq-comment-count nobold" href="{Permalink}#disqus_thread">
+                        Comments
+                    </a>
+                    <script type="text/javascript">
+                        var disqus_shortname = '{text:Disqus Shortname}';
+                        (function () {
+                            var s = document.createElement('script'); s.async = true;
+                            s.type = 'text/javascript';
+                            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+                            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                        }());
+                    </script>
+                </li>
+            {/block:IfDisqusShortname}
+            {/block:IndexPage}
+
+            <li class="hideOnPermalink">  
+                {block:Date} 
+                    <i class="fa fa-clock-o"></i> {timeAgo} 
+                {/block:Date}
+            </li>
+              
+            {block:Tags}
+                <li class="tags">
+                    <a href="{TagURL}" class="nobold">{Tag}</a>
+                </li>
+            {/block:Tags}
+          </ul>
+    </div> 
+    <!--END POST FOOTER-->
+    {/block:Text}
+    <!--+++++++++++++-->
+    <!--END TEXT POST-->
+    <!--+++++++++++++-->
+
+
+    <!--+++++--> 
+    <!--PHOTO-->
+    <!--+++++--> 
+    {block:Photo}
+        <li class="post photo">
+            {block:Date} 
+                <span class="postDate hideOnIndex pTextCenter">{DayOfMonth} {Month} {Year}</span>
+            {/block:Date}
+            <a href="{Permalink}">
+                <img src="{PhotoURL-500}" alt="{PhotoAlt}"/> 
+            </a>
+            {block:Caption}
+                <div class="caption">{Caption}</div>
+            {/block:Caption}
+            {block:More}
+                <a href="{Permalink}" class="readMoreButton">
+                    {lang:Read more} <i class="fa fa-long-arrow-right"></i>
+                </a>
+            {/block:More}
+        </li>   
+    <!--POST FOOTER FOR PHOTO-->          
+    <div class="postFooter">  
+        <ul class="postStats">
+            <div class="like_and_reblog_buttons"></div>
+            {block:IndexPage} <!--only show on index-->
+                <li>
+                    <i class="fa fa-heart"></i>
+                    <a class="nobold" href="{Permalink}">
+                        {NoteCountWithLabel}
+                    </a>
+                </li>
+            {block:IfDisqusShortname} <!--display comment count when nessecary-->
+                <li>
+                    <i class="fa fa-comment"></i> 
+                    <a class="dsq-comment-count nobold" href="{Permalink}#disqus_thread">
+                        Comments
+                    </a>
+                    <script type="text/javascript">
+                        var disqus_shortname = '{text:Disqus Shortname}';
+                        (function () {
+                            var s = document.createElement('script'); s.async = true;
+                            s.type = 'text/javascript';
+                            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+                            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                        }());
+                    </script>
+                </li>
+            {/block:IfDisqusShortname}
+            {/block:IndexPage}
+
+            <li class="hideOnPermalink">  
+                {block:Date} 
+                    <i class="fa fa-clock-o"></i> {timeAgo} 
+                {/block:Date}
+            </li>
+              
+            {block:Tags}
+                <li class="tags">
+                    <a href="{TagURL}" class="nobold">{Tag}</a>
+                </li>
+            {/block:Tags}
+          </ul>
+    </div>
+    <!--END POST FOOTER-->
+    {/block:Photo}
+    <!--+++++++++-->
+    <!--END PHOTO-->
+    <!--+++++++++-->
+
+
+    <!--+++++++++-->
+    <!--PANORAMA-->
+    <!--+++++++++-->
+    {block:Panorama}
+        <li class="post panorama">
+            {LinkOpenTag}
+                <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+            {LinkCloseTag}
+            {block:Date} 
+                    <span class="postDate hideOnIndex">{DayOfMonth} {Month} {Year}</span>
+            {/block:Date}
+            {block:Caption}
+                <div class="caption">{Caption}</div>
+            {/block:Caption}
+            {block:More}
+                <a href="{Permalink}" class="readMoreButton">
+                    {lang:Read more} <i class="fa fa-long-arrow-right"></i>
+                </a>
+            {/block:More}
+        </li>
+    <!--POST FOOTER FOR PANORAMA-->          
+    <div class="postFooter">  
+        <ul class="postStats">
+            <div class="like_and_reblog_buttons"></div>
+            {block:IndexPage} <!--only show on index-->
+                <li>
+                    <i class="fa fa-heart"></i>
+                    <a class="nobold" href="{Permalink}">
+                        {NoteCountWithLabel}
+                    </a>
+                </li>
+            {block:IfDisqusShortname} <!--display comment count when nessecary-->
+                <li>
+                    <i class="fa fa-comment"></i> 
+                    <a class="dsq-comment-count nobold" href="{Permalink}#disqus_thread">
+                        Comments
+                    </a>
+                    <script type="text/javascript">
+                        var disqus_shortname = '{text:Disqus Shortname}';
+                        (function () {
+                            var s = document.createElement('script'); s.async = true;
+                            s.type = 'text/javascript';
+                            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+                            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                        }());
+                    </script>
+                </li>
+            {/block:IfDisqusShortname}
+            {/block:IndexPage}
+
+            <li class="hideOnPermalink">  
+                {block:Date} 
+                    <i class="fa fa-clock-o"></i> {timeAgo} 
+                {/block:Date}
+            </li>
+              
+            {block:Tags}
+                <li class="tags">
+                    <a href="{TagURL}" class="nobold">{Tag}</a>
+                </li>
+            {/block:Tags}
+          </ul>
+    </div>
+    <!--END POST FOOTER-->
+    {/block:Panorama}
+    <!--++++++++++++-->
+    <!--END PANORAMA-->
+    <!--++++++++++++-->
+
+
+    <!--++++++++-->
+    <!--PHOTOSET-->
+    <!--++++++++-->
+    {block:Photoset}
+        {block:Date} 
+                <span class="postDate hideOnIndex pTextCenter">{DayOfMonth} {Month} {Year}</span>
+        {/block:Date}
+        <div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">
+
+          {block:Photos}
+            <div class="photo-data">
+              <div class="pxu-photo">
+                <img alt="{PhotoAlt}" src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}">
+              </div>
+              <div class="icons">
+                <a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}">
+                  <span class="zoom">Zoom</span>
+                </a>
+              </div>
+            </div>
+          {/block:Photos}
+        
+        </div><!-- close SLIDESHOW -->
+        
+        {block:Caption}{Caption}{/block:Caption}
+        {block:More}
+            <a href="{Permalink}" class="readMoreButton">
+                {lang:Read more} <i class="fa fa-long-arrow-right"></i>
+            </a>
+        {/block:More}
+    <!--POST FOOTER FOR PHOTOSET-->          
+    <div class="postFooter">  
+        <ul class="postStats">
+            <div class="like_and_reblog_buttons"></div>
+            {block:IndexPage} <!--only show on index-->
+                <li>
+                    <i class="fa fa-heart"></i>
+                    <a class="nobold" href="{Permalink}">
+                        {NoteCountWithLabel}
+                    </a>
+                </li>
+            {block:IfDisqusShortname} <!--display comment count when nessecary-->
+                <li>
+                    <i class="fa fa-comment"></i> 
+                    <a class="dsq-comment-count nobold" href="{Permalink}#disqus_thread">
+                        Comments
+                    </a>
+                    <script type="text/javascript">
+                        var disqus_shortname = '{text:Disqus Shortname}';
+                        (function () {
+                            var s = document.createElement('script'); s.async = true;
+                            s.type = 'text/javascript';
+                            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+                            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                        }());
+                    </script>
+                </li>
+            {/block:IfDisqusShortname}
+            {/block:IndexPage}
+
+            <li class="hideOnPermalink">  
+                {block:Date} 
+                    <i class="fa fa-clock-o"></i> {timeAgo} 
+                {/block:Date}
+            </li>
+              
+            {block:Tags}
+                <li class="tags">
+                    <a href="{TagURL}" class="nobold">{Tag}</a>
+                </li>
+            {/block:Tags}
+          </ul>
+    </div>
+    <!--END POST FOOTER-->
+    {/block:Photoset}
+    <!--++++++++++++-->
+    <!--END PHOTOSET-->
+    <!--++++++++++++-->
+
+
+    <!--+++++-->
+    <!--QUOTE-->
+    <!--+++++-->
+    {block:Quote}
+        <li class="post quote">
+            <br/>
+            “ {Quote} ”
+            {block:Source}
+                <div class="source">{Source}</div>
+            {/block:Source}
+            {block:More}
+                <a href="{Permalink}" class="readMoreButton">
+                    {lang:Read more} <i class="fa fa-long-arrow-right"></i>
+                </a>
+            {/block:More}
+        </li>
+    <!--POST FOOTER FOR QUOTE-->          
+    <div class="postFooter">  
+        <ul class="postStats">
+            <div class="like_and_reblog_buttons"></div>
+            {block:IndexPage} <!--only show on index-->
+                <li>
+                    <i class="fa fa-heart"></i>
+                    <a class="nobold" href="{Permalink}">
+                        {NoteCountWithLabel}
+                    </a>
+                </li>
+            {block:IfDisqusShortname} <!--display comment count when nessecary-->
+                <li>
+                    <i class="fa fa-comment"></i> 
+                    <a class="dsq-comment-count nobold" href="{Permalink}#disqus_thread">
+                        Comments
+                    </a>
+                    <script type="text/javascript">
+                        var disqus_shortname = '{text:Disqus Shortname}';
+                        (function () {
+                            var s = document.createElement('script'); s.async = true;
+                            s.type = 'text/javascript';
+                            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+                            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                        }());
+                    </script>
+                </li>
+            {/block:IfDisqusShortname}
+            {/block:IndexPage}
+
+            <li class="hideOnPermalink">  
+                {block:Date} 
+                    <i class="fa fa-clock-o"></i> {timeAgo} 
+                {/block:Date}
+            </li>
+              
+            {block:Tags}
+                <li class="tags">
+                    <a href="{TagURL}" class="nobold">{Tag}</a>
+                </li>
+            {/block:Tags}
+          </ul>
+    </div>
+    <!--END POST FOOTER-->
+    {/block:Quote}
+    <!--+++++++++-->
+    <!--END QUOTE-->
+    <!--+++++++++-->
+
+
+    <!--++++-->
+    <!--LINK-->
+    <!--++++-->
+    {block:Link}
+        <li class="post link">
+            
+                <a href="{URL}" id="link" class="link" {Target}><h3>{Name} <i class="fa fa-share"></i></h3></a>
+            
+            {block:Date} 
+                <span class="postDate hideOnIndex">{DayOfMonth} {Month} {Year}</span>
+            {/block:Date}
+            {block:Description}
+                <div class="description">
+                    {Description}
+                </div>
+            {/block:Description}
+            {block:More}
+                <a href="{Permalink}" class="readMoreButton">
+                    {lang:Read more} <i class="fa fa-long-arrow-right"></i>
+                </a>
+            {/block:More}
+        </li>
+    <!--POST FOOTER FOR LINK-->          
+    <div class="postFooter">  
+        <ul class="postStats">
+            <div class="like_and_reblog_buttons"></div>
+            {block:IndexPage} <!--only show on index-->
+                <li>
+                    <i class="fa fa-heart"></i>
+                    <a class="nobold" href="{Permalink}">
+                        {NoteCountWithLabel}
+                    </a>
+                </li>
+            {block:IfDisqusShortname} <!--display comment count when nessecary-->
+                <li>
+                    <i class="fa fa-comment"></i> 
+                    <a class="dsq-comment-count nobold" href="{Permalink}#disqus_thread">
+                        Comments
+                    </a>
+                    <script type="text/javascript">
+                        var disqus_shortname = '{text:Disqus Shortname}';
+                        (function () {
+                            var s = document.createElement('script'); s.async = true;
+                            s.type = 'text/javascript';
+                            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+                            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                        }());
+                    </script>
+                </li>
+            {/block:IfDisqusShortname}
+            {/block:IndexPage}
+
+            <li class="hideOnPermalink">  
+                {block:Date} 
+                    <i class="fa fa-clock-o"></i> {timeAgo} 
+                {/block:Date}
+            </li>
+              
+            {block:Tags}
+                <li class="tags">
+                    <a href="{TagURL}" class="nobold">{Tag}</a>
+                </li>
+            {/block:Tags}
+          </ul>
+    </div>
+    <!--END POST FOOTER-->
+    {/block:Link}
+    <!--++++++++-->
+    <!--END LINK-->
+    <!--++++++++-->
+
+
+    <!--++++-->
+    <!--CHAT-->
+    <!--++++-->
+    {block:Chat}
+        <li class="post chat">
+            {block:Title}
+                <h3 id="title">
+                    <a href="{Permalink}">
+                        {Title}
+                    </a>
+                </h3>
+            {/block:Title}
+            {block:Date} 
+                <span class="postDate hideOnIndex">{DayOfMonth} {Month} {Year}</span>
+            {/block:Date}
+            <ul class="chat">
+                {block:Lines}
+                    <li class="{Alt} user_{UserNumber}">
+                        {block:Label}
+                            <span class="label">
+                                {Label}
+                            </span>
+                        {/block:Label}
+                        {Line}
+                    </li>
+                {/block:Lines}
+            </ul>
+            {block:More}
+                <a href="{Permalink}" class="readMoreButton">
+                    {lang:Read more} <i class="fa fa-long-arrow-right"></i>
+                </a>
+            {/block:More}
+        </li>
+    <!--POST FOOTER FOR CHAT-->          
+    <div class="postFooter">  
+        <ul class="postStats">
+            <div class="like_and_reblog_buttons"></div>
+            {block:IndexPage} <!--only show on index-->
+                <li>
+                    <i class="fa fa-heart"></i>
+                    <a class="nobold" href="{Permalink}">
+                        {NoteCountWithLabel}
+                    </a>
+                </li>
+            {block:IfDisqusShortname} <!--display comment count when nessecary-->
+                <li>
+                    <i class="fa fa-comment"></i> 
+                    <a class="dsq-comment-count nobold" href="{Permalink}#disqus_thread">
+                        Comments
+                    </a>
+                    <script type="text/javascript">
+                        var disqus_shortname = '{text:Disqus Shortname}';
+                        (function () {
+                            var s = document.createElement('script'); s.async = true;
+                            s.type = 'text/javascript';
+                            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+                            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                        }());
+                    </script>
+                </li>
+            {/block:IfDisqusShortname}
+            {/block:IndexPage}
+
+            <li class="hideOnPermalink">  
+                {block:Date} 
+                    <i class="fa fa-clock-o"></i> {timeAgo} 
+                {/block:Date}
+            </li>
+              
+            {block:Tags}
+                <li class="tags">
+                    <a href="{TagURL}" class="nobold">{Tag}</a>
+                </li>
+            {/block:Tags}
+          </ul>
+    </div>
+    <!--END POST FOOTER-->
+    {/block:Chat}
+    <!--++++++++-->
+    <!--END CHAT-->
+    <!--++++++++-->
+
+
+    <!--+++++-->
+    <!--VIDEO-->
+    <!--+++++-->
+    {block:Video}
+        <li class="post video">
+            {block:Date} 
+                <span class="postDate hideOnIndex pTextCenter">{DayOfMonth} {Month} {Year}</span>
+            {/block:Date}
+            <div class="pCenter">
+                {Video-700}
+            </div>
+            {block:Caption}
+                <div class="caption">{Caption}</div>
+            {/block:Caption}
+            {block:More}
+                <a href="{Permalink}" class="readMoreButton">
+                    {lang:Read more} <i class="fa fa-long-arrow-right"></i>
+                </a>
+            {/block:More}
+        </li>
+    <!--POST FOOTER FOR VIDEO-->          
+    <div class="postFooter">  
+        <ul class="postStats">
+            <div class="like_and_reblog_buttons"></div>
+            {block:IndexPage} <!--only show on index-->
+                <li>
+                    <i class="fa fa-heart"></i>
+                    <a class="nobold" href="{Permalink}">
+                        {NoteCountWithLabel}
+                    </a>
+                </li>
+            {block:IfDisqusShortname} <!--display comment count when nessecary-->
+                <li>
+                    <i class="fa fa-comment"></i> 
+                    <a class="dsq-comment-count nobold" href="{Permalink}#disqus_thread">
+                        Comments
+                    </a>
+                    <script type="text/javascript">
+                        var disqus_shortname = '{text:Disqus Shortname}';
+                        (function () {
+                            var s = document.createElement('script'); s.async = true;
+                            s.type = 'text/javascript';
+                            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+                            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                        }());
+                    </script>
+                </li>
+            {/block:IfDisqusShortname}
+            {/block:IndexPage}
+
+            <li class="hideOnPermalink">  
+                {block:Date} 
+                    <i class="fa fa-clock-o"></i> {timeAgo} 
+                {/block:Date}
+            </li>
+              
+            {block:Tags}
+                <li class="tags">
+                    <a href="{TagURL}" class="nobold">{Tag}</a>
+                </li>
+            {/block:Tags}
+          </ul>
+    </div>
+    <!--END POST FOOTER-->
+    {/block:Video}
+    <!--+++++++++-->
+    <!--END VIDEO-->
+    <!--+++++++++-->
+
+
+    <!--+++++-->
+    <!--AUDIO-->
+    <!--+++++-->
+    {block:Audio}
+        <li class="post audio">
+            {AudioPlayerBlack}
+            {block:Date} 
+                <span class="postDate hideOnIndex">{DayOfMonth} {Month} {Year}</span>
+            {/block:Date}
+            {block:Caption}
+                <div class="caption">{Caption}</div>
+            {/block:Caption}
+            {block:More}
+                <a href="{Permalink}" class="readMoreButton">
+                    {lang:Read more} <i class="fa fa-long-arrow-right"></i>
+                </a>
+            {/block:More}
+        </li>
+    <!--POST FOOTER FOR AUDIO-->          
+    <div class="postFooter">  
+        <ul class="postStats">
+            <div class="like_and_reblog_buttons"></div>
+            {block:IndexPage} <!--only show on index-->
+                <li>
+                    <i class="fa fa-heart"></i>
+                    <a class="nobold" href="{Permalink}">
+                        {NoteCountWithLabel}
+                    </a>
+                </li>
+            {block:IfDisqusShortname} <!--display comment count when nessecary-->
+                <li>
+                    <i class="fa fa-comment"></i> 
+                    <a class="dsq-comment-count nobold" href="{Permalink}#disqus_thread">
+                        Comments
+                    </a>
+                    <script type="text/javascript">
+                        var disqus_shortname = '{text:Disqus Shortname}';
+                        (function () {
+                            var s = document.createElement('script'); s.async = true;
+                            s.type = 'text/javascript';
+                            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+                            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                        }());
+                    </script>
+                </li>
+            {/block:IfDisqusShortname}
+            {/block:IndexPage}
+
+            <li class="hideOnPermalink">  
+                {block:Date} 
+                    <i class="fa fa-clock-o"></i> {timeAgo} 
+                {/block:Date}
+            </li>
+              
+            {block:Tags}
+                <li class="tags">
+                    <a href="{TagURL}" class="nobold">{Tag}</a>
+                </li>
+            {/block:Tags}
+          </ul>
+    </div>
+    <!--END POST FOOTER-->
+    {/block:Audio}
+    <!--+++++++++-->
+    <!--END AUDIO-->
+    <!--+++++++++-->
+                
+
+<div class="space"></div> <!--space between each post-->
+
+{/block:Posts}
+<!--+++++++++-->
+<!--END POSTS-->
+<!--+++++++++-->
+       
+<!--++++++++++++++-->   
+<!--PERMALINK PAGE-->
+<!--++++++++++++++--> 
+{block:PermalinkPage}
+
+{block:IfPostNavigation}
+{block:PermalinkPagination}
+<div class="row permalinkPagination hideOnPrint">
+    <div class="large-6 medium-6 small-6 columns">
+        {block:PreviousPost}
+        <span>
+            <a class="postNav" id="previousPost" href="{PreviousPost}"><i class="fa fa-long-arrow-left"></i> Previous Post</a>
+        </span>
+        {/block:PreviousPost}
+    </div>
+    <div class="large-6 medium-6 small-6 columns">
+         {block:NextPost}
+        <span>
+            <a class="postNav" id="nextPost" href="{NextPost}">Next Post <i class="fa fa-long-arrow-right"></i></a>
+        </span>
+        {/block:NextPost} 
+    </div>
+</div>
+<div class="spaceSmall"></div>
+{/block:PermalinkPagination}
+{/block:IfPostNavigation}
+
+
+    <!--DISQUS COMMENTS-->
+    {block:IfDisqusShortname}
+        <div id="disqus_thread"></div>
+        <div id="disqus_loader" style="text-align: center">
+            <a onclick='$.ajaxSetup({cache:true});$.getScript("http://{text:Disqus Shortname}.disqus.com/embed.js");$.ajaxSetup({cache:false});$("#disqus_loader").remove();' id="disqusButton"><i class="fa fa-comments"></i></a>
+        </div>
+        <div class="spaceSmall"></div> <!--space-->
+    {/block:IfDisqusShortname}
+    
+    <!--NOTES-->
+    {block:PostNotes}
+        {PostNotes}<div class="spaceSmall"></div>
+    {/block:PostNotes}
+
+{/block:PermalinkPage}
+<!--+++++++++++++-->
+<!--END PERMALINK-->
+<!--+++++++++++++-->
+
+        </ol> <!--Ordered list for posts to be displayed, take this out?-->
+    </div> <!--Content columns-->
+</div> <!--Content row-->
+
+<!--+++++++++++-->
+<!--END CONTENT-->
+<!--+++++++++++-->
+
+
+<!--++++++++++++++++-->
+<!--PERMALINK FOOTER-->
+<!--++++++++++++++++-->
+<div class="postBottom hideOnIndex hideOnPrint"> <!--hide on index, show on permalink-->
+    <div class="row">
+    <div class="small-12 medium-9 large-{text:Column Size} small-centered columns">  
+        <div class="row">
+            <div class="large-6 small-centered columns">
+            <h3><a href="{BlogURL}">{Title}</a></h3>
+        <ul>     
+            {block:IfUsernameOnFacebook}
+                <li>
+                    <a target="_blank" href="http://www.facebook.com/{text:Username on Facebook}" id="facebook"><i class="fa fa-facebook-square"></i></a>
+                </li>
+            {/block:IfUsernameOnFacebook}
+            
+            {block:IfGooglePlusUrl}
+                <li>
+                    <a target="_blank" href="http://www.google.com/+{text:URL on Google Plus}" id="google"><i class="fa fa-google-plus-square"></i></a>
+                </li>
+            {/block:IfGooglePlusUrl}
+
+            {block:IfUsernameOnTwitter}
+                <li>
+                    <a target="_blank" href="http://www.twitter.com/{text:Username on Twitter}" id="twitter"><i class="fa fa-twitter-square"></i></a>
+                </li>
+            {/block:IfUsernameOnTwitter} 
+        
+            {block:IfUsernameOnYouTube}
+                <li>
+                    <a target="_blank" href="http://www.youtube.com/{text:Username on YouTube}" id="youtube"><i class="fa fa-youtube-square"></i></a>
+                </li>
+            {/block:IfUsernameOnYouTube}
+            
+            {block:IfUsernameOnInstagram}
+                <li>
+                    <a target="_blank" href="http://www.instagram.com/{text:Username on Instagram}" id="instagram"><i class="fa fa-instagram"></i></a>
+                </li>
+            {/block:IfUsernameOnInstagram}
+
+            {block:IfUsernameOnPinterest}
+                <li>
+                    <a target="_blank" href="http://www.pinterest.com/{text:Username on Pinterest}" id="pinterest"><i class="fa fa-pinterest-square"></i></a>
+                </li>
+            {/block:IfUsernameOnPinterest}
+
+            {block:IfUsernameOnFlickr}
+                <li>
+                    <a target="_blank" href="http://www.flickr.com/{text:Username on Flickr}" id="flickr"><i class="fa fa-flickr"></i></a>
+                </li>
+            {/block:IfUsernameOnFlickr}
+
+            {block:IfUsernameOnLinkedin}
+                <li>
+                    <a target="_blank" href="http://www.linkedin.com/in/{text:Username on LinkedIn}" id="linkedin"><i class="fa fa-linkedin-square"></i></a>
+                </li>
+            {/block:IfUsernameOnLinkedin}
+
+            {block:IfUsernameOnGitHub}
+                <li>
+                    <a target="_blank" href="http://www.github.com/{text:Username on GitHub}" id="github"><i class="fa fa-github-square"></i></a>
+                </li>
+            {/block:IfUsernameOnGitHub}
+
+            {block:IfUsernameOnDribbble}
+                <li>
+                    <a target="_blank" href="http://www.dribbble.com/{text:Username on Dribbble}" id="dribbble"><i class="fa fa-dribbble"></i></a>
+                </li>
+            {/block:IfUsernameOnDribbble}  
+        </ul>
+                <p>{Description}</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<!--++++++++++++++++++++-->
+<!--END PERMALINK FOOTER-->
+<!--++++++++++++++++++++-->
+
+
+<!--++++++-->
+<!--FOOTER-->
+<!--++++++-->  
+
+<!--NAVIGATION--> 
+<div class="row" >
+    <div class="small-12 medium-9 large-{text:Column Size} small-centered columns navlinkContainer">  
+        {block:NextPage}
+            <a id="navlink" href="{NextPage}">Next <i class="fa fa-long-arrow-right"></i> </a>
+        {/block:NextPage} 
+        
+        {block:PreviousPage}
+            <a id="navlink" href="{PreviousPage}"><i class="fa fa-long-arrow-left"></i> Previous</a>
+        {/block:PreviousPage}   
+        <a id="random" href="{BlogURL}random"><i class="fa fa-long-arrow-left"></i>Random</a>
+    </div>
+</div>
+
+<div class="spaceSmall"></div>
+<!--SEARCH
+<div class="row" id="bottomSearch">
+    <div class="small-12 medium-9 large-{text:Column Size} small-centered columns">  
+                        <form id="searchForm" action="/search" method="get">
+                            <input id="search" placeholder="Search..." autocomplete="off" type="text" name="q" value="{SearchQuery}"/>
+                        </form>           
+    </div>
+</div>
+-->
+
+<!--BOTTOM STUFF-->
+<div class="bottom hideOnPrint">
+    <!--LINKS-->
+    <div class="row" id="bottomLinks">
+        <div class="small-12 medium-9 large-{text:Column Size} small-centered columns">  
+            <a href="{BlogURL}">Home</a>
+            <a href="/archive">Archive</a>
+            {block:AskEnabled}
+                <a onclick="askOn()" id="askButton" href="#asksubmit">{AskLabel}</a>
+            {/block:AskEnabled}
+            {block:SubmissionsEnabled} 
+                <a onclick="submitOn()" id="submitButton" href="#asksubmit">{SubmitLabel}</a>
+            {/block:SubmissionsEnabled} 
+            {block:IfEmail}
+                <a href="mailto:{text:Email}" id="Email">Email</a>
+            {/block:IfEmail}
+        </div>
+    </div>
+    <!--BLURB-->
+    <div class="row" id="bottomBlurb">
+        <div class="small-8 medium-6 large-4 small-centered columns">
+            <p class="powered">
+                <a href="http://papertheme.tumblr.com/">Paper</a> theme powered by <a href="http://www.tumblr.com/">Tumblr</a>
+            </p>
+        </div>
+    </div> 
+</div>
+<!--++++++++++-->
+<!--END FOOTER-->
+<!--++++++++++-->
+
+
+<!--++++++++++++-->
+<!--ASK & SUBMIT-->
+<!--++++++++++++-->
+<div class="asksubmit hideOnPrint">
+    <a name="asksubmit"></a> 
+    {block:AskEnabled}
+        <div class="row" id="ask">
+            <div class="small-12 medium-9 large-{text:Column Size} small-centered columns">     
+                <iframe id="askBox" frameborder="0" scrolling="no" width="100%" height="190" src="http://www.tumblr.com/ask_form/{text:Tumblr Username}.tumblr.com" style="background-color:transparent; overflow:hidden;" id="ask_form"></iframe>
+            </div>
+        </div>
+    {/block:AskEnabled}
+    
+    {block:SubmissionsEnabled} 
+        <div class="row" id="submit">
+            <div class="small-12 medium-9 large-{text:Column Size} small-centered columns">    
+                <iframe id="submitBox" src="http://www.tumblr.com/submit_form/{text:Tumblr Username}.tumblr.com" frameborder="0" height="500" scrolling="no" width="100%"></iframe>
+            </div>
+        </div>
+    {/block:SubmissionsEnabled} 
+</div>
+<!--+++++++++++-->
+<!--END ASK/SUB-->
+<!--+++++++++++-->
+
+<!--INSTAGRAM BANNER-->
+{block:IfInstagramBanner}
+    <div id="instafeed"></div>
+{/block:IfInstagramBanner}
+
+</div>
+<!--+++++++++++++++++++++++++++++-->
+<!--END OF SLIDEBARS MAIN CONTENT-->
+<!--+++++++++++++++++++++++++++++-->
+
+<!--+++++++++-->
+<!--SLIDEBARS-->
+<!--+++++++++-->
+<!--
+<div class="sb-slidebar sb-left hideOnPrint">
+    <div>
+        <ul>
+            {block:Pages}
+                <li>
+                    <a href="{URL}">{Label}</a>
+                </li>
+            {/block:Pages}
+        </ul>
+    </div>
+</div>
+-->
+
+<!--+++++++-->
+<!--SCRIPTS-->
+<!--+++++++-->
+
+<!--Jquery-->
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
+
+<!--Syntax-->
+<script type="text/javascript" src="http://static.tumblr.com/smotcsf/phJn1y2w7/prettify.js"></script>
+
+<!--Instafeed-->
+{block:IfInstagramUserID}
+    <script  type="text/javascript" src="http://static.tumblr.com/smotcsf/y9Mmw9qml/instafeed.min.js"></script>
+{/block:IfInstagramUserID}
+{block:IfInstagramTag}
+    <script type="text/javascript" src="http://static.tumblr.com/smotcsf/y9Mmw9qml/instafeed.min.js"></script>
+{/block:IfInstagramTag}
+
+<!--Slidebars-->
+{block:IfSlidebars}
+    <script type="text/javascript" src="http://static.tumblr.com/smotcsf/5iOn0th2k/slidebars.min.js"></script>
+{/block:IfSlidebars}
+
+<!--Photoset Grid-->
+<script type="text/javascript" src="http://static.tumblr.com/smotcsf/Ecdn2cscy/pxuphotoset.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    
+    //PHOTOSETS
+   $('.photo-slideshow').pxuPhotoset({
+        // options go here
+        'highRes'   : true, // will use high res images
+        'rounded'   : 'false', // corners, all or false
+        'exif'      : false, // display EXIF data if available (tooltip)
+        'captions'  : false, // display individual captions on photos (tooltip)
+        'gutter'    : '10px', // spacing between the images
+        'photoset'  : '.photo-slideshow', // photoset wrapper
+        'photoWrap' : '.photo-data', // photo data wrapper (includes photo, icons + exif)
+        'photo'     : '.pxu-photo' // photo wrap (includes photo only)
+    }, function() {
+        // callback
+    });
+    
+});
+//end ready
+
+$.slidebars();
+
+$(window).load(function() {
+   //alert("window is loaded");
+   document.body.focus();
+});
+//end load
+
+//GLOBAL
+function askOn(){
+    if( $('#ask').css('display') == "block" ){
+        document.getElementById("ask").style.display = 'none';} 
+    else { 
+        document.getElementById("ask").style.display = 'block';
+        scroll();
+        document.getElementById("submit").style.display = 'none';}
+}
+
+//SUBMIT
+function submitOn(){
+    if( $('#submit').css('display') == "block" ) {
+        document.getElementById("submit").style.display = 'none';} 
+    else { 
+        document.getElementById("submit").style.display = 'block';
+        scroll();
+        document.getElementById("ask").style.display = 'none';}
+}
+
+//SCROLL TO
+function scroll() {
+    $('html, body').animate({scrollTop: $(".asksubmit").offset().top}, 500);
+        window.location.hash="content"; //FALL BACK
+}
+</script>
+
+<!--KEYBOARD NAV ON INDEX-->
+{block:IndexPage}
+<script>
+  //RANDOM NAVIGATION FOR INDEX
+  document.body.onkeydown = function(e){   
+        if (e == null) {
+            keycode = event.keyCode;
+        } else {
+            keycode = e.which;
+        }
+        if(keycode == 80){
+            $("#sb-site").fadeOut();
+            //alert('Random');
+            setTimeout(function(){
+                window.location = $('#random').attr('href');
+            },100);
+        } 
+         if (url) {
+        window.location = url;
+        }
+    };
+</script>
+{/block:IndexPage}
+
+<!--PERSONAL INSTAFEED-->
+{block:IfInstagramUserID}
+    <script type="text/javascript">
+        var userFeed = new Instafeed({
+            limit: 20,
+            get: 'user',
+            userId: {text:Instagram User ID},
+            accessToken: '{text:Instagram Access Token}',
+        });
+        userFeed.run();
+    </script>
+{/block:IfInstagramUserID}
+<!--INSTAFEED OF A TAG-->
+{block:IfInstagramTag}
+    <script type="text/javascript">
+        var feed = new Instafeed({
+            limit: 20,
+            get: 'tagged',
+            tagName: '{text:Instagram Tag}',
+            clientId: 'a25f5a7693b04351b165dc8df1e6aded'
+        });
+        feed.run();
+    </script>
+{/block:IfInstagramTag}
+
+<!--PERMALINK ONLY-->
+{block:PermalinkPage} 
+<script>
+  //KEYBOARD NAVIGATION FOR PERMALINK
+  document.body.onkeydown = function(e){  
+
+        if (e == null) {
+            keycode = event.keyCode;
+        } else {
+            keycode = e.which;
+        }
+        if(keycode == 39){
+            $("#sb-site").stop().animate({right:"100%"});
+            //alert('Right');
+            setTimeout(function(){
+                window.location = $('#nextPost').attr('href');
+            },200);
+        } else if(keycode == 37){
+            $("#sb-site").stop().animate({left:"100%"});
+            //alert('Left');
+            setTimeout(function(){
+                window.location = $('#previousPost').attr('href');
+            },200);
+        }   
+        else if(keycode == 80){
+            $("#sb-site").fadeOut();
+            //alert('Random')
+            setTimeout(function(){
+                window.location = $('#random').attr('href');
+            },100);
+        }
+    };
+</script>
+{/block:PermalinkPage}
+   
+</body>
+</html>
