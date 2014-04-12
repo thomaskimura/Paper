@@ -1,8 +1,14 @@
+
+/*  Load below code inside
+    style.css for now we can
+    do it like this for
+    easier development */
+    
 /*---------------------*/
 /*---ANY SCREEN SIZE---*/
 /*---------------------*/
-
-#sb-site{position: relative;} /* allow jquerry aniations on entire page */
+#random{display:block; text-align:center;}          /* hide this for now */
+#sb-site{position: relative;}   /* allow jquerry aniations on entire page */
 
 /* Tomorrow Theme */
 /* Original theme - https://github.com/chriskempson/tomorrow-theme */
@@ -58,6 +64,8 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
   h4{font-size:1rem; line-height:1.618rem;}     /*line height @ 1.618*/
   h5{font-size:0.927rem; line-height:1.499rem;} /*line height @ 1.618*/
   h6{font-size:0.573rem; line-height:0.927rem;} /*line height @ 1.618*/
+  h1,h2,h3,h4,h5,h6{margin-bottom:0px;}
+  
   
   /*--HIDES--*/
   /* hides element on different sizes */
@@ -346,13 +354,14 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
   #navlink
   {
     text-align: center;
-    float: right;
     padding: 0.573rem;
     width: 50%;
     background: #fafafa;
     padding-top: 1rem;
     padding-bottom: 1rem;}
   #navlink:hover{background:#eee;}
+  .left{float:left;}
+  .right{float:right;}
 
   /* bottom links */
   #bottomDescription,#bottomBlurb,#bottomLinks{text-align:center;}
@@ -418,6 +427,9 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
       padding-bottom:1rem;}
   .postNav:hover{background:#eee;}
   .permalinkPagination .columns{padding:0px;} /* remove spacing for permalink post buttons */
+    .left{float:left;}
+    .right{float:right;}
+  .hint{color:#aaaaaa; font-size:0.8rem; line-height:0.96rem;}
 
   /* permalink footer */
   .postBottom{text-align:center;color:#aaaaaa;}
@@ -425,6 +437,28 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
   .postBottom ul{list-style:none;padding:0px;margin:0rem;}
   .postBottom ul li{display:inline;padding-right:0.573rem;color:#aaaaaa;}
   .postBottom p{font-size:0.8rem;line-height:1.294rem;}
+  
+  /* permalink author */
+  .postAuthor
+  {
+      color:#aaaaaa;
+      font-size:0.8rem;
+      line-height:1.294rem;
+      margin-top:1rem;
+      margin-bottom:2rem;
+      font-weight:300;
+      text-align:left;
+  }
+  .postAuthor a
+  {
+      font-weight:300;
+  }
+  .postAuthorImage
+  {
+      display:inline !important;
+      padding:0px !important;
+      border-radius:50%;
+  }
 
 
   /*--USEABLE CLASSES--*/
@@ -503,6 +537,7 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
   /*--PERMALINK--*/
     .postBottom p{font-size:0.975rem;line-height:1.577rem;} /* h4 - 0.4 */
     .permalinkPagination{font-size:1.159rem; line-height:1.947rem;}
+    .postAuthor{font-size:0.975rem;line-height:1.577rem;}
   
   /*--USEABLE CLASSES--*/
     .pQuote{font-size:2.225rem; line-height:3.6rem;} /* h3 font size */
