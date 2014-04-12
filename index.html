@@ -113,6 +113,613 @@ body, ol.notes li.note blockquote a, .postAuthor {font-family:{font:Headings}; !
 blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 .post p, .chat li{font-family:{font:Body};}
 
+
+/*  Load below code inside
+    style.css for now we can
+    do it like this for
+    easier development */
+    
+/*---------------------*/
+/*---ANY SCREEN SIZE---*/
+/*---------------------*/
+#random{display:block; text-align:center;}          /* hide this for now */
+#sb-site{position: relative;}   /* allow jquerry aniations on entire page */
+
+/* Tomorrow Theme */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+.prettyprint {
+  background: white;
+  font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace;
+  font-size: 0.8rem;
+  line-height: 1.294rem;
+  padding: 10px;
+  overflow: auto;
+}
+
+.pln {color: #4d4d4c;}
+
+@media screen {
+  .str {color: #718c00;}
+  .kwd {color: #8959a8;}
+  .com {color: #8e908c;}
+  .typ {color: #4271ae;}
+  .lit {color: #f5871f;}
+  .pun {color: #4d4d4c;}
+  .opn {color: #4d4d4c;}
+  .clo {color: #4d4d4c;}
+  .tag {color: #c82829;}
+  .atn {color: #f5871f;}
+  .atv {color: #3e999f;}
+  .dec {color: #f5871f;}
+  .var {color: #c82829;}
+  .fun {color: #4271ae;}
+}
+
+@media print, projection {
+  .str {color: #006600;}
+  .kwd {color: #006;font-weight: bold;}
+  .com {color: #600;font-style: italic;}
+  .typ {color: #404;font-weight: bold;}
+  .lit {color: #004444;}
+  .pun, .opn, .clo {color: #444400;}
+  .tag {color: #006;font-weight: bold;}
+  .atn {color: #440044;}
+  .atv {color: #006600;}
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
+
+  /*--TYPOGRAPHY SIZING--*/
+  /* base font for mobile = 16px & 24px */
+  body {font-size: 1rem; line-height: 1.618rem;}
+  h1{font-size:3.927rem; line-height:4.712rem;} /*line height @ 1.2*/
+  h2{font-size:2.618rem; line-height:3.14rem;}
+  h3{font-size:1.618rem; line-height:2.617rem;} /*line height @ 1.618*/
+  h4{font-size:1rem; line-height:1.618rem;}     /*line height @ 1.618*/
+  h5{font-size:0.927rem; line-height:1.499rem;} /*line height @ 1.618*/
+  h6{font-size:0.573rem; line-height:0.927rem;} /*line height @ 1.618*/
+  h1,h2,h3,h4,h5,h6{margin-bottom:0px;}
+  
+  
+  /*--HIDES--*/
+  /* hides element on different sizes */
+  .hideOnSmall{display:none;}
+  .hideOnLarge{display:block;}
+  .hideOnIndex{display:none;}
+
+  /*--SPACER--*/
+  /* use this to space out elements evenly */
+  .space{height:3.927rem;}      /*font size of h1*/
+  .spaceSmall{height:2.618rem;} /*font size of h2*/
+
+  /*--BASIC--*/
+  body{color:#555555;}
+  html, body{overflow-x:hidden; -webkit-overflow-scrolling: touch;}
+
+  /*  Why did I put this in?
+      Figure it out */
+  #tumblr_controls{
+    position:absolute !important;} /* fix tumblr iframes */
+  
+  /* links */
+  a{
+    text-decoration:none;
+    color:inherit;
+    font-weight:600;}
+
+    
+  /* type elements */
+  p{
+    margin-top:0px;}
+  ul{
+    margin-left:0px;
+    margin-bottom:1rem;}/* remove foundation left margin and add spacing */
+  ol{
+    margin-bottom:1rem;}
+  blockquote{
+    border-left: solid  0.573rem;
+    border-color:#eee;
+    padding-left:1rem;
+    margin-left: 0px;
+    color:#444444;
+    font-size:1.618rem;
+    font-weight:600;
+    line-height:2.617rem;
+  }
+
+  /* change scrollbar for code overflow */
+  pre.prettyprint::-webkit-scrollbar{width:0px}
+  pre.prettyprint::-webkit-scrollbar:horizontal{height:0.573rem;}
+  pre.prettyprint::-webkit-scrollbar-track{background-color: #555555;}
+  pre.prettyprint::-webkit-scrollbar-thumb{background-color: #bbbbbb;}
+  pre.prettyprint::-webkit-scrollbar-corner{display:none;}
+
+  /*--HEADER--*/
+  /*  Use a text imput for header height
+      create a very good default
+      style slidebar menu. Let's redo the
+      headers, take inspiration from
+      medium.com */
+  .header{
+    text-align:center;}
+  .header h1{
+    color:#333333;
+    margin:0px;}
+
+  .header p{
+    color:#aaaaaa;}
+  .header ul{
+    list-style:none;
+    padding:0px; 
+    margin:1rem;}
+  .header ul li{
+    display:inline; 
+    padding:0.573rem; 
+    color:#aaaaaa;}
+
+  /*logo*/
+  /*  this may need to be fixed
+      for better headers. For
+      now it creates circular
+      avatars for display */
+  #headerImage{
+    border-radius:100px}
+  #headerImageContainer{
+    background:transparent;
+    width:100px;margin:0 auto;
+    padding:0.573rem;}
+
+  /* social media icons colours */
+  #twitter:hover{color:#55ACEE;}
+  #facebook:hover{color:#3B5998;}
+  #linkedin:hover{color:#0e76a8;}
+  #google:hover{color:#dd4b39;}
+  #youtube:hover{color:#c4302b;}
+  #instagram:hover{color:#3f729b;}
+  #pinterest:hover{color:#c8232c;}
+  #flickr:hover{color:#0063dc;}
+  #dribbble:hover{color:#ea4c89;}
+  #github:hover{color:#171515;}
+
+  /* header bacground */
+  #headerBackground /* set the background for the header */
+  {
+    position: absolute;
+    height: 300px;
+    top: 0px;
+    width: 100%;
+    z-index: -10;}
+  #headerTint /* set a tint colour to overlay ontop of images */
+  {
+    position: absolute;
+    height: 300px;
+    top: 0px;
+    width: 100%;
+    background: none; /* set option for tint colour */
+    opacity: 0.6;
+    z-index: -10;}
+
+
+  /*--SLIDEBARS--*/
+  /*  Come up with a new and
+      responsive way to navigate
+      through this theme. */
+  /* icon for menu */
+  .menuIcon{
+    position:absolute; 
+    top:1rem; left:1rem; 
+    font-size:1.618rem; 
+    cursor: pointer; 
+    color:#aaaaaa;;
+    z-index:10;}
+  /*Slidebar menu*/
+  /*  Restyle this to match
+      the rest of the theme */
+  .sb-slidebar{
+    z-index:10;}
+  .sb-slidebar ul{
+    list-style:none; 
+    padding:0px; 
+    margin:0px;}
+  .sb-slidebar ul li{
+    padding-top:1rem;
+    padding-left:0.573rem;}
+  .sb-slidebar ul li a{
+    color:#aaaaaa;}
+
+
+  /*--POSTS--*/
+  /*  General styling for all post
+      and post types */
+  .small-centered{float:none !important;} /* unfloat to center divs*/
+  .posts{padding:0px; margin:0px;}        /* remove padding */
+  .post{list-style:none;padding-left:0}   /* remove list-styling */
+  .post img{display:block;padding-top:1rem;padding-bottom:1rem;margin:0 auto;} /*center images*/
+  .post a{word-wrap:break-word;}          /* break links */
+  .post p{font-weight:300;}               /* set font reading font */
+  .postDate{color:#aaaaaa; padding-bottom:0.573rem;}
+  .readMoreButton{font-weight: 600; margin-bottom:1rem;} 
+  #title{margin:0px; margin-bottom:0.573rem; color:#444;}
+
+  /*CHAT*/    
+  .chat{
+    list-style:none;padding:0}
+  .chat li{
+    margin-top:0.573rem;
+    margin-bottom:0.573rem;
+    border-radius:5px; 
+    padding:0.573rem;}
+  .chat .odd{
+    background:#fafafa;}
+  .label{
+    font-weight:600;color:#444;}
+
+  /*IMAGE*/
+  /* pxu photoset extended styles*/
+  .clearit:before, .clearit:after { content: ""; display: table; }
+  .clearit:after { clear: both; }
+  .clearit { *zoom: 1; }
+
+  /*PHOTOSET*/
+  .photo-slideshow {visibility: hidden;}
+  .photo-slideshow.processed {visibility: visible;}
+  .photo-slideshow .row {clear: both;}
+  .photo-slideshow .pxu-photo {
+    display: block;
+    float: left;
+    margin-bottom: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+  .photo-slideshow .pxu-photo img {display: block;}
+  .photo-slideshow.processed .pxu-photo img {width: 100%;height: auto;}
+  .photo-slideshow .pxu-photo:first-child img {margin-left: 0;}
+  .photo-slideshow .count-1 {width: 100%;}
+  .photo-slideshow .count-2 {width: 50%;}
+  .photo-slideshow .count-3 {width: 33.33%;}
+  .photo-slideshow .count-4 {width: 25%;}
+  .photo-slideshow .count-5 {width: 20%;}
+  .photo-slideshow .info {display: none;}
+
+  /* Icons for EXIF Data and Zoom */
+  /*  Add display styling for
+      EXIF data on permalink */
+  .photo-data {position: relative;float: left;}
+  .icons {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999px;
+    z-index: 999;
+    visibility: hidden;
+  }
+  .icons > span, .icons .tumblr-box span {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin-bottom: 2px;
+    cursor: pointer;
+  }
+
+  /*QUOTE*/
+  .quote{
+    font-weight:600;
+    font-size:2.618rem; 
+    line-height:3.14rem; 
+    margin:0px; 
+    text-align:center;}
+  .source{ 
+    font-weight:300; 
+    font-size:1rem; 
+    line-height:1.618rem; 
+    padding-top:1rem; 
+    padding-bottom:1rem; 
+    font-style:italic;}
+  .source a{
+    font-weight:600;}
+
+  /*LINK*/
+  .link h3{
+    padding: 1rem;
+    background: #56bc8a; /* tumblr link green */
+    border-radius: 5px;
+    color:white;}
+  .link h3:hover{background:#45966e;}  /* 10% darker */
+
+  /*AUDIO*/
+  /* h2 font-size */
+  .tumblr_audio_player{height:2.618rem;}
+
+  /*VIDEO*/
+  /* center and limit videos */
+  .post iframe {max-width: 100%;width: 100%;}
+  .tumblr_video_container{max-width: 100%;width: 100%;}
+
+  /*--POST BOTTOM--*/
+  /* post notes,tags and comments */
+  .postFooter{padding-top:0.573rem;}
+  .postStats{
+    font-size:0.8rem;
+    font-family: 'Calluna Sans', sans-serif;
+    line-height:1.294rem;
+    list-style:none;
+    margin:0;
+    padding:0px; 
+    color:#aaaaaa;}
+  .postStats li{
+    display:inline-block; 
+    padding-right:1rem; 
+    margin-bottom:0.573rem;
+    padding-top: 0.573rem;
+    padding-bottom: 0.573rem;
+  }
+  .postStats li a{
+      font-weight:300;}
+  .tags a{
+    background-color:#eee;
+    padding:0.573rem;
+    border-radius:5px;}
+
+
+  /*--FOOTER--*/
+  /* navigation */
+  .navlinkContainer{padding:0px;}
+  #navlink
+  {
+    text-align: center;
+    padding: 0.573rem;
+    width: 50%;
+    background: #fafafa;
+    padding-top: 1rem;
+    padding-bottom: 1rem;}
+  #navlink:hover{background:#eee;}
+  .left{float:left;}
+  .right{float:right;}
+
+  /* bottom links */
+  #bottomDescription,#bottomBlurb,#bottomLinks{text-align:center;}
+  #bottomLinks a{
+    padding-right:0.573rem;
+    font-size:0.927rem;
+    line-height:1.499rem;
+    color:#aaaaaa;}
+
+  #bottomBlurb p{font-size:0.573rem;line-height:0.927rem;}
+  .powered{color:#dddddd;}
+
+  /* ask & submit */
+  #ask, #submit{display:none;}
+  #askBox, #submitBox{
+    margin-top:3.927rem;
+    margin-bottom:3.927rem;
+    height: 400px;}
+
+  /* instagram feed */
+  #instafeed{
+    width: 100%;
+    overflow: scroll;
+    white-space: nowrap;}
+  #instafeed img{
+    opacity:0.2;}
+  #instafeed img:hover{
+    opacity:0.5;}
+  #instafeed::-webkit-scrollbar{
+    width:0px}
+  #instafeed::-webkit-scrollbar:horizontal{
+    height:0px;}
+
+  /*--PERMALINK--*/
+  /* comment button */
+  #disqusButton{
+    text-align:center;
+    padding:0.573rem;}
+
+  /*permalink notes*/
+  ol.notes{list-style-type:none;padding:0px;}
+  ol.notes li{font-size:0.8rem;line-height:1.294rem;}
+  ol.notes li.note{padding:0.573rem 0 0.573rem;}
+  ol.notes li.note img.avatar{display:inline;padding-right:0.573rem;}
+  ol.notes li.note blockquote{
+    border-left:solid 0.573rem #eee;
+    margin:0.573rem; 0 0 1rem;}
+    ol.notes li.note blockquote a{
+    font-weight:300;
+    font-size:0.8rem;
+    line-height:1.294rem;
+  }
+
+  /* permalink navigation */
+  .permalinkPagination{
+    text-align:center;
+    font-size:0.927rem; line-height:1.499rem;}
+  .postNav{
+      display:block;
+      width:100%;
+      background:#fafafa;
+      padding-top:1rem;
+      padding-bottom:1rem;}
+  .postNav:hover{background:#eee;}
+  .permalinkPagination .columns{padding:0px;} /* remove spacing for permalink post buttons */
+    .left{float:left;}
+    .right{float:right;}
+  .hint{color:#aaaaaa; font-size:0.8rem; line-height:0.96rem;}
+
+  /* permalink footer */
+  .postBottom{text-align:center;color:#aaaaaa;}
+  .postBottom h3{margin:0px;}
+  .postBottom ul{list-style:none;padding:0px;margin:0rem;}
+  .postBottom ul li{display:inline;padding-right:0.573rem;color:#aaaaaa;}
+  .postBottom p{font-size:0.8rem;line-height:1.294rem;}
+  
+  /* permalink author */
+  .postAuthor
+  {
+      color:#aaaaaa;
+      font-size:0.8rem;
+      line-height:1.294rem;
+      margin-top:1rem;
+      margin-bottom:2rem;
+      font-weight:300;
+      text-align:left;
+  }
+  .postAuthor a
+  {
+      font-weight:300;
+  }
+  .postAuthorImage
+  {
+      display:inline !important;
+      padding:0px !important;
+      border-radius:50%;
+  }
+
+
+  /*--USEABLE CLASSES--*/
+  .pDropCap{
+    float: left; 
+    font-size: 75px; 
+    line-height: 60px; 
+    padding-top: 4px; 
+    padding-right: 4px; 
+    padding-left: 4px;}
+
+  .pHighlight, code{
+    background-color:#ffe4ca;
+    font-family: 'Source Code Pro';}
+
+  .pBigText{
+    font-size:1.2rem; 
+    line-height: 1.941rem;}
+
+  .pQuote{
+    font-size:1.618rem;
+    line-height:2.617rem;
+    font-weight:600 !important;
+    color:#444;
+    text-align:center;
+    margin:0px;
+    margin-bottom:1rem;
+    padding:0px;} 
+
+  .pCenter{
+    text-align:center;}
+  .pRight{
+    text-align:right;
+  }
+  .pLeft{
+    text-align:left;
+  }
+  
+
+/*END ANY SCREEN*/
+
+
+/*---------------------*/
+/*---LARGER THAN 900---*/
+/*---------------------*/
+@media only screen and (min-width: 900px) 
+{
+  .prettyprint {font-size: 1.175rem;line-height: 1.901rem;}
+
+  /*--TYPOGRAPHY--*/
+  body {font-size: 1.375rem; line-height:2.224rem;}
+  /*base font for desktop = 22px & 30px*/
+  h1{font-size:4.909rem; line-height:5.8rem;}   /*line height @ 1.2*/
+  h2{font-size:3.6rem; line-height:4.32rem;}    /*line height @ 1.2*/
+  h3{font-size:2.225rem; line-height:3.6rem;}   /*line height @ 1.618*/
+  h4{font-size:1.375rem; line-height:2.224rem;} /*line height @ 1.618*/
+  h5{font-size:1.159rem; line-height:1.947rem;} /*line height @ 1.618*/
+  h6{font-size:0.716rem; line-height:1.158rem;} /*line height @ 1.618*/
+
+  blockquote{font-size:2.225rem; line-height:3.6rem;}
+
+  /*--HIDES--*/
+    .hideOnSmall{display:block;}/*show hidden element on larger devices*/
+    .hideOnLarge{display:none;}
+  
+  /*--POSTS--*/
+    .quote{font-size:3.6rem; line-height:4.32rem;}
+    .source{font-size: 1.375rem; line-height:2.224rem;}
+    .tumblr_audio_player{height:3.6rem;}
+    .postStats{font-size:1rem;line-height:1.618rem;}
+
+  /*--NOTES--*/  
+    ol.notes li{font-size:1rem;line-height:1.618rem;font-family:font-family: 'Calluna Sans', sans-serif;}
+    ol.notes li.note blockquote a{font-size:1rem;line-height:1.618rem;}
+  
+  /*--PERMALINK--*/
+    .postBottom p{font-size:0.975rem;line-height:1.577rem;} /* h4 - 0.4 */
+    .permalinkPagination{font-size:1.159rem; line-height:1.947rem;}
+    .postAuthor{font-size:0.975rem;line-height:1.577rem;}
+  
+  /*--USEABLE CLASSES--*/
+    .pQuote{font-size:2.225rem; line-height:3.6rem;} /* h3 font size */
+
+  /*--SPACER--*/
+  /* use this to space out elements evenly */
+    .space{height:4.909rem;}
+    .spaceSmall{height:3.6rem;}
+        
+  /*Image align for big screens*/        
+  .post .pImageLeft
+  {
+    position:relative;
+    left:-20%;
+    margin-right:-18%;
+    float:left;
+    width: 60%;
+  }
+  .post .pImageRight
+  {
+    position:relative;
+    left:20%;
+    margin-left:-18%;
+    float:right;
+    width: 60%;
+  }
+  .pImageFull
+  {
+    max-width: none;
+    width: 140%;
+    position: relative;
+    left: -20%;
+  }
+}/*END LARGER THAN 900PX*/
+
+
+/*-----------*/
+/*---PRINT---*/
+/*-----------*/
+@media print 
+{
+     #tumblr_controls {display:none;}
+    /*--REMOVE--*/
+    .hideOnPrint{display:none !important;}
+    .notes{display:none;}
+    #disqus_thread{display:none;}
+    #disqus_loader{display:none;}
+
+    /*--CODE--*/
+    body{overflow:visible;}
+    pre.prettyprint { background-color: none }
+    pre .str, code .str { color: #060 }
+    pre .kwd, code .kwd { color: #006; font-weight: bold }
+    pre .com, code .com { color: #600; font-style: italic }
+    pre .typ, code .typ { color: #404; font-weight: bold }
+    pre .lit, code .lit { color: #044 }
+    pre .pun, code .pun { color: #440 }
+    pre .pln, code .pln { color: #000 }
+    pre .tag, code .tag { color: #006; font-weight: bold }
+    pre .atn, code .atn { color: #404 }
+    pre .atv, code .atv { color: #060 }
+
+    /*--Align images for print--*/        
+}
+/*END PRINT*/
+
+
 {CustomCSS}
 
 </style>
