@@ -88,6 +88,8 @@ view this project at https://github.com/thomaskimura/Paper
     <!--Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    
+    <script src="https://raw.githubusercontent.com/aterkik/jquery-tweet-highlighted/master/jquery.tweetHighlighted.js"></script>
 
 <style>
 /*--------------------*/
@@ -112,6 +114,16 @@ a:hover{color:{color:Main Color};}
 body, ol.notes li.note blockquote a, .postAuthor {font-family:{font:Headings}; !important}
 blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 .post p, .chat li{font-family:{font:Body};}
+
+/*  Load everything under
+    here in style.css
+*/
+ol.notes li.note img.avatar {
+display: inline;
+margin-right: 0.573rem;
+padding-right:0px;
+border-radius: 50%;
+}
 
 {CustomCSS}
 
@@ -305,7 +317,6 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 <!--++++++++++-->
 {block:Text}
   <li class="post text">
-
       {block:Title}
           <h3 id="title"><a href="{Permalink}">{Title}</a></h3>
       {/block:Title}
@@ -1285,12 +1296,9 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 <script type="text/javascript" src="http://static.tumblr.com/smotcsf/phJn1y2w7/prettify.js"></script>
 
 <!--Instafeed-->
-{block:IfInstagramUserID}
-    <script  type="text/javascript" src="http://static.tumblr.com/smotcsf/y9Mmw9qml/instafeed.min.js"></script>
-{/block:IfInstagramUserID}
-{block:IfInstagramTag}
-    <script type="text/javascript" src="http://static.tumblr.com/smotcsf/y9Mmw9qml/instafeed.min.js"></script>
-{/block:IfInstagramTag}
+{block:IfInstagramBanner}
+     <script type="text/javascript" src="http://static.tumblr.com/smotcsf/y9Mmw9qml/instafeed.min.js"></script>
+{/block:IfInstagramBanner}
 
 <!--Slidebars-->
 {block:IfSlidebars}
@@ -1301,6 +1309,7 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 <script type="text/javascript" src="http://static.tumblr.com/smotcsf/Ecdn2cscy/pxuphotoset.min.js"></script>
 
 <script>
+
 $(document).ready(function(){
     
     //PHOTOSETS
@@ -1317,6 +1326,8 @@ $(document).ready(function(){
     }, function() {
         // callback
     });
+    
+    
     
 });
 //end ready
