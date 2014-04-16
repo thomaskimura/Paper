@@ -126,18 +126,9 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
     style.css for now we can
     do it like this for
     easier development */
-  
-/*Put in if statement
 
-    #splash{display:none;}
-    #splashContainer{
-        width: 100vw;
-        height: 80vh;
-        overflow: hidden;}
-    #realSplash{
-        width:100vw;}
         
-*/
+#splash{display:none;}
     
 /*---------------------*/
 /*---ANY SCREEN SIZE---*/
@@ -803,7 +794,6 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
 {block:Permalink}
     {block:Posts}
     <div id="splashContainer">
-        <img id="realSplash">
     </div>
     {/block:Posts}
 {/block:Permalink}
@@ -940,8 +930,10 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
 <!--++++++++++-->
 {block:Text}
   <li class="post text">
+  
+<div class="postHead">
       {block:Title}
-          <h3 id="title"><a href="{Permalink}">{Title}</a></h3>
+          <h3 id="title" class="title"><a href="{Permalink}">{Title}</a></h3>
       {/block:Title}
         
     <span class="postAuthor hideOnIndex">
@@ -953,7 +945,7 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
             on {DayOfMonth} {Month} {Year}
         {block:Date} 
     </span>
-
+</div>
       {Body}
 
       {block:More}
@@ -1014,8 +1006,10 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
   <li class="post photo">
   
     <span class="postAuthor hideOnIndex">
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {block:IfAuthor}
+            <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+            <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {/block:IfAuthor}
         {block:Date} 
             on {DayOfMonth} {Month} {Year}
         {block:Date} 
@@ -1094,8 +1088,10 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
       {LinkCloseTag}
 
     <span class="postAuthor hideOnIndex">
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {block:IfAuthor}
+            <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+            <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {/block:IfAuthor}
         {block:Date} 
             on {DayOfMonth} {Month} {Year}
         {block:Date} 
@@ -1166,8 +1162,10 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
   <li class="post photoset">
   
     <span class="postAuthor hideOnIndex">
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {block:IfAuthor}
+            <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+            <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {/block:IfAuthor}
         {block:Date} 
             on {DayOfMonth} {Month} {Year}
         {block:Date} 
@@ -1255,8 +1253,10 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
   <li class="post quote">
 
     <span class="postAuthor hideOnIndex">
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {block:IfAuthor}
+            <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+            <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {/block:IfAuthor}
         {block:Date} 
             on {DayOfMonth} {Month} {Year}
         {block:Date} 
@@ -1331,9 +1331,10 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
     <a href="{URL}" id="link" class="link" {Target}><h3>{Name} <i class="fa fa-share"></i></h3></a>
     
     <span class="postAuthor hideOnIndex">
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
-        
+        {block:IfAuthor}
+            <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+            <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {/block:IfAuthor}
         {block:Date} 
             on {DayOfMonth} {Month} {Year}
         {block:Date} 
@@ -1414,9 +1415,10 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
     {/block:Title}
 
     <span class="postAuthor hideOnIndex">
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
-        
+        {block:IfAuthor}
+            <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+            <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {/block:IfAuthor}
         {block:Date} 
             on {DayOfMonth} {Month} {Year}
         {block:Date} 
@@ -1496,9 +1498,10 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
   <li class="post video">
 
     <span class="postAuthor hideOnIndex">
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
-        
+        {block:IfAuthor}
+            <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+            <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {/block:IfAuthor}
         {block:Date} 
             on {DayOfMonth} {Month} {Year}
         {block:Date} 
@@ -1575,9 +1578,10 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
     {AudioPlayerBlack}
 
     <span class="postAuthor hideOnIndex">
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
-        
+        {block:IfAuthor}
+            <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+            <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {/block:IfAuthor}
         {block:Date} 
             on {DayOfMonth} {Month} {Year}
         {block:Date} 
@@ -1654,7 +1658,7 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
 {block:PermalinkPage}
 
 {block:IfKeyboardControls}
-    <p class="hint hideOnSmall"><i class="fa fa-keyboard-o"></i> Use the left and right arrow keys to navigate OR hit 'p' to load a random post</p>
+    <p class="hint hideOnSmall"><i class="fa fa-keyboard-o"></i> Use the left and right arrow keys to navigate OR hit the forwardslash(?) key to load a random post</p>
 {/block:IfKeyboardControls}
 
 {block:IfPostNavigation}
@@ -1954,7 +1958,8 @@ $(document).ready(function(){
     }, function() {
         // callback
     $( ".tumblr-box" ).click(function() {
-      
+        
+      //Turn keyboard off when using photosets
       document.body.onkeydown = function(e){  
         if (e == null) {
             keycode = event.keyCode;
@@ -1973,19 +1978,10 @@ $(document).ready(function(){
             //alert('Random')
             setTimeout(function(){
                 window.location = $('#random').attr('href');
-            },100);
-        }
-        };
+            },100);}
+            };
+        }); 
     });
-    
-});
-
-    
-    if(document.getElementById("splash"))
-    {
-        var source = document.getElementById("splash").src;
-        document.getElementById('realSplash').src = source;
-    }
     
 });
 //end ready
@@ -2024,6 +2020,48 @@ function scroll() {
         window.location.hash="content"; //FALL BACK
 }
 </script>
+
+{block:PermalinkPage} 
+<script>
+    //SPLASH
+    //If a splash image is avaliable
+    if(document.getElementById("splash"))
+    {
+        var source = document.getElementById("splash").src;
+        $("#splashContainer").css({"background-image":'url(' + source + ')'});
+        $("#splashContainer").css(
+            {
+                "position":"relative", 
+                "top": "-60vh",
+                "width": "100vw", 
+                "height": "60vh", 
+                "overflow": "hidden",
+                "background-repeat": "no-repeat",
+                "background-size": "cover",
+                "background-position": "center"
+            });
+        $(".postHead").css(
+            {
+                "position": "absolute",
+                "top": "-50vh",
+                "color": "white"
+            });
+        $(".title").css(
+            {
+                "color": "white"
+            });
+        $(".postAuthor").css(
+            {
+                "color": "white"
+            });
+        $(".backButtonContainer").css(
+            {
+                "display": "none"
+            });
+        $("#splashContainer").animate({top:"0px"});
+    }
+</script>
+{/block:PermalinkPage} 
 
 {block:IfKeyboardControls}
 <!--KEYBOARD NAV ON INDEX-->
