@@ -1181,9 +1181,11 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
           <img alt="{PhotoAlt}" src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}">
         </div>
         <div class="icons">
+
           <a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}">
             <span class="zoom">Zoom</span>
           </a>
+
         </div>
       </div>  
     {/block:Photos}
@@ -1951,7 +1953,33 @@ $(document).ready(function(){
         'photo'     : '.pxu-photo' // photo wrap (includes photo only)
     }, function() {
         // callback
+    $( ".tumblr-box" ).click(function() {
+      
+      document.body.onkeydown = function(e){  
+        if (e == null) {
+            keycode = event.keyCode;
+        }
+        else {
+            keycode = e.which;
+        }
+        if(keycode == 39){
+
+        } 
+        else if(keycode == 37){
+
+        }
+        else if(keycode == 191){
+            $("#sb-site").fadeOut();
+            //alert('Random')
+            setTimeout(function(){
+                window.location = $('#random').attr('href');
+            },100);
+        }
+        };
     });
+    
+});
+
     
     if(document.getElementById("splash"))
     {
@@ -2008,7 +2036,7 @@ function scroll() {
         } else {
             keycode = e.which;
         }
-        if(keycode == 80){
+        if(keycode == 191){
             $("#sb-site").fadeOut();
             setTimeout(function(){
                 window.location = {JSBlogURL} + 'random';
@@ -2074,7 +2102,7 @@ function scroll() {
                 window.location = $('#previousPost').attr('href');
             },200);
         }   
-        else if(keycode == 80){
+        else if(keycode == 191){
             $("#sb-site").fadeOut();
             //alert('Random')
             setTimeout(function(){
