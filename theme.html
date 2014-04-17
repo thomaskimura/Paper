@@ -70,6 +70,7 @@ view this project at https://github.com/thomaskimura/Paper
     
     <!--Options-->
     <meta name="if:KeyboardControls" content="1"/>
+    <meta name="if:Author" content="1"/>
     <meta name="if:Random" content="1"/>
     <meta name="if:Post Navigation" content="1"/>
     <meta name="if:MiniFooter" content="1"/>
@@ -83,13 +84,11 @@ view this project at https://github.com/thomaskimura/Paper
         <link href="http://static.tumblr.com/smotcsf/SA3n0thdj/slidebars.min.css" rel="stylesheet">
     {/block:IfSlidebars}
     
-    <link href="http://static.tumblr.com/smotcsf/4Mbn3wj3i/style.css" rel="stylesheet">
-
+    <link href="http://static.tumblr.com/smotcsf/srln4703w/style.css" rel="stylesheet">
+    
     <!--Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    
-    <script src="https://raw.githubusercontent.com/aterkik/jquery-tweet-highlighted/master/jquery.tweetHighlighted.js"></script>
 
 <style>
 /*--------------------*/
@@ -118,12 +117,11 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 /*  Load everything under
     here in style.css
 */
-ol.notes li.note img.avatar {
-display: inline;
-margin-right: 0.573rem;
-padding-right:0px;
-border-radius: 50%;
-}
+
+/*  Load below code inside
+    style.css for now we can
+    do it like this for
+    easier development */
 
 {CustomCSS}
 
@@ -143,19 +141,19 @@ border-radius: 50%;
   .hideOnPermalink{display:none !important;}
   .hideOnIndex{display:block;}
 
-  #title{font-size:2.618rem; line-height:3.14rem;}
+  #title{font-size:2.618rem; line-height:3.141rem;}
     
   /*TYPOGRAPHY*/
   /* first paragraph larger */
-  .post p:first-child, .post p:first-of-type{font-size:1.2rem; line-height: 1.941rem;} /*1.2 & 1.618*/
+  .post p:first-child, .post p:first-of-type{font-size:1.25rem; line-height:2.022rem;} /*1.2 & 1.618*/
 
 /*LARGER THAN 900PX*/
   @media only screen and (min-width: 900px) 
   {
-    #title{font-size:3.6rem; line-height:4.32rem;}
+    #title{font-size:3.272rem; line-height:3.926rem;}
       
     /* first paragraph larger*/
-    .post p:first-child, .post p:first-of-type{font-size:1.65rem; line-height:2.669rem;} /*1.2 & 1.618*/
+    .post p:first-child, .post p:first-of-type{font-size:1.5rem; line-height:2.427rem;} /*1.2 & 1.618*/
   }
 /*END LARGER THAN 900PX*/
 </style>
@@ -182,12 +180,21 @@ border-radius: 50%;
 <!--MAIN CONTENT GOES DOWN THERE FOR SLIDEBAR-->
 <!--+++++++++++++++++++++++++++++++++++++++++-->
 <div id="sb-site"> 
+
 <!--
 <span class="sb-toggle-left menuIcon hideOnLarge hideOnPermalink"><i class="fa fa-bars"></i></span>
 -->
 <!--menu Icon-->
 
-<div class="spaceSmall"></div> <!--space-->
+{block:Permalink}
+    {block:Posts}
+    <div id="splashTint"></div>
+    <div id="splashContainer">
+    </div>
+    {/block:Posts}
+{/block:Permalink}
+
+<div class="spaceSmall hideOnSplash"></div> <!--space-->
 
 <!--++++++-->
 <!--HEADER-->
@@ -204,10 +211,12 @@ border-radius: 50%;
                 </div>
             {/block:IfLogoImage}  
         <h1><a id="title" href="{BlogURL}">{Title}</a></h1>
-
-        <div class="backButtonContainer hideOnIndex hideOnPrint"> <!--back button, hide on index, show on permalink-->
+        
+        {block:Permalink}
+        <div class="backButtonContainer hideOnPrint"> <!--back button, hide on index, show on permalink-->
             <a class="backButton" href="{BlogURL}"><i class="fa fa-long-arrow-left"></i> {Title}</a>
         </div>
+        {/block:Permalink}
 
         <!--SOCIAL-->
         <ul>
@@ -317,16 +326,22 @@ border-radius: 50%;
 <!--++++++++++-->
 {block:Text}
   <li class="post text">
+  
+<div class="postHead">
       {block:Title}
-          <h3 id="title"><a href="{Permalink}">{Title}</a></h3>
+          <h3 id="title" class="title"><a href="{Permalink}">{Title}</a></h3>
       {/block:Title}
-
-      <span class="postAuthor hideOnIndex">
-          <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-          <a href="{PostAuthorURL}"> {PostAuthorName} </a>
-          {block:Date} on {DayOfMonth} {Month} {Year}{block:Date} 
-      </span>
-
+        
+    <span class="postAuthor hideOnIndex">
+        {block:IfAuthor}
+            <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+            <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {/block:IfAuthor}
+        {block:Date} 
+            on {DayOfMonth} {Month} {Year}
+        {block:Date} 
+    </span>
+</div>
       {Body}
 
       {block:More}
@@ -385,15 +400,16 @@ border-radius: 50%;
 <!--+++++--> 
 {block:Photo}
   <li class="post photo">
-
-      <span class="postAuthor hideOnIndex">
-          <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-          <a href="{PostAuthorURL}"> {PostAuthorName} </a>
-          
-          {block:Date} 
-              on {DayOfMonth} {Month} {Year}
-          {block:Date} 
-      </span>
+  
+    <span class="postAuthor hideOnIndex">
+        {block:IfAuthor}
+            <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+            <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {/block:IfAuthor}
+        {block:Date} 
+            on {DayOfMonth} {Month} {Year}
+        {block:Date} 
+    </span>
 
       <a href="{Permalink}">
           <img src="{PhotoURL-500}" alt="{PhotoAlt}"/> 
@@ -467,14 +483,15 @@ border-radius: 50%;
           <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
       {LinkCloseTag}
 
-      <span class="postAuthor hideOnIndex">
-          <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-          <a href="{PostAuthorURL}"> {PostAuthorName} </a>
-          
-          {block:Date} 
-              on {DayOfMonth} {Month} {Year}
-          {block:Date} 
-      </span>
+    <span class="postAuthor hideOnIndex">
+        {block:IfAuthor}
+            <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+            <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {/block:IfAuthor}
+        {block:Date} 
+            on {DayOfMonth} {Month} {Year}
+        {block:Date} 
+    </span>
 
       {block:Caption}
           <div class="caption">{Caption}</div>
@@ -539,9 +556,12 @@ border-radius: 50%;
 <!--++++++++-->
 {block:Photoset}
   <li class="post photoset">
+  
     <span class="postAuthor hideOnIndex">
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {block:IfAuthor}
+            <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+            <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {/block:IfAuthor}
         {block:Date} 
             on {DayOfMonth} {Month} {Year}
         {block:Date} 
@@ -555,9 +575,11 @@ border-radius: 50%;
           <img alt="{PhotoAlt}" src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}">
         </div>
         <div class="icons">
+
           <a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}">
             <span class="zoom">Zoom</span>
           </a>
+
         </div>
       </div>  
     {/block:Photos}
@@ -627,8 +649,10 @@ border-radius: 50%;
   <li class="post quote">
 
     <span class="postAuthor hideOnIndex">
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {block:IfAuthor}
+            <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+            <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {/block:IfAuthor}
         {block:Date} 
             on {DayOfMonth} {Month} {Year}
         {block:Date} 
@@ -703,9 +727,10 @@ border-radius: 50%;
     <a href="{URL}" id="link" class="link" {Target}><h3>{Name} <i class="fa fa-share"></i></h3></a>
     
     <span class="postAuthor hideOnIndex">
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
-        
+        {block:IfAuthor}
+            <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+            <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {/block:IfAuthor}
         {block:Date} 
             on {DayOfMonth} {Month} {Year}
         {block:Date} 
@@ -786,9 +811,10 @@ border-radius: 50%;
     {/block:Title}
 
     <span class="postAuthor hideOnIndex">
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
-        
+        {block:IfAuthor}
+            <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+            <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {/block:IfAuthor}
         {block:Date} 
             on {DayOfMonth} {Month} {Year}
         {block:Date} 
@@ -868,9 +894,10 @@ border-radius: 50%;
   <li class="post video">
 
     <span class="postAuthor hideOnIndex">
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
-        
+        {block:IfAuthor}
+            <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+            <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {/block:IfAuthor}
         {block:Date} 
             on {DayOfMonth} {Month} {Year}
         {block:Date} 
@@ -947,9 +974,10 @@ border-radius: 50%;
     {AudioPlayerBlack}
 
     <span class="postAuthor hideOnIndex">
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
-        
+        {block:IfAuthor}
+            <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+            <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+        {/block:IfAuthor}
         {block:Date} 
             on {DayOfMonth} {Month} {Year}
         {block:Date} 
@@ -1026,7 +1054,7 @@ border-radius: 50%;
 {block:PermalinkPage}
 
 {block:IfKeyboardControls}
-    <p class="hint hideOnSmall">Use the left and right arrow keys to navigate OR hit 'p' to load a random post</p>
+    <p class="hint hideOnSmall"><i class="fa fa-keyboard-o"></i> Use the left and right arrow keys to navigate OR hit the forwardslash(?) key to load a random post</p>
 {/block:IfKeyboardControls}
 
 {block:IfPostNavigation}
@@ -1224,6 +1252,7 @@ border-radius: 50%;
         <div class="small-8 medium-6 large-4 small-centered columns">
             <p class="powered">
                 <a href="http://papertheme.tumblr.com/">Paper</a> theme powered by <a href="http://www.tumblr.com/">Tumblr</a>
+                <div id="recent-posts" ></div>
             </p>
         </div>
     </div> 
@@ -1309,55 +1338,93 @@ border-radius: 50%;
 <script type="text/javascript" src="http://static.tumblr.com/smotcsf/Ecdn2cscy/pxuphotoset.min.js"></script>
 
 <script>
+//Get title of recent posts
+var src = {JSBlogURL} + "rss";
+
+$.get(src, function (data) {
+    $(data).find("item").first().each(function () { // or "item" or whatever suits your feed
+        var el = $(this);
+
+        console.log("------------------------");
+        console.log("title      : " + el.find("title").text());
+    });
+});
+
+</script>
+
+<script>
+//PAPER
+//script.js
+
+//  The script file for
+//  all scripts in this
+//  theme
 
 $(document).ready(function(){
-    
+
     //PHOTOSETS
-   $('.photo-slideshow').pxuPhotoset({
+    $('.photo-slideshow').pxuPhotoset({
         // options go here
-        'highRes'   : true, // will use high res images
-        'rounded'   : 'false', // corners, all or false
-        'exif'      : false, // display EXIF data if available (tooltip)
-        'captions'  : false, // display individual captions on photos (tooltip)
-        'gutter'    : '10px', // spacing between the images
-        'photoset'  : '.photo-slideshow', // photoset wrapper
-        'photoWrap' : '.photo-data', // photo data wrapper (includes photo, icons + exif)
-        'photo'     : '.pxu-photo' // photo wrap (includes photo only)
-    }, function() {
-        // callback
+        'highRes'   : true,     // will use high res images
+        'rounded'   : 'false',  // corners, all or false
+        'exif'      : false,    // display EXIF data if available (tooltip)
+        'captions'  : false,    // display individual captions on photos (tooltip)
+        'gutter'    : '10px',   // spacing between the images
+        'photoset'  : '.photo-slideshow',   // photoset wrapper
+        'photoWrap' : '.photo-data',        // photo data wrapper (includes photo, icons + exif)
+        'photo'     : '.pxu-photo'          // photo wrap (includes photo only)
+        }, function() {
+        //callback for photosets
+        $( ".tumblr-box" ).click(function() {
+            //turn keyboard off when using photosets
+            document.body.onkeydown = function(e){  
+                if (e == null) {keycode = event.keyCode;}
+                else {keycode = e.which;}
+                if(keycode == 39){}         //do nothing
+                else if(keycode == 37){}    //do nothing
+                else if(keycode == 191){    //fade
+                    $("#sb-site").fadeOut();
+                    setTimeout(function(){window.location = $('#random').attr('href');},100);
+                }
+            };
+        }); 
     });
     
-    
-    
-});
-//end ready
+}); //ready
 
-$.slidebars();
+$.slidebars(); //turn slidebars on
 
 $(window).load(function() {
-   //alert("window is loaded");
-   document.body.focus();
-});
-//end load
+   document.body.focus(); //focus on document
+}); //end load
 
-//GLOBAL
+
+//GLOBAL THINGS
+
+//ASK BUTTON
 function askOn(){
-    if( $('#ask').css('display') == "block" ){
-        document.getElementById("ask").style.display = 'none';} 
-    else { 
-        document.getElementById("ask").style.display = 'block';
+    if( $('#ask').css('display') == "block" )
+    {
+        $("#ask").css({"display": "none"});
+    } 
+    else 
+    { 
+        $("#ask").css({"display": "block"});
+        $("#submit").css({"display": "none"});
         scroll();
-        document.getElementById("submit").style.display = 'none';}
+    }
 }
 
 //SUBMIT
 function submitOn(){
-    if( $('#submit').css('display') == "block" ) {
-        document.getElementById("submit").style.display = 'none';} 
+    if( $('#submit').css('display') == "block" ) 
+    {
+        $("#submit").css({"display": "none"});
+    } 
     else { 
-        document.getElementById("submit").style.display = 'block';
+        $("#submit").css({"display": "block"});
+        $("#ask").css({"display": "none"});
         scroll();
-        document.getElementById("ask").style.display = 'none';}
 }
 
 //SCROLL TO
@@ -1365,10 +1432,68 @@ function scroll() {
     $('html, body').animate({scrollTop: $(".asksubmit").offset().top}, 500);
         window.location.hash="content"; //FALL BACK
 }
+
 </script>
 
-{block:IfKeyboardControls}
+{block:PermalinkPage} 
+<script>
+$(document).ready(function(){
+    
+    //SPLASH
+    //If a splash image is avaliable
+    if(document.getElementById("splash"))
+    {
+        var source = document.getElementById("splash").src;
+        $("#splashContainer").css({"background-image":'url(' + source + ')'});
+        $(".hideOnSplash").css({"display": "none"});
+        $("#splashContainer").css(
+            {
+                "width": "100vw", 
+                "height": "60vh"
+            });
+        $("#splashTint").css(
+            {
+                "width": "100vw", 
+                "height": "60vh"
+            });
+        $(".postHead").css(
+            {
+                "position": "absolute",
+                "top": "-50vh",
+                "color": "white"
+            });
+        $(".title").css(
+            {
+                "color": "white"
+            });
+        $(".postAuthor").css(
+            {
+                "color": "white"
+            });
+        $(".backButtonContainer").css(
+            {
+                "display": "none"
+            });
+            
+            //Animate image down
+            setTimeout(function(){
+                $("#splashContainer").stop().animate({top:"0px"} ,500);
+            },200);
+        
+        //If screen is 480px or smaller
+        if (matchMedia('only screen and (max-width: 480px)').matches) 
+        {
+            $("#splashContainer").css({"height": "100vh"});
+            $("#splashTint").css({"height": "100vh"});
+            $(".postHead").css({"top": "-90vh",});            
+        }
+    }
+}); //end ready
+</script>
+{/block:PermalinkPage} 
+
 <!--KEYBOARD NAV ON INDEX-->
+{block:IfKeyboardControls}
 {block:IndexPage}
 <script>
   //RANDOM NAVIGATION FOR INDEX
@@ -1378,7 +1503,7 @@ function scroll() {
         } else {
             keycode = e.which;
         }
-        if(keycode == 80){
+        if(keycode == 191){
             $("#sb-site").fadeOut();
             setTimeout(function(){
                 window.location = {JSBlogURL} + 'random';
@@ -1404,6 +1529,7 @@ function scroll() {
         userFeed.run();
     </script>
 {/block:IfInstagramUserID}
+
 <!--INSTAFEED OF A TAG-->
 {block:IfInstagramTag}
     <script type="text/javascript">
@@ -1417,10 +1543,11 @@ function scroll() {
     </script>
 {/block:IfInstagramTag}
 
-{block:IfKeyboardControls}
 <!--PERMALINK ONLY-->
+{block:IfKeyboardControls}
 {block:PermalinkPage} 
 <script>
+    
   //KEYBOARD NAVIGATION FOR PERMALINK
   document.body.onkeydown = function(e){  
 
@@ -1430,7 +1557,7 @@ function scroll() {
             keycode = e.which;
         }
         if(keycode == 39){
-            $("#sb-site").stop().animate({right:"100%"});
+            $("#sb-site").stop().animate({right:"110%"},300);
             //alert('Right');
                 //If most recent post is a photoset this will 
                 //return to the home page
@@ -1438,13 +1565,13 @@ function scroll() {
                 window.location = $('#nextPost').attr('href');
             },200);
         } else if(keycode == 37){
-            $("#sb-site").stop().animate({left:"100%"});
+            $("#sb-site").stop().animate({left:"110%"},300);
             //alert('Left');
             setTimeout(function(){
                 window.location = $('#previousPost').attr('href');
             },200);
         }   
-        else if(keycode == 80){
+        else if(keycode == 191){
             $("#sb-site").fadeOut();
             //alert('Random')
             setTimeout(function(){
@@ -1452,9 +1579,10 @@ function scroll() {
             },100);
         }
     };
+
 </script>
 {/block:PermalinkPage}
 {block:IfKeyboardControls}
-   
+
 </body>
 </html>
