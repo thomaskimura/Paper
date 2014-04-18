@@ -73,18 +73,16 @@ view this project at https://github.com/thomaskimura/Paper
     <meta name="if:Author" content="1"/>
     <meta name="if:Random" content="1"/>
     <meta name="if:Post Navigation" content="1"/>
-    <meta name="if:MiniFooter" content="1"/>
     <meta name="if:Instagram Banner" content="0"/>
     <meta name="if:Big Photos" content="1"/>
     <meta name="if:Slidebars" content="1"/>
         
     <!--Stylesheets-->    
     <link href="http://static.tumblr.com/smotcsf/Vian0p49e/foundation.min.css" rel="stylesheet">
-    {block:IfSlidebars}
-        <link href="http://static.tumblr.com/smotcsf/SA3n0thdj/slidebars.min.css" rel="stylesheet">
-    {/block:IfSlidebars}
     
-    <link href="http://static.tumblr.com/smotcsf/srln4703w/style.css" rel="stylesheet">
+    <link href="http://static.tumblr.com/smotcsf/DEJn4724t/style.css" rel="stylesheet">
+    
+    <link href="http://static.tumblr.com/smotcsf/SA3n0thdj/slidebars.min.css" rel="stylesheet">
     
     <!--Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
@@ -181,9 +179,9 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 <!--+++++++++++++++++++++++++++++++++++++++++-->
 <div id="sb-site"> 
 
-<!--
-<span class="sb-toggle-left menuIcon hideOnLarge hideOnPermalink"><i class="fa fa-bars"></i></span>
--->
+
+<span class="sb-toggle-left hideOnLarge menuIcon"><i class="fa fa-bars"></i></span>
+
 <!--menu Icon-->
 
 {block:Permalink}
@@ -219,74 +217,15 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
         {/block:Permalink}
 
         <!--SOCIAL-->
-        <ul>
-                {block:IfUsernameOnFacebook}
-                    <li>
-                        <a target="_blank" href="http://www.facebook.com/{text:Username on Facebook}" id="facebook"><i class="fa fa-facebook-square"></i></a>
-                    </li>
-                {/block:IfUsernameOnFacebook}
-                
-                {block:IfGooglePlusUrl}
-                    <li>
-                        <a target="_blank" href="http://www.google.com/+{text:URL on Google Plus}" id="google"><i class="fa fa-google-plus-square"></i></a>
-                    </li>
-                {/block:IfGooglePlusUrl}
 
-                {block:IfUsernameOnTwitter}
-                    <li>
-                        <a target="_blank" href="http://www.twitter.com/{text:Username on Twitter}" id="twitter"><i class="fa fa-twitter-square"></i></a>
-                    </li>
-                {/block:IfUsernameOnTwitter} 
-            
-                {block:IfUsernameOnYouTube}
-                    <li>
-                        <a target="_blank" href="http://www.youtube.com/{text:Username on YouTube}" id="youtube"><i class="fa fa-youtube-square"></i></a>
-                    </li>
-                {/block:IfUsernameOnYouTube}
-                
-                {block:IfUsernameOnInstagram}
-                    <li>
-                        <a target="_blank" href="http://www.instagram.com/{text:Username on Instagram}" id="instagram"><i class="fa fa-instagram"></i></a>
-                    </li>
-                {/block:IfUsernameOnInstagram}
- 
-                {block:IfUsernameOnPinterest}
-                    <li>
-                        <a target="_blank" href="http://www.pinterest.com/{text:Username on Pinterest}" id="pinterest"><i class="fa fa-pinterest-square"></i></a>
-                    </li>
-                {/block:IfUsernameOnPinterest}
-    
-                {block:IfUsernameOnFlickr}
-                    <li>
-                        <a target="_blank" href="http://www.flickr.com/{text:Username on Flickr}" id="flickr"><i class="fa fa-flickr"></i></a>
-                    </li>
-                {/block:IfUsernameOnFlickr}
-    
-                {block:IfUsernameOnLinkedin}
-                    <li>
-                        <a target="_blank" href="http://www.linkedin.com/in/{text:Username on LinkedIn}" id="linkedin"><i class="fa fa-linkedin-square"></i></a>
-                    </li>
-                {/block:IfUsernameOnLinkedin}
-    
-                {block:IfUsernameOnGitHub}
-                    <li>
-                        <a target="_blank" href="http://www.github.com/{text:Username on GitHub}" id="github"><i class="fa fa-github-square"></i></a>
-                    </li>
-                {/block:IfUsernameOnGitHub}
-   
-                {block:IfUsernameOnDribbble}
-                    <li>
-                        <a target="_blank" href="http://www.dribbble.com/{text:Username on Dribbble}" id="dribbble"><i class="fa fa-dribbble"></i></a>
-                    </li>
-                {/block:IfUsernameOnDribbble}
-                
-            </ul>
     </div>
     
 <div class="large-8 small-10 small-centered columns">
+    <!--
     <p>{Description}</p>
+    -->
     <!--MENU-->
-            <ul>
+            <ul class="hideOnSmall">
                 {block:Pages}
                     <li>
                         <a href="{URL}">{Label}</a>
@@ -1054,7 +993,9 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 {block:PermalinkPage}
 
 {block:IfKeyboardControls}
+{block:PermalinkPagination}
     <p class="hint hideOnSmall"><i class="fa fa-keyboard-o"></i> Use the left and right arrow keys to navigate OR hit the forwardslash(?) key to load a random post</p>
+{/block:PermalinkPagination}
 {/block:IfKeyboardControls}
 
 {block:IfPostNavigation}
@@ -1101,7 +1042,6 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 <!--NOTES-->
 {block:PostNotes}
     {PostNotes}
-    <div class="spaceSmall"></div>
 {/block:PostNotes}
 {/block:PermalinkPage}
 <!--+++++++++++++-->
@@ -1116,11 +1056,31 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 <!--END CONTENT-->
 <!--+++++++++++-->
 
-{block:IfMiniFooter}
+<!--++++++-->
+<!--FOOTER-->
+<!--++++++-->
+
+{block:IndexPage}
+<!--NAVIGATION--> 
+<div class="row" >
+    <div class="small-12 medium-9 large-{text:Column Size} small-centered columns navlinkContainer">  
+        {block:NextPage}
+            <a  class="right" id="navlink" href="{NextPage}">Next <i class="fa fa-long-arrow-right"></i> </a>
+        {/block:NextPage} 
+        
+        {block:PreviousPage}
+            <a class="left" id="navlink" href="{PreviousPage}"><i class="fa fa-long-arrow-left"></i> Previous</a>
+        {/block:PreviousPage}   
+    </div>
+</div>
+<div class="spaceSmall"></div>
+{/block:IndexPage}
+
 <!--++++++++++++++++-->
 <!--PERMALINK FOOTER-->
 <!--++++++++++++++++-->
-<div class="postBottom hideOnIndex hideOnPrint"> <!--hide on index, show on permalink-->
+<div class="space"></div>
+<div class="postBottom hideOnPrint"> <!--hide on index, show on permalink-->
     <div class="row">
     <div class="small-12 medium-9 large-{text:Column Size} small-centered columns">  
         <div class="row">
@@ -1192,32 +1152,11 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
         </div>
     </div>
     </div>
-    <div class="spaceSmall"></div>
 </div>
 <!--++++++++++++++++++++-->
 <!--END PERMALINK FOOTER-->
 <!--++++++++++++++++++++-->
-{/block:IfMiniFooter}
 
-<!--++++++-->
-<!--FOOTER-->
-<!--++++++-->
-
-{block:IndexPage}
-<!--NAVIGATION--> 
-<div class="row" >
-    <div class="small-12 medium-9 large-{text:Column Size} small-centered columns navlinkContainer">  
-        {block:NextPage}
-            <a  class="right" id="navlink" href="{NextPage}">Next <i class="fa fa-long-arrow-right"></i> </a>
-        {/block:NextPage} 
-        
-        {block:PreviousPage}
-            <a class="left" id="navlink" href="{PreviousPage}"><i class="fa fa-long-arrow-left"></i> Previous</a>
-        {/block:PreviousPage}   
-    </div>
-</div>
-<div class="spaceSmall"></div>
-{/block:IndexPage}
 
 <!--SEARCH
 <div class="row" id="bottomSearch">
@@ -1300,7 +1239,6 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 <!--+++++++++-->
 <!--SLIDEBARS-->
 <!--+++++++++-->
-<!--
 <div class="sb-slidebar sb-left hideOnPrint">
     <div>
         <ul>
@@ -1312,7 +1250,7 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
         </ul>
     </div>
 </div>
--->
+
 
 <!--+++++++-->
 <!--SCRIPTS-->
@@ -1330,101 +1268,83 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 {/block:IfInstagramBanner}
 
 <!--Slidebars-->
-{block:IfSlidebars}
-    <script type="text/javascript" src="http://static.tumblr.com/smotcsf/5iOn0th2k/slidebars.min.js"></script>
-{/block:IfSlidebars}
+<script type="text/javascript" src="http://static.tumblr.com/smotcsf/5iOn0th2k/slidebars.min.js"></script>
 
 <!--Photoset Grid-->
 <script type="text/javascript" src="http://static.tumblr.com/smotcsf/Ecdn2cscy/pxuphotoset.min.js"></script>
-
+    
 <script>
-//Get title of recent posts
-var src = {JSBlogURL} + "rss";
-
-$.get(src, function (data) {
-    $(data).find("item").first().each(function () { // or "item" or whatever suits your feed
-        var el = $(this);
-
-        console.log("------------------------");
-        console.log("title      : " + el.find("title").text());
-    });
-});
-
-</script>
-
-<script>
-//PAPER
-//script.js
-
-//  The script file for
-//  all scripts in this
-//  theme
-
 $(document).ready(function(){
-
+    
+    $.slidebars();
+    
     //PHOTOSETS
-    $('.photo-slideshow').pxuPhotoset({
+   $('.photo-slideshow').pxuPhotoset({
         // options go here
-        'highRes'   : true,     // will use high res images
-        'rounded'   : 'false',  // corners, all or false
-        'exif'      : false,    // display EXIF data if available (tooltip)
-        'captions'  : false,    // display individual captions on photos (tooltip)
-        'gutter'    : '10px',   // spacing between the images
-        'photoset'  : '.photo-slideshow',   // photoset wrapper
-        'photoWrap' : '.photo-data',        // photo data wrapper (includes photo, icons + exif)
-        'photo'     : '.pxu-photo'          // photo wrap (includes photo only)
-        }, function() {
-        //callback for photosets
-        $( ".tumblr-box" ).click(function() {
-            //turn keyboard off when using photosets
-            document.body.onkeydown = function(e){  
-                if (e == null) {keycode = event.keyCode;}
-                else {keycode = e.which;}
-                if(keycode == 39){}         //do nothing
-                else if(keycode == 37){}    //do nothing
-                else if(keycode == 191){    //fade
-                    $("#sb-site").fadeOut();
-                    setTimeout(function(){window.location = $('#random').attr('href');},100);
-                }
+        'highRes'   : true, // will use high res images
+        'rounded'   : 'false', // corners, all or false
+        'exif'      : false, // display EXIF data if available (tooltip)
+        'captions'  : false, // display individual captions on photos (tooltip)
+        'gutter'    : '10px', // spacing between the images
+        'photoset'  : '.photo-slideshow', // photoset wrapper
+        'photoWrap' : '.photo-data', // photo data wrapper (includes photo, icons + exif)
+        'photo'     : '.pxu-photo' // photo wrap (includes photo only)
+    }, function() {
+        // callback
+    $( ".tumblr-box" ).click(function() {
+        
+      //Turn keyboard off when using photosets
+      document.body.onkeydown = function(e){  
+        if (e == null) {
+            keycode = event.keyCode;
+        }
+        else {
+            keycode = e.which;
+        }
+        if(keycode == 39){
+
+        } 
+        else if(keycode == 37){
+
+        }
+        else if(keycode == 191){
+            $("#sb-site").fadeOut();
+            //alert('Random')
+            setTimeout(function(){
+                window.location = $('#random').attr('href');
+            },100);}
             };
         }); 
     });
     
-}); //ready
+});//end ready
 
-$.slidebars(); //turn slidebars on
+
 
 $(window).load(function() {
-   document.body.focus(); //focus on document
-}); //end load
+   //alert("window is loaded");
+   document.body.focus();
+});
+//end load
 
-
-//GLOBAL THINGS
-
-//ASK BUTTON
+//GLOBAL
 function askOn(){
-    if( $('#ask').css('display') == "block" )
-    {
-        $("#ask").css({"display": "none"});
-    } 
-    else 
-    { 
-        $("#ask").css({"display": "block"});
-        $("#submit").css({"display": "none"});
+    if( $('#ask').css('display') == "block" ){
+        document.getElementById("ask").style.display = 'none';} 
+    else { 
+        document.getElementById("ask").style.display = 'block';
         scroll();
-    }
+        document.getElementById("submit").style.display = 'none';}
 }
 
 //SUBMIT
 function submitOn(){
-    if( $('#submit').css('display') == "block" ) 
-    {
-        $("#submit").css({"display": "none"});
-    } 
+    if( $('#submit').css('display') == "block" ) {
+        document.getElementById("submit").style.display = 'none';} 
     else { 
-        $("#submit").css({"display": "block"});
-        $("#ask").css({"display": "none"});
+        document.getElementById("submit").style.display = 'block';
         scroll();
+        document.getElementById("ask").style.display = 'none';}
 }
 
 //SCROLL TO
@@ -1432,12 +1352,10 @@ function scroll() {
     $('html, body').animate({scrollTop: $(".asksubmit").offset().top}, 500);
         window.location.hash="content"; //FALL BACK
 }
-
 </script>
 
 {block:PermalinkPage} 
 <script>
-$(document).ready(function(){
     
     //SPLASH
     //If a splash image is avaliable
@@ -1459,7 +1377,7 @@ $(document).ready(function(){
         $(".postHead").css(
             {
                 "position": "absolute",
-                "top": "-50vh",
+                "top": "-60vh",
                 "color": "white"
             });
         $(".title").css(
@@ -1470,11 +1388,17 @@ $(document).ready(function(){
             {
                 "color": "white"
             });
-        $(".backButtonContainer").css(
+        $(".header").css(
             {
-                "display": "none"
+                "position": "relative",
+                "top": "-10vh",
+                "opacity": "0.6"
             });
-            
+        $(".backButton").css(
+            {
+                "border": "none",
+                "color": "white"
+            });
             //Animate image down
             setTimeout(function(){
                 $("#splashContainer").stop().animate({top:"0px"} ,500);
@@ -1488,7 +1412,7 @@ $(document).ready(function(){
             $(".postHead").css({"top": "-90vh",});            
         }
     }
-}); //end ready
+
 </script>
 {/block:PermalinkPage} 
 
@@ -1515,6 +1439,31 @@ $(document).ready(function(){
     };
 </script>
 {/block:IndexPage}
+{/block:IfKeyboardControls}
+
+<!--KEYBOARD NAV ON PAGES-->
+{block:IfKeyboardControls}
+{block:Pages}
+<script>
+  //RANDOM NAVIGATION FOR INDEX
+  document.body.onkeydown = function(e){   
+        if (e == null) {
+            keycode = event.keyCode;
+        } else {
+            keycode = e.which;
+        }
+        if(keycode == 191){
+            $("#sb-site").fadeOut();
+            setTimeout(function(){
+                window.location = {JSBlogURL} + 'random';
+            },100);
+        } 
+         if (url) {
+        window.location = url;
+        }
+    };
+</script>
+{/block:Pages}
 {/block:IfKeyboardControls}
 
 <!--PERSONAL INSTAFEED-->
@@ -1546,6 +1495,7 @@ $(document).ready(function(){
 <!--PERMALINK ONLY-->
 {block:IfKeyboardControls}
 {block:PermalinkPage} 
+{block:PermalinkPagination}
 <script>
     
   //KEYBOARD NAVIGATION FOR PERMALINK
@@ -1565,7 +1515,7 @@ $(document).ready(function(){
                 window.location = $('#nextPost').attr('href');
             },200);
         } else if(keycode == 37){
-            $("#sb-site").stop().animate({left:"110%"},300);
+            $("#sb-site").stop().animate({right:"-110%"},300);
             //alert('Left');
             setTimeout(function(){
                 window.location = $('#previousPost').attr('href');
@@ -1581,8 +1531,26 @@ $(document).ready(function(){
     };
 
 </script>
+{/block:PermalinkPagination}
 {/block:PermalinkPage}
 {block:IfKeyboardControls}
+
+<script>
+//Get title of recent posts
+var src = {JSBlogURL} + "rss";
+
+$.get(src, function (data) {
+    $(data).find("item").first().each(function () { // or "item" or whatever suits your feed
+        var el = $(this);
+
+        console.log("------------------------");
+        console.log("Title      : " + el.find("title").text());
+        console.log("Date       : " + el.find("pubDate").text());
+        console.log("Author     : " + el.find("creator").text());
+    });
+});
+
+</script>
 
 </body>
 </html>
