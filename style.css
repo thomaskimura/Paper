@@ -2,6 +2,16 @@
 /*---------------------*/
 /*---ANY SCREEN SIZE---*/
 /*---------------------*/
+body{margin:0px;}
+
+img{
+  vertical-align: middle;
+  max-width: 100%;}
+
+.row{
+  margin: 0 auto;
+  padding:10px;}
+
 #random{display:block; text-align:center;}      /* hide this for now */
 #sb-site{position: relative;}                   /* allow jquerry aniations on entire page */
 
@@ -388,7 +398,6 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
   #navlink
   {
     text-align: center;
-    padding: 0.573rem;
     width: 50%;
     background: #fafafa;
     padding-top: 1rem;
@@ -456,7 +465,7 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
     text-align:center;}
   .postNav{
       display:block;
-      width:100%;
+      width:50%;
       background:#fafafa;
       padding-top:1rem;
       padding-bottom:1rem;}
