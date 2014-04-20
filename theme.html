@@ -18,13 +18,11 @@ view this project at https://github.com/thomaskimura/Paper
     github @thomaskimura
     
 -->
-
 <html>
   <head>
     <title>{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}</title>
 
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
-
     <link rel="shortcut icon" href="{Favicon}">
     
     {block:Description}
@@ -80,9 +78,9 @@ view this project at https://github.com/thomaskimura/Paper
     <!--Stylesheets-->    
     <link href="http://static.tumblr.com/smotcsf/Vian0p49e/foundation.min.css" rel="stylesheet">
     
-    <link href="http://static.tumblr.com/smotcsf/nSXn4b6jc/style.css" rel="stylesheet">
+    <link href="http://static.tumblr.com/smotcsf/r92n4bb61/style.css" rel="stylesheet">
     
-    <link href="http://static.tumblr.com/smotcsf/SA3n0thdj/slidebars.min.css" rel="stylesheet">
+    <link href="">
     
     <!--Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
@@ -113,16 +111,10 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 .post p, .chat li{font-family:{font:Body};}
 
 /*  Load everything under
-    here in style.css
+    here in style.css   
 */
 
-/*  Load below code inside
-    style.css for now we can
-    do it like this for
-    easier development */
-
 {CustomCSS}
-
 </style>
 
 {block:PermalinkPage} 
@@ -1233,19 +1225,6 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 <!--END OF SLIDEBARS MAIN CONTENT-->
 <!--+++++++++++++++++++++++++++++-->
 
-<!--+++++++++-->
-<!--SLIDEBARS-->
-<!--+++++++++-->
-<div class="sb-slidebar sb-left hideOnPrint">
-    <h2 id="slidebarTitle"><a href="{BlogURL}">{Title}</a></h2>
-        <ul>
-            {block:Pages}
-                <li>
-                    <a href="{URL}">{Label}</a>
-                </li>
-            {/block:Pages}
-        </ul>
-</div>
 
 
 <!--+++++++-->
@@ -1441,10 +1420,10 @@ function scroll() {
             keycode = e.which;
         }
         if(keycode == 191){
-            $("#sb-site").fadeOut();
+            $("#sb-site").addClass( "fadeAnimate" );
             setTimeout(function(){
                 window.location = {JSBlogURL} + 'random';
-            },100);
+            },300);
         } 
          if (url) {
         window.location = url;
@@ -1495,26 +1474,21 @@ function scroll() {
             keycode = e.which;
         }
         if(keycode == 39){
-            $("#sb-site").stop().animate({right:"110%"},300);
-            //alert('Right');
-                //If most recent post is a photoset this will 
-                //return to the home page
+            $('#sb-site').addClass( "leftAnimate" );
             setTimeout(function(){
                 window.location = $('#nextPost').attr('href');
-            },200);
+            },300);
         } else if(keycode == 37){
-            $("#sb-site").stop().animate({right:"-110%"},300);
-            //alert('Left');
+            $('#sb-site').addClass( "rightAnimate" );
             setTimeout(function(){
                 window.location = $('#previousPost').attr('href');
-            },200);
+            },300);
         }   
         else if(keycode == 191){
-            $("#sb-site").fadeOut();
-            //alert('Random')
+            $("#sb-site").addClass( "fadeAnimate" );
             setTimeout(function(){
                 window.location = $('#random').attr('href');
-            },100);
+            },300);
         }
     };
 
