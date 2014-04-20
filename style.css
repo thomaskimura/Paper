@@ -17,10 +17,23 @@
     position:absolute;
     top:0vh;
     background:#000;}
-.leftChange{
-    left:100%;}
-.rightChange{
-    right:100%;}
+
+/*ANIMATIONS*/
+#sb-site{
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;}
+.leftAnimate{
+  -ms-transform: translate(-100%); /* IE 9 */
+  -webkit-transform: translate(-100%); /* Chrome, Safari, Opera */
+  transform: translate(-100%);}
+.rightAnimate{
+  -ms-transform: translate(100%); /* IE 9 */
+  -webkit-transform: translate(100%); /* Chrome, Safari, Opera */
+  transform: translate(100%);}
+.fadeAnimate{
+  opacity:0;}
 
 /* Tomorrow Theme */
 /* Original theme - https://github.com/chriskempson/tomorrow-theme */
