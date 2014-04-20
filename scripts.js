@@ -13,12 +13,35 @@ $(document).ready(function(){
         'photo'     : '.pxu-photo' // photo wrap (includes photo only)
     }, function() {
         // callback
+    $( ".tumblr-box" ).click(function() {
+        
+      //Turn keyboard off when using photosets
+      document.body.onkeydown = function(e){  
+        if (e == null) {
+            keycode = event.keyCode;
+        }
+        else {
+            keycode = e.which;
+        }
+        if(keycode == 39){
+
+        } 
+        else if(keycode == 37){
+
+        }
+        else if(keycode == 191){
+            $("#sb-site").fadeOut();
+            //alert('Random')
+            setTimeout(function(){
+                window.location = $('#random').attr('href');
+            },100);}
+            };
+        }); 
     });
     
-});
-//end ready
+});//end ready
 
-$.slidebars();
+
 
 $(window).load(function() {
    //alert("window is loaded");
@@ -51,26 +74,3 @@ function scroll() {
     $('html, body').animate({scrollTop: $(".asksubmit").offset().top}, 500);
         window.location.hash="content"; //FALL BACK
 }
-</script>
-
-<!--KEYBOARD NAV ON INDEX-->
-{block:IndexPage}
-<script>
-  //RANDOM NAVIGATION FOR INDEX
-  document.body.onkeydown = function(e){   
-        if (e == null) {
-            keycode = event.keyCode;
-        } else {
-            keycode = e.which;
-        }
-        if(keycode == 80){
-            $("#sb-site").fadeOut();
-            //alert('Random');
-            setTimeout(function(){
-                window.location = $('#random').attr('href');
-            },100);
-        } 
-         if (url) {
-        window.location = url;
-        }
-    };
