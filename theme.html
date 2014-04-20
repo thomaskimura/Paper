@@ -75,12 +75,11 @@ view this project at https://github.com/thomaskimura/Paper
     <meta name="if:Big Photos" content="1"/>
     <meta name="if:Slidebars" content="1"/>
         
-    <!--Stylesheets-->    
+    <!--Stylesheets--> 
+    <!--Get rid of foundation,
+        why did i even use this? -->
     <link href="http://static.tumblr.com/smotcsf/Vian0p49e/foundation.min.css" rel="stylesheet">
-    
-    <link href="http://static.tumblr.com/smotcsf/r92n4bb61/style.css" rel="stylesheet">
-    
-    <link href="">
+    <link href="http://static.tumblr.com/smotcsf/QYNn4bdju/style.min.css" rel="stylesheet">
     
     <!--Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
@@ -111,8 +110,7 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 .post p, .chat li{font-family:{font:Body};}
 
 /*  Load everything under
-    here in style.css   
-*/
+    here in style.css   */
 
 {CustomCSS}
 </style>
@@ -1226,7 +1224,6 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 <!--+++++++++++++++++++++++++++++-->
 
 
-
 <!--+++++++-->
 <!--SCRIPTS-->
 <!--+++++++-->
@@ -1239,94 +1236,16 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 
 <!--Instafeed-->
 {block:IfInstagramBanner}
-     <script type="text/javascript" src="http://static.tumblr.com/smotcsf/y9Mmw9qml/instafeed.min.js"></script>
+    <script type="text/javascript" src="http://static.tumblr.com/smotcsf/y9Mmw9qml/instafeed.min.js"></script>
 {/block:IfInstagramBanner}
 
 <!--Photoset Grid-->
 <script type="text/javascript" src="http://static.tumblr.com/smotcsf/Ecdn2cscy/pxuphotoset.min.js"></script>
-    
-<script>
-$(document).ready(function(){
-    
-    //PHOTOSETS
-   $('.photo-slideshow').pxuPhotoset({
-        // options go here
-        'highRes'   : true, // will use high res images
-        'rounded'   : 'false', // corners, all or false
-        'exif'      : false, // display EXIF data if available (tooltip)
-        'captions'  : false, // display individual captions on photos (tooltip)
-        'gutter'    : '10px', // spacing between the images
-        'photoset'  : '.photo-slideshow', // photoset wrapper
-        'photoWrap' : '.photo-data', // photo data wrapper (includes photo, icons + exif)
-        'photo'     : '.pxu-photo' // photo wrap (includes photo only)
-    }, function() {
-        // callback
-    $( ".tumblr-box" ).click(function() {
-        
-      //Turn keyboard off when using photosets
-      document.body.onkeydown = function(e){  
-        if (e == null) {
-            keycode = event.keyCode;
-        }
-        else {
-            keycode = e.which;
-        }
-        if(keycode == 39){
 
-        } 
-        else if(keycode == 37){
-
-        }
-        else if(keycode == 191){
-            $("#sb-site").fadeOut();
-            //alert('Random')
-            setTimeout(function(){
-                window.location = $('#random').attr('href');
-            },100);}
-            };
-        }); 
-    });
-    
-});//end ready
-
-
-
-$(window).load(function() {
-   //alert("window is loaded");
-   document.body.focus();
-});
-//end load
-
-//GLOBAL
-function askOn(){
-    if( $('#ask').css('display') == "block" ){
-        document.getElementById("ask").style.display = 'none';} 
-    else { 
-        document.getElementById("ask").style.display = 'block';
-        scroll();
-        document.getElementById("submit").style.display = 'none';}
-}
-
-//SUBMIT
-function submitOn(){
-    if( $('#submit').css('display') == "block" ) {
-        document.getElementById("submit").style.display = 'none';} 
-    else { 
-        document.getElementById("submit").style.display = 'block';
-        scroll();
-        document.getElementById("ask").style.display = 'none';}
-}
-
-//SCROLL TO
-function scroll() {
-    $('html, body').animate({scrollTop: $(".asksubmit").offset().top}, 500);
-        window.location.hash="content"; //FALL BACK
-}
-</script>
+<script type="text/javascript" src="http://static.tumblr.com/smotcsf/xs0n4bdtp/script.min.js"></script>
 
 {block:PermalinkPage} 
 <script>
-    
     //SPLASH
     //If a splash image is avaliable
     if(document.getElementById("splash"))
@@ -1395,10 +1314,10 @@ function scroll() {
             keycode = e.which;
         }
         if(keycode == 191){
-            $("#sb-site").fadeOut();
+            $("#sb-site").addClass( "fadeAnimate" );
             setTimeout(function(){
                 window.location = {JSBlogURL} + 'random';
-            },100);
+            },300);
         } 
          if (url) {
         window.location = url;
@@ -1410,6 +1329,7 @@ function scroll() {
 
 <!--KEYBOARD NAV ON PAGES-->
 {block:IfKeyboardControls}
+{block:PermalinkPage} 
 {block:Pages}
 <script>
   //RANDOM NAVIGATION FOR INDEX
@@ -1431,6 +1351,7 @@ function scroll() {
     };
 </script>
 {/block:Pages}
+{/block:PermalinkPage} 
 {/block:IfKeyboardControls}
 
 <!--PERSONAL INSTAFEED-->
@@ -1497,6 +1418,7 @@ function scroll() {
 {/block:PermalinkPage}
 {block:IfKeyboardControls}
 
+<!--GET MOST RECENT POST TITLE FROM RSS
 <script>
 //Get title of recent posts
 var src = {JSBlogURL} + "rss";
@@ -1511,8 +1433,8 @@ $.get(src, function (data) {
         console.log("Author     : " + el.find("creator").text());
     });
 });
-
 </script>
+-->
 
 </body>
 </html>
