@@ -80,7 +80,7 @@ view this project at https://github.com/thomaskimura/Paper
     <!--Stylesheets-->    
     <link href="http://static.tumblr.com/smotcsf/Vian0p49e/foundation.min.css" rel="stylesheet">
     
-    <link href="http://static.tumblr.com/smotcsf/DEJn4724t/style.css" rel="stylesheet">
+    <link href="http://static.tumblr.com/smotcsf/nSXn4b6jc/style.css" rel="stylesheet">
     
     <link href="http://static.tumblr.com/smotcsf/SA3n0thdj/slidebars.min.css" rel="stylesheet">
     
@@ -179,9 +179,6 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 <!--+++++++++++++++++++++++++++++++++++++++++-->
 <div id="sb-site"> 
 
-
-<span class="sb-toggle-left hideOnLarge menuIcon"><i class="fa fa-bars"></i></span>
-
 <!--menu Icon-->
 
 {block:Permalink}
@@ -220,12 +217,12 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 
     </div>
     
-<div class="large-8 small-10 small-centered columns">
+<div class="large-8 small-12 small-centered columns">
     <!--
     <p>{Description}</p>
     -->
     <!--MENU-->
-            <ul class="hideOnSmall">
+            <ul>
                 {block:Pages}
                     <li>
                         <a href="{URL}">{Label}</a>
@@ -1240,7 +1237,7 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 <!--SLIDEBARS-->
 <!--+++++++++-->
 <div class="sb-slidebar sb-left hideOnPrint">
-    <div>
+    <h2 id="slidebarTitle"><a href="{BlogURL}">{Title}</a></h2>
         <ul>
             {block:Pages}
                 <li>
@@ -1248,7 +1245,6 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
                 </li>
             {/block:Pages}
         </ul>
-    </div>
 </div>
 
 
@@ -1267,16 +1263,11 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
      <script type="text/javascript" src="http://static.tumblr.com/smotcsf/y9Mmw9qml/instafeed.min.js"></script>
 {/block:IfInstagramBanner}
 
-<!--Slidebars-->
-<script type="text/javascript" src="http://static.tumblr.com/smotcsf/5iOn0th2k/slidebars.min.js"></script>
-
 <!--Photoset Grid-->
 <script type="text/javascript" src="http://static.tumblr.com/smotcsf/Ecdn2cscy/pxuphotoset.min.js"></script>
     
 <script>
 $(document).ready(function(){
-    
-    $.slidebars();
     
     //PHOTOSETS
    $('.photo-slideshow').pxuPhotoset({
@@ -1391,7 +1382,7 @@ function scroll() {
         $(".header").css(
             {
                 "position": "relative",
-                "top": "-10vh",
+                "top": "-57.5vh",
                 "opacity": "0.6"
             });
         $(".backButton").css(
@@ -1399,17 +1390,14 @@ function scroll() {
                 "border": "none",
                 "color": "white"
             });
-            //Animate image down
-            setTimeout(function(){
-                $("#splashContainer").stop().animate({top:"0px"} ,500);
-            },200);
         
         //If screen is 480px or smaller
         if (matchMedia('only screen and (max-width: 480px)').matches) 
         {
             $("#splashContainer").css({"height": "100vh"});
             $("#splashTint").css({"height": "100vh"});
-            $(".postHead").css({"top": "-90vh",});            
+            $(".postHead").css({"top": "-90vh",});    
+            $(".header").css({"top": "-90vh"});
         }
     }
 
