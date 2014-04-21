@@ -79,10 +79,9 @@ view this project at https://github.com/thomaskimura/Paper
     <!--Get rid of foundation,
         why did i even use this? -->
 
-    <link href="http://static.tumblr.com/smotcsf/fJLn4cdcm/style.min.css" rel="stylesheet">
+    <link href="http://static.tumblr.com/smotcsf/98zn4dc4d/style.min.css" rel="stylesheet">
     
     <!--Fonts-->
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 <style>
@@ -182,12 +181,12 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
   {/block:Posts}
 {/block:Permalink}
 
-<div class="spaceSmall hideOnSplash"></div> <!--space-->
+<div class="spaceSmall"></div> <!--space-->
 
 <!--++++++-->
 <!--HEADER-->
 <!--++++++-->
-<div class="row header">
+<div class="fullRow header">
 
   <!--LOGO-->
   {block:IfLogoImage}
@@ -250,7 +249,8 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
         {block:Title}
             <h3 id="title" class="title"><a href="{Permalink}">{Title}</a></h3>
         {/block:Title}
-            
+        
+        {block:PermalinkPage} 
         <span class="postAuthor hideOnIndex">
           {block:IfAuthor}
               <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
@@ -260,6 +260,8 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
               on {DayOfMonth} {Month} {Year}
           {block:Date} 
         </span>
+        
+        {/block:PermalinkPage}
     </div>
 
     {Body}
@@ -327,15 +329,17 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 {block:Photo}
   <li class="post photo">
 
-    <span class="postAuthor hideOnIndex">
-      {block:IfAuthor}
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
-      {/block:IfAuthor}
-      {block:Date} 
-        on {DayOfMonth} {Month} {Year}
-      {block:Date} 
-    </span>
+        {block:PermalinkPage} 
+        <span class="postAuthor hideOnIndex">
+          {block:IfAuthor}
+              <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+              <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+          {/block:IfAuthor}
+          {block:Date} 
+              on {DayOfMonth} {Month} {Year}
+          {block:Date} 
+        </span>
+        {/block:PermalinkPage}
 
     <a href="{Permalink}">
       <img src="{PhotoURL-500}" alt="{PhotoAlt}"/> 
@@ -414,15 +418,17 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
       <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
     {LinkCloseTag}
 
-    <span class="postAuthor hideOnIndex">
-      {block:IfAuthor}
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
-      {/block:IfAuthor}
-      {block:Date} 
-        on {DayOfMonth} {Month} {Year}
-      {block:Date} 
-    </span>
+         {block:PermalinkPage} 
+        <span class="postAuthor hideOnIndex">
+          {block:IfAuthor}
+              <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+              <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+          {/block:IfAuthor}
+          {block:Date} 
+              on {DayOfMonth} {Month} {Year}
+          {block:Date} 
+        </span>
+        {/block:PermalinkPage}
 
     {block:Caption}
       <div class="caption">{Caption}</div>
@@ -493,15 +499,17 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 {block:Photoset}
   <li class="post photoset">
 
-    <span class="postAuthor hideOnIndex">
-      {block:IfAuthor}
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
-      {/block:IfAuthor}
-      {block:Date} 
-        on {DayOfMonth} {Month} {Year}
-      {block:Date} 
-    </span>
+        {block:PermalinkPage} 
+        <span class="postAuthor hideOnIndex">
+          {block:IfAuthor}
+              <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+              <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+          {/block:IfAuthor}
+          {block:Date} 
+              on {DayOfMonth} {Month} {Year}
+          {block:Date} 
+        </span>
+        {/block:PermalinkPage}
 
     <div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">
       {block:Photos}
@@ -587,15 +595,17 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 {block:Quote}
   <li class="post quote">
 
-    <span class="postAuthor hideOnIndex">
-      {block:IfAuthor}
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
-      {/block:IfAuthor}
-      {block:Date} 
-        on {DayOfMonth} {Month} {Year}
-      {block:Date} 
-    </span>
+        {block:PermalinkPage} 
+        <span class="postAuthor hideOnIndex">
+          {block:IfAuthor}
+              <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+              <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+          {/block:IfAuthor}
+          {block:Date} 
+              on {DayOfMonth} {Month} {Year}
+          {block:Date} 
+        </span>
+        {/block:PermalinkPage}
 
     “ {Quote} ”
 
@@ -670,15 +680,17 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
       
     <a href="{URL}" id="link" class="link" {Target}><h3>{Name} <i class="fa fa-share"></i></h3></a>
     
-    <span class="postAuthor hideOnIndex">
-      {block:IfAuthor}
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
-      {/block:IfAuthor}
-      {block:Date} 
-        on {DayOfMonth} {Month} {Year}
-      {block:Date} 
-    </span>
+        {block:PermalinkPage} 
+        <span class="postAuthor hideOnIndex">
+          {block:IfAuthor}
+              <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+              <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+          {/block:IfAuthor}
+          {block:Date} 
+              on {DayOfMonth} {Month} {Year}
+          {block:Date} 
+        </span>
+        {/block:PermalinkPage}
     
     {block:Description}
       <div class="description">
@@ -759,15 +771,17 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
       </h3>
     {/block:Title}
 
-    <span class="postAuthor hideOnIndex">
-      {block:IfAuthor}
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
-      {/block:IfAuthor}
-      {block:Date} 
-        on {DayOfMonth} {Month} {Year}
-      {block:Date} 
-    </span>
+        {block:PermalinkPage} 
+        <span class="postAuthor hideOnIndex">
+          {block:IfAuthor}
+              <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+              <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+          {/block:IfAuthor}
+          {block:Date} 
+              on {DayOfMonth} {Month} {Year}
+          {block:Date} 
+        </span>
+        {/block:PermalinkPage}
 
     <ul class="chat">
       {block:Lines}
@@ -847,15 +861,17 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 {block:Video}
   <li class="post video">
 
-    <span class="postAuthor hideOnIndex">
-      {block:IfAuthor}
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
-      {/block:IfAuthor}
-      {block:Date} 
-        on {DayOfMonth} {Month} {Year}
-      {block:Date} 
-    </span>
+        {block:PermalinkPage} 
+        <span class="postAuthor hideOnIndex">
+          {block:IfAuthor}
+              <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+              <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+          {/block:IfAuthor}
+          {block:Date} 
+              on {DayOfMonth} {Month} {Year}
+          {block:Date} 
+        </span>
+        {/block:PermalinkPage}
 
     <div class="pCenter">
       {Video-700}
@@ -932,15 +948,17 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 
     {AudioPlayerBlack}
 
-    <span class="postAuthor hideOnIndex">
-      {block:IfAuthor}
-        <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-        <a href="{PostAuthorURL}"> {PostAuthorName} </a>
-      {/block:IfAuthor}
-      {block:Date} 
-        on {DayOfMonth} {Month} {Year}
-      {block:Date} 
-    </span>
+        {block:PermalinkPage} 
+        <span class="postAuthor hideOnIndex">
+          {block:IfAuthor}
+              <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+              <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+          {/block:IfAuthor}
+          {block:Date} 
+              on {DayOfMonth} {Month} {Year}
+          {block:Date} 
+        </span>
+        {/block:PermalinkPage}
 
     {block:Caption}
       <div class="caption">{Caption}</div>
@@ -1039,6 +1057,7 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
         {/block:NextPost} 
 
       </div>
+      <div class="spaceSmall"></div>
     {/block:PermalinkPagination}
   {/block:IfPostNavigation}
 
@@ -1061,6 +1080,7 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
   <!--NOTES-->
   {block:PostNotes}
     {PostNotes}
+    <div class="spaceSmall"></div>
   {/block:PostNotes}
 
 {/block:PermalinkPage}
@@ -1096,7 +1116,6 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 <!--++++++++++++++++-->
 <!--PERMALINK FOOTER-->
 <!--++++++++++++++++-->
-<div class="space"></div>
 <div class="postBottom hideOnPrint"> <!--hide on index, show on permalink-->
   <div class="row">
 
@@ -1265,37 +1284,41 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
     {
         var source = document.getElementById("splash").src;
         $("#splashContainer").css({"background-image":'url(' + source + ')'});
-        $(".hideOnSplash").css({"display": "none"});
+
         $("#splashContainer").css(
             {
-                "width": "100vw", 
-                "height": "60vh"
+                "display": "block"
             });
+            
         $("#splashTint").css(
             {
-                "width": "100vw", 
-                "height": "60vh"
+                "display": "block"
             });
+            
         $(".postHead").css(
             {
                 "position": "absolute",
                 "top": "20vh",
                 "color": "white"
             });
+            
         $(".title").css(
             {
                 "color": "white"
             });
+            
         $(".postAuthor").css(
             {
                 "color": "white"
             });
+            
         $(".header").css(
             {
-                "position": "relative",
-                "top": "-57.5vh",
-                "opacity": "0.6"
+                "position": "absolute",
+                "opacity": "0.6",
+                "top": "1rem"
             });
+            
         $(".backButton").css(
             {
                 "border": "none",
@@ -1305,9 +1328,13 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
         //If screen is 480px or smaller
         if (matchMedia('only screen and (max-width: 480px)').matches) 
         {
-            $("#splashContainer").css({"height": "100vh"});
-            $("#splashTint").css({"height": "100vh"});
-            $(".header").css({"top": "-90vh"});
+            var newHeight = $(window).height();
+            var newWidth = $(window).width();
+            
+            $('#splashContainer').height(newHeight);
+            $('#splashTint').height(newHeight);
+            $(".header").css({"top": "1rem"});
+            $(".postHead").css({"top": "5rem"});
         }
     }
 
