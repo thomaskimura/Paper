@@ -82,7 +82,7 @@ view this project at https://github.com/thomaskimura/Paper
     <link href="http://static.tumblr.com/smotcsf/98zn4dc4d/style.min.css" rel="stylesheet">
     
     <!--Fonts-->
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="http://static.tumblr.com/smotcsf/136n4dd0v/font-awesome.min.css" rel="stylesheet">
 
 <style>
 
@@ -1231,12 +1231,14 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
   <a name="asksubmit"></a> 
   {block:AskEnabled}
     <div class="row" id="ask">
-        <iframe id="askBox" frameborder="0" scrolling="no" width="100%" height="190" src="http://www.tumblr.com/ask_form/{text:Tumblr Username}.tumblr.com" style="background-color:transparent; overflow:hidden;" id="ask_form"></iframe>
+    <a href="http://www.tumblr.com/ask_form/{text:Tumblr Username}.tumblr.com" id="askSource"></a>
+        <iframe id="askBox" frameborder="0" scrolling="no" width="100%" height="190" style="background-color:transparent; overflow:hidden;" id="ask_form"></iframe>
     </div>
   {/block:AskEnabled}
   
   {block:SubmissionsEnabled} 
     <div class="row" id="submit">
+    <a href="http://www.tumblr.com/submit_form/{text:Tumblr Username}.tumblr.com" id="submitSource"></a>
         <iframe id="submitBox" src="http://www.tumblr.com/submit_form/{text:Tumblr Username}.tumblr.com" frameborder="0" height="500" scrolling="no" width="100%"></iframe>
     </div>
   {/block:SubmissionsEnabled} 
@@ -1274,7 +1276,7 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 <!--Photoset Grid-->
 <script type="text/javascript" src="http://static.tumblr.com/smotcsf/Ecdn2cscy/pxuphotoset.min.js"></script>
 
-<script type="text/javascript" src="http://static.tumblr.com/smotcsf/xs0n4bdtp/script.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/smotcsf/15Kn4dcud/script.min.js"></script>
 
 {block:PermalinkPage} 
 <script>
