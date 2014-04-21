@@ -12,6 +12,15 @@ img{
   margin: 0 auto;
   padding:10px;}
 
+.fullRow{
+    width:100%;
+    padding:0px;}
+
+.permalinkPagination{float:left;width:100%;}
+
+.space{clear:both;}
+.spaceSmall{clear:both;}
+
 #random{display:block; text-align:center;}      /* hide this for now */
 #sb-site{position: relative;}                   /* allow jquerry aniations on entire page */
 
@@ -19,13 +28,19 @@ img{
 #splashContainer{
     position:relative;
     top:0vh;
+    width: 100vw;
+    height: 60vh;
     opacity:0.6;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;}
+    background-position: center;
+    display: none;}
 #splashTint{
     position:absolute;
-    top:0vh;
+    top:0px;
+    width: 100vw;
+    height: 60vh;
+    display: none;
     background:#000;}
 
 /*ANIMATIONS*/
