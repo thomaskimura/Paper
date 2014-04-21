@@ -1,4 +1,4 @@
-$(document).ready(function(){
+    $(document).ready(function(){
     
     //PHOTOSETS
    $('.photo-slideshow').pxuPhotoset({
@@ -54,9 +54,11 @@ function askOn(){
     if( $('#ask').css('display') == "block" ){
         document.getElementById("ask").style.display = 'none';} 
     else { 
+        var askSource = document.getElementById("askSource").href;
+        document.getElementById("askBox").src=askSource;
         document.getElementById("ask").style.display = 'block';
-        scroll();
-        document.getElementById("submit").style.display = 'none';}
+        document.getElementById("submit").style.display = 'none';
+        scroll();}
 }
 
 //SUBMIT
@@ -64,9 +66,11 @@ function submitOn(){
     if( $('#submit').css('display') == "block" ) {
         document.getElementById("submit").style.display = 'none';} 
     else { 
+        var submitSource = document.getElementById("submitSource").href;
+        document.getElementById("submitBox").src=submitSource;
         document.getElementById("submit").style.display = 'block';
-        scroll();
-        document.getElementById("ask").style.display = 'none';}
+        document.getElementById("ask").style.display = 'none';
+        scroll();}
 }
 
 //SCROLL TO
