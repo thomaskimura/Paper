@@ -34,13 +34,15 @@ view this project at https://github.com/thomaskimura/Paper
     <!--TUMBLR CUSTOMIZATION-->
     <!--Colours-->
     <meta name="color:Main Color" content="#f2f291"/> <!--Color for hover and highlight-->
-    
-    <!--Images-->
-    <meta name="image:Logo" content=""/> <!--Circular image to display in header-->
+    <meta name="color:Tint Color" content="#000"/>
+    <meta name="color:Header Color" content="#fff"/>
     
     <!--Sizing-->
     <meta name="text:Column Size" content="7"/> <!--Set column width using Foundation 5, takes a number 1-12-->
     
+    <!--Images-->
+    <meta name="image:HeaderBackground" content=""/>
+        
     <!--Fonts-->
     <meta name="font:Headings" content=""/>
     <meta name="font:Body" content=""/>
@@ -67,29 +69,35 @@ view this project at https://github.com/thomaskimura/Paper
     <meta name="text:Instagram Tag" content=""/>
     
     <!--Options-->
-    <meta name="if:KeyboardControls" content="1"/>
+    <meta name="if:Keyboard Controls" content="1"/>
     <meta name="if:Author" content="1"/>
     <meta name="if:Random" content="1"/>
     <meta name="if:Post Navigation" content="1"/>
+    <meta name="if:Recent Post" content="1"/>
     <meta name="if:Instagram Banner" content="0"/>
     <meta name="if:Big Photos" content="1"/>
-    <meta name="if:Slidebars" content="1"/>
         
     <!--Stylesheets--> 
     <!--Get rid of foundation,
         why did i even use this? -->
 
-    <link href="http://static.tumblr.com/smotcsf/98zn4dc4d/style.min.css" rel="stylesheet">
+    <link href="http://static.tumblr.com/smotcsf/tSqn4h3bt/style.css" rel="stylesheet">
     
     <!--Fonts-->
-    <link href="http://static.tumblr.com/smotcsf/136n4dd0v/font-awesome.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
 
 <style>
 
 /*--------------------*/
 /*----STYLE SHEET----*/
 /*--------------------*/
-
+#headerBackground{
+    background:url('{image:HeaderBackground}');
+    background-size: cover;}
+#headerTint{background:{color:Tint Color};}
+#bigTitle{color:{color:Header Color};}
+    
 /*-------------*/
 /*---OPTIONS---*/
 /*-------------*/
@@ -109,8 +117,8 @@ a:hover{color:{color:Main Color};}
 
 /*--Fonts--*/
 body, ol.notes li.note blockquote a, .postAuthor {font-family:{font:Headings}; !important}
-blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
-.post p, .chat li{font-family:{font:Body};}
+.quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
+.post p, .chat li, blockquote{font-family:{font:Body};}
 
 /*  Load everything under
     here in style.css   */
@@ -132,7 +140,7 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
   .hideOnPermalink{display:none !important;}
   .hideOnIndex{display:block;}
 
-  #title{font-size:2.618rem; line-height:3.141rem;}
+  #title, #recentTitle{font-size:2.618rem; line-height:3.141rem;}
     
   /*TYPOGRAPHY*/
   /* first paragraph larger */
@@ -141,7 +149,7 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 /*LARGER THAN 900PX*/
   @media only screen and (min-width: 900px) 
   {
-    #title{font-size:3.272rem; line-height:3.926rem;}
+    #title, #recentTitle{font-size:3.272rem; line-height:3.926rem;}
       
     /* first paragraph larger*/
     .post p:first-child, .post p:first-of-type{font-size:1.5rem; line-height:2.427rem;} /*1.2 & 1.618*/
@@ -164,6 +172,16 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 </style>
 {/block:IfBigPhotos}
 
+{block:IfRandom}
+<style>
+.postNav{
+    width:33.333333%;
+    display:inline-table;}
+.random{
+    float:inherit;}
+</style>
+{/block:IfRandom}
+
 </head>
 <body onload="prettyPrint()" id="body" tabindex="0" onkeydown="keyPress(event)"> <!--load syntax highlighter-->
 
@@ -181,24 +199,15 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
   {/block:Posts}
 {/block:Permalink}
 
-<div class="spaceSmall"></div> <!--space-->
-
 <!--++++++-->
 <!--HEADER-->
 <!--++++++-->
-<div class="fullRow header">
-
-  <!--LOGO-->
-  {block:IfLogoImage}
-    <div id="headerImageContainer" class="hideOnPermalink">
-      <a id="title" href="{BlogURL}">
-        <img id="headerImage" src="{image:Logo}"/>
-      </a>
-    </div>
-  {/block:IfLogoImage}  
+<div class="fullRow header" id="header">
+    
+    <div class="spaceSmall"></div> <!--space-->
 
   <!--TITLE-->
-  <h1><a id="title" href="{BlogURL}">{Title}</a></h1>  
+  <h1 id="bigTitle"><a href="{BlogURL}">{Title}</a></h1>  
 
   <!--BACK-->
   {block:Permalink}
@@ -207,6 +216,7 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
     </div>
   {/block:Permalink}
 
+  <p>{Description}</p>
   <!--MENU-->
   <ul>
     {block:Pages}
@@ -226,14 +236,17 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 <!--+++++++++++++++++-->
 <!--HEADER BACKGROUND-->
 <!--+++++++++++++++++-->
+{block:IndexPage}
 <div id="headerBackground">
   <div id="headerTint"></div>
 </div>
+{/block:IndexPage}
 
 <!--+++++++-->
 <!--CONTENT-->
 <!--+++++++-->
 <div class="row">
+<div class="spaceSmall"></div> <!--space-->
   <ol class="posts">
         
 <!--POST TYPES-->
@@ -1021,7 +1034,9 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 <!--+++++++++-->
 <!--END AUDIO-->
 <!--+++++++++-->
-                
+
+<!--STYLE ASKS
+https://www.tumblr.com/docs/en/custom_themes#answer-posts -->
 
 <div class="space"></div> <!--space between each post-->
 
@@ -1037,8 +1052,11 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 
   {block:IfKeyboardControls}
     {block:PermalinkPagination}
+    <a id="previousPost" href="{PreviousPost}"></a>
+    <a id="nextPost" href="{nextPost}"></a>
+    <a id="randomPost" href="{BlogURL}random"></a>
         <p class="hint hideOnSmall">
-          <i class="fa fa-keyboard-o"></i> Use the left and right arrow keys to navigate OR hit the forwardslash(?) key to load a random post
+          <i class="fa fa-keyboard-o"></i> Use the left and right arrow keys to navigate OR hit the forwardslash(/) key to load a random post
         </p>
     {/block:PermalinkPagination}
   {/block:IfKeyboardControls}
@@ -1048,25 +1066,21 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
       <div class="permalinkPagination hideOnPrint">
 
         {block:PreviousPost}
-          <a class="postNav left" id="previousPost" href="{PreviousPost}"><i class="fa fa-long-arrow-left"></i> Previous Post</a>
+          <a class="postNav" id="previousPost" href="{PreviousPost}"><i class="fa fa-long-arrow-left"></i> Old Post</a>
         {/block:PreviousPost}
-
+        
+        {block:IfRandom}
+              <a class="postNav" href="{BlogURL}random"><i class="fa fa-random"></i></a>
+        {/block:IfRandom}
 
         {block:NextPost}
-          <a class="postNav right" id="nextPost" href="{NextPost}">Next Post <i class="fa fa-long-arrow-right"></i></a>
+          <a class="postNav" id="nextPost" href="{NextPost}">New Post <i class="fa fa-long-arrow-right"></i></a>
         {/block:NextPost} 
 
       </div>
       <div class="spaceSmall"></div>
     {/block:PermalinkPagination}
   {/block:IfPostNavigation}
-
-{block:IfRandom}
-  <div class="row hideOnPrint">
-      <a id="random" href="{BlogURL}random"><i class="fa fa-random"></i></a>
-  </div>
-  <div class="spaceSmall"></div>
-{/block:IfRandom}
 
 <!--DISQUS COMMENTS-->
 {block:IfDisqusShortname}
@@ -1101,7 +1115,7 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 
 {block:IndexPage}
 <!--NAVIGATION--> 
-  <div class="row" >
+  <div class="row">
     {block:NextPage}
         <a  class="right" id="navlink" href="{NextPage}">Next <i class="fa fa-long-arrow-right"></i> </a>
     {/block:NextPage} 
@@ -1117,7 +1131,7 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 <!--PERMALINK FOOTER-->
 <!--++++++++++++++++-->
 <div class="postBottom hideOnPrint"> <!--hide on index, show on permalink-->
-  <div class="row">
+  <div>
 
     <h3><a href="{BlogURL}">{Title}</a></h3>
 
@@ -1183,8 +1197,6 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
       {/block:IfUsernameOnDribbble}  
     </ul>
 
-    <p>{Description}</p>
-
   </div>
 </div>
 <!--++++++++++++++++++++-->
@@ -1196,7 +1208,7 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 <div class="bottom hideOnPrint">
 
   <!--LINKS-->
-  <div class="row" id="bottomLinks">
+  <div id="bottomLinks">
     <a href="{BlogURL}">Home</a>
     <a href="/archive">Archive</a>
     {block:AskEnabled}
@@ -1211,14 +1223,14 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
   </div>
 
   <!--BLURB-->
-  <div class="row" id="bottomBlurb">
+  <div id="bottomBlurb">
     <p class="powered">
       <a href="http://papertheme.tumblr.com/">Paper</a> theme powered by <a href="http://www.tumblr.com/">Tumblr</a>
-      <div id="recent-posts" ></div>
     </p>
   </div> 
 
 </div>
+<div class="spaceSmall"></div>
 <!--++++++++++-->
 <!--END FOOTER-->
 <!--++++++++++-->
@@ -1246,6 +1258,32 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 <!--+++++++++++-->
 <!--END ASK/SUB-->
 <!--+++++++++++-->
+
+{block:PermalinkPage}
+{block:IfRecentPost}
+    <div id="recent">
+        <div class="spaceSmall"></div>
+        <div class="row">
+        
+                <h3 id="recentTitle"></h3>
+                
+                {block:IfAuthor}
+                <span id="recentAuthor"></span>
+                {/block:IfAuthor}
+                
+                <span id="recentDate"></span>
+                
+                <p id="recentSummary"></p>
+                
+              <a href="{Permalink}" class="readMoreButton">
+                Read more <i class="fa fa-long-arrow-right"></i>
+              </a>       
+              
+        </div>
+        <div class="spaceSmall"></div>
+    </div>
+{/block:IfRecentPost}
+{/block:PermalinkPage}
 
 <!--INSTAGRAM BANNER-->
 {block:IfInstagramBanner}
@@ -1277,6 +1315,12 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 <script type="text/javascript" src="http://static.tumblr.com/smotcsf/Ecdn2cscy/pxuphotoset.min.js"></script>
 
 <script type="text/javascript" src="http://static.tumblr.com/smotcsf/15Kn4dcud/script.min.js"></script>
+
+<script>
+    var headHeight = document.getElementById('header').clientHeight;    
+            $("#headerBackground").css({ "height": headHeight});
+            $("#headerTint").css({ "height": headHeight});
+</script>
 
 {block:PermalinkPage} 
 <script>
@@ -1449,7 +1493,7 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
               else if(keycode == 191){
                   $("#sb-site").addClass( "fadeAnimate" );
                   setTimeout(function(){
-                      window.location = $('#random').attr('href');
+                      window.location = {JSBlogURL} + 'random';
                   },300);
               }
           };
@@ -1459,7 +1503,7 @@ blockquote, .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
   {/block:PermalinkPage}
 {block:IfKeyboardControls}
 
-<!--GET MOST RECENT POST TITLE FROM RSS
+
 <script>
 //Get title of recent posts
 var src = {JSBlogURL} + "rss";
@@ -1472,10 +1516,26 @@ $.get(src, function (data) {
         console.log("Title      : " + el.find("title").text());
         console.log("Date       : " + el.find("pubDate").text());
         console.log("Author     : " + el.find("creator").text());
+        
+        var title = el.find("title").text();
+        var date = el.find("pubDate").text().substr(5,11);
+        var author = el.find("creator").text();
+        var summary = el.find("description").text().substr(0,50);
+        var link = el.find("link").text();
+
+        document.getElementById("recentTitle").innerHTML=title;
+        document.getElementById("recentDate").innerHTML="on " + date;
+        document.getElementById("recentAuthor").innerHTML=author;
+        document.getElementById("recentSummary").innerHTML=summary + "...";
+        $("#recent").click(function(){
+             window.location= link; 
+             return false;
+        });
+
     });
 });
 </script>
--->
+
 
 </body>
 </html>
