@@ -204,7 +204,7 @@ body, ol.notes li.note blockquote a, .postAuthor {font-family:{font:Headings}; !
 <!--++++++-->
 <div class="fullRow header" id="header">
     
-    <div class="spaceSmall"></div> <!--space-->
+    <div class="spaceSmall hideOnSplash"></div> <!--space-->
 
   <!--TITLE-->
   <h1 id="bigTitle"><a href="{BlogURL}">{Title}</a></h1>  
@@ -1334,6 +1334,11 @@ https://www.tumblr.com/docs/en/custom_themes#answer-posts -->
         $("#splashContainer").css(
             {
                 "display": "block"
+            });
+            
+        $(".hideOnSplash").css(
+            {
+                "display": "none"
             });
             
         $("#splashTint").css(
