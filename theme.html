@@ -16,6 +16,13 @@ view this project at https://github.com/thomaskimura/Paper
     
     tweet @thomaskimura_
     github @thomaskimura
+
+stuff I used:
+https://github.com/PixelUnion/Extended-Tumblr-Photoset
+
+http://instafeedjs.com/
+
+https://code.google.com/p/google-code-prettify/
     
 -->
 <html lang="en">
@@ -38,15 +45,15 @@ view this project at https://github.com/thomaskimura/Paper
     <meta name="color:Header Color" content="#fff"/>
     
     <!--Sizing-->
-    <meta name="text:Column Size" content="7"/> <!--Set column width using Foundation 5, takes a number 1-12-->
+    <meta name="text:Column Size" content="600"/> <!--Set column width using Foundation 5, takes a number 1-12-->
     
     <!--Images-->
     <meta name="image:HeaderBackground" content=""/>
         
     <!--Fonts-->
-    <meta name="font:Headings" content=""/>
-    <meta name="font:Body" content=""/>
-    <meta name="font:Fancy" content=""/>
+    <meta name="font:Headings" content="Gibson"/>
+    <meta name="font:Body" content="Capita"/>
+    <meta name="font:Fancy" content="Clarendon"/>
 
     <!--Text-->
     <meta name="text:Email" content="Email"/>
@@ -74,20 +81,26 @@ view this project at https://github.com/thomaskimura/Paper
     <meta name="if:Random" content="1"/>
     <meta name="if:Post Navigation" content="1"/>
     <meta name="if:Recent Post" content="1"/>
-    <meta name="if:Instagram Banner" content="0"/>
+    <meta name="if:Instagram Feed" content="0"/>
     <meta name="if:Big Photos" content="1"/>
         
     <!--Stylesheets--> 
     <!--Get rid of foundation,
         why did i even use this? -->
 
-    <link href="http://static.tumblr.com/smotcsf/tSqn4h3bt/style.css" rel="stylesheet">
+    <link href="http://static.tumblr.com/9hupah0/Znnn4i9qq/style.css" rel="stylesheet">
     
     <!--Fonts-->
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 
 <style>
+
+.header p
+{
+    max-width:600px;
+    margin:0 auto;
+}
 
 /*--------------------*/
 /*----STYLE SHEET----*/
@@ -118,7 +131,7 @@ a:hover{color:{color:Main Color};}
 /*--Fonts--*/
 body, ol.notes li.note blockquote a, .postAuthor {font-family:{font:Headings}; !important}
 .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
-.post p, .chat li, blockquote{font-family:{font:Body};}
+.post p, .chat li, blockquote, #recentSummary{font-family:{font:Body};}
 
 /*  Load everything under
     here in style.css   */
@@ -237,9 +250,11 @@ body, ol.notes li.note blockquote a, .postAuthor {font-family:{font:Headings}; !
 <!--HEADER BACKGROUND-->
 <!--+++++++++++++++++-->
 {block:IndexPage}
-<div id="headerBackground">
-  <div id="headerTint"></div>
-</div>
+    {block:IfHeaderBackgroundImage}
+        <div id="headerBackground">
+          <div id="headerTint"></div>
+        </div>
+    {block:IfHeaderBackgroundImage}
 {/block:IndexPage}
 
 <!--+++++++-->
@@ -1285,10 +1300,10 @@ https://www.tumblr.com/docs/en/custom_themes#answer-posts -->
 {/block:IfRecentPost}
 {/block:PermalinkPage}
 
-<!--INSTAGRAM BANNER-->
-{block:IfInstagramBanner}
+<!--INSTAGRAM FEED-->
+{block:IfInstagramFeed}
   <div id="instafeed"></div>
-{/block:IfInstagramBanner}
+{/block:IfInstagramFeed}
 
 </div>
 <!--+++++++++++++++++++++++++++++-->
@@ -1307,19 +1322,102 @@ https://www.tumblr.com/docs/en/custom_themes#answer-posts -->
 <script type="text/javascript" src="http://static.tumblr.com/smotcsf/phJn1y2w7/prettify.js"></script>
 
 <!--Instafeed-->
-{block:IfInstagramBanner}
+{block:IfInstagramFeed}
   <script type="text/javascript" src="http://static.tumblr.com/smotcsf/y9Mmw9qml/instafeed.min.js"></script>
-{/block:IfInstagramBanner}
+{/block:IfInstagramFeed}
 
 <!--Photoset Grid-->
 <script type="text/javascript" src="http://static.tumblr.com/smotcsf/Ecdn2cscy/pxuphotoset.min.js"></script>
 
+<!--
 <script type="text/javascript" src="http://static.tumblr.com/smotcsf/15Kn4dcud/script.min.js"></script>
+-->
 
 <script>
+$(document).ready(function(){
+    
+    //PHOTOSETS
+   $('.photo-slideshow').pxuPhotoset({
+        // options go here
+        'highRes'   : true, // will use high res images
+        'rounded'   : 'false', // corners, all or false
+        'exif'      : false, // display EXIF data if available (tooltip)
+        'captions'  : false, // display individual captions on photos (tooltip)
+        'gutter'    : '10px', // spacing between the images
+        'photoset'  : '.photo-slideshow', // photoset wrapper
+        'photoWrap' : '.photo-data', // photo data wrapper (includes photo, icons + exif)
+        'photo'     : '.pxu-photo' // photo wrap (includes photo only)
+    }, function() {
+        // callback
+    $( ".tumblr-box" ).click(function() {
+        
+      //Turn keyboard off when using photosets
+      document.body.onkeydown = function(e){  
+        if (e == null) {
+            keycode = event.keyCode;
+        }
+        else {
+            keycode = e.which;
+        }
+        if(keycode == 39){
+
+        } 
+        else if(keycode == 37){
+
+        }
+        else if(keycode == 191){
+            $("#sb-site").fadeOut();
+            //alert('Random')
+            setTimeout(function(){
+                window.location = $('#random').attr('href');
+            },100);}
+            };
+        }); 
+    });
+    
     var headHeight = document.getElementById('header').clientHeight;    
-            $("#headerBackground").css({ "height": headHeight});
-            $("#headerTint").css({ "height": headHeight});
+        $("#headerBackground").css({ "height": headHeight});
+        $("#headerTint").css({ "height": headHeight});
+            
+});//end ready
+
+
+
+$(window).load(function() {
+   //alert("window is loaded");
+   document.body.focus();
+});
+//end load
+
+//GLOBAL
+function askOn(){
+    if( $('#ask').css('display') == "block" ){
+        document.getElementById("ask").style.display = 'none';} 
+    else { 
+        var askSource = document.getElementById("askSource").href;
+        document.getElementById("askBox").src=askSource;
+        document.getElementById("ask").style.display = 'block';
+        document.getElementById("submit").style.display = 'none';
+        scroll();}
+}
+
+//SUBMIT
+function submitOn(){
+    if( $('#submit').css('display') == "block" ) {
+        document.getElementById("submit").style.display = 'none';} 
+    else { 
+        var submitSource = document.getElementById("submitSource").href;
+        document.getElementById("submitBox").src=submitSource;
+        document.getElementById("submit").style.display = 'block';
+        document.getElementById("ask").style.display = 'none';
+        scroll();}
+}
+
+//SCROLL TO
+function scroll() {
+    $('html, body').animate({scrollTop: $(".asksubmit").offset().top}, 500);
+        window.location.hash="content"; //FALL BACK
+}
 </script>
 
 {block:PermalinkPage} 
@@ -1508,38 +1606,41 @@ https://www.tumblr.com/docs/en/custom_themes#answer-posts -->
   {/block:PermalinkPage}
 {block:IfKeyboardControls}
 
-
-<script>
-//Get title of recent posts
-var src = {JSBlogURL} + "rss";
-
-$.get(src, function (data) {
-    $(data).find("item").first().each(function () { // or "item" or whatever suits your feed
-        var el = $(this);
-
-        console.log("------------------------");
-        console.log("Title      : " + el.find("title").text());
-        console.log("Date       : " + el.find("pubDate").text());
-        console.log("Author     : " + el.find("creator").text());
-        
-        var title = el.find("title").text();
-        var date = el.find("pubDate").text().substr(5,11);
-        var author = el.find("creator").text();
-        var summary = el.find("description").text().substr(0,50);
-        var link = el.find("link").text();
-
-        document.getElementById("recentTitle").innerHTML=title;
-        document.getElementById("recentDate").innerHTML="on " + date;
-        document.getElementById("recentAuthor").innerHTML=author;
-        document.getElementById("recentSummary").innerHTML=summary + "...";
-        $("#recent").click(function(){
-             window.location= link; 
-             return false;
-        });
-
-    });
-});
-</script>
+{block:PermalinkPage}
+    {block:IfRecentPost}
+        <script>
+            //Get title of recent posts
+            var src = {JSBlogURL} + "rss";
+            
+            $.get(src, function (data) {
+                $(data).find("item").first().each(function () { // or "item" or whatever suits your feed
+                    var el = $(this);
+            
+                    console.log("------------------------");
+                    console.log("Title      : " + el.find("title").text());
+                    console.log("Date       : " + el.find("pubDate").text());
+                    console.log("Author     : " + el.find("creator").text());
+                    
+                    var title = el.find("title").text();
+                    var date = el.find("pubDate").text().substr(5,11);
+                    var author = el.find("creator").text();
+                    var summary = el.find("description").text().substr(0,75);
+                    var link = el.find("link").text();
+            
+                    document.getElementById("recentTitle").innerHTML=title;
+                    document.getElementById("recentDate").innerHTML="on " + date;
+                    document.getElementById("recentAuthor").innerHTML=author;
+                    document.getElementById("recentSummary").innerHTML=summary + "...";
+                    $("#recent").click(function(){
+                         window.location= link; 
+                         return false;
+                    });
+            
+                });
+            });
+        </script>
+    {block:IfRecentPost}
+{/block:PermalinkPage}
 
 
 </body>
