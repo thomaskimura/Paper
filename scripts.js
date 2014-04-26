@@ -1,4 +1,4 @@
-    $(document).ready(function(){
+$(document).ready(function(){
     
     //PHOTOSETS
    $('.photo-slideshow').pxuPhotoset({
@@ -39,6 +39,10 @@
         }); 
     });
     
+    var headHeight = document.getElementById('header').clientHeight;    
+        $("#headerBackground").css({ "height": headHeight});
+        $("#headerTint").css({ "height": headHeight});
+            
 });//end ready
 
 
