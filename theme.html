@@ -47,6 +47,7 @@ thanks to:
     
     <!--Images-->
     <meta name="image:HeaderBackground" content=""/>
+    <meta name="image:Header" content=""/>
         
     <!--Fonts-->
     <meta name="font:Headings" content="Gibson"/>
@@ -80,20 +81,18 @@ thanks to:
     <meta name="if:Post Navigation" content="1"/>
     <meta name="if:Recent Post" content="1"/>
     <meta name="if:Instagram Feed" content="0"/>
-    <meta name="if:Big Photos" content="1"/>
         
     <!--Stylesheets--> 
     <!--Get rid of foundation,
         why did i even use this? -->
 
-    <link href="http://static.tumblr.com/9hupah0/OTDn4m3hn/style.min.css" rel="stylesheet">
+    <link href="http://static.tumblr.com/9hupah0/cqfn4ngsb/style.css" rel="stylesheet">
     
     <!--Fonts-->
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 
 <style>
-
 /*--------------------*/
 /*----STYLE SHEET----*/
 /*--------------------*/
@@ -121,7 +120,7 @@ a:hover{color:{color:Main Color};}
 #bottomLinks a:hover{color:{color:Main Color};}
 
 /*--Fonts--*/
-body, ol.notes li.note blockquote a, .postAuthor {font-family:{font:Headings}; !important}
+body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-family:{font:Headings}; !important}
 .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 .post p, .chat li, blockquote, #recentSummary{font-family:{font:Body};}
 
@@ -163,20 +162,6 @@ body, ol.notes li.note blockquote a, .postAuthor {font-family:{font:Headings}; !
 </style>
 {/block:PermalinkPage}
 
-{block:IfBigPhotos}
-<style>
-  @media only screen and (min-width: 700px) 
-  {
-    .post img
-    {
-      max-width:none;
-      width:130%;
-      margin-left:-15%;
-    }
-  }
-</style>
-{/block:IfBigPhotos}
-
 {block:IfRandom}
 <style>
 .postNav{
@@ -186,8 +171,6 @@ body, ol.notes li.note blockquote a, .postAuthor {font-family:{font:Headings}; !
     float:inherit;}
 </style>
 {/block:IfRandom}
-
-<script type="text/javascript" src="http://codysherman.com/tools/infinite-scrolling/code"></script>
 
 </head>
 <body onload="prettyPrint()" id="body" tabindex="0" onkeydown="keyPress(event)"> <!--load syntax highlighter-->
@@ -214,6 +197,10 @@ body, ol.notes li.note blockquote a, .postAuthor {font-family:{font:Headings}; !
     <div class="spaceSmall hideOnSplash"></div> <!--space-->
 
   <!--TITLE-->
+  {block:IfHeaderImage}
+    <img src="{image:Header}"/>
+    <div class="spaceSmall hideOnSplash"></div> <!--space-->
+  {/block:IfHeaderImage} 
   <h1 id="bigTitle"><a href="{BlogURL}">{Title}</a></h1>  
 
   <!--BACK-->
@@ -276,13 +263,13 @@ body, ol.notes li.note blockquote a, .postAuthor {font-family:{font:Headings}; !
         <span class="postAuthor hideOnIndex">
           {block:IfAuthor}
               <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+              Posted by:
               <a href="{PostAuthorURL}"> {PostAuthorName} </a>
           {/block:IfAuthor}
           {block:Date} 
               on {DayOfMonth} {Month} {Year}
           {block:Date} 
         </span>
-        
         {/block:PermalinkPage}
     </div>
 
@@ -355,6 +342,7 @@ body, ol.notes li.note blockquote a, .postAuthor {font-family:{font:Headings}; !
         <span class="postAuthor hideOnIndex">
           {block:IfAuthor}
               <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+              Posted by:
               <a href="{PostAuthorURL}"> {PostAuthorName} </a>
           {/block:IfAuthor}
           {block:Date} 
@@ -440,10 +428,11 @@ body, ol.notes li.note blockquote a, .postAuthor {font-family:{font:Headings}; !
       <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
     {LinkCloseTag}
 
-         {block:PermalinkPage} 
+        {block:PermalinkPage} 
         <span class="postAuthor hideOnIndex">
           {block:IfAuthor}
               <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+              Posted by:
               <a href="{PostAuthorURL}"> {PostAuthorName} </a>
           {/block:IfAuthor}
           {block:Date} 
@@ -525,6 +514,7 @@ body, ol.notes li.note blockquote a, .postAuthor {font-family:{font:Headings}; !
         <span class="postAuthor hideOnIndex">
           {block:IfAuthor}
               <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+              Posted by:
               <a href="{PostAuthorURL}"> {PostAuthorName} </a>
           {/block:IfAuthor}
           {block:Date} 
@@ -621,6 +611,7 @@ body, ol.notes li.note blockquote a, .postAuthor {font-family:{font:Headings}; !
         <span class="postAuthor hideOnIndex">
           {block:IfAuthor}
               <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+              Posted by:
               <a href="{PostAuthorURL}"> {PostAuthorName} </a>
           {/block:IfAuthor}
           {block:Date} 
@@ -706,6 +697,7 @@ body, ol.notes li.note blockquote a, .postAuthor {font-family:{font:Headings}; !
         <span class="postAuthor hideOnIndex">
           {block:IfAuthor}
               <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+              Posted by:
               <a href="{PostAuthorURL}"> {PostAuthorName} </a>
           {/block:IfAuthor}
           {block:Date} 
@@ -797,6 +789,7 @@ body, ol.notes li.note blockquote a, .postAuthor {font-family:{font:Headings}; !
         <span class="postAuthor hideOnIndex">
           {block:IfAuthor}
               <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+              Posted by:
               <a href="{PostAuthorURL}"> {PostAuthorName} </a>
           {/block:IfAuthor}
           {block:Date} 
@@ -887,6 +880,7 @@ body, ol.notes li.note blockquote a, .postAuthor {font-family:{font:Headings}; !
         <span class="postAuthor hideOnIndex">
           {block:IfAuthor}
               <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+              Posted by:
               <a href="{PostAuthorURL}"> {PostAuthorName} </a>
           {/block:IfAuthor}
           {block:Date} 
@@ -974,6 +968,7 @@ body, ol.notes li.note blockquote a, .postAuthor {font-family:{font:Headings}; !
         <span class="postAuthor hideOnIndex">
           {block:IfAuthor}
               <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+              Posted by:
               <a href="{PostAuthorURL}"> {PostAuthorName} </a>
           {/block:IfAuthor}
           {block:Date} 
@@ -1044,16 +1039,97 @@ body, ol.notes li.note blockquote a, .postAuthor {font-family:{font:Headings}; !
 <!--END AUDIO-->
 <!--+++++++++-->
 
-<!--STYLE ASKS
-https://www.tumblr.com/docs/en/custom_themes#answer-posts -->
 
-<div class="space"></div> <!--space between each post-->
+<!--++++++-->
+<!--ANSWER-->
+<!--++++++-->
+{block:Answer}
+  <li class="post ask">
+    <div class="section">
+        <span class="postAuthor">
+              <img class="postAuthorImage" src="{AskerPortraitURL-30}"/>
+              {Asker} asks:
+        </span>
+        
+        <h3 id="title" class="title"><a href="{Permalink}">{Question}</a></h3>
+    </div>
+    
+    <div class="section"> 
+        {block:PermalinkPage} 
+        <span class="postAuthor">
+          {block:IfAuthor}
+              <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+              Answered by: 
+              <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+          {/block:IfAuthor}
+          {block:Date} 
+              on {DayOfMonth} {Month} {Year}
+          {block:Date} 
+        </span>
+        {/block:PermalinkPage}
+    
+    {Answer}
+    </div>
 
+  </li>
+    
+  <!--POST FOOTER FOR ASK-->          
+    <div class="postFooter">  
+      <ul class="postStats">
+        {block:IndexPage} <!--only show on index-->
+
+          <li>
+            <i class="fa fa-heart"></i>
+            <a class="nobold" href="{Permalink}">
+              {NoteCountWithLabel}
+            </a>
+          </li>
+
+          {block:IfDisqusShortname} <!--display comment count when nessecary-->
+            <li>
+              <i class="fa fa-comment"></i> 
+              <a class="dsq-comment-count nobold" href="{Permalink}#disqus_thread">
+                  Comments
+              </a>
+              <script type="text/javascript">
+                  var disqus_shortname = '{text:Disqus Shortname}';
+                  (function () {
+                      var s = document.createElement('script'); s.async = true;
+                      s.type = 'text/javascript';
+                      s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+                      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                  }());
+              </script>
+            </li>
+          {/block:IfDisqusShortname}
+
+          <li>  
+            {block:Date} 
+              <i class="fa fa-clock-o"></i> {timeAgo} 
+            {/block:Date}
+          </li>
+          {/block:IndexPage}
+          
+          {block:Tags}
+            <li class="tags">
+                <a href="{TagURL}" class="nobold">{Tag}</a>
+            </li>
+          {/block:Tags}
+      </ul>
+    </div>
+  <!--END POST FOOTER-->
+{/block:Answer}
+<!--+++++++-->
+<!--END ASK-->
+<!--+++++++-->
+
+
+<div class="space"></div> <!--space between each post-->   
 {/block:Posts}
 <!--+++++++++-->
 <!--END POSTS-->
 <!--+++++++++-->
-       
+
 <!--++++++++++++++-->   
 <!--PERMALINK PAGE-->
 <!--++++++++++++++--> 
