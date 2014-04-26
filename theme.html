@@ -17,12 +17,10 @@ view this project at https://github.com/thomaskimura/Paper
     tweet @thomaskimura_
     github @thomaskimura
 
-stuff I used:
-https://github.com/PixelUnion/Extended-Tumblr-Photoset
-
-http://instafeedjs.com/
-
-https://code.google.com/p/google-code-prettify/
+thanks to:
+    - github.com/PixelUnion/Extended-Tumblr-Photoset
+    - instafeedjs.com
+    - code.google.com/p/google-code-prettify/
     
 -->
 <html lang="en">
@@ -88,19 +86,13 @@ https://code.google.com/p/google-code-prettify/
     <!--Get rid of foundation,
         why did i even use this? -->
 
-    <link href="http://static.tumblr.com/9hupah0/Znnn4i9qq/style.css" rel="stylesheet">
+    <link href="http://static.tumblr.com/9hupah0/OTDn4m3hn/style.min.css" rel="stylesheet">
     
     <!--Fonts-->
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 
 <style>
-
-.header p
-{
-    max-width:600px;
-    margin:0 auto;
-}
 
 /*--------------------*/
 /*----STYLE SHEET----*/
@@ -194,6 +186,8 @@ body, ol.notes li.note blockquote a, .postAuthor {font-family:{font:Headings}; !
     float:inherit;}
 </style>
 {/block:IfRandom}
+
+<script type="text/javascript" src="http://codysherman.com/tools/infinite-scrolling/code"></script>
 
 </head>
 <body onload="prettyPrint()" id="body" tabindex="0" onkeydown="keyPress(event)"> <!--load syntax highlighter-->
@@ -1279,6 +1273,7 @@ https://www.tumblr.com/docs/en/custom_themes#answer-posts -->
     <div id="recent">
         <div class="spaceSmall"></div>
         <div class="row">
+                <p id="recentPost">Recent Post</p>
         
                 <h3 id="recentTitle"></h3>
                 
@@ -1310,7 +1305,6 @@ https://www.tumblr.com/docs/en/custom_themes#answer-posts -->
 <!--END OF SLIDEBARS MAIN CONTENT-->
 <!--+++++++++++++++++++++++++++++-->
 
-
 <!--+++++++-->
 <!--SCRIPTS-->
 <!--+++++++-->
@@ -1329,96 +1323,7 @@ https://www.tumblr.com/docs/en/custom_themes#answer-posts -->
 <!--Photoset Grid-->
 <script type="text/javascript" src="http://static.tumblr.com/smotcsf/Ecdn2cscy/pxuphotoset.min.js"></script>
 
-<!--
-<script type="text/javascript" src="http://static.tumblr.com/smotcsf/15Kn4dcud/script.min.js"></script>
--->
-
-<script>
-$(document).ready(function(){
-    
-    //PHOTOSETS
-   $('.photo-slideshow').pxuPhotoset({
-        // options go here
-        'highRes'   : true, // will use high res images
-        'rounded'   : 'false', // corners, all or false
-        'exif'      : false, // display EXIF data if available (tooltip)
-        'captions'  : false, // display individual captions on photos (tooltip)
-        'gutter'    : '10px', // spacing between the images
-        'photoset'  : '.photo-slideshow', // photoset wrapper
-        'photoWrap' : '.photo-data', // photo data wrapper (includes photo, icons + exif)
-        'photo'     : '.pxu-photo' // photo wrap (includes photo only)
-    }, function() {
-        // callback
-    $( ".tumblr-box" ).click(function() {
-        
-      //Turn keyboard off when using photosets
-      document.body.onkeydown = function(e){  
-        if (e == null) {
-            keycode = event.keyCode;
-        }
-        else {
-            keycode = e.which;
-        }
-        if(keycode == 39){
-
-        } 
-        else if(keycode == 37){
-
-        }
-        else if(keycode == 191){
-            $("#sb-site").fadeOut();
-            //alert('Random')
-            setTimeout(function(){
-                window.location = $('#random').attr('href');
-            },100);}
-            };
-        }); 
-    });
-    
-    var headHeight = document.getElementById('header').clientHeight;    
-        $("#headerBackground").css({ "height": headHeight});
-        $("#headerTint").css({ "height": headHeight});
-            
-});//end ready
-
-
-
-$(window).load(function() {
-   //alert("window is loaded");
-   document.body.focus();
-});
-//end load
-
-//GLOBAL
-function askOn(){
-    if( $('#ask').css('display') == "block" ){
-        document.getElementById("ask").style.display = 'none';} 
-    else { 
-        var askSource = document.getElementById("askSource").href;
-        document.getElementById("askBox").src=askSource;
-        document.getElementById("ask").style.display = 'block';
-        document.getElementById("submit").style.display = 'none';
-        scroll();}
-}
-
-//SUBMIT
-function submitOn(){
-    if( $('#submit').css('display') == "block" ) {
-        document.getElementById("submit").style.display = 'none';} 
-    else { 
-        var submitSource = document.getElementById("submitSource").href;
-        document.getElementById("submitBox").src=submitSource;
-        document.getElementById("submit").style.display = 'block';
-        document.getElementById("ask").style.display = 'none';
-        scroll();}
-}
-
-//SCROLL TO
-function scroll() {
-    $('html, body').animate({scrollTop: $(".asksubmit").offset().top}, 500);
-        window.location.hash="content"; //FALL BACK
-}
-</script>
+<script type="text/javascript" src="http://static.tumblr.com/9hupah0/oVJn4m3gk/script.min.js"></script>
 
 {block:PermalinkPage} 
 <script>
