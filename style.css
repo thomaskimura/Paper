@@ -2,7 +2,12 @@
 /*---------------------*/
 /*---ANY SCREEN SIZE---*/
 /*---------------------*/
+
+
+
+
 body{margin:0px;}
+#sb-site{position: relative;} /* allow jquerry aniations on entire page */
 
 img{
   vertical-align: middle;
@@ -16,8 +21,7 @@ img{
     width:100%;
     padding:0px;}
 
-#sb-site{position: relative;}                   /* allow jquerry aniations on entire page */
-
+/*SPLASH*/
 #splash{display:none;}
 #splashContainer{
     position:relative;
@@ -39,10 +43,10 @@ img{
 
 /*ANIMATIONS*/
 #sb-site{
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;}
+  -webkit-transition: 0.5s cubic-bezier(.35, .20, .05, .55);
+  -moz-transition: 0.5s cubic-bezier(.35, .20, .05, .55);
+  -o-transition: 0.5s cubic-bezier(.35, .20, .05, .55);
+  transition: 0.5s cubic-bezier(.35, .20, .05, .55);}
 .leftAnimate{
   -ms-transform: translate(-100%); /* IE 9 */
   -webkit-transform: translate(-100%); /* Chrome, Safari, Opera */
@@ -57,12 +61,10 @@ img{
 /* Tomorrow Theme */
 /* Original theme - https://github.com/chriskempson/tomorrow-theme */
 .prettyprint {
-  background: white;
   font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace;
   font-size:0.773rem; line-height:1.250rem; /* base -1 */
-  padding: 10px;
-  overflow: auto;
-}
+  padding: 5px;
+  overflow: auto;}
 
 .pln {color: #4d4d4c;}
 
@@ -96,7 +98,7 @@ img{
 }
 
 /* Specify class=linenums on a pre to get line numbering */
-ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
+ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
 
   /*--TYPOGRAPHY SIZING--*/
 
@@ -139,18 +141,15 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
     color:inherit;
     font-weight:600;}
 
-    
   /* type elements */
   p{
     margin-top:0px;}
   ul{
-    margin-left:0px;
     margin-bottom:1rem;} /* remove foundation left margin and add spacing */
   ol{
     margin-bottom:1rem;}
   blockquote{
-    border-left: solid  0.573rem;
-    border-color:#eee;
+    border-left: solid  0.573rem #eee;
     padding-left:1rem;
     margin-left: 0px;
     color:#444444;
@@ -165,13 +164,11 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
   pre.prettyprint::-webkit-scrollbar-corner{display:none;}
 
   /*--HEADER--*/
-  /*  Use a text imput for header height
-      create a very good default
-      style slidebar menu. Let's redo the
-      headers, take inspiration from
-      medium.com */
   #bigTitle{font-size:3.2726rem;}
   .header{text-align:center;}
+  .header p{
+    max-width:600px;
+    margin:0 auto;}
   .header h1{
     color:#333333; /* set color */
     margin:0px;}
@@ -207,7 +204,6 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;}
-
   #headerTint{
     position: absolute;
     top: 0px;
@@ -220,10 +216,9 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
       and post types */
   .posts{padding:0px; margin:0px;}        /* remove padding */
   .post{list-style:none;padding-left:0}   /* remove list-styling */
-  .post img{display:block;padding-top:1rem;padding-bottom:1rem;margin:0 auto;} /*center images*/
+  .post img{display:block;margin:0 auto;} /*center images*/
   .post a{word-wrap:break-word;}          /* break links */
   .post p{font-weight:300;}               /* set font reading font */
-  .postDate{color:#aaaaaa; padding-bottom:0.573rem;}
   .readMoreButton{font-weight: 600; margin-bottom:1rem;} 
   #title{margin:0px; margin-bottom:0.573rem; color:#333333;}
 
@@ -347,7 +342,6 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
 
   /*--FOOTER--*/
   /* navigation */
-  .navlinkContainer{padding:0px;}
   #navlink{
     text-align: center;
     width: 50%;
@@ -422,9 +416,8 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
       padding-bottom:1rem;
       float:inherit;}
   .postNav:hover{background:#eee;}
-  .permalinkPagination .columns{padding:0px;} /* remove spacing for permalink post buttons */
-  .hint{color:#aaaaaa; font-size:0.773rem; line-height:1.250rem;} /* base -1 */
   .permalinkPagination{float:left;width:100%;}
+  .hint{color:#aaaaaa; font-size:0.773rem; line-height:1.250rem;} /* base -1 */
 
   /* permalink footer */
   .postBottom{text-align:center;color:#aaaaaa;}
@@ -458,14 +451,16 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
     font-size: .975rem;
     line-height: 1.577rem;
     font-weight:300;}
+  #recentPost{
+    text-align:center;
+    color:#aaaaaa;
+    font-size:0.773rem; line-height:1.250rem;}
 
   /*--USEABLE CLASSES--*/
   .pDropCap{
     float: left; 
-    font-size: 4.235rem; /* h1 x1.618 */
-    padding-top: 4px; 
-    padding-right: 4px; 
-    padding-left: 4px;}
+    font-size: 3.2726rem; /* h1 x1.618 */
+    padding: 1rem;}
 
   .pHighlight, code{
     background-color:#ffe4ca;
@@ -487,11 +482,9 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
   .pCenter{
     text-align:center;}
   .pRight{
-    text-align:right;
-  }
+    text-align:right;}
   .pLeft{
-    text-align:left;
-  }
+    text-align:left;}
   
 
 /*END ANY SCREEN*/
@@ -519,7 +512,9 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
   
   blockquote{font-size:0.927rem; line-height:1.499rem;} /* base -1 */
 
-  #bigTitle{font-size:3.927rem;} 
+  #bigTitle{font-size:3.927rem;}
+  #recentPost{
+    font-size:0.927rem; line-height:1.499rem;} 
 
   /*--HIDES--*/
     .hideOnSmall{display:block;}/*show hidden element on larger devices*/
@@ -542,6 +537,8 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#eee;}
   
   /*--USEABLE CLASSES--*/
     .pQuote{font-size:2.023rem; line-height:3.273rem;} /* h3 */
+    .pDropCap{font-size:3.927rem;}
+    .pBigText{font-size:1.5rem; line-height:2.427rem; /* base +1 */}
 
   /*--SPACER--*/
   /* use this to space out elements evenly */
