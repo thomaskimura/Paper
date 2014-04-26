@@ -289,8 +289,7 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
   .quote{
     font-weight:600;
     font-size:2.023rem; line-height:3.273rem; /* base +3 */
-    margin:0px; 
-    text-align:center;}
+    margin:0px;}
   .source{ 
     font-weight:300; 
     font-size:1rem; /* base */
