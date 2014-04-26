@@ -21,6 +21,8 @@ img{
     width:100%;
     padding:0px;}
 
+.section{margin-bottom:1rem;}
+
 /*SPLASH*/
 #splash{display:none;}
 #splashContainer{
@@ -321,7 +323,6 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
   .postFooter{padding-top:0.573rem;}
   .postStats{
     font-size:0.773rem; line-height:1.250rem; /* base -1 */
-    font-family: 'Calluna Sans', sans-serif;
     list-style:none;
     margin:0;
     padding:0px; 
@@ -462,9 +463,8 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
     font-size: 3.2726rem; /* h1 x1.618 */
     padding: 1rem;}
 
-  .pHighlight, code{
-    background-color:#ffe4ca;
-    font-family: 'Source Code Pro';}
+  .pHighlight{
+    background-color:#ffe4ca;}
 
   .pBigText{
     font-size:1.25rem; line-height:2.022rem; /* base +1 */}
@@ -525,9 +525,10 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
     .source{font-size:1.25rem; line-height:2.202rem;}      /* base */
     .tumblr_audio_player{height:3.927rem;}                 /* base + 3 */
     .postStats{font-size:0.975rem;line-height:1.577rem;}   /* h4 - 0.4 */
+    .section{margin-bottom:1.25rem;}
 
   /*--NOTES--*/  
-    ol.notes li{font-size:0.773rem; line-height:1.250rem;font-family:font-family: 'Calluna Sans', sans-serif;}
+    ol.notes li{font-size:0.773rem; line-height:1.250rem;}
     ol.notes li.note blockquote a{font-size:0.773rem; line-height:1.250rem;}
   
   /*--PERMALINK--*/
