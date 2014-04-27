@@ -83,7 +83,7 @@ thanks to:
     <meta name="if:Instagram Feed" content="0"/>      <!--Enable instagram feeds-->
         
     <!--Stylesheets--> 
-    <link href="http://static.tumblr.com/9hupah0/w21n4np8w/style.min.css" rel="stylesheet">
+    <link href="http://static.tumblr.com/9hupah0/IWgn4oakg/style.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 <style> 
@@ -139,7 +139,7 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
       
     /*TYPOGRAPHY*/
     /* first paragraph larger */
-    .post p:first-child, .post p:first-of-type{font-size:1.25rem; line-height:2.022rem;} /*1.2 & 1.618*/
+    .post > p:first-of-type{font-size:1.25rem; line-height:2.022rem;} /*1.2 & 1.618*/
 
   /*LARGER THAN 900PX*/
     @media only screen and (min-width: 900px) 
@@ -147,7 +147,7 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
       #title, #recentTitle{font-size:3.272rem; line-height:3.926rem;}
         
       /* first paragraph larger*/
-      .post p:first-child, .post p:first-of-type{font-size:1.5rem; line-height:2.427rem;} /*1.2 & 1.618*/
+      .post > p:first-of-type{font-size:1.5rem; line-height:2.427rem;} /*1.2 & 1.618*/
     }
   /*END LARGER THAN 900PX*/
   </style>
@@ -262,6 +262,13 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
           {block:Date} 
               on {DayOfMonth} {Month} {Year}
           {block:Date} 
+          
+        {block:ContentSource}
+            <a class="contentSource"  href="{SourceURL}">{lang:Source}:
+                {SourceTitle}
+            </a>
+        {/block:ContentSource}
+        
         </span>
       {/block:PermalinkPage}
     </div>
@@ -272,6 +279,14 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
       <a href="{Permalink}" class="readMoreButton">{lang:Read more} <i class="fa fa-long-arrow-right"></i></a>
     {/block:More}  
 
+    {block:RebloggedFrom}
+    <div class="contentReblog">
+        <i class="fa fa-retweet"></i> Reblogged from: 
+        <a href="{ReblogParentURL}"><img class="postAuthorImage" src="{ReblogParentPortraitURL-24}"/></a>
+        <a href="{ReblogParentURL}">{ReblogParentName}</a>
+    </div>
+    {/block:RebloggedFrom}
+    
   </li>
 
   <!--POST FOOTER FOR TEXT-->          
@@ -342,6 +357,13 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
           {block:Date} 
               on {DayOfMonth} {Month} {Year}
           {block:Date} 
+          
+        {block:ContentSource}
+            <a class="contentSource"  href="{SourceURL}">{lang:Source}:
+                {SourceTitle}
+            </a>
+        {/block:ContentSource}
+        
         </span>
       {/block:PermalinkPage}
 
@@ -359,6 +381,14 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
       </a>
     {/block:More}
 
+    {block:RebloggedFrom}
+    <div class="contentReblog">
+        <i class="fa fa-retweet"></i> Reblogged from: 
+        <a href="{ReblogParentURL}"><img class="postAuthorImage" src="{ReblogParentPortraitURL-24}"/></a>
+        <a href="{ReblogParentURL}">{ReblogParentName}</a>
+    </div>
+    {/block:RebloggedFrom}
+    
   </li>  
 
   <!--POST FOOTER FOR PHOTO-->          
@@ -433,6 +463,13 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
           {block:Date} 
               on {DayOfMonth} {Month} {Year}
           {block:Date} 
+          
+        {block:ContentSource}
+            <a class="contentSource"  href="{SourceURL}">{lang:Source}:
+                {SourceTitle}
+            </a>
+        {/block:ContentSource}
+        
         </span>
       {/block:PermalinkPage}
 
@@ -446,6 +483,14 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
       </a>
     {/block:More}
 
+    {block:RebloggedFrom}
+    <div class="contentReblog">
+        <i class="fa fa-retweet"></i> Reblogged from: 
+        <a href="{ReblogParentURL}"><img class="postAuthorImage" src="{ReblogParentPortraitURL-24}"/></a>
+        <a href="{ReblogParentURL}">{ReblogParentName}</a>
+    </div>
+    {/block:RebloggedFrom}
+    
   </li>
 
   <!--POST FOOTER FOR PANORAMA-->          
@@ -516,6 +561,13 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
           {block:Date} 
               on {DayOfMonth} {Month} {Year}
           {block:Date} 
+          
+        {block:ContentSource}
+            <a class="contentSource"  href="{SourceURL}">{lang:Source}:
+                {SourceTitle}
+            </a>
+        {/block:ContentSource}
+        
         </span>
       {/block:PermalinkPage}
 
@@ -544,6 +596,14 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
         </a>
     {/block:More}
 
+    {block:RebloggedFrom}
+    <div class="contentReblog">
+        <i class="fa fa-retweet"></i> Reblogged from: 
+        <a href="{ReblogParentURL}"><img class="postAuthorImage" src="{ReblogParentPortraitURL-24}"/></a>
+        <a href="{ReblogParentURL}">{ReblogParentName}</a>
+    </div>
+    {/block:RebloggedFrom}
+    
   </li>
 
   <!--POST FOOTER FOR PHOTOSET-->          
@@ -614,6 +674,13 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
         {block:Date} 
             on {DayOfMonth} {Month} {Year}
         {block:Date} 
+        
+        {block:ContentSource}
+            <a class="contentSource"  href="{SourceURL}">{lang:Source}:
+                {SourceTitle}
+            </a>
+        {/block:ContentSource}
+        
       </span>
     {/block:PermalinkPage}
 
@@ -629,6 +696,14 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
       </a>
     {/block:More}
 
+    {block:RebloggedFrom}
+    <div class="contentReblog">
+        <i class="fa fa-retweet"></i> Reblogged from: 
+        <a href="{ReblogParentURL}"><img class="postAuthorImage" src="{ReblogParentPortraitURL-24}"/></a>
+        <a href="{ReblogParentURL}">{ReblogParentName}</a>
+    </div>
+    {/block:RebloggedFrom}
+    
   </li>
 
   <!--POST FOOTER FOR QUOTE-->          
@@ -701,6 +776,13 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
         {block:Date} 
             on {DayOfMonth} {Month} {Year}
         {block:Date} 
+        
+        {block:ContentSource}
+            <a class="contentSource"  href="{SourceURL}">{lang:Source}:
+                {SourceTitle}
+            </a>
+        {/block:ContentSource}
+        
       </span>
     {/block:PermalinkPage}
     
@@ -716,6 +798,14 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
       </a>
     {/block:More}
 
+    {block:RebloggedFrom}
+    <div class="contentReblog">
+        <i class="fa fa-retweet"></i> Reblogged from: 
+        <a href="{ReblogParentURL}"><img class="postAuthorImage" src="{ReblogParentPortraitURL-24}"/></a>
+        <a href="{ReblogParentURL}">{ReblogParentName}</a>
+    </div>
+    {/block:RebloggedFrom}
+    
   </li>
 
   <!--POST FOOTER FOR LINK-->          
@@ -794,6 +884,13 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
         {block:Date} 
             on {DayOfMonth} {Month} {Year}
         {block:Date} 
+
+        {block:ContentSource}
+            <a class="contentSource"  href="{SourceURL}">{lang:Source}:
+                {SourceTitle}
+            </a>
+        {/block:ContentSource}
+        
       </span>
     {/block:PermalinkPage}
 
@@ -816,6 +913,14 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
       </a>
     {/block:More}
 
+    {block:RebloggedFrom}
+    <div class="contentReblog">
+        <i class="fa fa-retweet"></i> Reblogged from: 
+        <a href="{ReblogParentURL}"><img class="postAuthorImage" src="{ReblogParentPortraitURL-24}"/></a>
+        <a href="{ReblogParentURL}">{ReblogParentName}</a>
+    </div>
+    {/block:RebloggedFrom}
+    
   </li>
 
   <!--POST FOOTER FOR CHAT-->          
@@ -886,6 +991,13 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
         {block:Date} 
             on {DayOfMonth} {Month} {Year}
         {block:Date} 
+        
+        {block:ContentSource}
+            <a class="contentSource"  href="{SourceURL}">{lang:Source}:
+                {SourceTitle}
+            </a>
+        {/block:ContentSource}
+        
       </span>
     {/block:PermalinkPage}
 
@@ -903,6 +1015,14 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
       </a>
     {/block:More}
 
+    {block:RebloggedFrom}
+    <div class="contentReblog">
+        <i class="fa fa-retweet"></i> Reblogged from: 
+        <a href="{ReblogParentURL}"><img class="postAuthorImage" src="{ReblogParentPortraitURL-24}"/></a>
+        <a href="{ReblogParentURL}">{ReblogParentName}</a>
+    </div>
+    {/block:RebloggedFrom}
+    
   </li>
 
   <!--POST FOOTER FOR VIDEO-->          
@@ -975,6 +1095,13 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
         {block:Date} 
             on {DayOfMonth} {Month} {Year}
         {block:Date} 
+        
+        {block:ContentSource}
+            <a class="contentSource"  href="{SourceURL}">{lang:Source}:
+                {SourceTitle}
+            </a>
+        {/block:ContentSource}
+        
       </span>
     {/block:PermalinkPage}
 
@@ -987,6 +1114,14 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
         {lang:Read more} <i class="fa fa-long-arrow-right"></i>
       </a>
     {/block:More}
+    
+    {block:RebloggedFrom}
+    <div class="contentReblog">
+        <i class="fa fa-retweet"></i> Reblogged from: 
+        <a href="{ReblogParentURL}"><img class="postAuthorImage" src="{ReblogParentPortraitURL-24}"/></a>
+        <a href="{ReblogParentURL}">{ReblogParentName}</a>
+    </div>
+    {/block:RebloggedFrom}
 
   </li>
 
@@ -1071,12 +1206,26 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
           {block:Date} 
               on {DayOfMonth} {Month} {Year}
           {block:Date} 
+          
+        {block:ContentSource}
+            <a class="contentSource"  href="{SourceURL}">{lang:Source}:
+                {SourceTitle}
+            </a>
+        {/block:ContentSource}
 
         </span>
       {/block:PermalinkPage}
       {Answer}
     </div>
 
+    {block:RebloggedFrom}
+    <div class="contentReblog">
+        <i class="fa fa-retweet"></i> Reblogged from: 
+        <a href="{ReblogParentURL}"><img class="postAuthorImage" src="{ReblogParentPortraitURL-24}"/></a>
+        <a href="{ReblogParentURL}">{ReblogParentName}</a>
+    </div>
+    {/block:RebloggedFrom}
+    
   </li>
     
   <!--POST FOOTER FOR ASK-->          
@@ -1605,14 +1754,15 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
                     console.log("Title      : " + el.find("title").text());
                     console.log("Date       : " + el.find("pubDate").text());
                     console.log("Author     : " + el.find("creator").text());
+                    console.log("Author     : " + el.find("category").text());
                     
-                    var title = el.find("title").text();
+                    var title = el.find("title").text().substr(0,50);
                     var date = el.find("pubDate").text().substr(5,11);
                     var author = el.find("creator").text();
                     var summary = el.find("description").text().substr(0,75);
                     var link = el.find("link").text();
             
-                    document.getElementById("recentTitle").innerHTML=title;
+                    document.getElementById("recentTitle").innerHTML=title + "...";
                     document.getElementById("recentDate").innerHTML="on " + date;
                     document.getElementById("recentAuthor").innerHTML=author;
                     document.getElementById("recentSummary").innerHTML=summary + "...";
