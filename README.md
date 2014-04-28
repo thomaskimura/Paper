@@ -7,5 +7,4 @@ Second try and making a tumblr theme. View a live version at http://papertheme.t
 
 ###To Do
 - Responsive navigation
-- Create header with customization
 - Documentation
