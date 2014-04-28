@@ -83,7 +83,7 @@ thanks to:
     <meta name="if:Instagram Feed" content="0"/>      <!--Enable instagram feeds-->
         
     <!--Stylesheets--> 
-    <link href="http://static.tumblr.com/9hupah0/IWgn4oakg/style.css" rel="stylesheet">
+    <link href="http://static.tumblr.com/9hupah0/VNvn4qcr2/style.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 <style> 
@@ -175,6 +175,7 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
 {block:Permalink}
   {block:Posts}
     <div id="splashTint"></div>
+    <div id="splashGradient"></div>
     <div id="splashContainer"></div>
   {/block:Posts}
 {/block:Permalink}
@@ -1536,22 +1537,12 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
 <!--+++++++-->
 <!--SCRIPTS-->
 <!--+++++++-->
-
-<!--Jquery-->
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
-
-<!--Syntax-->
 <script type="text/javascript" src="http://static.tumblr.com/smotcsf/phJn1y2w7/prettify.js"></script>
-
-<!--Instafeed-->
 {block:IfInstagramFeed}
   <script type="text/javascript" src="http://static.tumblr.com/smotcsf/y9Mmw9qml/instafeed.min.js"></script>
 {/block:IfInstagramFeed}
-
-<!--Photoset Grid-->
 <script type="text/javascript" src="http://static.tumblr.com/smotcsf/Ecdn2cscy/pxuphotoset.min.js"></script>
-
-<!--Script-->
 <script type="text/javascript" src="http://static.tumblr.com/9hupah0/oVJn4m3gk/script.min.js"></script>
 
 {block:PermalinkPage} 
@@ -1562,52 +1553,23 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
     {
         var source = document.getElementById("splash").src;
         $("#splashContainer").css({"background-image":'url(' + source + ')'});
-
-        $("#splashContainer").css(
-            {
-                "display": "block"
-            });
-            
-        $(".hideOnSplash").css(
-            {
-                "display": "none"
-            });
-            
-        $("#splashTint").css(
-            {
-                "display": "block"
-            });
-            
-        $(".postHead").css(
-            {
+        $("#splashContainer").css({"display": "block"});
+        $(".hideOnSplash").css({"display": "none"});
+        $("#splashTint").css({"display": "block"});
+        $(".postHead").css({
                 "position": "absolute",
                 "top": "20vh",
-                "color": "white"
-            });
-            
-        $(".title").css(
-            {
-                "color": "white"
-            });
-            
-        $(".postAuthor").css(
-            {
-                "color": "white"
-            });
-            
-        $(".header").css(
-            {
+                "color": "white"});
+        $(".title").css({"color": "white"});
+        $(".postAuthor").css({"color": "white"});
+        $(".header").css({
                 "position": "absolute",
                 "opacity": "0.6",
-                "top": "1rem"
-            });
-            
-        $(".backButton").css(
-            {
+                "top": "1rem"});
+        $(".backButton").css({
                 "border": "none",
-                "color": "white"
-            });
-        
+                "color": "white"});
+                
         //If screen is 480px or smaller
         if (matchMedia('only screen and (max-width: 480px)').matches) 
         {
@@ -1620,7 +1582,41 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
             $(".postHead").css({"top": "5rem"});
         }
     }
-
+    
+    //SPLASH FADE
+    if(document.getElementById("splashFade"))
+    {
+        var source = document.getElementById("splashFade").src;
+        $("#splashContainer").css({"background-image":'url(' + source + ')'});
+        $("#splashGradient").css({"display": "block"});
+        $("#splashContainer").css({
+                "display": "block",
+                "opacity": "1"});
+        $(".hideOnSplash").css({"display": "none"});
+        $("#splashTint").css({"display": "none"});
+        $(".postHead").css({
+                "position": "absolute",
+                "top": "40vh"});
+        $(".title").css({"text-align": "center"});
+        $(".header").css({
+                "position": "absolute",
+                "top": "1rem"});
+        $(".backButton").css({
+                "border": "none",
+                "color": "white"});
+        
+        //If screen is 480px or smaller
+        if (matchMedia('only screen and (max-width: 480px)').matches) 
+        {
+            var newHeight = $(window).height();
+            var newWidth = $(window).width();
+            
+            $('#splashContainer').height(newHeight);
+            $("#splashGradient").height(newHeight);
+            $(".header").css({"top": "1rem"});
+            $(".postHead").css({"top": "5rem"});
+        }
+    }
 </script>
 {/block:PermalinkPage} 
 
@@ -1720,18 +1716,18 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
                   $('#sb-site').addClass( "leftAnimate" );
                   setTimeout(function(){
                       window.location = $('#nextPost').attr('href');
-                  },300);
+                  },100);
               } else if(keycode == 37){
                   $('#sb-site').addClass( "rightAnimate" );
                   setTimeout(function(){
                       window.location = $('#previousPost').attr('href');
-                  },300);
+                  },100);
               }   
               else if(keycode == 191){
                   $("#sb-site").addClass( "fadeAnimate" );
                   setTimeout(function(){
                       window.location = {JSBlogURL} + 'random';
-                  },300);
+                  },100);
               }
           };
 
@@ -1749,12 +1745,14 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
             $.get(src, function (data) {
                 $(data).find("item").first().each(function () { // or "item" or whatever suits your feed
                     var el = $(this);
-            
+                    
+                    /*
                     console.log("------------------------");
                     console.log("Title      : " + el.find("title").text());
                     console.log("Date       : " + el.find("pubDate").text());
                     console.log("Author     : " + el.find("creator").text());
                     console.log("Author     : " + el.find("category").text());
+                    */
                     
                     var title = el.find("title").text().substr(0,50);
                     var date = el.find("pubDate").text().substr(5,11);
@@ -1767,7 +1765,10 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
                     document.getElementById("recentAuthor").innerHTML=author;
                     document.getElementById("recentSummary").innerHTML=summary + "...";
                     $("#recent").click(function(){
-                         window.location= link; 
+                        $("#sb-site").addClass( "slideUp" );
+                          setTimeout(function(){
+                              window.location= link; 
+                          },100);
                          return false;
                     });
             
