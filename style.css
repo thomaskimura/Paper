@@ -228,7 +228,7 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
   /*  General styling for all post
       and post types */
   .posts{padding:0px; margin:0px;}        /* remove padding */
-  .post{list-style:none;padding-left:0}   /* remove list-styling */
+  .post{list-style:none;padding-left:0; z-index:1;}   /* remove list-styling */
   .post img{display:block;margin:0 auto;} /*center images*/
   .post a{word-wrap:break-word;}          /* break links */
   .post p{font-weight:300;}               /* set font reading font */
@@ -430,14 +430,13 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
     text-align:center;}
   .postNav{
       display:block;
-      width:50%;
+      width:49%;
       background:#fafafa;
       padding-top:1rem;
       padding-bottom:1rem;
       float:inherit;}
   .postNav:hover{background:#eee;}
-  .permalinkPagination{float:left;width:100%;}
-  .hint{color:#aaaaaa; font-size:0.773rem; line-height:1.250rem;} /* base -1 */
+  .hint{color:#aaaaaa; font-size:0.773rem; line-height:1.250rem; text-align: center;} /* base -1 */
 
   /* permalink footer */
   .postBottom{text-align:center;color:#aaaaaa;}
@@ -479,7 +478,8 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
   .pDropCap{
     float: left; 
     font-size: 3.2726rem; /* h1 x1.618 */
-    padding: 1rem;}
+    padding: 1rem;
+    padding-left: 0px;}
 
   .pHighlight{
     background-color:#ffe4ca;}
@@ -503,6 +503,20 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
     text-align:right;}
   .pLeft{
     text-align:left;}
+
+  .pTwoColumns{
+    font-size:0.773rem !important; line-height:1.250rem !important;
+    -moz-column-count: 2;
+    -moz-column-gap: 1rem;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 1rem;}
+
+  .pThreeColumns{
+    font-size:0.773rem !important; line-height:1.250rem !important;
+    -moz-column-count: 3;
+    -moz-column-gap: 1rem;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 1rem;}
   
 
 /*END ANY SCREEN*/
@@ -513,7 +527,7 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
 /*---------------------*/
 @media only screen and (min-width: 900px) 
 {
-  .prettyprint {font-size: 1.175rem;line-height: 1.901rem;}
+  .prettyprint {font-size:0.927rem; line-height:1.499rem;}
 
   /*--TYPOGRAPHY--*/
   body {font-size: 1.25rem; line-height:2.202rem;}
@@ -562,6 +576,8 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
     .pQuote{font-size:2.023rem; line-height:3.273rem;} /* h3 */
     .pDropCap{font-size:3.927rem;}
     .pBigText{font-size:1.5rem; line-height:2.427rem; /* base +1 */}
+    .pTwoColumns{font-size:0.927rem !important; line-height:1.499rem !important;}
+    .pThreeColumns{font-size:0.927rem !important; line-height:1.499rem !important;}
 
   /*--SPACER--*/
   /* use this to space out elements evenly */
