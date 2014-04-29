@@ -83,14 +83,28 @@ thanks to:
     <meta name="if:Instagram Feed" content="0"/>      <!--Enable instagram feeds-->
         
     <!--Stylesheets--> 
-    <link href="http://static.tumblr.com/9hupah0/VNvn4qcr2/style.min.css" rel="stylesheet">
+    <link href="http://static.tumblr.com/9hupah0/1K0n4s2xv/style.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 <style> 
 /*-------------*/
 /*---OPTIONS---*/
 /*-------------*/
-
+.share{
+    padding: 0.573rem;
+    margin-right:1rem;
+    border-radius: 5px;
+    color: white;}
+    
+#shareFacebook{
+    background: #3b5998;}
+    
+#shareTwitter{
+    background: #55acee;}
+    
+#shareGoogle{
+    background: #dd4b39;}
+    
 /*--Column Width--*/
 .postHead{max-width:{text:Column Size}px;}
 .row{max-width:{text:Column Size}px;}
@@ -156,7 +170,7 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
 {block:IfRandom}
 <style>
 .postNav{
-    width:33.333333%;
+    width:32%;
     display:inline-table;}
 .random{
     float:inherit;}
@@ -332,6 +346,18 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
                 <a href="{TagURL}" class="nobold">{Tag}</a>
             </li>
           {/block:Tags}
+          
+          {block:PermalinkPage} 
+            <a class="share" id="shareFacebook" href="https://www.facebook.com/sharer/sharer.php?u={URL}" target="_blank">
+          <i class="fa fa-facebook"></i> Share
+            </a>
+            <a class="share" id="shareTwitter" href="https://twitter.com/share?url={URL}" target="_blank">
+                <i class="fa fa-twitter"></i> Tweet
+            </a>
+            <a class="share" id="shareGoogle" href="https://www.facebook.com/sharer/sharer.php?u={URL}" target="_blank">
+          <i class="fa fa-google-plus"></i> Google+
+            </a>
+        {/block:PermalinkPage} 
       </ul>
     </div>
   <!--END POST FOOTER-->
@@ -1594,9 +1620,10 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
                 "opacity": "1"});
         $(".hideOnSplash").css({"display": "none"});
         $("#splashTint").css({"display": "none"});
-        $(".postHead").css({
-                "position": "absolute",
-                "top": "40vh"});
+        $("li.post.text").css({
+                "position": "relative",
+                "top": "-30vh"
+        });
         $(".title").css({"text-align": "center"});
         $(".header").css({
                 "position": "absolute",
@@ -1614,7 +1641,7 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
             $('#splashContainer').height(newHeight);
             $("#splashGradient").height(newHeight);
             $(".header").css({"top": "1rem"});
-            $(".postHead").css({"top": "5rem"});
+            $("li.post.text").css({"top": "-10vh"});
         }
     }
 </script>
@@ -1661,7 +1688,7 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
                   $("#sb-site").addClass( "fadeAnimate" );
                   setTimeout(function(){
                       window.location = {JSBlogURL} + 'random';
-                  },300);
+                  },100);
               } 
                if (url) {
               window.location = url;
