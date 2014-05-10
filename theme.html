@@ -36,6 +36,13 @@ thanks to:
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" charset="UTF-8">
     
+    <!-- for Facebook -->          
+<meta property="og:title" content="{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="" />
+<meta property="og:url" content="{URL}" />
+<meta property="og:description" content="" />
+    
     <!--TUMBLR CUSTOMIZATION-->
     <!--Colours-->
     <meta name="color:Main Color" content="#f2f291"/> <!--Color for hover and highlight-->
@@ -81,29 +88,17 @@ thanks to:
     <meta name="if:Post Navigation" content="1"/>     <!--Navigation on permalink pages-->
     <meta name="if:Recent Post" content="1"/>         <!--Display recent posts-->
     <meta name="if:Instagram Feed" content="0"/>      <!--Enable instagram feeds-->
+    <meta name="if:Tweet Button" content="1"/>        <!--Turn on keyboard controls-->
         
     <!--Stylesheets--> 
-    <link href="http://static.tumblr.com/9hupah0/1K0n4s2xv/style.min.css" rel="stylesheet">
+    <link href="http://static.tumblr.com/9hupah0/0Urn4su0d/style.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 <style> 
 /*-------------*/
 /*---OPTIONS---*/
 /*-------------*/
-.share{
-    padding: 0.573rem;
-    margin-right:1rem;
-    border-radius: 5px;
-    color: white;}
-    
-#shareFacebook{
-    background: #3b5998;}
-    
-#shareTwitter{
-    background: #55acee;}
-    
-#shareGoogle{
-    background: #dd4b39;}
+
     
 /*--Column Width--*/
 .postHead{max-width:{text:Column Size}px;}
@@ -347,17 +342,13 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
             </li>
           {/block:Tags}
           
+          {block:IfTweetButton}
           {block:PermalinkPage} 
-            <a class="share" id="shareFacebook" href="https://www.facebook.com/sharer/sharer.php?u={URL}" target="_blank">
-          <i class="fa fa-facebook"></i> Share
-            </a>
-            <a class="share" id="shareTwitter" href="https://twitter.com/share?url={URL}" target="_blank">
+            <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}">
                 <i class="fa fa-twitter"></i> Tweet
             </a>
-            <a class="share" id="shareGoogle" href="https://www.facebook.com/sharer/sharer.php?u={URL}" target="_blank">
-          <i class="fa fa-google-plus"></i> Google+
-            </a>
-        {/block:PermalinkPage} 
+          {/block:PermalinkPage} 
+          {/block:IfTweetButton}
       </ul>
     </div>
   <!--END POST FOOTER-->
@@ -460,6 +451,14 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
                 <a href="{TagURL}" class="nobold">{Tag}</a>
             </li>
           {/block:Tags}
+          
+          {block:IfTweetButton}
+          {block:PermalinkPage} 
+            <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}">
+                <i class="fa fa-twitter"></i> Tweet
+            </a>
+          {/block:PermalinkPage} 
+          {/block:IfTweetButton}
       </ul>
     </div>
   <!--END POST FOOTER-->
@@ -562,6 +561,14 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
                 <a href="{TagURL}" class="nobold">{Tag}</a>
             </li>
           {/block:Tags}
+          
+          {block:IfTweetButton}
+          {block:PermalinkPage} 
+            <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}">
+                <i class="fa fa-twitter"></i> Tweet
+            </a>
+          {/block:PermalinkPage} 
+          {/block:IfTweetButton}
       </ul>
     </div>
   <!--END POST FOOTER-->
@@ -675,6 +682,14 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
                 <a href="{TagURL}" class="nobold">{Tag}</a>
             </li>
           {/block:Tags}
+
+          {block:IfTweetButton}
+          {block:PermalinkPage} 
+            <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}">
+                <i class="fa fa-twitter"></i> Tweet
+            </a>
+          {/block:PermalinkPage} 
+          {/block:IfTweetButton}
       </ul>
     </div>
   <!--END POST FOOTER-->
@@ -775,6 +790,14 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
                 <a href="{TagURL}" class="nobold">{Tag}</a>
             </li>
           {/block:Tags}
+          
+          {block:IfTweetButton}
+          {block:PermalinkPage} 
+            <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}">
+                <i class="fa fa-twitter"></i> Tweet
+            </a>
+          {/block:PermalinkPage} 
+          {/block:IfTweetButton}
       </ul>
     </div>
   <!--END POST FOOTER-->
@@ -877,6 +900,14 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
                 <a href="{TagURL}" class="nobold">{Tag}</a>
             </li>
           {/block:Tags}
+          
+          {block:IfTweetButton}
+          {block:PermalinkPage} 
+            <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}">
+                <i class="fa fa-twitter"></i> Tweet
+            </a>
+          {/block:PermalinkPage} 
+          {/block:IfTweetButton}
       </ul>
     </div>
   <!--END POST FOOTER-->
@@ -992,6 +1023,14 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
                 <a href="{TagURL}" class="nobold">{Tag}</a>
             </li>
           {/block:Tags}
+          
+          {block:IfTweetButton}
+          {block:PermalinkPage} 
+            <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}">
+                <i class="fa fa-twitter"></i> Tweet
+            </a>
+          {/block:PermalinkPage} 
+          {/block:IfTweetButton}
       </ul>
     </div>
   <!--END POST FOOTER-->
@@ -1094,6 +1133,14 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
                 <a href="{TagURL}" class="nobold">{Tag}</a>
             </li>
           {/block:Tags}
+          
+          {block:IfTweetButton}
+          {block:PermalinkPage} 
+            <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}">
+                <i class="fa fa-twitter"></i> Tweet
+            </a>
+          {/block:PermalinkPage} 
+          {/block:IfTweetButton}
       </ul>
     </div>
   <!--END POST FOOTER-->
@@ -1194,6 +1241,14 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
                 <a href="{TagURL}" class="nobold">{Tag}</a>
             </li>
           {/block:Tags}
+          
+          {block:IfTweetButton}
+          {block:PermalinkPage} 
+            <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}">
+                <i class="fa fa-twitter"></i> Tweet
+            </a>
+          {/block:PermalinkPage} 
+          {/block:IfTweetButton}
       </ul>
     </div>
   <!--END POST FOOTER-->
@@ -1297,6 +1352,14 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
                 <a href="{TagURL}" class="nobold">{Tag}</a>
             </li>
           {/block:Tags}
+          
+          {block:IfTweetButton}
+          {block:PermalinkPage} 
+            <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}">
+                <i class="fa fa-twitter"></i> Tweet
+            </a>
+          {/block:PermalinkPage} 
+          {/block:IfTweetButton}
       </ul>
     </div>
   <!--END POST FOOTER-->
@@ -1337,7 +1400,7 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
       <div class="permalinkPagination hideOnPrint">
 
         {block:PreviousPost}
-          <a class="postNav" id="previousPost" href="{PreviousPost}"><i class="fa fa-long-arrow-left"></i> Old Post</a>
+          <a class="postNav" id="previousPost" href="{PreviousPost}"><i class="fa fa-long-arrow-left"></i></a>
         {/block:PreviousPost}
         
         {block:IfRandom}
@@ -1345,7 +1408,7 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
         {/block:IfRandom}
 
         {block:NextPost}
-          <a class="postNav" id="nextPost" href="{NextPost}">New Post <i class="fa fa-long-arrow-right"></i></a>
+          <a class="postNav" id="nextPost" href="{NextPost}"><i class="fa fa-long-arrow-right"></i></a>
         {/block:NextPost} 
 
       </div>
@@ -1622,7 +1685,7 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
         $("#splashTint").css({"display": "none"});
         $("li.post.text").css({
                 "position": "relative",
-                "top": "-30vh"
+                "margin-top": "-30vh"
         });
         $(".title").css({"text-align": "center"});
         $(".header").css({
