@@ -96,7 +96,7 @@ thanks to:
     <meta name="if:Tweet Button" content="1"/>        <!--Turn on keyboard controls-->
         
     <!--Stylesheets--> 
-    <link href="http://static.tumblr.com/9hupah0/0Urn4su0d/style.min.css" rel="stylesheet">
+    <link href="http://static.tumblr.com/9hupah0/rV9n5e3eh/style.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 <style> 
@@ -104,7 +104,6 @@ thanks to:
 /*---OPTIONS---*/
 /*-------------*/
 
-    
 /*--Column Width--*/
 .postHead{max-width:{text:Column Size}px;}
 .row{max-width:{text:Column Size}px;}
@@ -202,7 +201,7 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
 
   <!--IMAGE-->
   {block:IfHeaderImage}
-    <img src="{image:Header}"/>
+    <img class="hideOnSplash" src="{image:Header}"/>
     <div class="spaceSmall"></div> <!--space under image-->
   {/block:IfHeaderImage} 
 
@@ -712,11 +711,11 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
 
     {block:PermalinkPage} 
       <span class="postAuthor hideOnIndex">
-        {block:IfAuthor}
-            <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-            Posted by:
-            <a href="{PostAuthorURL}"> {PostAuthorName} </a>
-        {/block:IfAuthor}
+          {block:IfAuthor}
+              <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
+              Posted by:
+              <a href="{PostAuthorURL}"> {PostAuthorName} </a>
+          {/block:IfAuthor}
 
         {block:Date} 
             on {DayOfMonth} {Month} {Year}
@@ -1393,9 +1392,11 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
     <a id="previousPost" href="{PreviousPost}"></a>
     <a id="nextPost" href="{nextPost}"></a>
     <a id="randomPost" href="{BlogURL}random"></a>
-        <p class="hint hideOnSmall">
-          <i class="fa fa-keyboard-o"></i> Use the left and right arrow keys to navigate OR hit the forwardslash(/) key to load a random post
-        </p>
+    <p class="pCenter">
+        <a class="hint" id="tooltip" data-title=" Use your arrow keys to navigate OR use the forward slash to load a random post">
+          <i class="fa fa-keyboard-o"></i>
+        </a>
+    </p>
     {/block:PermalinkPagination}
   {/block:IfKeyboardControls}
 
@@ -1692,7 +1693,6 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
                 "position": "relative",
                 "margin-top": "-30vh"
         });
-        $(".title").css({"text-align": "center"});
         $(".header").css({
                 "position": "absolute",
                 "top": "1rem"});
