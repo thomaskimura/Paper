@@ -131,7 +131,7 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
   /*--HIDES--*/
   /* hides element on different sizes */
   .hideOnSmall{display:none;}
-  .hideOnLarge{display:block;}
+  .hideOnLarge{display:inherit;}
   .hideOnIndex{display:none;}
 
   /*--SPACER--*/
@@ -447,7 +447,12 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
       padding-bottom:1rem;
       float:inherit;}
   .postNav:hover{background:#eee;}
-  .hint{color:#aaaaaa; font-size:0.773rem; line-height:1.250rem; text-align: center;} /* base -1 */
+  .hint{color:#aaaaaa; font-size:0.773rem; line-height:1.250rem;} /* base -1 */
+  .hint:hover{color:#aaaaaa;}
+  #tooltip:hover:after{
+    content: attr(data-title);
+    font-weight: 300;
+    color: #aaa;}
 
   /* permalink footer */
   .postBottom{text-align:center;color:#aaaaaa;}
@@ -561,7 +566,7 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
     font-size:0.927rem; line-height:1.499rem;}
 
   /*--HIDES--*/
-    .hideOnSmall{display:block;}/*show hidden element on larger devices*/
+    .hideOnSmall{display:inherit;}/*show hidden element on larger devices*/
     .hideOnLarge{display:none;}
 
   /*--POSTS--*/
@@ -666,5 +671,7 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
     -moz-column-gap: 0;
     -webkit-column-count: 1;
     -webkit-column-gap: 0;}
+
+  .hint{display:none;}
 }
 /*---*/
