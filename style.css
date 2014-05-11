@@ -147,7 +147,7 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
       Figure it out */
   #tumblr_controls{
     position:absolute !important;} /* fix tumblr iframes */
-  
+
   /* links */
   a{
     text-decoration:none;
@@ -192,8 +192,8 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
     list-style:none;
     padding:0px; }
   .header ul li{
-    display:inline; 
-    padding:0.573rem; 
+    display:inline;
+    padding:0.573rem;
     color:#aaaaaa;} /* set color */
 
   /* social media icons colours */
@@ -232,7 +232,7 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
   .post img{display:block;margin:0 auto;} /*center images*/
   .post a{word-wrap:break-word;}          /* break links */
   .post p{font-weight:300;}               /* set font reading font */
-  .readMoreButton{font-weight: 600; margin-bottom:1rem;} 
+  .readMoreButton{font-weight: 600; margin-bottom:1rem;}
   #title{margin:0px; margin-bottom:0.573rem; color:#333333;}
 
   /*REBLOG & SOURCE*/
@@ -244,13 +244,13 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
     line-height:1.250rem;
     text-decoration: underline;}
 
-  /*CHAT*/    
+  /*CHAT*/
   .chat{
     list-style:none;padding:0}
   .chat li{
     margin-top:0.573rem;
     margin-bottom:0.573rem;
-    border-radius:5px; 
+    border-radius:5px;
     padding:0.573rem;}
   .chat .odd{
     background:#fafafa;}
@@ -310,11 +310,11 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
     font-weight:600;
     font-size:2.023rem; line-height:3.273rem; /* base +3 */
     margin:0px;}
-  .source{ 
+  .source{
     font-size:1rem; /* base */
-    line-height:1.618rem; 
-    padding-top:1rem; 
-    padding-bottom:1rem; 
+    line-height:1.618rem;
+    padding-top:1rem;
+    padding-bottom:1rem;
     font-style:italic;}
   .source a{
     font-weight:600;}
@@ -339,16 +339,27 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
 
   /*--POST BOTTOM--*/
   /* post notes,tags and comments */
+  .share{
+    padding: 0.573rem;
+    margin-right:1rem;
+    border-radius: 5px;
+    color: white;
+    white-space:nowrap;}
+  .share:hover{
+    color:white;
+    opacity:0.6;}
+  #shareTwitter{
+    background: #55acee;}
   .postFooter{padding-top:0.573rem;}
   .postStats{
     font-size:0.773rem; line-height:1.250rem; /* base -1 */
     list-style:none;
     margin:0;
-    padding:0px; 
+    padding:0px;
     color:#aaaaaa;}
   .postStats li{
-    display:inline-block; 
-    padding-right:1rem; 
+    display:inline-block;
+    padding-right:1rem;
     margin-bottom:0.573rem;
     padding-top: 0.573rem;
     padding-bottom: 0.573rem;}
@@ -444,14 +455,15 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
   .postBottom ul{list-style:none;padding:0px;margin:0rem;}
   .postBottom ul li{display:inline;padding-right:0.573rem;color:#aaaaaa;}
   .postBottom p{font-size:0.8rem;line-height:1.294rem; margin:0px;}
-  
+
   /* permalink author */
   .postAuthor{
       color:#aaaaaa;
       font-size:0.773rem; line-height:1.250rem; /* base -1 */
       margin-top:1rem;
       margin-bottom:2rem;
-      text-align:left;}
+      text-align:left;
+      font-weight:300;}
   .postAuthor a{
       font-weight:300;}
   .postAuthorImage{
@@ -476,7 +488,7 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
 
   /*--USEABLE CLASSES--*/
   .pDropCap{
-    float: left; 
+    float: left;
     font-size: 3.2726rem; /* h1 x1.618 */
     padding: 1rem;
     padding-left: 0px;}
@@ -495,7 +507,7 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
     text-align:center;
     margin:0px;
     margin-bottom:1rem;
-    padding:0px;} 
+    padding:0px;}
 
   .pCenter{
     text-align:center;}
@@ -517,7 +529,7 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
     -moz-column-gap: 1rem;
     -webkit-column-count: 3;
     -webkit-column-gap: 1rem;}
-  
+
 
 /*END ANY SCREEN*/
 
@@ -525,7 +537,7 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
 /*---------------------*/
 /*---LARGER THAN 900---*/
 /*---------------------*/
-@media only screen and (min-width: 900px) 
+@media only screen and (min-width: 900px)
 {
   .prettyprint {font-size:0.927rem; line-height:1.499rem;}
 
@@ -541,17 +553,17 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
   h4{font-size:1.5rem; line-height:2.427rem;}     /*line height @ 1.618*/
   h5{font-size:1.25rem; line-height:2.202rem;}    /*line height @ 1.618*/ /* base:20px */
   h6{font-size:0.927rem; line-height:1.499rem;}   /*line height @ 1.618*/
-  
+
   blockquote{font-size:0.927rem; line-height:1.499rem;} /* base -1 */
 
   #bigTitle{font-size:3.927rem;}
   #recentPost{
-    font-size:0.927rem; line-height:1.499rem;} 
+    font-size:0.927rem; line-height:1.499rem;}
 
   /*--HIDES--*/
     .hideOnSmall{display:block;}/*show hidden element on larger devices*/
     .hideOnLarge{display:none;}
-  
+
   /*--POSTS--*/
     .quote{font-size:2.427rem; line-height:3.926rem;}      /* base + 3 */
     .source{font-size:1.25rem; line-height:2.202rem;}      /* base */
@@ -563,15 +575,15 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
   .contentReblog{font-size:0.927rem; line-height:1.499rem;}
   .contentSource {line-height:1.499rem;}
 
-  /*--NOTES--*/  
+  /*--NOTES--*/
     ol.notes li{font-size:0.773rem; line-height:1.250rem;}
     ol.notes li.note blockquote a{font-size:0.773rem; line-height:1.250rem;}
-  
+
   /*--PERMALINK--*/
     .postBottom p{font-size:0.975rem;line-height:1.577rem;}         /* h4 - 0.4 */
     .postAuthor{font-size:0.975rem;line-height:1.577rem;}           /* h4 - 0.4 */
     .permalinkPagination{font-size:0.927rem; line-height:1.499rem;} /* h5 */
-  
+
   /*--USEABLE CLASSES--*/
     .pQuote{font-size:2.023rem; line-height:3.273rem;} /* h3 */
     .pDropCap{font-size:3.927rem;}
@@ -583,8 +595,8 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
   /* use this to space out elements evenly */
     .space{height:5.294rem;}      /* h1 x 1.618 */
     .spaceSmall{height:3.926rem;} /* h2 x 1.618 */
-        
-  /*Image align for big screens*/        
+
+  /*Image align for big screens*/
   .post .pImageLeft
   {
     position:relative;
@@ -614,7 +626,7 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
 /*-----------*/
 /*---PRINT---*/
 /*-----------*/
-@media print 
+@media print
 {
      #tumblr_controls {display:none;}
     /*--REMOVE--*/
@@ -637,8 +649,22 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
     pre .atn, code .atn { color: #404 }
     pre .atv, code .atv { color: #060 }
 
-    /*--Align images for print--*/        
+    /*--Align images for print--*/
 }
 /*END PRINT*/
 
+@media only screen and (max-width: 600px)
+{
+  .pTwoColumns{
+    -moz-column-count: 1;
+    -moz-column-gap: 0;
+    -webkit-column-count: 1;
+    -webkit-column-gap: 0;}
+
+  .pThreeColumns{
+    -moz-column-count: 1;
+    -moz-column-gap: 0;
+    -webkit-column-count: 1;
+    -webkit-column-gap: 0;}
+}
 /*---*/
