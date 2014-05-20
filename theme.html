@@ -1709,7 +1709,7 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
             $('#splashContainer').height(newHeight);
             $("#splashGradient").height(newHeight);
             $(".header").css({"top": "1rem"});
-            $("li.post.text").css({"top": "-10vh"});
+            $("li.post.text").css({"margin-top": "-20vh"});
         }
     }
 </script>
@@ -1808,17 +1808,20 @@ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-
                   keycode = e.which;
               }
               if(keycode == 39){
+                  e.preventDefault();
                   $('#sb-site').addClass( "leftAnimate" );
                   setTimeout(function(){
                       window.location = $('#nextPost').attr('href');
                   },100);
               } else if(keycode == 37){
+                  e.preventDefault();
                   $('#sb-site').addClass( "rightAnimate" );
                   setTimeout(function(){
                       window.location = $('#previousPost').attr('href');
                   },100);
               }   
               else if(keycode == 191){
+                  e.preventDefault();
                   $("#sb-site").addClass( "fadeAnimate" );
                   setTimeout(function(){
                       window.location = {JSBlogURL} + 'random';
