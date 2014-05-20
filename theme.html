@@ -50,7 +50,7 @@ thanks to:
     
     <!--TUMBLR CUSTOMIZATION-->
     <!--Colours-->
-    <meta name="color:Main Color" content="#f2f291"/> <!--Color for hover and highlight-->
+    <meta name="color:Main Color" content="#d45603"/> <!--Color for hover and highlight-->
     <meta name="color:Tint Color" content="#000"/>
     <meta name="color:Header Color" content="#fff"/>
     
@@ -58,12 +58,13 @@ thanks to:
     <meta name="text:Column Size" content="600"/> <!--Set column width-->
     
     <!--Images-->
-    <meta name="image:HeaderBackground" content=""/>  <!--Background image for header-->
+    <meta name="image:HeaderBackground" content="http://static.tumblr.com/40475f56bedf81faa4b89b37ef5eb712/9hupah0/HPgn5v07c/tumblr_static_a9w0vrteg6wwk4g4k040wkkk8.jpg"/>  <!--Background image for header-->
     <meta name="image:Header" content=""/>            <!--Optional image above header-->
         
     <!--Fonts-->
-    <meta name="font:Headings" content="Gibson"/> <!--Sans-serif, headings, notes, navigation-->
-    <meta name="font:Body" content="Capita"/>     <!--All content-->
+    <meta name="font:Headings" content="Calluna Sans"/> <!--Sans-serif, headings, notes, navigation-->
+    <meta name="font:Subheadings" content="Calluna Sans"/>
+    <meta name="font:Body" content="Calluna"/>     <!--All content-->
     <meta name="font:Fancy" content="Clarendon"/> <!--Quotes-->
 
     <!--Text-->
@@ -93,7 +94,7 @@ thanks to:
     <meta name="if:Post Navigation" content="1"/>     <!--Navigation on permalink pages-->
     <meta name="if:Recent Post" content="1"/>         <!--Display recent posts-->
     <meta name="if:Instagram Feed" content="0"/>      <!--Enable instagram feeds-->
-    <meta name="if:Tweet Button" content="1"/>        <!--Turn on keyboard controls-->
+    <meta name="if:Tweet Button" content="0"/>        <!--Turn on keyboard controls-->
         
     <!--Stylesheets--> 
     <link href="http://static.tumblr.com/9hupah0/rV9n5e3eh/style.min.css" rel="stylesheet">
@@ -127,7 +128,8 @@ a:hover{color:{color:Main Color};}
 #bottomLinks a:hover{color:{color:Main Color};}
 
 /*--Fonts--*/
-body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-family:{font:Headings}; !important}
+ h1, h2, h3, h4, h5, h6{font-family:{font:Headings}; !important}
+ body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-family:{font:Subheadings}; !important}
 .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 .post p, .chat li, blockquote, #recentSummary, .source{font-family:{font:Body};}
 
