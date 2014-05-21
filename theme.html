@@ -1,10 +1,10 @@
 <!--
-  ____   _    ____  _____ ____  
- |  _ \ / \  |  _ \| ____|  _ \ 
+  ____   _    ____  _____ ____
+ |  _ \ / \  |  _ \| ____|  _ \
  | |_) / _ \ | |_) |  _| | |_) |
- |  __/ ___ \|  __/| |___|  _ < 
+ |  __/ ___ \|  __/| |___|  _ <
  |_| /_/   \_\_|   |_____|_| \_\
-                                
+
 
 Version 1.0
 
@@ -13,7 +13,7 @@ Paper theme created by Thomas Kimura
 View a live demo at http://papertheme.tumblr.com/
 
 view this project at https://github.com/thomaskimura/Paper
-    
+
     tweet @thomaskimura_
     github @thomaskimura
 
@@ -21,7 +21,7 @@ thanks to:
     - github.com/PixelUnion/Extended-Tumblr-Photoset
     - instafeedjs.com
     - code.google.com/p/google-code-prettify/
-    
+
 -->
 <html lang="en">
   <head>
@@ -29,38 +29,38 @@ thanks to:
 
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
     <link rel="shortcut icon" href="{Favicon}">
-    
+
     {block:Description}
         <meta name="description" content="{MetaDescription}" />
     {/block:Description}
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" charset="UTF-8">
-    
-    <!-- for Facebook -->          
+
+    <!-- for Facebook -->
 <meta property="og:title" content="{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="{URL}" />
 <meta property="og:description" content="{block:PostSummary}{PostSummary}{/block:PostSummary}" />
-    
+
     <!-- for Twitter -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@{text:Username on Twitter}">
 <meta name="twitter:creator" content="@{text:Username on Twitter}">
 <meta name="twitter:title" content="{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}">
-    
+
     <!--TUMBLR CUSTOMIZATION-->
     <!--Colours-->
     <meta name="color:Main Color" content="#d45603"/> <!--Color for hover and highlight-->
     <meta name="color:Tint Color" content="#000"/>
     <meta name="color:Header Color" content="#d45603"/>
-    
+
     <!--Sizing-->
     <meta name="text:Column Size" content="600"/> <!--Set column width-->
-    
+
     <!--Images-->
     <meta name="image:HeaderBackground" content=""/>  <!--Background image for header-->
     <meta name="image:Header" content=""/>            <!--Optional image above header-->
-        
+
     <!--Fonts-->
     <meta name="font:Headings" content="Calluna Sans"/> <!--Sans-serif, headings, notes, navigation-->
     <meta name="font:Subheadings" content="Calluna Sans"/>
@@ -86,7 +86,7 @@ thanks to:
     <meta name="text:Instagram User ID" content=""/>
     <meta name="text:Instagram Access Token" content=""/>
     <meta name="text:Instagram Tag" content=""/>
-    
+
     <!--Options-->
     <meta name="if:Keyboard Controls" content="1"/>   <!--Turn on keyboard controls-->
     <meta name="if:Author" content="1"/>              <!--Display authors-->
@@ -95,12 +95,12 @@ thanks to:
     <meta name="if:Recent Post" content="1"/>         <!--Display recent posts-->
     <meta name="if:Instagram Feed" content="0"/>      <!--Enable instagram feeds-->
     <meta name="if:Tweet Button" content="0"/>        <!--Turn on keyboard controls-->
-        
-    <!--Stylesheets--> 
+
+    <!--Stylesheets-->
     <link href="http://static.tumblr.com/9hupah0/rV9n5e3eh/style.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
-<style> 
+<style>
 /*-------------*/
 /*---OPTIONS---*/
 /*-------------*/
@@ -136,7 +136,7 @@ a:hover{color:{color:Main Color};}
 {CustomCSS}
 </style>
 
-{block:PermalinkPage} 
+{block:PermalinkPage}
   <style>
   /*--STYLE FOR PERMALINK PAGE ONLY--*/
     /*HEADER*/
@@ -151,16 +151,16 @@ a:hover{color:{color:Main Color};}
     .hideOnIndex{display:block;}
 
     #title, #recentTitle{font-size:2.618rem; line-height:3.141rem;}
-      
+
     /*TYPOGRAPHY*/
     /* first paragraph larger */
     .post > p:first-of-type{font-size:1.25rem; line-height:2.022rem;} /*1.2 & 1.618*/
 
   /*LARGER THAN 900PX*/
-    @media only screen and (min-width: 900px) 
+    @media only screen and (min-width: 900px)
     {
       #title, #recentTitle{font-size:3.272rem; line-height:3.926rem;}
-        
+
       /* first paragraph larger*/
       .post > p:first-of-type{font-size:1.5rem; line-height:2.427rem;} /*1.2 & 1.618*/
     }
@@ -203,12 +203,12 @@ a:hover{color:{color:Main Color};}
 
   <!--IMAGE-->
   {block:IfHeaderImage}
-    <img class="hideOnSplash" src="{image:Header}"/>
+    <img class="hideOnSplash headerImage" src="{image:Header}"/>
     <div class="spaceSmall"></div> <!--space under image-->
-  {/block:IfHeaderImage} 
+  {/block:IfHeaderImage}
 
   <!--TITLE-->
-  <h1 id="bigTitle"><a href="{BlogURL}">{Title}</a></h1>  
+  <h1 id="bigTitle"><a href="{BlogURL}">{Title}</a></h1>
 
   <!--BACK-->
   {block:Permalink}
@@ -252,9 +252,9 @@ a:hover{color:{color:Main Color};}
 <div class="row">
 <div class="spaceSmall"></div> <!--space after header-->
   <ol class="posts">
-        
+
 <!--POST TYPES-->
-{block:Posts} 
+{block:Posts}
 
 <!--++++++++++-->
 <!--TEXT POSTS-->
@@ -266,8 +266,8 @@ a:hover{color:{color:Main Color};}
       {block:Title}
           <h3 id="title" class="title"><a href="{Permalink}">{Title}</a></h3>
       {/block:Title}
-      
-      {block:PermalinkPage} 
+
+      {block:PermalinkPage}
         <span class="postAuthor hideOnIndex">
           {block:IfAuthor}
               <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
@@ -275,16 +275,16 @@ a:hover{color:{color:Main Color};}
               <a href="{PostAuthorURL}"> {PostAuthorName} </a>
           {/block:IfAuthor}
 
-          {block:Date} 
+          {block:Date}
               on {DayOfMonth} {Month} {Year}
-          {block:Date} 
-          
+          {block:Date}
+
         {block:ContentSource}
             <a class="contentSource"  href="{SourceURL}">{lang:Source}:
                 {SourceTitle}
             </a>
         {/block:ContentSource}
-        
+
         </span>
       {/block:PermalinkPage}
     </div>
@@ -293,20 +293,20 @@ a:hover{color:{color:Main Color};}
 
     {block:More}
       <a href="{Permalink}" class="readMoreButton">{lang:Read more} <i class="fa fa-long-arrow-right"></i></a>
-    {/block:More}  
+    {/block:More}
 
     {block:RebloggedFrom}
     <div class="contentReblog">
-        <i class="fa fa-retweet"></i> Reblogged from: 
+        <i class="fa fa-retweet"></i> Reblogged from:
         <a href="{ReblogParentURL}"><img class="postAuthorImage" src="{ReblogParentPortraitURL-24}"/></a>
         <a href="{ReblogParentURL}">{ReblogParentName}</a>
     </div>
     {/block:RebloggedFrom}
-    
+
   </li>
 
-  <!--POST FOOTER FOR TEXT-->          
-    <div class="postFooter">  
+  <!--POST FOOTER FOR TEXT-->
+    <div class="postFooter">
       <ul class="postStats">
         {block:IndexPage} <!--only show on index-->
 
@@ -319,7 +319,7 @@ a:hover{color:{color:Main Color};}
 
           {block:IfDisqusShortname} <!--display comment count when nessecary-->
             <li>
-              <i class="fa fa-comment"></i> 
+              <i class="fa fa-comment"></i>
               <a class="dsq-comment-count nobold" href="{Permalink}#disqus_thread">
                   Comments
               </a>
@@ -335,9 +335,9 @@ a:hover{color:{color:Main Color};}
             </li>
           {/block:IfDisqusShortname}
 
-          <li>  
-            {block:Date} 
-              <i class="fa fa-clock-o"></i> {timeAgo} 
+          <li>
+            {block:Date}
+              <i class="fa fa-clock-o"></i> {timeAgo}
             {/block:Date}
           </li>
           {/block:IndexPage}
@@ -347,13 +347,13 @@ a:hover{color:{color:Main Color};}
                 <a href="{TagURL}" class="nobold">{Tag}</a>
             </li>
           {/block:Tags}
-          
+
           {block:IfTweetButton}
-          {block:PermalinkPage} 
+          {block:PermalinkPage}
             <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}">
                 <i class="fa fa-twitter"></i> Tweet
             </a>
-          {/block:PermalinkPage} 
+          {/block:PermalinkPage}
           {/block:IfTweetButton}
       </ul>
     </div>
@@ -364,13 +364,13 @@ a:hover{color:{color:Main Color};}
 <!--+++++++++++++-->
 
 
-<!--+++++--> 
+<!--+++++-->
 <!--PHOTO-->
-<!--+++++--> 
+<!--+++++-->
 {block:Photo}
   <li class="post photo">
 
-      {block:PermalinkPage} 
+      {block:PermalinkPage}
         <span class="postAuthor hideOnIndex">
           {block:IfAuthor}
               <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
@@ -378,21 +378,21 @@ a:hover{color:{color:Main Color};}
               <a href="{PostAuthorURL}"> {PostAuthorName} </a>
           {/block:IfAuthor}
 
-          {block:Date} 
+          {block:Date}
               on {DayOfMonth} {Month} {Year}
-          {block:Date} 
-          
+          {block:Date}
+
         {block:ContentSource}
             <a class="contentSource"  href="{SourceURL}">{lang:Source}:
                 {SourceTitle}
             </a>
         {/block:ContentSource}
-        
+
         </span>
       {/block:PermalinkPage}
 
     <a href="{Permalink}">
-      <img src="{PhotoURL-500}" alt="{PhotoAlt}"/> 
+      <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
     </a>
 
     {block:Caption}
@@ -407,16 +407,16 @@ a:hover{color:{color:Main Color};}
 
     {block:RebloggedFrom}
     <div class="contentReblog">
-        <i class="fa fa-retweet"></i> Reblogged from: 
+        <i class="fa fa-retweet"></i> Reblogged from:
         <a href="{ReblogParentURL}"><img class="postAuthorImage" src="{ReblogParentPortraitURL-24}"/></a>
         <a href="{ReblogParentURL}">{ReblogParentName}</a>
     </div>
     {/block:RebloggedFrom}
-    
-  </li>  
 
-  <!--POST FOOTER FOR PHOTO-->          
-    <div class="postFooter">  
+  </li>
+
+  <!--POST FOOTER FOR PHOTO-->
+    <div class="postFooter">
       <ul class="postStats">
         {block:IndexPage} <!--only show on index-->
 
@@ -429,7 +429,7 @@ a:hover{color:{color:Main Color};}
 
           {block:IfDisqusShortname} <!--display comment count when nessecary-->
             <li>
-              <i class="fa fa-comment"></i> 
+              <i class="fa fa-comment"></i>
               <a class="dsq-comment-count nobold" href="{Permalink}#disqus_thread">
                   Comments
               </a>
@@ -445,25 +445,25 @@ a:hover{color:{color:Main Color};}
             </li>
           {/block:IfDisqusShortname}
 
-          <li>  
-            {block:Date} 
-              <i class="fa fa-clock-o"></i> {timeAgo} 
+          <li>
+            {block:Date}
+              <i class="fa fa-clock-o"></i> {timeAgo}
             {/block:Date}
           </li>
           {/block:IndexPage}
-          
+
           {block:Tags}
             <li class="tags">
                 <a href="{TagURL}" class="nobold">{Tag}</a>
             </li>
           {/block:Tags}
-          
+
           {block:IfTweetButton}
-          {block:PermalinkPage} 
+          {block:PermalinkPage}
             <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}">
                 <i class="fa fa-twitter"></i> Tweet
             </a>
-          {/block:PermalinkPage} 
+          {/block:PermalinkPage}
           {/block:IfTweetButton}
       </ul>
     </div>
@@ -484,7 +484,7 @@ a:hover{color:{color:Main Color};}
       <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
     {LinkCloseTag}
 
-      {block:PermalinkPage} 
+      {block:PermalinkPage}
         <span class="postAuthor hideOnIndex">
           {block:IfAuthor}
               <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
@@ -492,16 +492,16 @@ a:hover{color:{color:Main Color};}
               <a href="{PostAuthorURL}"> {PostAuthorName} </a>
           {/block:IfAuthor}
 
-          {block:Date} 
+          {block:Date}
               on {DayOfMonth} {Month} {Year}
-          {block:Date} 
-          
+          {block:Date}
+
         {block:ContentSource}
             <a class="contentSource"  href="{SourceURL}">{lang:Source}:
                 {SourceTitle}
             </a>
         {/block:ContentSource}
-        
+
         </span>
       {/block:PermalinkPage}
 
@@ -517,16 +517,16 @@ a:hover{color:{color:Main Color};}
 
     {block:RebloggedFrom}
     <div class="contentReblog">
-        <i class="fa fa-retweet"></i> Reblogged from: 
+        <i class="fa fa-retweet"></i> Reblogged from:
         <a href="{ReblogParentURL}"><img class="postAuthorImage" src="{ReblogParentPortraitURL-24}"/></a>
         <a href="{ReblogParentURL}">{ReblogParentName}</a>
     </div>
     {/block:RebloggedFrom}
-    
+
   </li>
 
-  <!--POST FOOTER FOR PANORAMA-->          
-    <div class="postFooter">  
+  <!--POST FOOTER FOR PANORAMA-->
+    <div class="postFooter">
       <ul class="postStats">
         {block:IndexPage} <!--only show on index-->
 
@@ -539,7 +539,7 @@ a:hover{color:{color:Main Color};}
 
           {block:IfDisqusShortname} <!--display comment count when nessecary-->
             <li>
-              <i class="fa fa-comment"></i> 
+              <i class="fa fa-comment"></i>
               <a class="dsq-comment-count nobold" href="{Permalink}#disqus_thread">
                   Comments
               </a>
@@ -555,25 +555,25 @@ a:hover{color:{color:Main Color};}
             </li>
           {/block:IfDisqusShortname}
 
-          <li>  
-            {block:Date} 
-              <i class="fa fa-clock-o"></i> {timeAgo} 
+          <li>
+            {block:Date}
+              <i class="fa fa-clock-o"></i> {timeAgo}
             {/block:Date}
           </li>
           {/block:IndexPage}
-          
+
           {block:Tags}
             <li class="tags">
                 <a href="{TagURL}" class="nobold">{Tag}</a>
             </li>
           {/block:Tags}
-          
+
           {block:IfTweetButton}
-          {block:PermalinkPage} 
+          {block:PermalinkPage}
             <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}">
                 <i class="fa fa-twitter"></i> Tweet
             </a>
-          {/block:PermalinkPage} 
+          {/block:PermalinkPage}
           {/block:IfTweetButton}
       </ul>
     </div>
@@ -590,7 +590,7 @@ a:hover{color:{color:Main Color};}
 {block:Photoset}
   <li class="post photoset">
 
-      {block:PermalinkPage} 
+      {block:PermalinkPage}
         <span class="postAuthor hideOnIndex">
           {block:IfAuthor}
               <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
@@ -598,16 +598,16 @@ a:hover{color:{color:Main Color};}
               <a href="{PostAuthorURL}"> {PostAuthorName} </a>
           {/block:IfAuthor}
 
-          {block:Date} 
+          {block:Date}
               on {DayOfMonth} {Month} {Year}
-          {block:Date} 
-          
+          {block:Date}
+
         {block:ContentSource}
             <a class="contentSource"  href="{SourceURL}">{lang:Source}:
                 {SourceTitle}
             </a>
         {/block:ContentSource}
-        
+
         </span>
       {/block:PermalinkPage}
 
@@ -624,10 +624,10 @@ a:hover{color:{color:Main Color};}
             </a>
 
           </div>
-        </div>  
+        </div>
       {/block:Photos}
     </div><!-- close SLIDESHOW -->
-      
+
     {block:Caption}{Caption}{/block:Caption}
 
     {block:More}
@@ -638,16 +638,16 @@ a:hover{color:{color:Main Color};}
 
     {block:RebloggedFrom}
     <div class="contentReblog">
-        <i class="fa fa-retweet"></i> Reblogged from: 
+        <i class="fa fa-retweet"></i> Reblogged from:
         <a href="{ReblogParentURL}"><img class="postAuthorImage" src="{ReblogParentPortraitURL-24}"/></a>
         <a href="{ReblogParentURL}">{ReblogParentName}</a>
     </div>
     {/block:RebloggedFrom}
-    
+
   </li>
 
-  <!--POST FOOTER FOR PHOTOSET-->          
-    <div class="postFooter">  
+  <!--POST FOOTER FOR PHOTOSET-->
+    <div class="postFooter">
       <ul class="postStats">
         {block:IndexPage} <!--only show on index-->
 
@@ -660,7 +660,7 @@ a:hover{color:{color:Main Color};}
 
           {block:IfDisqusShortname} <!--display comment count when nessecary-->
             <li>
-              <i class="fa fa-comment"></i> 
+              <i class="fa fa-comment"></i>
               <a class="dsq-comment-count nobold" href="{Permalink}#disqus_thread">
                   Comments
               </a>
@@ -676,13 +676,13 @@ a:hover{color:{color:Main Color};}
             </li>
           {/block:IfDisqusShortname}
 
-          <li>  
-            {block:Date} 
-              <i class="fa fa-clock-o"></i> {timeAgo} 
+          <li>
+            {block:Date}
+              <i class="fa fa-clock-o"></i> {timeAgo}
             {/block:Date}
           </li>
           {/block:IndexPage}
-          
+
           {block:Tags}
             <li class="tags">
                 <a href="{TagURL}" class="nobold">{Tag}</a>
@@ -690,11 +690,11 @@ a:hover{color:{color:Main Color};}
           {/block:Tags}
 
           {block:IfTweetButton}
-          {block:PermalinkPage} 
+          {block:PermalinkPage}
             <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}">
                 <i class="fa fa-twitter"></i> Tweet
             </a>
-          {/block:PermalinkPage} 
+          {/block:PermalinkPage}
           {/block:IfTweetButton}
       </ul>
     </div>
@@ -711,7 +711,7 @@ a:hover{color:{color:Main Color};}
 {block:Quote}
   <li class="post quote">
 
-    {block:PermalinkPage} 
+    {block:PermalinkPage}
       <span class="postAuthor hideOnIndex">
           {block:IfAuthor}
               <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
@@ -719,16 +719,16 @@ a:hover{color:{color:Main Color};}
               <a href="{PostAuthorURL}"> {PostAuthorName} </a>
           {/block:IfAuthor}
 
-        {block:Date} 
+        {block:Date}
             on {DayOfMonth} {Month} {Year}
-        {block:Date} 
-        
+        {block:Date}
+
         {block:ContentSource}
             <a class="contentSource"  href="{SourceURL}">{lang:Source}:
                 {SourceTitle}
             </a>
         {/block:ContentSource}
-        
+
       </span>
     {/block:PermalinkPage}
 
@@ -746,16 +746,16 @@ a:hover{color:{color:Main Color};}
 
     {block:RebloggedFrom}
     <div class="contentReblog">
-        <i class="fa fa-retweet"></i> Reblogged from: 
+        <i class="fa fa-retweet"></i> Reblogged from:
         <a href="{ReblogParentURL}"><img class="postAuthorImage" src="{ReblogParentPortraitURL-24}"/></a>
         <a href="{ReblogParentURL}">{ReblogParentName}</a>
     </div>
     {/block:RebloggedFrom}
-    
+
   </li>
 
-  <!--POST FOOTER FOR QUOTE-->          
-    <div class="postFooter">  
+  <!--POST FOOTER FOR QUOTE-->
+    <div class="postFooter">
       <ul class="postStats">
         {block:IndexPage} <!--only show on index-->
 
@@ -768,7 +768,7 @@ a:hover{color:{color:Main Color};}
 
           {block:IfDisqusShortname} <!--display comment count when nessecary-->
             <li>
-              <i class="fa fa-comment"></i> 
+              <i class="fa fa-comment"></i>
               <a class="dsq-comment-count nobold" href="{Permalink}#disqus_thread">
                   Comments
               </a>
@@ -784,25 +784,25 @@ a:hover{color:{color:Main Color};}
             </li>
           {/block:IfDisqusShortname}
 
-          <li>  
-            {block:Date} 
-              <i class="fa fa-clock-o"></i> {timeAgo} 
+          <li>
+            {block:Date}
+              <i class="fa fa-clock-o"></i> {timeAgo}
             {/block:Date}
           </li>
           {/block:IndexPage}
-          
+
           {block:Tags}
             <li class="tags">
                 <a href="{TagURL}" class="nobold">{Tag}</a>
             </li>
           {/block:Tags}
-          
+
           {block:IfTweetButton}
-          {block:PermalinkPage} 
+          {block:PermalinkPage}
             <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}">
                 <i class="fa fa-twitter"></i> Tweet
             </a>
-          {/block:PermalinkPage} 
+          {/block:PermalinkPage}
           {/block:IfTweetButton}
       </ul>
     </div>
@@ -818,10 +818,10 @@ a:hover{color:{color:Main Color};}
 <!--++++-->
 {block:Link}
   <li class="post link">
-      
+
     <a href="{URL}" id="link" class="link" {Target}><h3>{Name} <i class="fa fa-share"></i></h3></a>
-    
-    {block:PermalinkPage} 
+
+    {block:PermalinkPage}
       <span class="postAuthor hideOnIndex">
         {block:IfAuthor}
             <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
@@ -829,19 +829,19 @@ a:hover{color:{color:Main Color};}
             <a href="{PostAuthorURL}"> {PostAuthorName} </a>
         {/block:IfAuthor}
 
-        {block:Date} 
+        {block:Date}
             on {DayOfMonth} {Month} {Year}
-        {block:Date} 
-        
+        {block:Date}
+
         {block:ContentSource}
             <a class="contentSource"  href="{SourceURL}">{lang:Source}:
                 {SourceTitle}
             </a>
         {/block:ContentSource}
-        
+
       </span>
     {/block:PermalinkPage}
-    
+
     {block:Description}
       <div class="description">
         {Description}
@@ -856,16 +856,16 @@ a:hover{color:{color:Main Color};}
 
     {block:RebloggedFrom}
     <div class="contentReblog">
-        <i class="fa fa-retweet"></i> Reblogged from: 
+        <i class="fa fa-retweet"></i> Reblogged from:
         <a href="{ReblogParentURL}"><img class="postAuthorImage" src="{ReblogParentPortraitURL-24}"/></a>
         <a href="{ReblogParentURL}">{ReblogParentName}</a>
     </div>
     {/block:RebloggedFrom}
-    
+
   </li>
 
-  <!--POST FOOTER FOR LINK-->          
-    <div class="postFooter">  
+  <!--POST FOOTER FOR LINK-->
+    <div class="postFooter">
       <ul class="postStats">
         {block:IndexPage} <!--only show on index-->
 
@@ -878,7 +878,7 @@ a:hover{color:{color:Main Color};}
 
           {block:IfDisqusShortname} <!--display comment count when nessecary-->
             <li>
-              <i class="fa fa-comment"></i> 
+              <i class="fa fa-comment"></i>
               <a class="dsq-comment-count nobold" href="{Permalink}#disqus_thread">
                   Comments
               </a>
@@ -894,25 +894,25 @@ a:hover{color:{color:Main Color};}
             </li>
           {/block:IfDisqusShortname}
 
-          <li>  
-            {block:Date} 
-              <i class="fa fa-clock-o"></i> {timeAgo} 
+          <li>
+            {block:Date}
+              <i class="fa fa-clock-o"></i> {timeAgo}
             {/block:Date}
           </li>
           {/block:IndexPage}
-          
+
           {block:Tags}
             <li class="tags">
                 <a href="{TagURL}" class="nobold">{Tag}</a>
             </li>
           {/block:Tags}
-          
+
           {block:IfTweetButton}
-          {block:PermalinkPage} 
+          {block:PermalinkPage}
             <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}">
                 <i class="fa fa-twitter"></i> Tweet
             </a>
-          {/block:PermalinkPage} 
+          {/block:PermalinkPage}
           {/block:IfTweetButton}
       </ul>
     </div>
@@ -937,7 +937,7 @@ a:hover{color:{color:Main Color};}
       </h3>
     {/block:Title}
 
-    {block:PermalinkPage} 
+    {block:PermalinkPage}
       <span class="postAuthor hideOnIndex">
         {block:IfAuthor}
             <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
@@ -945,16 +945,16 @@ a:hover{color:{color:Main Color};}
             <a href="{PostAuthorURL}"> {PostAuthorName} </a>
         {/block:IfAuthor}
 
-        {block:Date} 
+        {block:Date}
             on {DayOfMonth} {Month} {Year}
-        {block:Date} 
+        {block:Date}
 
         {block:ContentSource}
             <a class="contentSource"  href="{SourceURL}">{lang:Source}:
                 {SourceTitle}
             </a>
         {/block:ContentSource}
-        
+
       </span>
     {/block:PermalinkPage}
 
@@ -979,16 +979,16 @@ a:hover{color:{color:Main Color};}
 
     {block:RebloggedFrom}
     <div class="contentReblog">
-        <i class="fa fa-retweet"></i> Reblogged from: 
+        <i class="fa fa-retweet"></i> Reblogged from:
         <a href="{ReblogParentURL}"><img class="postAuthorImage" src="{ReblogParentPortraitURL-24}"/></a>
         <a href="{ReblogParentURL}">{ReblogParentName}</a>
     </div>
     {/block:RebloggedFrom}
-    
+
   </li>
 
-  <!--POST FOOTER FOR CHAT-->          
-    <div class="postFooter">  
+  <!--POST FOOTER FOR CHAT-->
+    <div class="postFooter">
       <ul class="postStats">
         {block:IndexPage} <!--only show on index-->
 
@@ -1001,7 +1001,7 @@ a:hover{color:{color:Main Color};}
 
           {block:IfDisqusShortname} <!--display comment count when nessecary-->
             <li>
-              <i class="fa fa-comment"></i> 
+              <i class="fa fa-comment"></i>
               <a class="dsq-comment-count nobold" href="{Permalink}#disqus_thread">
                   Comments
               </a>
@@ -1017,25 +1017,25 @@ a:hover{color:{color:Main Color};}
             </li>
           {/block:IfDisqusShortname}
 
-          <li>  
-            {block:Date} 
-              <i class="fa fa-clock-o"></i> {timeAgo} 
+          <li>
+            {block:Date}
+              <i class="fa fa-clock-o"></i> {timeAgo}
             {/block:Date}
           </li>
           {/block:IndexPage}
-          
+
           {block:Tags}
             <li class="tags">
                 <a href="{TagURL}" class="nobold">{Tag}</a>
             </li>
           {/block:Tags}
-          
+
           {block:IfTweetButton}
-          {block:PermalinkPage} 
+          {block:PermalinkPage}
             <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}">
                 <i class="fa fa-twitter"></i> Tweet
             </a>
-          {/block:PermalinkPage} 
+          {/block:PermalinkPage}
           {/block:IfTweetButton}
       </ul>
     </div>
@@ -1052,7 +1052,7 @@ a:hover{color:{color:Main Color};}
 {block:Video}
   <li class="post video">
 
-    {block:PermalinkPage} 
+    {block:PermalinkPage}
       <span class="postAuthor hideOnIndex">
         {block:IfAuthor}
             <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
@@ -1060,16 +1060,16 @@ a:hover{color:{color:Main Color};}
             <a href="{PostAuthorURL}"> {PostAuthorName} </a>
         {/block:IfAuthor}
 
-        {block:Date} 
+        {block:Date}
             on {DayOfMonth} {Month} {Year}
-        {block:Date} 
-        
+        {block:Date}
+
         {block:ContentSource}
             <a class="contentSource"  href="{SourceURL}">{lang:Source}:
                 {SourceTitle}
             </a>
         {/block:ContentSource}
-        
+
       </span>
     {/block:PermalinkPage}
 
@@ -1089,16 +1089,16 @@ a:hover{color:{color:Main Color};}
 
     {block:RebloggedFrom}
     <div class="contentReblog">
-        <i class="fa fa-retweet"></i> Reblogged from: 
+        <i class="fa fa-retweet"></i> Reblogged from:
         <a href="{ReblogParentURL}"><img class="postAuthorImage" src="{ReblogParentPortraitURL-24}"/></a>
         <a href="{ReblogParentURL}">{ReblogParentName}</a>
     </div>
     {/block:RebloggedFrom}
-    
+
   </li>
 
-  <!--POST FOOTER FOR VIDEO-->          
-    <div class="postFooter">  
+  <!--POST FOOTER FOR VIDEO-->
+    <div class="postFooter">
       <ul class="postStats">
         {block:IndexPage} <!--only show on index-->
 
@@ -1111,7 +1111,7 @@ a:hover{color:{color:Main Color};}
 
           {block:IfDisqusShortname} <!--display comment count when nessecary-->
             <li>
-              <i class="fa fa-comment"></i> 
+              <i class="fa fa-comment"></i>
               <a class="dsq-comment-count nobold" href="{Permalink}#disqus_thread">
                   Comments
               </a>
@@ -1127,25 +1127,25 @@ a:hover{color:{color:Main Color};}
             </li>
           {/block:IfDisqusShortname}
 
-          <li>  
-            {block:Date} 
-              <i class="fa fa-clock-o"></i> {timeAgo} 
+          <li>
+            {block:Date}
+              <i class="fa fa-clock-o"></i> {timeAgo}
             {/block:Date}
           </li>
           {/block:IndexPage}
-          
+
           {block:Tags}
             <li class="tags">
                 <a href="{TagURL}" class="nobold">{Tag}</a>
             </li>
           {/block:Tags}
-          
+
           {block:IfTweetButton}
-          {block:PermalinkPage} 
+          {block:PermalinkPage}
             <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}">
                 <i class="fa fa-twitter"></i> Tweet
             </a>
-          {/block:PermalinkPage} 
+          {/block:PermalinkPage}
           {/block:IfTweetButton}
       </ul>
     </div>
@@ -1164,7 +1164,7 @@ a:hover{color:{color:Main Color};}
 
     {AudioPlayerBlack}
 
-    {block:PermalinkPage} 
+    {block:PermalinkPage}
       <span class="postAuthor hideOnIndex">
         {block:IfAuthor}
             <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
@@ -1172,16 +1172,16 @@ a:hover{color:{color:Main Color};}
             <a href="{PostAuthorURL}"> {PostAuthorName} </a>
         {/block:IfAuthor}
 
-        {block:Date} 
+        {block:Date}
             on {DayOfMonth} {Month} {Year}
-        {block:Date} 
-        
+        {block:Date}
+
         {block:ContentSource}
             <a class="contentSource"  href="{SourceURL}">{lang:Source}:
                 {SourceTitle}
             </a>
         {/block:ContentSource}
-        
+
       </span>
     {/block:PermalinkPage}
 
@@ -1194,10 +1194,10 @@ a:hover{color:{color:Main Color};}
         {lang:Read more} <i class="fa fa-long-arrow-right"></i>
       </a>
     {/block:More}
-    
+
     {block:RebloggedFrom}
     <div class="contentReblog">
-        <i class="fa fa-retweet"></i> Reblogged from: 
+        <i class="fa fa-retweet"></i> Reblogged from:
         <a href="{ReblogParentURL}"><img class="postAuthorImage" src="{ReblogParentPortraitURL-24}"/></a>
         <a href="{ReblogParentURL}">{ReblogParentName}</a>
     </div>
@@ -1205,8 +1205,8 @@ a:hover{color:{color:Main Color};}
 
   </li>
 
-  <!--POST FOOTER FOR AUDIO-->          
-    <div class="postFooter">  
+  <!--POST FOOTER FOR AUDIO-->
+    <div class="postFooter">
       <ul class="postStats">
         {block:IndexPage} <!--only show on index-->
 
@@ -1219,7 +1219,7 @@ a:hover{color:{color:Main Color};}
 
           {block:IfDisqusShortname} <!--display comment count when nessecary-->
             <li>
-              <i class="fa fa-comment"></i> 
+              <i class="fa fa-comment"></i>
               <a class="dsq-comment-count nobold" href="{Permalink}#disqus_thread">
                   Comments
               </a>
@@ -1235,25 +1235,25 @@ a:hover{color:{color:Main Color};}
             </li>
           {/block:IfDisqusShortname}
 
-          <li>  
-            {block:Date} 
-              <i class="fa fa-clock-o"></i> {timeAgo} 
+          <li>
+            {block:Date}
+              <i class="fa fa-clock-o"></i> {timeAgo}
             {/block:Date}
           </li>
           {/block:IndexPage}
-          
+
           {block:Tags}
             <li class="tags">
                 <a href="{TagURL}" class="nobold">{Tag}</a>
             </li>
           {/block:Tags}
-          
+
           {block:IfTweetButton}
-          {block:PermalinkPage} 
+          {block:PermalinkPage}
             <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}">
                 <i class="fa fa-twitter"></i> Tweet
             </a>
-          {/block:PermalinkPage} 
+          {/block:PermalinkPage}
           {/block:IfTweetButton}
       </ul>
     </div>
@@ -1280,21 +1280,21 @@ a:hover{color:{color:Main Color};}
         <h3 id="title" class="title"><a href="{Permalink}">{Question}</a></h3>
 
     </div>
-    
-    <div class="section"> 
-      {block:PermalinkPage} 
+
+    <div class="section">
+      {block:PermalinkPage}
         <span class="postAuthor">
 
           {block:IfAuthor}
               <a href="{PostAuthorURL}"><img class="postAuthorImage" src="{PostAuthorPortraitURL-30}"/></a>
-              Answered by: 
+              Answered by:
               <a href="{PostAuthorURL}"> {PostAuthorName} </a>
           {/block:IfAuthor}
 
-          {block:Date} 
+          {block:Date}
               on {DayOfMonth} {Month} {Year}
-          {block:Date} 
-          
+          {block:Date}
+
         {block:ContentSource}
             <a class="contentSource"  href="{SourceURL}">{lang:Source}:
                 {SourceTitle}
@@ -1308,16 +1308,16 @@ a:hover{color:{color:Main Color};}
 
     {block:RebloggedFrom}
     <div class="contentReblog">
-        <i class="fa fa-retweet"></i> Reblogged from: 
+        <i class="fa fa-retweet"></i> Reblogged from:
         <a href="{ReblogParentURL}"><img class="postAuthorImage" src="{ReblogParentPortraitURL-24}"/></a>
         <a href="{ReblogParentURL}">{ReblogParentName}</a>
     </div>
     {/block:RebloggedFrom}
-    
+
   </li>
-    
-  <!--POST FOOTER FOR ASK-->          
-    <div class="postFooter">  
+
+  <!--POST FOOTER FOR ASK-->
+    <div class="postFooter">
       <ul class="postStats">
         {block:IndexPage} <!--only show on index-->
 
@@ -1330,7 +1330,7 @@ a:hover{color:{color:Main Color};}
 
           {block:IfDisqusShortname} <!--display comment count when nessecary-->
             <li>
-              <i class="fa fa-comment"></i> 
+              <i class="fa fa-comment"></i>
               <a class="dsq-comment-count nobold" href="{Permalink}#disqus_thread">
                   Comments
               </a>
@@ -1346,25 +1346,25 @@ a:hover{color:{color:Main Color};}
             </li>
           {/block:IfDisqusShortname}
 
-          <li>  
-            {block:Date} 
-              <i class="fa fa-clock-o"></i> {timeAgo} 
+          <li>
+            {block:Date}
+              <i class="fa fa-clock-o"></i> {timeAgo}
             {/block:Date}
           </li>
           {/block:IndexPage}
-          
+
           {block:Tags}
             <li class="tags">
                 <a href="{TagURL}" class="nobold">{Tag}</a>
             </li>
           {/block:Tags}
-          
+
           {block:IfTweetButton}
-          {block:PermalinkPage} 
+          {block:PermalinkPage}
             <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}">
                 <i class="fa fa-twitter"></i> Tweet
             </a>
-          {/block:PermalinkPage} 
+          {/block:PermalinkPage}
           {/block:IfTweetButton}
       </ul>
     </div>
@@ -1375,15 +1375,15 @@ a:hover{color:{color:Main Color};}
 <!--+++++++-->
 
 
-<div class="space"></div> <!--space between each post-->   
+<div class="space"></div> <!--space between each post-->
 {/block:Posts}
 <!--+++++++++-->
 <!--END POSTS-->
 <!--+++++++++-->
 
-<!--++++++++++++++-->   
+<!--++++++++++++++-->
 <!--PERMALINK PAGE-->
-<!--++++++++++++++--> 
+<!--++++++++++++++-->
 <!--Display only on
     permalink page-->
 {block:PermalinkPage}
@@ -1410,14 +1410,14 @@ a:hover{color:{color:Main Color};}
         {block:PreviousPost}
           <a class="postNav" id="previousPost" href="{PreviousPost}"><i class="fa fa-long-arrow-left"></i></a>
         {/block:PreviousPost}
-        
+
         {block:IfRandom}
               <a class="postNav" href="{BlogURL}random"><i class="fa fa-random"></i></a>
         {/block:IfRandom}
 
         {block:NextPost}
           <a class="postNav" id="nextPost" href="{NextPost}"><i class="fa fa-long-arrow-right"></i></a>
-        {/block:NextPost} 
+        {/block:NextPost}
 
       </div>
       <div class="spaceSmall"></div> <!--space-->
@@ -1432,7 +1432,7 @@ a:hover{color:{color:Main Color};}
     </div>
     <div class="spaceSmall"></div> <!--space-->
   {/block:IfDisqusShortname}
-    
+
   <!--Notes-->
   {block:PostNotes}
     {PostNotes}
@@ -1460,11 +1460,11 @@ a:hover{color:{color:Main Color};}
   <div class="row">
     {block:NextPage}
         <a  class="right" id="navlink" href="{NextPage}">Next <i class="fa fa-long-arrow-right"></i> </a>
-    {/block:NextPage} 
-    
+    {/block:NextPage}
+
     {block:PreviousPage}
         <a class="left" id="navlink" href="{PreviousPage}"><i class="fa fa-long-arrow-left"></i> Previous</a>
-    {/block:PreviousPage}   
+    {/block:PreviousPage}
   </div>
   <div class="spaceSmall"></div>
 {/block:IndexPage}
@@ -1477,13 +1477,13 @@ a:hover{color:{color:Main Color};}
     <h3><a href="{BlogURL}">{Title}</a></h3>
 
     <!--Social Media-->
-    <ul>     
+    <ul>
       {block:IfUsernameOnFacebook}
         <li>
           <a target="_blank" href="http://www.facebook.com/{text:Username on Facebook}" id="facebook"><i class="fa fa-facebook-square"></i></a>
         </li>
       {/block:IfUsernameOnFacebook}
-      
+
       {block:IfGooglePlusUrl}
         <li>
           <a target="_blank" href="http://www.google.com/+{text:URL on Google Plus}" id="google"><i class="fa fa-google-plus-square"></i></a>
@@ -1494,14 +1494,14 @@ a:hover{color:{color:Main Color};}
         <li>
           <a target="_blank" href="http://www.twitter.com/{text:Username on Twitter}" id="twitter"><i class="fa fa-twitter-square"></i></a>
         </li>
-      {/block:IfUsernameOnTwitter} 
+      {/block:IfUsernameOnTwitter}
 
       {block:IfUsernameOnYouTube}
         <li>
           <a target="_blank" href="http://www.youtube.com/{text:Username on YouTube}" id="youtube"><i class="fa fa-youtube-square"></i></a>
         </li>
       {/block:IfUsernameOnYouTube}
-      
+
       {block:IfUsernameOnInstagram}
         <li>
           <a target="_blank" href="http://www.instagram.com/{text:Username on Instagram}" id="instagram"><i class="fa fa-instagram"></i></a>
@@ -1536,7 +1536,7 @@ a:hover{color:{color:Main Color};}
         <li>
           <a target="_blank" href="http://www.dribbble.com/{text:Username on Dribbble}" id="dribbble"><i class="fa fa-dribbble"></i></a>
         </li>
-      {/block:IfUsernameOnDribbble}  
+      {/block:IfUsernameOnDribbble}
     </ul>
 
   </div>
@@ -1551,9 +1551,9 @@ a:hover{color:{color:Main Color};}
     {block:AskEnabled}
       <a onclick="askOn()" id="askButton" href="#asksubmit">{AskLabel}</a>
     {/block:AskEnabled}
-    {block:SubmissionsEnabled} 
+    {block:SubmissionsEnabled}
       <a onclick="submitOn()" id="submitButton" href="#asksubmit">{SubmitLabel}</a>
-    {/block:SubmissionsEnabled} 
+    {/block:SubmissionsEnabled}
     {block:IfEmail}
       <a href="mailto:{text:Email}" id="Email">Email</a>
     {/block:IfEmail}
@@ -1564,7 +1564,7 @@ a:hover{color:{color:Main Color};}
     <p class="powered">
       <a href="http://papertheme.tumblr.com/">Paper</a> theme powered by <a href="http://www.tumblr.com/">Tumblr</a>
     </p>
-  </div> 
+  </div>
 
 </div>
 
@@ -1578,20 +1578,20 @@ a:hover{color:{color:Main Color};}
 <!--ASK & SUBMIT-->
 <!--++++++++++++-->
 <div class="asksubmit hideOnPrint">
-  <a name="asksubmit"></a> 
+  <a name="asksubmit"></a>
   {block:AskEnabled}
     <div class="row" id="ask">
     <a href="http://www.tumblr.com/ask_form/{text:Tumblr Username}.tumblr.com" id="askSource"></a>
         <iframe id="askBox" frameborder="0" scrolling="no" width="100%" height="190" style="background-color:transparent; overflow:hidden;" id="ask_form"></iframe>
     </div>
   {/block:AskEnabled}
-  
-  {block:SubmissionsEnabled} 
+
+  {block:SubmissionsEnabled}
     <div class="row" id="submit">
     <a href="http://www.tumblr.com/submit_form/{text:Tumblr Username}.tumblr.com" id="submitSource"></a>
         <iframe id="submitBox" src="http://www.tumblr.com/submit_form/{text:Tumblr Username}.tumblr.com" frameborder="0" height="500" scrolling="no" width="100%"></iframe>
     </div>
-  {/block:SubmissionsEnabled} 
+  {/block:SubmissionsEnabled}
 </div>
 <!--+++++++++++-->
 <!--END ASK/SUB-->
@@ -1603,21 +1603,21 @@ a:hover{color:{color:Main Color};}
         <div class="spaceSmall"></div>
         <div class="row">
                 <p id="recentPost">Recent Post</p>
-        
+
                 <h3 id="recentTitle"></h3>
-                
+
                 {block:IfAuthor}
                 <span id="recentAuthor"></span>
                 {/block:IfAuthor}
-                
+
                 <span id="recentDate"></span>
-                
+
                 <p id="recentSummary"></p>
-                
+
               <a href="{Permalink}" class="readMoreButton">
                 Read more <i class="fa fa-long-arrow-right"></i>
-              </a>       
-              
+              </a>
+
         </div>
         <div class="spaceSmall"></div>
     </div>
@@ -1642,7 +1642,7 @@ a:hover{color:{color:Main Color};}
 <script type="text/javascript" src="http://static.tumblr.com/smotcsf/Ecdn2cscy/pxuphotoset.min.js"></script>
 <script type="text/javascript" src="http://static.tumblr.com/9hupah0/oVJn4m3gk/script.min.js"></script>
 
-{block:PermalinkPage} 
+{block:PermalinkPage}
 <script>
     //SPLASH
     //If a splash image is avaliable
@@ -1666,20 +1666,20 @@ a:hover{color:{color:Main Color};}
         $(".backButton").css({
                 "border": "none",
                 "color": "white"});
-                
+
         //If screen is 480px or smaller
-        if (matchMedia('only screen and (max-width: 480px)').matches) 
+        if (matchMedia('only screen and (max-width: 480px)').matches)
         {
             var newHeight = $(window).height();
             var newWidth = $(window).width();
-            
+
             $('#splashContainer').height(newHeight);
             $('#splashTint').height(newHeight);
             $(".header").css({"top": "1rem"});
             $(".postHead").css({"top": "5rem"});
         }
     }
-    
+
     //SPLASH FADE
     if(document.getElementById("splashFade"))
     {
@@ -1701,13 +1701,13 @@ a:hover{color:{color:Main Color};}
         $(".backButton").css({
                 "border": "none",
                 "color": "white"});
-        
+
         //If screen is 480px or smaller
-        if (matchMedia('only screen and (max-width: 480px)').matches) 
+        if (matchMedia('only screen and (max-width: 480px)').matches)
         {
             var newHeight = $(window).height();
             var newWidth = $(window).width();
-            
+
             $('#splashContainer').height(newHeight);
             $("#splashGradient").height(newHeight);
             $(".header").css({"top": "1rem"});
@@ -1715,14 +1715,14 @@ a:hover{color:{color:Main Color};}
         }
     }
 </script>
-{/block:PermalinkPage} 
+{/block:PermalinkPage}
 
 <!--KEYBOARD NAV ON INDEX-->
 {block:IfKeyboardControls}
   {block:IndexPage}
     <script>
       //RANDOM NAVIGATION FOR INDEX
-      document.body.onkeydown = function(e){   
+      document.body.onkeydown = function(e){
             if (e == null) {
                 keycode = event.keyCode;
             } else {
@@ -1733,7 +1733,7 @@ a:hover{color:{color:Main Color};}
                 setTimeout(function(){
                     window.location = {JSBlogURL} + 'random';
                 },300);
-            } 
+            }
              if (url) {
             window.location = url;
             }
@@ -1744,11 +1744,11 @@ a:hover{color:{color:Main Color};}
 
 <!--KEYBOARD NAV ON PAGES-->
 {block:IfKeyboardControls}
-  {block:PermalinkPage} 
+  {block:PermalinkPage}
     {block:Pages}
       <script>
         //RANDOM NAVIGATION FOR INDEX
-        document.body.onkeydown = function(e){   
+        document.body.onkeydown = function(e){
               if (e == null) {
                   keycode = event.keyCode;
               } else {
@@ -1759,14 +1759,14 @@ a:hover{color:{color:Main Color};}
                   setTimeout(function(){
                       window.location = {JSBlogURL} + 'random';
                   },100);
-              } 
+              }
                if (url) {
               window.location = url;
               }
           };
       </script>
     {/block:Pages}
-  {/block:PermalinkPage} 
+  {/block:PermalinkPage}
 {/block:IfKeyboardControls}
 
 <!--PERSONAL INSTAFEED-->
@@ -1797,12 +1797,12 @@ a:hover{color:{color:Main Color};}
 
 <!--PERMALINK ONLY-->
 {block:IfKeyboardControls}
-  {block:PermalinkPage} 
+  {block:PermalinkPage}
     {block:PermalinkPagination}
       <script>
-          
+
         //KEYBOARD NAVIGATION FOR PERMALINK
-        document.body.onkeydown = function(e){  
+        document.body.onkeydown = function(e){
 
               if (e == null) {
                   keycode = event.keyCode;
@@ -1821,7 +1821,7 @@ a:hover{color:{color:Main Color};}
                   setTimeout(function(){
                       window.location = $('#previousPost').attr('href');
                   },100);
-              }   
+              }
               else if(keycode == 191){
                   e.preventDefault();
                   $("#sb-site").addClass( "fadeAnimate" );
@@ -1841,11 +1841,11 @@ a:hover{color:{color:Main Color};}
         <script>
             //Get title of recent posts
             var src = {JSBlogURL} + "rss";
-            
+
             $.get(src, function (data) {
                 $(data).find("item").first().each(function () { // or "item" or whatever suits your feed
                     var el = $(this);
-                    
+
                     /*
                     console.log("------------------------");
                     console.log("Title      : " + el.find("title").text());
@@ -1853,13 +1853,13 @@ a:hover{color:{color:Main Color};}
                     console.log("Author     : " + el.find("creator").text());
                     console.log("Author     : " + el.find("category").text());
                     */
-                    
+
                     var title = el.find("title").text().substr(0,50);
                     var date = el.find("pubDate").text().substr(5,11);
                     var author = el.find("creator").text();
                     var summary = el.find("description").text().substr(0,75);
                     var link = el.find("link").text();
-            
+
                     document.getElementById("recentTitle").innerHTML=title + "...";
                     document.getElementById("recentDate").innerHTML="on " + date;
                     document.getElementById("recentAuthor").innerHTML=author;
@@ -1867,11 +1867,11 @@ a:hover{color:{color:Main Color};}
                     $("#recent").click(function(){
                         $("#sb-site").addClass( "slideUp" );
                           setTimeout(function(){
-                              window.location= link; 
+                              window.location= link;
                           },100);
                          return false;
                     });
-            
+
                 });
             });
         </script>
