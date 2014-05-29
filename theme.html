@@ -82,6 +82,7 @@ thanks to:
     <meta name="text:Username on Linkedin" content="Linkedin"/>
     <meta name="text:Username on Dribbble" content="Dribbble"/>
     <meta name="text:Username on GitHub" content="GitHub"/>
+    <meta name="text:Google analytics ID" content="">
 
     <meta name="text:Instagram User ID" content=""/>
     <meta name="text:Instagram Access Token" content=""/>
@@ -95,6 +96,8 @@ thanks to:
     <meta name="if:Recent Post" content="1"/>         <!--Display recent posts-->
     <meta name="if:Instagram Feed" content="0"/>      <!--Enable instagram feeds-->
     <meta name="if:Tweet Button" content="0"/>        <!--Turn on keyboard controls-->
+    <meta name="if:Description" content="1"/>
+    <meta name="if:Full Height" content="1"/>
 
     <!--Stylesheets-->
     <link href="http://static.tumblr.com/9hupah0/5ptn5xh2l/style.min.css" rel="stylesheet">
@@ -178,6 +181,26 @@ a:hover{color:{color:Main Color};}
 </style>
 {/block:IfRandom}
 
+{block:IndexPage}
+{block:IfFullHeight}
+<style>
+    .header, #headerBackground, #headerTint{height:100vh;}
+    #bigTitle{margin-top:30vh;}
+</style>
+{block:IfFullHeight}
+{/block:IndexPage}
+
+        {block:IfGoogleAnalyticsID}
+            <script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+              ga('create', '{text:Google Analytics ID}', 'tumblr.com');
+              ga('send', 'pageview');
+            </script>
+        {/block:IfGoogleAnalyticsID}
+        
 </head>
 <body onload="prettyPrint()" tabindex="0" onkeydown="keyPress(event)"> <!--load syntax highlighter-->
 
@@ -218,7 +241,9 @@ a:hover{color:{color:Main Color};}
   {/block:Permalink}
 
   <!--DESCRIPTION-->
+  {block:IfDescription}
   <p>{Description}</p>
+  {/block:IfDescription}
 
   <!--MENU-->
   <ul>
@@ -1641,6 +1666,22 @@ a:hover{color:{color:Main Color};}
 {/block:IfInstagramFeed}
 <script type="text/javascript" src="http://static.tumblr.com/smotcsf/Ecdn2cscy/pxuphotoset.min.js"></script>
 <script type="text/javascript" src="http://static.tumblr.com/9hupah0/oVJn4m3gk/script.min.js"></script>
+
+{block:IfFullHeight}
+<script>
+//If screen is 480px or smaller
+if (matchMedia('only screen and (max-width: 480px)').matches)
+{
+    var newHeight = $(window).height();
+    var newWidth = $(window).width();
+
+    $('.header').height(newHeight);
+    $('#headerBackground').height(newHeight);
+    $("#headerTint").height(newHeight);
+    $("#bigTitle").css({"margin-top": "50px"});
+}
+</script>
+{/block:IfFullHeight}
 
 {block:PermalinkPage}
 <script>
