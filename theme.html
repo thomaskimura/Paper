@@ -53,6 +53,7 @@ thanks to:
     <meta name="color:Main Color" content="#d45603"/> <!--Color for hover and highlight-->
     <meta name="color:Tint Color" content="#000"/>
     <meta name="color:Header Color" content="#d45603"/>
+    <meta name="color:Header Background Color" content="#333333"/>
 
     <!--Sizing-->
     <meta name="text:Column Size" content="600"/> <!--Set column width-->
@@ -101,7 +102,7 @@ thanks to:
     <meta name="if:Full Images" content="1"/>
 
     <!--Stylesheets-->
-    <link href="http://static.tumblr.com/9hupah0/5ptn5xh2l/style.min.css" rel="stylesheet">
+    <link href="http://static.tumblr.com/smotcsf/U5sn6dfjm/style.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 <style>
@@ -114,11 +115,13 @@ thanks to:
 .row{max-width:{text:Column Size}px;}
 
 /*--Header--*/
-#headerBackground{
-    background:url('{image:HeaderBackground}');
-    background-size: cover;}
+{block:IndexPage}
+    #header{background-color:{color:Header Background Color};}
+{/block:IndexPage}
+
 #headerTint{background:{color:Tint Color};}
 #bigTitle{color:{color:Header Color};}
+
 
 /*--Highlight Options--*/
 ::selection{opacity:1;color:#fff; background-color:{color:Main Color};}
@@ -172,6 +175,15 @@ a:hover{color:{color:Main Color};}
   </style>
 {/block:PermalinkPage}
 
+{block:IfHeaderBackgroundImage}
+<style>
+    #headerBackground{
+        background:url('{image:HeaderBackground}');
+        background-size: cover;}
+    #header{background-color:inherit;}
+</style>
+{block:IfHeaderBackgroundImage}
+  
 {block:IfRandom}
 <style>
 .postNav{
@@ -191,10 +203,10 @@ a:hover{color:{color:Main Color};}
 {block:IfFullHeight}
 {/block:IndexPage}
 
-
 {block:IfFullImages}
 <style>
     img{width:100%;}
+    .postAuthorImage{width:inherit;}
 </style>
 {/block:IfFullImages}
 
