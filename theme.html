@@ -6,7 +6,7 @@
  |_| /_/   \_\_|   |_____|_| \_\
 
 
-Version 1.22
+Version 1.23
 
 Paper theme created by Thomas Kimura
 
@@ -247,7 +247,7 @@ a:hover{color:{color:Main Color};}
 
   <!--IMAGE-->
   {block:IfHeaderImage}
-    <img class="hideOnSplash headerImage" src="{image:Header}"/>
+    <a href="{BlogURL}"><img class="hideOnSplash headerImage" src="{image:Header}"/></a>
     <div class="spaceSmall"></div> <!--space under image-->
   {/block:IfHeaderImage}
 
@@ -1532,7 +1532,7 @@ a:hover{color:{color:Main Color};}
 
       {block:IfGooglePlusUrl}
         <li>
-          <a target="_blank" href="{text:URL on Google Plus}" id="google"><i class="fa fa-google-plus-square"></i></a>
+          <a target="_blank" href="http://www.google.com/+{text:URL on Google Plus}" id="google"><i class="fa fa-google-plus-square"></i></a>
         </li>
       {/block:IfGooglePlusUrl}
 
