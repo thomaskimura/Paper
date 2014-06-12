@@ -396,7 +396,7 @@ a:hover{color:{color:Main Color};}
 
           {block:IfTweetButton}
           {block:PermalinkPage}
-            <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}">
+            <a class="share" id="shareTwitter" href="https://twitter.com/share?" target="_blank" url="{URL}" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')">
                 <i class="fa fa-twitter"></i> Tweet
             </a>
           {/block:PermalinkPage}
