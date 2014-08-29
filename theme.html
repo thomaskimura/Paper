@@ -6,7 +6,7 @@
  |_| /_/   \_\_|   |_____|_| \_\
 
 
-Version 1.23
+Version 2.0
 
 Paper theme created by Thomas Kimura
 
@@ -100,6 +100,8 @@ thanks to:
     <meta name="if:Description" content="1"/>
     <meta name="if:Full Height" content="0"/>
     <meta name="if:Full Images" content="1"/>
+    <meta name="if:Header On" content="0"/>
+    <meta name="if:Fade On" content="0"/>
 
     <!--Stylesheets-->
     <link href="http://static.tumblr.com/smotcsf/EAmn6lstl/style.min.css" rel="stylesheet">
@@ -171,8 +173,33 @@ a:hover{color:{color:Main Color};}
       .post > p:first-of-type{font-size:1.5rem; line-height:2.427rem;} /*1.2 & 1.618*/
     }
   /*END LARGER THAN 900PX*/
+
+  #headerBackground{display:none;}
   </style>
 {/block:PermalinkPage}
+
+{block:IfHeaderOn}
+    <style>
+        .header ul, .header p{display:block;}
+        .header h1{display:block;}
+        .backButtonContainer{display:none !important;}
+        .backButton{display:none;}
+        #header{background-color:{color:Header Background Color};}
+    </style>
+{/block:IfHeaderOn}
+
+{block:IfFadeOn}
+    <style>
+        #headerBackground{display:block;}
+        #headerTint{
+        background: linear-gradient(to bottom,
+            rgba(255,255,255,0) 0,
+            rgba(255,255,255,0.7) 50%,
+            rgba(255,255,255,0.9) 75%,
+            rgba(255,255,255,1) 100%);
+        opacity:1;}
+    </style>
+{/block:IfFadeOn}
 
 {block:IfHeaderBackgroundImage}
 <style>
@@ -182,7 +209,7 @@ a:hover{color:{color:Main Color};}
     #header{background-color:inherit;}
 </style>
 {block:IfHeaderBackgroundImage}
-  
+
 {block:IfRandom}
 <style>
 .postNav{
@@ -208,6 +235,7 @@ a:hover{color:{color:Main Color};}
     img{width:100%;}
     .postAuthorImage{width:inherit;}
     img.avatar {width:inherit;}
+    #instafeed img{width:initial;}
 </style>
 {/block:IfFullImages}
 
@@ -221,7 +249,7 @@ a:hover{color:{color:Main Color};}
       ga('send', 'pageview');
     </script>
 {/block:IfGoogleAnalyticsID}
-        
+
 </head>
 <body onload="prettyPrint()" tabindex="0" onkeydown="keyPress(event)"> <!--load syntax highlighter-->
 
