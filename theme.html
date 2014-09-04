@@ -124,7 +124,6 @@ thanks to:
 #headerTint{background:{color:Tint Color};}
 #bigTitle{color:{color:Header Color};}
 
-
 /*--Highlight Options--*/
 ::selection{opacity:1;color:#fff; background-color:{color:Main Color};}
 :-moz-selection{opacity:1;color:#fff; background-color:{color:Main Color};}
@@ -192,11 +191,11 @@ a:hover{color:{color:Main Color};}
     <style>
         #headerBackground{display:block;}
         #headerTint{
-        background: linear-gradient(to bottom,
-            rgba(255,255,255,0) 0,
-            rgba(255,255,255,0.7) 50%,
-            rgba(255,255,255,0.9) 75%,
-            rgba(255,255,255,1) 100%);
+    background: linear-gradient(to top, 
+        rgba(255,255,255,1) 0%,
+        rgba(255,255,255,0.95) 10%,
+        rgba(255,255,255,0.75) 30%,
+        rgba(255,255,255,0) 100%);
         opacity:1;}
     </style>
 {/block:IfFadeOn}
@@ -208,7 +207,7 @@ a:hover{color:{color:Main Color};}
         background-size: cover;}
     #header{background-color:inherit;}
 </style>
-{block:IfHeaderBackgroundImage}
+{/block:IfHeaderBackgroundImage}
 
 {block:IfRandom}
 <style>
@@ -227,7 +226,7 @@ a:hover{color:{color:Main Color};}
     .header, #headerBackground, #headerTint{height:100vh;}
     #bigTitle{margin-top:30vh;}
 </style>
-{block:IfFullHeight}
+{/block:IfFullHeight}
 {/block:IndexPage}
 
 {block:IfFullImages}
@@ -312,13 +311,11 @@ a:hover{color:{color:Main Color};}
 <!--+++++++++++++++++-->
 <!--HEADER BACKGROUND-->
 <!--+++++++++++++++++-->
-{block:IndexPage}
   {block:IfHeaderBackgroundImage}
     <div id="headerBackground">
       <div id="headerTint"></div>
     </div>
-  {block:IfHeaderBackgroundImage}
-{/block:IndexPage}
+  {/block:IfHeaderBackgroundImage}
 
 <!--+++++++-->
 <!--CONTENT-->
