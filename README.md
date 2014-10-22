@@ -13,5 +13,5 @@ Second try at making a tumblr theme. View a [live version](http://papertheme.tum
 ###Requested Features
 - Link to gerneral website
 - Like/Reblog button
-- Facebook like/share
+- Facebook like/ ~~share~~
 
