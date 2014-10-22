@@ -96,7 +96,8 @@ thanks to:
     <meta name="if:Post Navigation" content="1"/>     <!--Navigation on permalink pages-->
     <meta name="if:Recent Post" content="1"/>         <!--Display recent posts-->
     <meta name="if:Instagram Feed" content="0"/>      <!--Enable instagram feeds-->
-    <meta name="if:Tweet Button" content="0"/>        <!--Turn on keyboard controls-->
+    <meta name="if:Tweet Button" content="0"/>        
+    <meta name="if:Facebook Button" content="0"/>
     <meta name="if:Description" content="1"/>
     <meta name="if:Full Height" content="0"/>
     <meta name="if:Full Images" content="1"/>
@@ -141,6 +142,9 @@ a:hover{color:{color:Main Color};}
 .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 .post p, .chat li, blockquote, #recentSummary, .source{font-family:{font:Body};}
 
+#shareFacebook {
+background: #3b5998;
+}
 {CustomCSS}
 </style>
 
@@ -426,6 +430,14 @@ a:hover{color:{color:Main Color};}
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
+          
+          {block:IfFacebookButton}
+          {block:PermalinkPage}
+            <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
+                <i class="fa fa-facebook-square"></i> Share on Facebook
+            </a>
+          {/block:PermalinkPage}
+          {/block:IfFacebookButton}
       </ul>
     </div>
   <!--END POST FOOTER-->
@@ -536,6 +548,14 @@ a:hover{color:{color:Main Color};}
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
+          
+          {block:IfFacebookButton}
+          {block:PermalinkPage}
+            <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
+                <i class="fa fa-facebook-square"></i> Share on Facebook
+            </a>
+          {/block:PermalinkPage}
+          {/block:IfFacebookButton}
       </ul>
     </div>
   <!--END POST FOOTER-->
@@ -646,6 +666,14 @@ a:hover{color:{color:Main Color};}
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
+
+          {block:IfFacebookButton}
+          {block:PermalinkPage}
+            <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
+                <i class="fa fa-facebook-square"></i> Share on Facebook
+            </a>
+          {/block:PermalinkPage}
+          {/block:IfFacebookButton}
       </ul>
     </div>
   <!--END POST FOOTER-->
@@ -767,6 +795,14 @@ a:hover{color:{color:Main Color};}
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
+
+          {block:IfFacebookButton}
+          {block:PermalinkPage}
+            <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
+                <i class="fa fa-facebook-square"></i> Share on Facebook
+            </a>
+          {/block:PermalinkPage}
+          {/block:IfFacebookButton}
       </ul>
     </div>
   <!--END POST FOOTER-->
@@ -875,6 +911,14 @@ a:hover{color:{color:Main Color};}
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
+          
+          {block:IfFacebookButton}
+          {block:PermalinkPage}
+            <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
+                <i class="fa fa-facebook-square"></i> Share on Facebook
+            </a>
+          {/block:PermalinkPage}
+          {/block:IfFacebookButton}
       </ul>
     </div>
   <!--END POST FOOTER-->
@@ -985,6 +1029,14 @@ a:hover{color:{color:Main Color};}
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
+          
+          {block:IfFacebookButton}
+          {block:PermalinkPage}
+            <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
+                <i class="fa fa-facebook-square"></i> Share on Facebook
+            </a>
+          {/block:PermalinkPage}
+          {/block:IfFacebookButton}
       </ul>
     </div>
   <!--END POST FOOTER-->
@@ -1108,6 +1160,14 @@ a:hover{color:{color:Main Color};}
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
+          
+           {block:IfFacebookButton}
+          {block:PermalinkPage}
+            <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
+                <i class="fa fa-facebook-square"></i> Share on Facebook
+            </a>
+          {/block:PermalinkPage}
+          {/block:IfFacebookButton}
       </ul>
     </div>
   <!--END POST FOOTER-->
@@ -1218,6 +1278,14 @@ a:hover{color:{color:Main Color};}
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
+          
+          {block:IfFacebookButton}
+          {block:PermalinkPage}
+            <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
+                <i class="fa fa-facebook-square"></i> Share on Facebook
+            </a>
+          {/block:PermalinkPage}
+          {/block:IfFacebookButton}
       </ul>
     </div>
   <!--END POST FOOTER-->
@@ -1326,6 +1394,14 @@ a:hover{color:{color:Main Color};}
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
+          
+          {block:IfFacebookButton}
+          {block:PermalinkPage}
+            <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
+                <i class="fa fa-facebook-square"></i> Share on Facebook
+            </a>
+          {/block:PermalinkPage}
+          {/block:IfFacebookButton}
       </ul>
     </div>
   <!--END POST FOOTER-->
@@ -1437,6 +1513,14 @@ a:hover{color:{color:Main Color};}
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
+          
+          {block:IfFacebookButton}
+          {block:PermalinkPage}
+            <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
+                <i class="fa fa-facebook-square"></i> Share on Facebook
+            </a>
+          {/block:PermalinkPage}
+          {/block:IfFacebookButton}
       </ul>
     </div>
   <!--END POST FOOTER-->
@@ -1923,6 +2007,16 @@ if (matchMedia('only screen and (max-width: 480px)').matches)
   {/block:PermalinkPage}
 {block:IfKeyboardControls}
 
+<!--PERMALINK ONLY-->
+{block:PermalinkPage}
+    <script>
+        function shareFunction() {
+        var myWindow = window.open("https://www.facebook.com/sharer/sharer.php?u="+ window.location, "", "width=450, height=279");
+        }
+    </script>
+{/block:PermalinkPage}    
+
+<!--PERMALINK ONLY-->
 {block:PermalinkPage}
     {block:IfRecentPost}
         <script>
