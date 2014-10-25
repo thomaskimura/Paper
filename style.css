@@ -348,8 +348,8 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
   .share:hover{
     color:white;
     opacity:0.6;}
-  #shareTwitter{
-    background: #55acee;}
+  #shareTwitter{background: #55acee;}
+  #shareFacebook {background: #3b5998;}
   .postFooter{padding-top:0.573rem;}
   .postStats{
     font-size:0.773rem; line-height:1.250rem; /* base -1 */
