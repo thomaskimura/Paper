@@ -6,7 +6,7 @@
  |_| /_/   \_\_|   |_____|_| \_\
 
 
-Version 2.11
+Version 2.12
 
 Paper theme created by Thomas Kimura
 
@@ -83,6 +83,7 @@ thanks to:
     <meta name="text:Username on Linkedin" content="Linkedin"/>
     <meta name="text:Username on Dribbble" content="Dribbble"/>
     <meta name="text:Username on GitHub" content="GitHub"/>
+    <meta name="text:Website" content="Website"/>
     <meta name="text:Google analytics ID" content="">
 
     <meta name="text:Instagram User ID" content=""/>
@@ -96,7 +97,7 @@ thanks to:
     <meta name="if:Post Navigation" content="1"/>     <!--Navigation on permalink pages-->
     <meta name="if:Recent Post" content="1"/>         <!--Display recent posts-->
     <meta name="if:Instagram Feed" content="0"/>      <!--Enable instagram feeds-->
-    <meta name="if:Tweet Button" content="0"/>        
+    <meta name="if:Tweet Button" content="0"/>
     <meta name="if:Facebook Button" content="0"/>
     <meta name="if:Description" content="1"/>
     <meta name="if:Full Height" content="0"/>
@@ -105,7 +106,7 @@ thanks to:
     <meta name="if:Fade On" content="0"/>
 
     <!--Stylesheets-->
-    <link href="http://static.tumblr.com/smotcsf/EAmn6lstl/style.min.css" rel="stylesheet">
+    <link href="http://static.tumblr.com/9hupah0/VtEndzk3k/style.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 <style>
@@ -141,10 +142,6 @@ a:hover{color:{color:Main Color};}
  body, ol.notes li.note blockquote a, .postAuthor, .postStats, ol.notes li {font-family:{font:Subheadings}; !important}
 .quote, .pDropCap, pQuote {font-family: {font:Fancy} !important;}
 .post p, .chat li, blockquote, #recentSummary, .source{font-family:{font:Body};}
-
-#shareFacebook {
-background: #3b5998;
-}
 {CustomCSS}
 </style>
 
@@ -195,7 +192,7 @@ background: #3b5998;
     <style>
         #headerBackground{display:block;}
         #headerTint{
-    background: linear-gradient(to top, 
+    background: linear-gradient(to top,
         rgba(255,255,255,1) 0%,
         rgba(255,255,255,0.95) 10%,
         rgba(255,255,255,0.75) 30%,
@@ -430,7 +427,7 @@ background: #3b5998;
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
-          
+
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
@@ -548,7 +545,7 @@ background: #3b5998;
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
-          
+
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
@@ -911,7 +908,7 @@ background: #3b5998;
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
-          
+
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
@@ -1029,7 +1026,7 @@ background: #3b5998;
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
-          
+
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
@@ -1160,7 +1157,7 @@ background: #3b5998;
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
-          
+
            {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
@@ -1278,7 +1275,7 @@ background: #3b5998;
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
-          
+
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
@@ -1394,7 +1391,7 @@ background: #3b5998;
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
-          
+
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
@@ -1513,7 +1510,7 @@ background: #3b5998;
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
-          
+
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
@@ -1692,6 +1689,11 @@ background: #3b5998;
           <a target="_blank" href="http://www.dribbble.com/{text:Username on Dribbble}" id="dribbble"><i class="fa fa-dribbble"></i></a>
         </li>
       {/block:IfUsernameOnDribbble}
+      {block:IfWebsite}
+        <li>
+          <a target="_blank" href="{text:Website}" id="website"><i class="fa fa-globe"></i></a>
+        </li>
+      {/block:IfWebsite}
     </ul>
 
   </div>
@@ -2014,7 +2016,7 @@ if (matchMedia('only screen and (max-width: 480px)').matches)
         var myWindow = window.open("https://www.facebook.com/sharer/sharer.php?u="+ window.location, "", "width=450, height=279");
         }
     </script>
-{/block:PermalinkPage}    
+{/block:PermalinkPage}
 
 <!--PERMALINK ONLY-->
 {block:PermalinkPage}
