@@ -194,6 +194,7 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
     padding:0.573rem;}
   .headerImage {
     max-width: 200px;
+    max-height: 200px;
   }
 
   /* social media icons colours */
@@ -570,7 +571,7 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
     .hideOnLarge{display:none;}
 
   /*--POSTS--*/
-    .quote{font-size:2.427rem; line-height:3.926rem;}      /* base + 3 */
+    .quote{font-size:1.5rem; line-height:2.427rem;}      /* base + 1 */
     .source{font-size:1.25rem; line-height:2.202rem;}      /* base */
     .tumblr_audio_player{height:3.927rem;}                 /* base + 3 */
     .postStats{font-size:0.975rem;line-height:1.577rem;}   /* h4 - 0.4 */
