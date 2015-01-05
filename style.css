@@ -186,15 +186,15 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
     color:#333333; /* set color */
     margin:0px;}
 
-  .header p{
-    color:#aaaaaa;} /* set color */
   .header ul{
     list-style:none;
     padding:0px; }
   .header ul li{
     display:inline;
-    padding:0.573rem;
-    color:#aaaaaa;} /* set color */
+    padding:0.573rem;}
+  .headerImage {
+    max-width: 200px;
+  }
 
   /* social media icons colours */
   #twitter:hover{color:#55ACEE;}
@@ -445,7 +445,7 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
       background:#fafafa;
       padding-top:1rem;
       padding-bottom:1rem;
-      float:inherit;}
+      float:left;}
   .postNav:hover{background:#eee;}
   .hint{color:#aaaaaa; font-size:0.773rem; line-height:1.250rem;} /* base -1 */
   .hint:hover{color:#aaaaaa;}
