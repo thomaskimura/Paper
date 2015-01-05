@@ -25,6 +25,7 @@ Thanks to:
 _____________________________________________
 
 -->
+
 <html lang="en">
   <head>
     <title>{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}</title>
@@ -75,6 +76,7 @@ _____________________________________________
     <meta name="text:Tumblr Username" content="USER" /> <!--Needed for ask/submit to work-->
     <meta name='text:Disqus Shortname' content='' />
 
+<<<<<<< HEAD
     <meta name="text:Username  " content="Facebook"/>
     <meta name="text:Google Plus Url" content="Google"/>
     <meta name="text:Username on Twitter" content="Twitter"/>
@@ -86,6 +88,19 @@ _____________________________________________
     <meta name="text:Username on Dribbble" content="Dribbble"/>
     <meta name="text:Username on GitHub" content="GitHub"/>
     <meta name="text:Website" content="Website"/>
+=======
+    <meta name="text:Username on Facebook" content=""/>
+    <meta name="text:Google Plus Url" content=""/>
+    <meta name="text:Username on Twitter" content=""/>
+    <meta name="text:Username on YouTube" content=""/>
+    <meta name="text:Username on Instagram" content=""/>
+    <meta name="text:Username on Pinterest" content=""/>
+    <meta name="text:Username on Flickr" content=""/>
+    <meta name="text:Username on Linkedin" content=""/>
+    <meta name="text:Username on Dribbble" content=""/>
+    <meta name="text:Username on GitHub" content=""/>
+    <meta name="text:Website" content=""/>
+>>>>>>> FETCH_HEAD
     <meta name="text:Google analytics ID" content="">
 
     <meta name="text:Instagram User ID" content=""/>
@@ -99,7 +114,7 @@ _____________________________________________
     <meta name="if:Post Navigation" content="1"/>     <!--Navigation on permalink pages-->
     <meta name="if:Recent Post" content="1"/>         <!--Display recent posts-->
     <meta name="if:Instagram Feed" content="0"/>      <!--Enable instagram feeds-->
-    <meta name="if:Tweet Button" content="0"/>
+    <meta name="if:Tweet Button" content="0"/>        
     <meta name="if:Facebook Button" content="0"/>
     <meta name="if:Description" content="1"/>
     <meta name="if:Full Height" content="0"/>
@@ -202,7 +217,7 @@ a:hover{color:{color:Main Color};}
     <style>
         #headerBackground{display:block;}
         #headerTint{
-    background: linear-gradient(to top,
+    background: linear-gradient(to top, 
         rgba(255,255,255,1) 0%,
         rgba(255,255,255,0.95) 10%,
         rgba(255,255,255,0.75) 30%,
@@ -437,7 +452,7 @@ a:hover{color:{color:Main Color};}
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
-
+          
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
@@ -555,7 +570,7 @@ a:hover{color:{color:Main Color};}
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
-
+          
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
@@ -918,7 +933,7 @@ a:hover{color:{color:Main Color};}
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
-
+          
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
@@ -1036,7 +1051,7 @@ a:hover{color:{color:Main Color};}
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
-
+          
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
@@ -1167,7 +1182,7 @@ a:hover{color:{color:Main Color};}
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
-
+          
            {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
@@ -1285,7 +1300,7 @@ a:hover{color:{color:Main Color};}
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
-
+          
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
@@ -1401,7 +1416,7 @@ a:hover{color:{color:Main Color};}
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
-
+          
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
@@ -1520,7 +1535,7 @@ a:hover{color:{color:Main Color};}
             </a>
           {/block:PermalinkPage}
           {/block:IfTweetButton}
-
+          
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
@@ -2032,7 +2047,7 @@ if (matchMedia('only screen and (max-width: 480px)').matches)
         var myWindow = window.open("https://www.facebook.com/sharer/sharer.php?u="+ window.location, "", "width=450, height=279");
         }
     </script>
-{/block:PermalinkPage}
+{/block:PermalinkPage}    
 
 <!--PERMALINK ONLY-->
 {block:PermalinkPage}
