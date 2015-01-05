@@ -9,7 +9,7 @@ _____________________________________________
 _____________________________________________
 _____________________________________________
 
-Version 2.12
+Version 2.20
 _____________________________________________
 
 Paper theme created by: @thomaskimura_
@@ -39,16 +39,16 @@ _____________________________________________
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" charset="UTF-8">
 
     <!-- for Facebook -->
-<meta property="og:title" content="{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="{URL}" />
-<meta property="og:description" content="{block:PostSummary}{PostSummary}{/block:PostSummary}" />
+    <meta property="og:title" content="{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{URL}" />
+    <meta property="og:description" content="{block:PostSummary}{PostSummary}{/block:PostSummary}" />
 
     <!-- for Twitter -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@{text:Username on Twitter}">
-<meta name="twitter:creator" content="@{text:Username on Twitter}">
-<meta name="twitter:title" content="{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@{text:Username on Twitter}">
+    <meta name="twitter:creator" content="@{text:Username on Twitter}">
+    <meta name="twitter:title" content="{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}">
 
     <!--TUMBLR CUSTOMIZATION-->
     <!--Colours-->
@@ -62,7 +62,7 @@ _____________________________________________
 
     <!--Images-->
     <meta name="image:HeaderBackground" content=""/>  <!--Background image for header-->
-    <meta name="image:Header" content=""/>            <!--Optional image above header-->
+    <meta name="image:Avatar" content=""/>            <!--Optional image above header-->
 
     <!--Fonts-->
     <meta name="font:Headings" content="Calluna Sans"/> <!--Sans-serif, headings, notes, navigation-->
@@ -75,7 +75,7 @@ _____________________________________________
     <meta name="text:Tumblr Username" content="USER" /> <!--Needed for ask/submit to work-->
     <meta name='text:Disqus Shortname' content='' />
 
-    <meta name="text:Username on Facebook" content="Facebook"/>
+    <meta name="text:Username  " content="Facebook"/>
     <meta name="text:Google Plus Url" content="Google"/>
     <meta name="text:Username on Twitter" content="Twitter"/>
     <meta name="text:Username on YouTube" content="YouTube"/>
@@ -108,7 +108,7 @@ _____________________________________________
     <meta name="if:Fade On" content="0"/>
 
     <!--Stylesheets-->
-    <link href="http://static.tumblr.com/9hupah0/VtEndzk3k/style.min.css" rel="stylesheet">
+    <link href="http://static.tumblr.com/9hupah0/huOnhoxft/style.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 <style>
@@ -124,6 +124,14 @@ _____________________________________________
 {block:IndexPage}
     #header{background-color:{color:Header Background Color};}
 {/block:IndexPage}
+  .header p{
+    color:{color:Header Color};
+    opacity:0.6;
+  }
+  .header ul li{
+    color:{color:Header Color};
+    opacity:0.6;
+  }
 
 #headerTint{background:{color:Tint Color};}
 #bigTitle{color:{color:Header Color};}
@@ -276,10 +284,10 @@ a:hover{color:{color:Main Color};}
   <div class="spaceSmall hideOnSplash"></div> <!--space at top-->
 
   <!--IMAGE-->
-  {block:IfHeaderImage}
-    <a href="{BlogURL}"><img class="hideOnSplash headerImage" src="{image:Header}"/></a>
+  {block:IfAvatarImage}
+    <a href="{BlogURL}"><img class="hideOnSplash headerImage" src="{image:Avatar}"/></a>
     <div class="spaceSmall"></div> <!--space under image-->
-  {/block:IfHeaderImage}
+  {/block:IfAvatarImage}
 
   <!--TITLE-->
   <h1 id="bigTitle"><a href="{BlogURL}">{Title}</a></h1>
@@ -293,14 +301,14 @@ a:hover{color:{color:Main Color};}
 
   <!--DESCRIPTION-->
   {block:IfDescription}
-  <p>{Description}</p>
+  <p class="light">{Description}</p>
   {/block:IfDescription}
 
   <!--MENU-->
   <ul>
     {block:Pages}
       <li>
-        <a href="{URL}">{Label}</a>
+        <a class="light" href="{URL}">{Label}</a>
       </li>
     {/block:Pages}
   </ul>
@@ -433,7 +441,7 @@ a:hover{color:{color:Main Color};}
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
-                <i class="fa fa-facebook-square"></i> Share on Facebook
+                <i class="fa fa-facebook-square"></i> Share
             </a>
           {/block:PermalinkPage}
           {/block:IfFacebookButton}
@@ -551,7 +559,7 @@ a:hover{color:{color:Main Color};}
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
-                <i class="fa fa-facebook-square"></i> Share on Facebook
+                <i class="fa fa-facebook-square"></i>Share
             </a>
           {/block:PermalinkPage}
           {/block:IfFacebookButton}
@@ -669,7 +677,7 @@ a:hover{color:{color:Main Color};}
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
-                <i class="fa fa-facebook-square"></i> Share on Facebook
+                <i class="fa fa-facebook-square"></i>Share
             </a>
           {/block:PermalinkPage}
           {/block:IfFacebookButton}
@@ -798,7 +806,7 @@ a:hover{color:{color:Main Color};}
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
-                <i class="fa fa-facebook-square"></i> Share on Facebook
+                <i class="fa fa-facebook-square"></i>Share
             </a>
           {/block:PermalinkPage}
           {/block:IfFacebookButton}
@@ -914,7 +922,7 @@ a:hover{color:{color:Main Color};}
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
-                <i class="fa fa-facebook-square"></i> Share on Facebook
+                <i class="fa fa-facebook-square"></i>Share
             </a>
           {/block:PermalinkPage}
           {/block:IfFacebookButton}
@@ -1032,7 +1040,7 @@ a:hover{color:{color:Main Color};}
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
-                <i class="fa fa-facebook-square"></i> Share on Facebook
+                <i class="fa fa-facebook-square"></i>Share
             </a>
           {/block:PermalinkPage}
           {/block:IfFacebookButton}
@@ -1163,7 +1171,7 @@ a:hover{color:{color:Main Color};}
            {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
-                <i class="fa fa-facebook-square"></i> Share on Facebook
+                <i class="fa fa-facebook-square"></i>Share
             </a>
           {/block:PermalinkPage}
           {/block:IfFacebookButton}
@@ -1281,7 +1289,7 @@ a:hover{color:{color:Main Color};}
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
-                <i class="fa fa-facebook-square"></i> Share on Facebook
+                <i class="fa fa-facebook-square"></i>Share
             </a>
           {/block:PermalinkPage}
           {/block:IfFacebookButton}
@@ -1397,7 +1405,7 @@ a:hover{color:{color:Main Color};}
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
-                <i class="fa fa-facebook-square"></i> Share on Facebook
+                <i class="fa fa-facebook-square"></i> Share
             </a>
           {/block:PermalinkPage}
           {/block:IfFacebookButton}
@@ -1516,7 +1524,7 @@ a:hover{color:{color:Main Color};}
           {block:IfFacebookButton}
           {block:PermalinkPage}
             <a class="share" id="shareFacebook" href="#" onclick="shareFunction()">
-                <i class="fa fa-facebook-square"></i> Share on Facebook
+                <i class="fa fa-facebook-square"></i> Share
             </a>
           {/block:PermalinkPage}
           {/block:IfFacebookButton}
@@ -1634,7 +1642,7 @@ a:hover{color:{color:Main Color};}
     <ul>
       {block:IfUsernameOnFacebook}
         <li>
-          <a target="_blank" href="http://www.facebook.com/{text:Username on Facebook}" id="facebook"><i class="fa fa-facebook-square"></i></a>
+          <a target="_blank" href="http://www.facebook.com/{text:Username  }" id="facebook"><i class="fa fa-facebook-square"></i></a>
         </li>
       {/block:IfUsernameOnFacebook}
 
@@ -1789,6 +1797,12 @@ a:hover{color:{color:Main Color};}
 {/block:IfInstagramFeed}
 
 </div> <!--main window to animate-->
+
+<!--++++++++++++-->
+<!--EXTRA SHEETS-->
+<!--++++++++++++-->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link href="http://static.tumblr.com/9hupah0/v7Anhowir/twemoji-awesome.min.css" rel="stylesheet">
 
 <!--+++++++-->
 <!--SCRIPTS-->
