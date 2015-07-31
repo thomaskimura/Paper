@@ -1715,12 +1715,11 @@ a:hover{color:{color:Main Color};}
   <div id="bottomLinks">
     <a href="{BlogURL}">Home</a>
     <a href="/archive">Archive</a>
-    <a href="/ask">Archive</a>
-    <!--{block:AskEnabled}-->
-    <!--  <a onclick="askOn()" id="askButton" href="#asksubmit">{AskLabel}</a>-->
-    <!--{/block:AskEnabled}-->
+    {block:AskEnabled}
+      <a id="askButton" href="/ask">{AskLabel}</a>
+    {/block:AskEnabled}
     {block:SubmissionsEnabled}
-      <a onclick="submitOn()" id="submitButton" href="#asksubmit">{SubmitLabel}</a>
+      <a id="submitButton" href="/submit">{SubmitLabel}</a>
     {/block:SubmissionsEnabled}
     {block:IfEmail}
       <a href="mailto:{text:Email}" id="Email">Email</a>
