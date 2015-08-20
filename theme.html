@@ -1640,15 +1640,15 @@ a:hover{color:{color:Main Color};}
 
     <!--Social Media-->
     <ul>
-      {block:IfUsernameOnFacebook}
+      {block:IfFacebookURL}
         <li>
           <a target="_blank" href="{text:Facebook URL}" id="facebook"><i class="fa fa-facebook-square"></i></a>
         </li>
-      {/block:IfUsernameOnFacebook}
+      {/block:IfFacebookURL}
 
       {block:IfGooglePlusUrl}
         <li>
-          <a target="_blank" href="{text:URL on Google Plus}" id="google"><i class="fa fa-google-plus-square"></i></a>
+          <a target="_blank" href="{text:Google Plus URL}" id="google"><i class="fa fa-google-plus-square"></i></a>
         </li>
       {/block:IfGooglePlusUrl}
 
@@ -2037,43 +2037,38 @@ if (matchMedia('only screen and (max-width: 480px)').matches)
 <!--PERMALINK ONLY-->
 {block:PermalinkPage}
     {block:IfRecentPost}
-        <script>
-            //Get title of recent posts
-            var src = {JSBlogURL} + "rss";
+    <script>
 
-            $.get(src, function (data) {
-                $(data).find("item").first().each(function () { // or "item" or whatever suits your feed
-                    var el = $(this);
+        //Get title of recent posts
+        var src = {JSBlogURL} + "rss";
 
-                    /*
-                    console.log("------------------------");
-                    console.log("Title      : " + el.find("title").text());
-                    console.log("Date       : " + el.find("pubDate").text());
-                    console.log("Author     : " + el.find("creator").text());
-                    console.log("Author     : " + el.find("category").text());
-                    */
+        $.get(src, function (data) {
+            $(data).find("item").first().each(function () { // or "item" or whatever suits your feed
+                var el = $(this);
 
-                    var title = el.find("title").text().substr(0,50);
-                    var date = el.find("pubDate").text().substr(5,11);
-                    var author = el.find("creator").text();
-                    var summary = el.find("description").text().substr(0,75);
-                    var link = el.find("link").text();
+                var title = el.find("title").text().substr(0,50);
+                var date = el.find("pubDate").text().substr(5,11);
+                var author = el.find("creator").text();
+                var summary = el.find("description").text().substr(0,75);
+                var link = el.find("link").text();
 
-                    document.getElementById("recentTitle").innerHTML=title + "...";
-                    document.getElementById("recentDate").innerHTML="on " + date;
-                    document.getElementById("recentAuthor").innerHTML=author;
-                    document.getElementById("recentSummary").innerHTML=summary + "...";
-                    $("#recent").click(function(){
-                        $("#sb-site").addClass( "slideUp" );
-                          setTimeout(function(){
-                              window.location= link;
-                          },100);
-                         return false;
-                    });
-
+                $("#recent").click(function(){
+                    $("#sb-site").addClass( "slideUp" );
+                      setTimeout(function(){
+                          window.location= link;
+                      },100);
+                     return false;
                 });
+
+                document.getElementById("recentTitle").innerHTML=title + "...";
+                document.getElementById("recentDate").innerHTML="on " + date;
+                document.getElementById("recentAuthor").innerHTML=author;
+                document.getElementById("recentSummary").innerHTML=summary + "...";
+
+
             });
-        </script>
+        });
+    </script>
     {block:IfRecentPost}
 {/block:PermalinkPage}
 
