@@ -143,11 +143,6 @@ ol.linenums {margin-top: 0;margin-bottom: 0;color:#dddddd;}
   body{color:#555555;}
   html, body{overflow-x:hidden; -webkit-overflow-scrolling: touch;}
 
-  /*  Why did I put this in?
-      Figure it out */
-  #tumblr_controls{
-    position:absolute !important;} /* fix tumblr iframes */
-
   /* links */
   a{
     text-decoration:none;
